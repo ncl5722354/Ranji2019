@@ -7,13 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
     <Grid>
-        <local:Zongmao_Subview x:Name="zongmao1" HorizontalAlignment="Left" Margin="28,39,0,0" VerticalAlignment="Top" Height="236" Width="190"/>
-        <local:Zongmao_Subview x:Name="zongmao2" HorizontalAlignment="Left" Margin="246,39,0,0" VerticalAlignment="Top" Height="236" Width="184"/>
-        <local:Zongmao_Subview x:Name="zongmao3" HorizontalAlignment="Left" Margin="453,39,0,0" VerticalAlignment="Top" Height="236" Width="184"/>
-        <local:Zongmao_Subview x:Name="zongmao4" HorizontalAlignment="Left" Margin="655,39,-39,0" VerticalAlignment="Top" Height="236" Width="184"/>
-        <local:Zongmao_Subview x:Name="zongmao5" HorizontalAlignment="Left" Margin="34,301,0,-37" VerticalAlignment="Top" Height="236" Width="184"/>
-        <local:Zongmao_Subview x:Name="zongmao6" HorizontalAlignment="Left" Margin="246,301,0,-37" VerticalAlignment="Top" Height="236" Width="184"/>
-        <local:Zongmao_Subview x:Name="zongmao7" HorizontalAlignment="Left" Margin="453,301,0,-37" VerticalAlignment="Top" Height="236" Width="184"/>
-        <local:Zongmao_Subview x:Name="zongmao8" HorizontalAlignment="Left" Margin="655,301,-39,-37" VerticalAlignment="Top" Height="236" Width="184"/>
+        <local:Zongmao_SubView_JuanRan x:Name="zongmao1" HorizontalAlignment="Left" Margin="28,39,0,0" VerticalAlignment="Top" Height="236" Width="190"/>
+        <local:Zongmao_SubView_JuanRan x:Name="zongmao2" HorizontalAlignment="Left" Margin="246,39,0,0" VerticalAlignment="Top" Height="236" Width="184"/>
+        <local:Zongmao_SubView_JuanRan x:Name="zongmao3" HorizontalAlignment="Left" Margin="453,39,0,0" VerticalAlignment="Top" Height="236" Width="184"/>
+        <local:Zongmao_SubView_JuanRan x:Name="zongmao4" HorizontalAlignment="Left" Margin="655,39,-39,0" VerticalAlignment="Top" Height="236" Width="184"/>
+        <local:Zongmao_SubView_JuanRan x:Name="zongmao5" HorizontalAlignment="Left" Margin="34,301,0,-37" VerticalAlignment="Top" Height="236" Width="184"/>
+        <local:Zongmao_SubView_JuanRan x:Name="zongmao6" HorizontalAlignment="Left" Margin="246,301,0,-37" VerticalAlignment="Top" Height="236" Width="184"/>
+        <local:Zongmao_SubView_JuanRan x:Name="zongmao7" HorizontalAlignment="Left" Margin="453,301,0,-37" VerticalAlignment="Top" Height="236" Width="184"/>
+        <local:Zongmao_SubView_JuanRan x:Name="zongmao8" HorizontalAlignment="Left" Margin="655,301,-39,-37" VerticalAlignment="Top" Height="236" Width="184"/>
     </Grid>
 </UserControl>

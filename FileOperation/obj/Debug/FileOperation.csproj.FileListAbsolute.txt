@@ -125,3 +125,9 @@ D:\程序\组态控制软件\组态与上位机软件\上位机系统\FileOperat
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\FileOperation\obj\Debug\FileOperation.csproj.ResolveComReference.cache
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\FileOperation\obj\Debug\FileOperation.dll
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\FileOperation\obj\Debug\FileOperation.pdb
+D:\Ranji2019\FileOperation\bin\Debug\FileOperation.dll
+D:\Ranji2019\FileOperation\bin\Debug\FileOperation.pdb
+D:\Ranji2019\FileOperation\obj\Debug\FileOperation.csprojResolveAssemblyReference.cache
+D:\Ranji2019\FileOperation\obj\Debug\FileOperation.csproj.ResolveComReference.cache
+D:\Ranji2019\FileOperation\obj\Debug\FileOperation.dll
+D:\Ranji2019\FileOperation\obj\Debug\FileOperation.pdb

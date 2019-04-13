@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\程序\组态控制软件\组态与上位机软件\上位机系统\Ranji2019\obj\Debug\
+D:\Ranji2019\Ranji2019\obj\Debug\
 Ranji2019
 none
 false
 DEBUG;TRACE
-D:\程序\组态控制软件\组态与上位机软件\上位机系统\Ranji2019\App.xaml
-101888422254
+D:\Ranji2019\Ranji2019\App.xaml
+11-1703611347
 
-2274476279
-171797191556
-MainWindow.xaml;MyLabel.xaml;ShenChanPaiChan_View.xaml;ShengchanPaichan_Item.xaml;ShengchanPaichan_Tiao.xaml;ValueConfig.xaml;ValueConfig_Item.xaml;xiangxi.xaml;Zongmao.xaml;Zongmao_Subview.xaml;
+21-1157285136
+17-1513981384
+MainWindow.xaml;MyLabel.xaml;ShenChanPaiChan_View.xaml;ShengchanPaichan_Item.xaml;ShengchanPaichan_Tiao.xaml;ValueConfig.xaml;ValueConfig_Item.xaml;xiangxi.xaml;Zongmao.xaml;Zongmao_Subview.xaml;Zongmao_SubView_JuanRan.xaml;
 
-False
+True
 

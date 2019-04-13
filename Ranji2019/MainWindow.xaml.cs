@@ -97,6 +97,11 @@ namespace Ranji2019
             All_Vaule_Name.Add("运行段号");
 
             All_Vaule_Name.Add("执行工艺");
+
+            // 卷染机
+            All_Vaule_Name.Add("转速1");
+            All_Vaule_Name.Add("转速2");
+            All_Vaule_Name.Add("张力");
         }
 
         // 全部隐藏
