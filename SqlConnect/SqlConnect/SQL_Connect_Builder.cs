@@ -127,11 +127,12 @@ namespace SqlConnect
             }
         }           // 查询
 
-        public void Insert(string table_name,string[] insert_values)
+        public bool Insert(string table_name,string[] insert_values)
         {
             using(SqlConnection conn=new SqlConnection(connStr.ConnectionString))
             {
-                
+
+                bool success = false;
                     conn.Open();
                     SqlCommand cmd = new SqlCommand();
                     cmd.Connection = conn;
@@ -149,9 +150,11 @@ namespace SqlConnect
                     try
                     {
                         cmd.ExecuteNonQuery();
+                        success = true;
                     }
-                    catch { }
+                    catch { success = false; }
                     conn.Close();
+                    return success;
                
             }
         }                                            // 向数据库中添加信息
@@ -182,8 +185,9 @@ namespace SqlConnect
             }
         }                                          // 删除
 
-        public void Updata(string table_name,string where_condition,string[] updata_value)
+        public bool Updata(string table_name,string where_condition,string[] updata_value)
         {
+            bool success = false;
             using(SqlConnection conn = new SqlConnection(connStr.ConnectionString))
             {
                 conn.Open();
@@ -203,9 +207,11 @@ namespace SqlConnect
                 try
                 {
                     cmd.ExecuteNonQuery();
+                    success = true;
                 }
-                catch { }
+                catch { success = false; }
                 conn.Close();
+                return success;
             }
         }                       // 更改
 
@@ -218,6 +224,42 @@ namespace SqlConnect
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = "Create Database "+Database_Name;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch { }
+                conn.Close();
+            }
+        }
+
+        // 删除一个表格
+        public void Delete_Table(string table_name)
+        {
+            using(SqlConnection conn=new SqlConnection(connStr.ConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "Drop table " + table_name;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch { }
+                conn.Close();
+            }
+        }
+
+        // 修改一个表格的名字
+        public void Updata_Table_Name(string old_table_name,string new_table_name)
+        {
+            using(SqlConnection conn=new SqlConnection(connStr.ConnectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "EXEC sp_rename '" + old_table_name + "','" + new_table_name + "'";
                 try
                 {
                     cmd.ExecuteNonQuery();
