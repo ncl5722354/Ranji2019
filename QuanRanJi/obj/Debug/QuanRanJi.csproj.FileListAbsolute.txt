@@ -1,0 +1,16 @@
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\bin\Debug\QuanRanJi.exe.config
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\bin\Debug\QuanRanJi.exe
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\bin\Debug\QuanRanJi.pdb
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\bin\Debug\ViewConfig.dll
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\bin\Debug\ViewConfig.pdb
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\obj\Debug\QuanRanJi.csprojResolveAssemblyReference.cache
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\obj\Debug\QuanRanJi.MainView.resources
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\obj\Debug\QuanRanJi.Properties.Resources.resources
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\obj\Debug\QuanRanJi.csproj.GenerateResource.Cache
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\obj\Debug\QuanRanJi.exe
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\obj\Debug\QuanRanJi.pdb
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\obj\Debug\QuanRanJi.ZongmaoItem.resources
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\bin\Debug\voice.dll
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\bin\Debug\voice.pdb
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\obj\Debug\QuanRanJi.Zongmao.resources
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\QuanRanJi\obj\Debug\QuanRanJi.xiangxi.resources

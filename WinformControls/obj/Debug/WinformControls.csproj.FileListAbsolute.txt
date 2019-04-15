@@ -1,0 +1,11 @@
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\bin\Debug\WinformControls.exe.config
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\bin\Debug\WinformControls.exe
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\bin\Debug\WinformControls.pdb
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\obj\Debug\WinformControls.csprojResolveAssemblyReference.cache
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\obj\Debug\WinformControls.Form1.resources
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\obj\Debug\WinformControls.MyChart.resources
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\obj\Debug\WinformControls.Properties.Resources.resources
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\obj\Debug\WinformControls.csproj.GenerateResource.Cache
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\obj\Debug\WinformControls.exe
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\obj\Debug\WinformControls.pdb
+D:\程序\组态控制软件\组态与上位机软件\上位机系统\WinformControls\obj\Debug\WinformControls.JobTable.resources
