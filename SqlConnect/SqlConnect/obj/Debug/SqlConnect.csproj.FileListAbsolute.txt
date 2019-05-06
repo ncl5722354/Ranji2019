@@ -70,3 +70,8 @@ D:\程序\组态控制软件\组态与上位机软件\上位机系统\SqlConnect
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\SqlConnect\SqlConnect\obj\Debug\SqlConnect.csprojResolveAssemblyReference.cache
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\SqlConnect\SqlConnect\obj\Debug\SqlConnect.dll
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\SqlConnect\SqlConnect\obj\Debug\SqlConnect.pdb
+D:\Ranji2019\SqlConnect\SqlConnect\bin\Debug\SqlConnect.dll
+D:\Ranji2019\SqlConnect\SqlConnect\bin\Debug\SqlConnect.pdb
+D:\Ranji2019\SqlConnect\SqlConnect\obj\Debug\SqlConnect.csprojResolveAssemblyReference.cache
+D:\Ranji2019\SqlConnect\SqlConnect\obj\Debug\SqlConnect.dll
+D:\Ranji2019\SqlConnect\SqlConnect\obj\Debug\SqlConnect.pdb
