@@ -19,7 +19,8 @@ namespace YinRan2020
         /// 定义窗体
         /// </summary>
         ///
-        zongmao zongmao_view = new zongmao();      // 总貌窗体
+        zongmao zongmao_view = new zongmao();              // 总貌窗体
+        Deivce_Info device_info = new Deivce_Info();       // 设备管理窗体
 
 
         /// <summary>
@@ -77,13 +78,30 @@ namespace YinRan2020
                     Show_Chuangti(zongmao_view);
                     zongmao_view.Set_Chejian("一车间");
                     break;
+                    // 总貌二车间
                 case "2chejianrealtimeshengchan":
                     Show_Chuangti(zongmao_view);
                     zongmao_view.Set_Chejian("二车间");
                     break;
+                    //  总貌三车间
                 case "3chejianrealtimeshengchan":
                     Show_Chuangti(zongmao_view);
                     zongmao_view.Set_Chejian("三车间");
+                    break;
+                    // 通讯设置1车间
+                case "1chejiantongxun":
+                    Show_Chuangti(device_info);
+                    device_info.Set_Chenjian("一车间");
+                    break;
+                // 通讯设置2车间
+                case "2chejiantongxun":
+                    Show_Chuangti(device_info);
+                    device_info.Set_Chenjian("二车间");
+                    break;
+                // 通讯设置3车间
+                case "3chejiantongxun":
+                    Show_Chuangti(device_info);
+                    device_info.Set_Chenjian("三车间");
                     break;
 
             }
@@ -98,6 +116,8 @@ namespace YinRan2020
             form.Show();
             form.Left = 0;
             form.Top = 0;
+            form.Width = panel_bg.Width;
+            form.Height = panel_bg.Height;
         }
     }
 }

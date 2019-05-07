@@ -12,3 +12,4 @@ D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.pdb
 D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.zongmao.resources
 D:\Ranji2019\YinRan2020\bin\Debug\SqlConnect.dll
 D:\Ranji2019\YinRan2020\bin\Debug\SqlConnect.pdb
+D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.Deivce_Info.resources
