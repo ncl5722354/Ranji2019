@@ -54,6 +54,21 @@ namespace Ranji2019
           // 转速2显示
         private MyLabel MyLabel_Zhuansu2_Show = new MyLabel(MainWindow.Usercontrol_Config);
 
+<<<<<<< HEAD
+=======
+          // 张力标签
+        private MyLabel MyLabel_Zhangli_Label = new MyLabel(MainWindow.Usercontrol_Config);
+
+          // 张力显示
+        private MyLabel MyLabel_Zhangli_Show = new MyLabel(MainWindow.Usercontrol_Config);
+
+
+          // 启动标签
+        private MyLabel MyLabel_Start_Show = new MyLabel(MainWindow.Usercontrol_Config);
+
+          // 暂停标签 
+        private MyLabel MyLabel_Pause_Show = new MyLabel(MainWindow.Usercontrol_Config);
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
         #endregion
 
 
@@ -61,6 +76,10 @@ namespace Ranji2019
         public void Set_Machine_Num(int mynum)
         {
             machine_num = mynum;
+<<<<<<< HEAD
+=======
+            // 设置变量名
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
             label_machine_num.Content = mynum.ToString() + "机号";
 
             MyLabel_Wendu_Show.Value_Name = "主缸温度" + machine_num.ToString();
@@ -71,6 +90,14 @@ namespace Ranji2019
 
             MyLabel_Zhuansu2_Show.Value_Name = "转速2" + machine_num.ToString();
 
+<<<<<<< HEAD
+=======
+            MyLabel_Zhangli_Show.Value_Name = "张力" + machine_num.ToString();
+
+            MyLabel_Start_Show.Value_Name = "开始" + machine_num.ToString();
+
+            MyLabel_Pause_Show.Value_Name = "暂停" + machine_num.ToString();
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
             
         }
 
@@ -136,6 +163,43 @@ namespace Ranji2019
             MyLabel_Zhuansu2_Show.Width = MainWindow.screen_width * 0.1;
             MyLabel_Zhuansu2_Show.Height = MainWindow.scree_height * 0.04;
             MyLabel_Zhuansu2_Show.mode = 1;
+<<<<<<< HEAD
+=======
+
+            // 张力标签
+            maingrid.Children.Add(MyLabel_Zhangli_Label);
+            MyLabel_Zhangli_Label.Margin = new Thickness(MainWindow.screen_width * 0.001, MainWindow.scree_height * 0.27, 0, 0);
+            MyLabel_Zhangli_Label.Width = MainWindow.screen_width * 0.05;
+            MyLabel_Zhangli_Label.Height = MainWindow.scree_height * 0.04;
+            MyLabel_Zhangli_Label.mode = 0;
+            MyLabel_Zhangli_Label.Set_Text("张力");
+
+            // 张力显示
+            maingrid.Children.Add(MyLabel_Zhangli_Show);
+            MyLabel_Zhangli_Show.Margin = new Thickness(MainWindow.screen_width * 0.06, MainWindow.scree_height * 0.27, 0, 0);
+            MyLabel_Zhangli_Show.Width = MainWindow.screen_width * 0.1;
+            MyLabel_Zhangli_Show.Height = MainWindow.scree_height * 0.04;
+            MyLabel_Zhangli_Show.mode = 1;
+
+            // 开始显示 
+            maingrid.Children.Add(MyLabel_Start_Show);
+            MyLabel_Start_Show.Margin = new Thickness(MainWindow.screen_width * 0.02, MainWindow.scree_height * 0.32, 0, 0);
+            MyLabel_Start_Show.Width = MainWindow.screen_width * 0.07;
+            MyLabel_Start_Show.Height = MainWindow.scree_height * 0.04;
+            MyLabel_Start_Show.mode = 7;
+            MyLabel_Start_Show.Set_Text("启动");
+            MyLabel_Start_Show.config_inifile = MainWindow.Color_Config;
+
+            // 暂停显示
+            maingrid.Children.Add(MyLabel_Pause_Show);
+            MyLabel_Pause_Show.Margin = new Thickness(MainWindow.screen_width * 0.12, MainWindow.scree_height * 0.32, 0, 0);
+            MyLabel_Pause_Show.Width = MainWindow.screen_width * 0.07;
+            MyLabel_Pause_Show.Height = MainWindow.scree_height * 0.04;
+            MyLabel_Pause_Show.mode = 7;
+            MyLabel_Pause_Show.Set_Text("暂停");
+            MyLabel_Pause_Show.config_inifile = MainWindow.Color_Config;
+
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
         }
     }
 }

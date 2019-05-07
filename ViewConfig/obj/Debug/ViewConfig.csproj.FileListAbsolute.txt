@@ -97,8 +97,11 @@ D:\程序\组态控制软件\组态与上位机软件\上位机系统\ViewConfig
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\ViewConfig\obj\Debug\ViewConfig.dll
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\ViewConfig\obj\Debug\ViewConfig.pdb
+<<<<<<< HEAD
 D:\Ranji2019\ViewConfig\bin\Debug\ViewConfig.dll
 D:\Ranji2019\ViewConfig\bin\Debug\ViewConfig.pdb
 D:\Ranji2019\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
 D:\Ranji2019\ViewConfig\obj\Debug\ViewConfig.dll
 D:\Ranji2019\ViewConfig\obj\Debug\ViewConfig.pdb
+=======
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c

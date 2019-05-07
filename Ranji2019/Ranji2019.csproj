@@ -175,6 +175,18 @@
       <Name>FileOperation</Name>
     </ProjectReference>
   </ItemGroup>
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\ranseji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ranseji.png" />
+  </ItemGroup>
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

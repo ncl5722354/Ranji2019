@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\Ranji2019\WPFDataStruct\obj\Debug\
+=======
+D:\程序\Ranji2019-master\WPFDataStruct\obj\Debug\
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
 WPFDataStruct
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\Ranji2019\WPFDataStruct\App.xaml
 22021279262
 
 13602704465
 141038130167
+=======
+D:\程序\Ranji2019-master\WPFDataStruct\App.xaml
+22021279262
+
+13706168422
+14-2077758735
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
 MainWindow.xaml;SubWindow.xaml;
 
 False

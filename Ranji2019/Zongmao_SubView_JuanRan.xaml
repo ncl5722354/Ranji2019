@@ -7,6 +7,10 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid Name="maingrid" Background="#FF137467">
         <Label x:Name="label_machine_num" Content="Label" HorizontalAlignment="Left" Margin="24,24,0,0" VerticalAlignment="Top" Height="35" Width="101" FontSize="16" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF13EA7E" FontStyle="Italic"/>
+<<<<<<< HEAD
         <Rectangle x:Name="label_machine_num_frame" HorizontalAlignment="Left" Height="35" Margin="24,24,0,0" Stroke="#FF130505" VerticalAlignment="Top" Width="89" StrokeThickness="3"/>
+=======
+        <Rectangle x:Name="label_machine_num_frame" HorizontalAlignment="Left" Height="35" Margin="24,24,0,0" Stroke="#FF130505" VerticalAlignment="Top" Width="101" StrokeThickness="3"/>
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
     </Grid>
 </UserControl>

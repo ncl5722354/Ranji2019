@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 D:\Ranji2019\Ranji_Controlor4.0\obj\Debug\
+=======
+D:\程序\Ranji2019-master\Ranji_Controlor4.0\obj\Debug\
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
 Ranji_Controlor4._0
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 D:\Ranji2019\Ranji_Controlor4.0\App.xaml
 22131412466
 
 101668168951
 161466002400
+=======
+D:\程序\Ranji2019-master\Ranji_Controlor4.0\App.xaml
+22131412466
+
+101771632908
+16-1763286247
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
 MainWindow.xaml;Start.xaml;
 
 False
