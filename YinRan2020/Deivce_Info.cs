@@ -21,7 +21,13 @@ namespace YinRan2020
 
         private void init_view()
         {
+            // 标题
             ViewCaoZuo.Object_Position(0, 0, 1, 0.05, label_title, this.Controls);
+
+            // 工具栏
+            ViewCaoZuo.Object_Position(0, 0.05, 1, 0.05, panel_tool, this.Controls);
+
+            ViewCaoZuo.Object_Position(0, 0, 1, 1, toolStrip1, panel_tool.Controls);
         }
 
         public void Set_Chenjian(string name)
