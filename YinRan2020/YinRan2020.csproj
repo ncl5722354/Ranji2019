@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCraft.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCraft.Designer.cs">
+      <DependentUpon>AddCraft.cs</DependentUpon>
+    </Compile>
     <Compile Include="Deivce_Info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     <Compile Include="zongmao.Designer.cs">
       <DependentUpon>zongmao.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddCraft.resx">
+      <DependentUpon>AddCraft.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Deivce_Info.resx">
       <DependentUpon>Deivce_Info.cs</DependentUpon>
     </EmbeddedResource>
