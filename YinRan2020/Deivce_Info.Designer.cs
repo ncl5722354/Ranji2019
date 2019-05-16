@@ -30,45 +30,48 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deivce_Info));
-            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("串口1");
-            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("串口2");
-            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("串口3");
-            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("串口4");
-            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("串口5");
-            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("串口6");
-            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("通讯选择", new System.Windows.Forms.TreeNode[] {
-            treeNode57,
-            treeNode58,
-            treeNode59,
-            treeNode60,
-            treeNode61,
-            treeNode62});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("串口1");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("串口2");
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("串口3");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("串口4");
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("串口5");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("串口6");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("通讯选择", new System.Windows.Forms.TreeNode[] {
+            treeNode8,
+            treeNode9,
+            treeNode10,
+            treeNode11,
+            treeNode12,
+            treeNode13});
             this.label_title = new System.Windows.Forms.Label();
             this.panel_tool = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel_com_info = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox_chuankouhao = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.comboBox_botelv = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox_shujuwei = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox_tingzhiwei = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.comboBox_jiaoyanwei = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label_zhuangtai = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label_zhuangtai = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.comboBox_jiaoyanwei = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox_tingzhiwei = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox_shujuwei = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox_botelv = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox_chuankouhao = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.myDataGridView1 = new YinRan2020.MyDataGridView();
             this.panel_tool.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel_com_info.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_title
@@ -119,24 +122,25 @@
             this.treeView1.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.treeView1.Location = new System.Drawing.Point(12, 104);
             this.treeView1.Name = "treeView1";
-            treeNode57.Name = "com1";
-            treeNode57.Text = "串口1";
-            treeNode58.Name = "com2";
-            treeNode58.Text = "串口2";
-            treeNode59.Name = "com3";
-            treeNode59.Text = "串口3";
-            treeNode60.Name = "com4";
-            treeNode60.Text = "串口4";
-            treeNode61.Name = "com5";
-            treeNode61.Text = "串口5";
-            treeNode62.Name = "com6";
-            treeNode62.Text = "串口6";
-            treeNode63.Name = "tongxun";
-            treeNode63.Text = "通讯选择";
+            treeNode8.Name = "com1";
+            treeNode8.Text = "串口1";
+            treeNode9.Name = "com2";
+            treeNode9.Text = "串口2";
+            treeNode10.Name = "com3";
+            treeNode10.Text = "串口3";
+            treeNode11.Name = "com4";
+            treeNode11.Text = "串口4";
+            treeNode12.Name = "com5";
+            treeNode12.Text = "串口5";
+            treeNode13.Name = "com6";
+            treeNode13.Text = "串口6";
+            treeNode14.Name = "tongxun";
+            treeNode14.Text = "通讯选择";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode63});
+            treeNode14});
             this.treeView1.Size = new System.Drawing.Size(223, 617);
             this.treeView1.TabIndex = 2;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // panel_com_info
             // 
@@ -163,141 +167,6 @@
             this.panel_com_info.Size = new System.Drawing.Size(906, 145);
             this.panel_com_info.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(16, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 26);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "串口信息";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(152, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "串口号";
-            // 
-            // comboBox_chuankouhao
-            // 
-            this.comboBox_chuankouhao.FormattingEnabled = true;
-            this.comboBox_chuankouhao.Location = new System.Drawing.Point(226, 16);
-            this.comboBox_chuankouhao.Name = "comboBox_chuankouhao";
-            this.comboBox_chuankouhao.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_chuankouhao.TabIndex = 2;
-            this.comboBox_chuankouhao.DropDown += new System.EventHandler(this.comboBox_chuankouhao_DropDown);
-            this.comboBox_chuankouhao.Click += new System.EventHandler(this.comboBox_chuankouhao_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(152, 54);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "波特率";
-            // 
-            // comboBox_botelv
-            // 
-            this.comboBox_botelv.FormattingEnabled = true;
-            this.comboBox_botelv.Location = new System.Drawing.Point(226, 51);
-            this.comboBox_botelv.Name = "comboBox_botelv";
-            this.comboBox_botelv.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_botelv.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(152, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "数据位";
-            // 
-            // comboBox_shujuwei
-            // 
-            this.comboBox_shujuwei.FormattingEnabled = true;
-            this.comboBox_shujuwei.Location = new System.Drawing.Point(226, 85);
-            this.comboBox_shujuwei.Name = "comboBox_shujuwei";
-            this.comboBox_shujuwei.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_shujuwei.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(449, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(41, 12);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "停止位";
-            // 
-            // comboBox_tingzhiwei
-            // 
-            this.comboBox_tingzhiwei.FormattingEnabled = true;
-            this.comboBox_tingzhiwei.Location = new System.Drawing.Point(496, 16);
-            this.comboBox_tingzhiwei.Name = "comboBox_tingzhiwei";
-            this.comboBox_tingzhiwei.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_tingzhiwei.TabIndex = 8;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(449, 54);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 12);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "校验位";
-            // 
-            // comboBox_jiaoyanwei
-            // 
-            this.comboBox_jiaoyanwei.FormattingEnabled = true;
-            this.comboBox_jiaoyanwei.Location = new System.Drawing.Point(496, 51);
-            this.comboBox_jiaoyanwei.Name = "comboBox_jiaoyanwei";
-            this.comboBox_jiaoyanwei.Size = new System.Drawing.Size(121, 20);
-            this.comboBox_jiaoyanwei.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(449, 88);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 12);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "状  态";
-            // 
-            // label_zhuangtai
-            // 
-            this.label_zhuangtai.AutoSize = true;
-            this.label_zhuangtai.Location = new System.Drawing.Point(496, 88);
-            this.label_zhuangtai.Name = "label_zhuangtai";
-            this.label_zhuangtai.Size = new System.Drawing.Size(41, 12);
-            this.label_zhuangtai.TabIndex = 12;
-            this.label_zhuangtai.Text = "状  态";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.GreenYellow;
-            this.button1.Location = new System.Drawing.Point(714, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 37);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "打开";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(714, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 37);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "关闭";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.SandyBrown;
@@ -309,16 +178,169 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Location = new System.Drawing.Point(714, 54);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 37);
+            this.button2.TabIndex = 14;
+            this.button2.Text = "关闭";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.GreenYellow;
+            this.button1.Location = new System.Drawing.Point(714, 8);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 37);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "打开";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label_zhuangtai
+            // 
+            this.label_zhuangtai.AutoSize = true;
+            this.label_zhuangtai.Location = new System.Drawing.Point(496, 88);
+            this.label_zhuangtai.Name = "label_zhuangtai";
+            this.label_zhuangtai.Size = new System.Drawing.Size(41, 12);
+            this.label_zhuangtai.TabIndex = 12;
+            this.label_zhuangtai.Text = "状  态";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(449, 88);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 12);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "状  态";
+            // 
+            // comboBox_jiaoyanwei
+            // 
+            this.comboBox_jiaoyanwei.FormattingEnabled = true;
+            this.comboBox_jiaoyanwei.Location = new System.Drawing.Point(496, 51);
+            this.comboBox_jiaoyanwei.Name = "comboBox_jiaoyanwei";
+            this.comboBox_jiaoyanwei.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_jiaoyanwei.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(449, 54);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 12);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "校验位";
+            // 
+            // comboBox_tingzhiwei
+            // 
+            this.comboBox_tingzhiwei.FormattingEnabled = true;
+            this.comboBox_tingzhiwei.Location = new System.Drawing.Point(496, 16);
+            this.comboBox_tingzhiwei.Name = "comboBox_tingzhiwei";
+            this.comboBox_tingzhiwei.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_tingzhiwei.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(449, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 12);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "停止位";
+            // 
+            // comboBox_shujuwei
+            // 
+            this.comboBox_shujuwei.FormattingEnabled = true;
+            this.comboBox_shujuwei.Location = new System.Drawing.Point(226, 85);
+            this.comboBox_shujuwei.Name = "comboBox_shujuwei";
+            this.comboBox_shujuwei.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_shujuwei.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(152, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "数据位";
+            // 
+            // comboBox_botelv
+            // 
+            this.comboBox_botelv.FormattingEnabled = true;
+            this.comboBox_botelv.Location = new System.Drawing.Point(226, 51);
+            this.comboBox_botelv.Name = "comboBox_botelv";
+            this.comboBox_botelv.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_botelv.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(152, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "波特率";
+            // 
+            // comboBox_chuankouhao
+            // 
+            this.comboBox_chuankouhao.FormattingEnabled = true;
+            this.comboBox_chuankouhao.Location = new System.Drawing.Point(226, 16);
+            this.comboBox_chuankouhao.Name = "comboBox_chuankouhao";
+            this.comboBox_chuankouhao.Size = new System.Drawing.Size(121, 20);
+            this.comboBox_chuankouhao.TabIndex = 2;
+            this.comboBox_chuankouhao.DropDown += new System.EventHandler(this.comboBox_chuankouhao_DropDown);
+            this.comboBox_chuankouhao.Click += new System.EventHandler(this.comboBox_chuankouhao_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(152, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "串口号";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(16, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 26);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "串口信息";
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.myDataGridView1);
+            this.panel1.Location = new System.Drawing.Point(242, 256);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(905, 446);
+            this.panel1.TabIndex = 4;
+            // 
+            // myDataGridView1
+            // 
+            this.myDataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.myDataGridView1.Name = "myDataGridView1";
+            this.myDataGridView1.Size = new System.Drawing.Size(897, 712);
+            this.myDataGridView1.TabIndex = 0;
             // 
             // Deivce_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1301, 742);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_com_info);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.panel_tool);
@@ -332,6 +354,7 @@
             this.toolStrip1.PerformLayout();
             this.panel_com_info.ResumeLayout(false);
             this.panel_com_info.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -361,5 +384,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
+        private MyDataGridView myDataGridView1;
     }
 }

@@ -41,8 +41,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dedusting", "Dedusting\Dedu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarningSystem", "WarningSystem\WarningSystem.csproj", "{9C16DFD5-D778-438E-AB5C-5842FC10FB34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ranji2019", "Ranji2019\Ranji2019.csproj", "{39872053-A494-4DC7-B431-D677C6D13684}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnShanDataCollection", "AnShanDataCollection\AnShanDataCollection.csproj", "{0D6419B4-DF98-4879-84FE-79BFDD462547}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBrowser_warningsystem", "WpfBrowser_warningsystem\WpfBrowser_warningsystem.csproj", "{D124D6BB-10BB-479E-B75E-914294C54B70}"
@@ -55,11 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinformControls", "WinformC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanRanJi", "QuanRanJi\QuanRanJi.csproj", "{F13A5E34-64B7-4B26-B776-A8947541EB8C}"
 EndProject
-<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YinRan2020", "YinRan2020\YinRan2020.csproj", "{3468C8C1-E339-4664-97D9-2F98FDD144B5}"
 EndProject
-=======
->>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -260,16 +255,6 @@ Global
 		{9C16DFD5-D778-438E-AB5C-5842FC10FB34}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{9C16DFD5-D778-438E-AB5C-5842FC10FB34}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{9C16DFD5-D778-438E-AB5C-5842FC10FB34}.Release|Win32.ActiveCfg = Release|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{39872053-A494-4DC7-B431-D677C6D13684}.Release|Win32.ActiveCfg = Release|Any CPU
 		{0D6419B4-DF98-4879-84FE-79BFDD462547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0D6419B4-DF98-4879-84FE-79BFDD462547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D6419B4-DF98-4879-84FE-79BFDD462547}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -330,7 +315,6 @@ Global
 		{F13A5E34-64B7-4B26-B776-A8947541EB8C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F13A5E34-64B7-4B26-B776-A8947541EB8C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F13A5E34-64B7-4B26-B776-A8947541EB8C}.Release|Win32.ActiveCfg = Release|Any CPU
-<<<<<<< HEAD
 		{3468C8C1-E339-4664-97D9-2F98FDD144B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3468C8C1-E339-4664-97D9-2F98FDD144B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3468C8C1-E339-4664-97D9-2F98FDD144B5}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -341,8 +325,6 @@ Global
 		{3468C8C1-E339-4664-97D9-2F98FDD144B5}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3468C8C1-E339-4664-97D9-2F98FDD144B5}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3468C8C1-E339-4664-97D9-2F98FDD144B5}.Release|Win32.ActiveCfg = Release|Any CPU
-=======
->>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

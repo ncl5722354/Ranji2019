@@ -17,7 +17,7 @@ namespace YinRan2020
     {
         private string chejian_name;
         SerialPort sp_test = new SerialPort();                               // 串口检测单位
-        
+
         public Deivce_Info()
         {
             InitializeComponent();
@@ -40,6 +40,14 @@ namespace YinRan2020
 
             // 串口信息
             ViewCaoZuo.Object_Position(0.12, 0.1, 0.85, 0.2, panel_com_info, this.Controls);
+
+            // 表格背景
+            ViewCaoZuo.Object_Position(0.12, 0.35, 0.85, 0.6, panel1, this.Controls);
+
+            // 表格
+            ViewCaoZuo.Object_Position(0.01, 0.01, 0.98, 0.98, myDataGridView1, panel1.Controls);
+
+
 
             Create_Device_Database();   // 创建串口通讯表
 
@@ -96,9 +104,11 @@ namespace YinRan2020
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
+            // 添加一个数据
             AddCraft view = new AddCraft();
             AddCraft.Chejian_Name = chejian_name;
             view.ShowDialog();
+            Read_Device_Info_Form_DataBase(); // 重新读取表格
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -123,12 +133,12 @@ namespace YinRan2020
                 com_name = treeView1.SelectedNode.Text;
             }
             catch { MessageBox.Show("选择正确的串口！"); }
-            if(com_name=="串口1" || com_name=="串口2"|| com_name=="串口3" || com_name=="串口4" || com_name=="串口5" || com_name=="串口6")
+            if (com_name == "串口1" || com_name == "串口2" || com_name == "串口3" || com_name == "串口4" || com_name == "串口5" || com_name == "串口6")
             {
                 com_name = com_name + chejian_name;    //串口名字
-                
-               
-                    // 更新失败，插入一行
+
+
+                // 更新失败，插入一行
                 string[] insert_cmd = new string[7];
                 insert_cmd[0] = com_name;
                 insert_cmd[1] = comboBox_chuankouhao.Text;
@@ -138,9 +148,9 @@ namespace YinRan2020
                 insert_cmd[5] = comboBox_jiaoyanwei.Text;
                 insert_cmd[6] = chejian_name;
                 bool result = MainView.builder.Insert("com_config", insert_cmd);
-                
-               
-                if(result==false)
+
+
+                if (result == false)
                 {
                     string[] update_cmd = new string[7];
                     update_cmd[0] = "com_name='" + com_name + "'";
@@ -151,7 +161,7 @@ namespace YinRan2020
                     update_cmd[5] = "jiaoyanwei='" + comboBox_jiaoyanwei.Text + "'";
                     update_cmd[6] = "chejian='" + chejian_name + "'";
                     string where_cmd = "com_name='" + com_name + "'";
-                    MainView.builder.Updata("com_config", where_cmd, update_cmd); 
+                    MainView.builder.Updata("com_config", where_cmd, update_cmd);
                 }
 
             }
@@ -164,7 +174,7 @@ namespace YinRan2020
 
         private void comboBox_chuankouhao_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void comboBox_chuankouhao_DropDown(object sender, EventArgs e)
@@ -202,5 +212,60 @@ namespace YinRan2020
             }
             catch { panel_com_info.Visible = false; }
         }
+        private void Read_Device_Info_Form_DataBase()
+        {
+            // 从数据库里面读取设备数据
+             Clear_Info(); //清空信息
+            try
+            {
+                // 读取串口信息
+                string where_cmd = "com_name='" + treeView1.SelectedNode.Text.ToString() + chejian_name + "'";
+
+                DataTable dt = MainView.builder.Select_Table("com_config", where_cmd);
+                DataRow dr = dt.Rows[0];
+                comboBox_chuankouhao.Text = dr[1].ToString();
+                comboBox_botelv.Text = dr[2].ToString();
+                comboBox_shujuwei.Text = dr[3].ToString();
+                comboBox_tingzhiwei.Text = dr[4].ToString();
+            }catch{}
+            try{
+
+
+                // 读取设备信息
+                string device_where_cmd = "workshop='" + chejian_name + "' and Com='" + treeView1.SelectedNode.Text.ToString() + "'";
+                DataTable device_dt = MainView.builder.Select_Table("Device_Info", device_where_cmd);
+                myDataGridView1.Read_Table(device_dt);
+                string[] header_array = new string[7];
+                header_array[0] = "设备";
+            }
+            catch { }
+
+
+
+        }
+
+        public void Clear_Info()
+        {
+            // 清空信息
+            comboBox_chuankouhao.Text = "";
+            comboBox_botelv.Text = "";
+            comboBox_jiaoyanwei.Text = "";
+            comboBox_shujuwei.Text = "";
+            comboBox_tingzhiwei.Text = "";
+            label_zhuangtai.Text = "";
+        }
+
+
+
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+            Read_Device_Info_Form_DataBase();
+
+
+        }
+
+           
     }
 }
