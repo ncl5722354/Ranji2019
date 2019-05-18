@@ -72,5 +72,17 @@ namespace YinRan2020
         {
             DataGrid_ReSize();
         }
+
+        // 返回表格的某个数据
+        public string Get_Value(int row, int col)
+        {
+            return dataGridView1[col, row].Value.ToString();
+        }
+
+        // 返回表格选中的一行
+        public DataGridViewRow Selected_Row()
+        {
+            return dataGridView1.SelectedRows[0];
+        }
     }
 }

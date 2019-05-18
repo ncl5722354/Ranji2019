@@ -77,31 +77,37 @@ namespace YinRan2020
                 case "1chejianrealtimeshengchan":
                     Show_Chuangti(zongmao_view);
                     zongmao_view.Set_Chejian("一车间");
+                    zongmao_view.ReSet_Device_Info();    // 显示总貌信息
                     break;
                     // 总貌二车间
                 case "2chejianrealtimeshengchan":
                     Show_Chuangti(zongmao_view);
                     zongmao_view.Set_Chejian("二车间");
+                    zongmao_view.ReSet_Device_Info();   // 显示总貌信息
                     break;
                     //  总貌三车间
                 case "3chejianrealtimeshengchan":
                     Show_Chuangti(zongmao_view);
                     zongmao_view.Set_Chejian("三车间");
+                    zongmao_view.ReSet_Device_Info();   // 显示总貌信息
                     break;
                     // 通讯设置1车间
                 case "1chejiantongxun":
                     Show_Chuangti(device_info);
                     device_info.Set_Chenjian("一车间");
+                    device_info.Read_Device_Info_Form_DataBase();
                     break;
                 // 通讯设置2车间
                 case "2chejiantongxun":
                     Show_Chuangti(device_info);
                     device_info.Set_Chenjian("二车间");
+                    device_info.Read_Device_Info_Form_DataBase();
                     break;
                 // 通讯设置3车间
                 case "3chejiantongxun":
                     Show_Chuangti(device_info);
                     device_info.Set_Chenjian("三车间");
+                    device_info.Read_Device_Info_Form_DataBase();
                     break;
 
             }

@@ -13,6 +13,8 @@ namespace YinRan2020
 {
     public partial class zongmao : Form
     {
+
+        public string CheJian_Name="";
         public zongmao()
         {
             InitializeComponent();
@@ -23,6 +25,9 @@ namespace YinRan2020
         {
             // 初始化画面
             ViewCaoZuo.Object_Position(0, 0, 1, 0.05, label_title, this.Controls);
+
+            // 容器 
+            ViewCaoZuo.Object_Position(0.01, 0.06, 0.95, 0.89, tabControl1, this.Controls);
         }
 
         private void zongmao_SizeChanged(object sender, EventArgs e)
@@ -33,6 +38,42 @@ namespace YinRan2020
         public void Set_Chejian(string name)
         {
             label_title.Text = name + "实时生产情况";
+            CheJian_Name = name;
+        }
+
+        public void ReSet_Device_Info()
+        {
+            // 总貌中显示设备的信息
+            for (int i = 0; i < 6; i++)
+            {
+                tabControl1.TabPages[i].Controls.Clear();
+                // 读取本车间的名称，并从com1到com6在数据库中读取设备信息
+                //string keyname = tabControl1.TabPages[i].Name + CheJian_Name;
+                string where_cmd = "workshop='" + CheJian_Name + "' and Com='" + tabControl1.TabPages[i].Text + "'";
+                DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                for (int j = 0; j < dt.Rows.Count; j++)
+                {
+                    DataRow dr = dt.Rows[j];
+                    if (dr[3].ToString() == "溢流缸")
+                    {
+                        YiLiuGang_Item item = new YiLiuGang_Item();
+                        item.Set_Title(dr[0].ToString());
+                        ViewCaoZuo.Object_Position(0.01 + (j % 3) * 0.3, 0.01 + (j / 3) * 0.3, 0.3, 0.3, item, tabControl1.TabPages[i].Controls);
+                    }
+
+                    if(dr[3].ToString()=="气流缸")
+                    {
+                        QiLiuGang item = new QiLiuGang();
+                        item.Set_Title(dr[0].ToString());
+                        ViewCaoZuo.Object_Position(0.01 + (j % 3) * 0.3, 0.01 + (j / 3) * 0.3, 0.3, 0.3, item, tabControl1.TabPages[i].Controls);
+                    }
+                }
+            }
+            
+
+           
+
+           
         }
 
 

@@ -30,19 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deivce_Info));
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("串口1");
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("串口2");
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("串口3");
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("串口4");
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("串口5");
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("串口6");
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("通讯选择", new System.Windows.Forms.TreeNode[] {
-            treeNode8,
-            treeNode9,
-            treeNode10,
-            treeNode11,
-            treeNode12,
-            treeNode13});
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("串口1");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("串口2");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("串口3");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("串口4");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("串口5");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("串口6");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("通讯选择", new System.Windows.Forms.TreeNode[] {
+            treeNode15,
+            treeNode16,
+            treeNode17,
+            treeNode18,
+            treeNode19,
+            treeNode20});
             this.label_title = new System.Windows.Forms.Label();
             this.panel_tool = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -68,6 +68,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.myDataGridView1 = new YinRan2020.MyDataGridView();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.panel_tool.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel_com_info.SuspendLayout();
@@ -99,7 +100,8 @@
             // 
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1224, 48);
@@ -122,22 +124,22 @@
             this.treeView1.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.treeView1.Location = new System.Drawing.Point(12, 104);
             this.treeView1.Name = "treeView1";
-            treeNode8.Name = "com1";
-            treeNode8.Text = "串口1";
-            treeNode9.Name = "com2";
-            treeNode9.Text = "串口2";
-            treeNode10.Name = "com3";
-            treeNode10.Text = "串口3";
-            treeNode11.Name = "com4";
-            treeNode11.Text = "串口4";
-            treeNode12.Name = "com5";
-            treeNode12.Text = "串口5";
-            treeNode13.Name = "com6";
-            treeNode13.Text = "串口6";
-            treeNode14.Name = "tongxun";
-            treeNode14.Text = "通讯选择";
+            treeNode15.Name = "com1";
+            treeNode15.Text = "串口1";
+            treeNode16.Name = "com2";
+            treeNode16.Text = "串口2";
+            treeNode17.Name = "com3";
+            treeNode17.Text = "串口3";
+            treeNode18.Name = "com4";
+            treeNode18.Text = "串口4";
+            treeNode19.Name = "com5";
+            treeNode19.Text = "串口5";
+            treeNode20.Name = "com6";
+            treeNode20.Text = "串口6";
+            treeNode21.Name = "tongxun";
+            treeNode21.Text = "通讯选择";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode14});
+            treeNode21});
             this.treeView1.Size = new System.Drawing.Size(223, 617);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -335,6 +337,17 @@
             this.myDataGridView1.Size = new System.Drawing.Size(897, 712);
             this.myDataGridView1.TabIndex = 0;
             // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 45);
+            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.ToolTipText = "删除";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
             // Deivce_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -386,5 +399,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private MyDataGridView myDataGridView1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

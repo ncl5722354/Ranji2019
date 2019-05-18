@@ -212,7 +212,7 @@ namespace YinRan2020
             }
             catch { panel_com_info.Visible = false; }
         }
-        private void Read_Device_Info_Form_DataBase()
+        public  void Read_Device_Info_Form_DataBase()
         {
             // 从数据库里面读取设备数据
              Clear_Info(); //清空信息
@@ -227,6 +227,7 @@ namespace YinRan2020
                 comboBox_botelv.Text = dr[2].ToString();
                 comboBox_shujuwei.Text = dr[3].ToString();
                 comboBox_tingzhiwei.Text = dr[4].ToString();
+                comboBox_jiaoyanwei.Text = dr[5].ToString();
             }catch{}
             try{
 
@@ -236,7 +237,14 @@ namespace YinRan2020
                 DataTable device_dt = MainView.builder.Select_Table("Device_Info", device_where_cmd);
                 myDataGridView1.Read_Table(device_dt);
                 string[] header_array = new string[7];
-                header_array[0] = "设备";
+                header_array[0] = "设备ID";
+                header_array[1] = "设备名称";
+                header_array[2] = "车间名称";
+                header_array[3] = "设备型号";
+                header_array[4] = "通讯串口";
+                header_array[5] = "设备地址";
+                header_array[6] = "通讯协议";
+                myDataGridView1.Set_Header(header_array);  // 设置表格的表头 
             }
             catch { }
 
@@ -264,6 +272,34 @@ namespace YinRan2020
             Read_Device_Info_Form_DataBase();
 
 
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DeleteDevice view = new DeleteDevice();
+                view.Set_Title("是否删除设备“" + myDataGridView1.Selected_Row().Cells[0].Value.ToString() + "”");
+                DialogResult result = view.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    Delete_Device();
+                }
+            }
+            catch { }
+        }
+
+        private void Delete_Device()
+        {
+            try
+            {
+                DataGridViewRow dr = myDataGridView1.Selected_Row();
+                string where_cmd = "ID='" + dr.Cells[0].Value.ToString() + "'";
+                MainView.builder.Delete("Device_Info", where_cmd);
+                Read_Device_Info_Form_DataBase();
+            }
+            catch { }
         }
 
            
