@@ -14,7 +14,21 @@ namespace YinRan2020
     {
 
         private string device_name = "";          // 设备名称属性
-        private int DT_Address = 0;               // 对应的DT地址
+        //private string value_name = "";              // 对应的DT地址
+
+        private value_name MyValue_Name=value_name.机缸温度;
+        public enum value_name
+        {
+            // 模拟量输出
+            机缸温度,
+            料缸温度,
+            机缸水位,
+            料缸水位,
+            主泵频率,
+            运行段号,
+            提布频率1,
+            提布频率2
+        };
 
 
         public MyLabel()
@@ -37,21 +51,34 @@ namespace YinRan2020
             }
         }
 
-        public int Device_Address
+        public value_name Value_Name
         {
             get
             {
-                return DT_Address;
+                return MyValue_Name;
             }
             set
             {
-                DT_Address = value;
+                MyValue_Name = value;
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Resize(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MyLabel_Resize(object sender, EventArgs e)
+        {
+            label1.Top = 0;
+            label1.Left = 0;
+            label1.Width = this.Width;
+            label1.Height = this.Height;
         }
 
 

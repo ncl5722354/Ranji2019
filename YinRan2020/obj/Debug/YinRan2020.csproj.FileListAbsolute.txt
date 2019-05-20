@@ -18,3 +18,4 @@ D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.MyDataGridView.resources
 D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.DeleteDevice.resources
 D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.QiLiuGang.resources
 D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.YiLiuGang_Item.resources
+D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.MyLabel.resources

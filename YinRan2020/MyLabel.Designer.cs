@@ -36,12 +36,14 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(3, 11);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 47);
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(188, 63);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Resize += new System.EventHandler(this.label1_Resize);
             // 
             // timer1
             // 
@@ -56,7 +58,8 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.label1);
             this.Name = "MyLabel";
-            this.Size = new System.Drawing.Size(239, 65);
+            this.Size = new System.Drawing.Size(194, 63);
+            this.Resize += new System.EventHandler(this.MyLabel_Resize);
             this.ResumeLayout(false);
 
         }
