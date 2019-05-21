@@ -50,7 +50,13 @@
     <Compile Include="AddCraft.Designer.cs">
       <DependentUpon>AddCraft.cs</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Device_Data.cs" />
+    <Compile Include="Config_Value.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Config_Value.Designer.cs">
+      <DependentUpon>Config_Value.cs</DependentUpon>
+    </Compile>
     <Compile Include="Deivce_Info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     <EmbeddedResource Include="AddCraft.resx">
       <DependentUpon>AddCraft.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Config_Value.resx">
+      <DependentUpon>Config_Value.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Deivce_Info.resx">
       <DependentUpon>Deivce_Info.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +161,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FileOperation\FileOperation.csproj">
+      <Project>{9ed43ee0-8a99-4c7d-bbac-464573da4dd9}</Project>
+      <Name>FileOperation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SqlConnect\SqlConnect\SqlConnect.csproj">
       <Project>{a220dcc6-9e02-4060-818e-1d71c24570ca}</Project>
       <Name>SqlConnect</Name>
@@ -169,6 +182,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xiugai.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

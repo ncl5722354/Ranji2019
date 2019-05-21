@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("串口1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("串口2");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("串口3");
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("串口4");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("串口5");
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("串口6");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("通讯选择", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode2,
+            treeNode3,
+            treeNode4,
+            treeNode5,
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("数据设置");
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deivce_Info));
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("串口1");
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("串口2");
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("串口3");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("串口4");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("串口5");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("串口6");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("通讯选择", new System.Windows.Forms.TreeNode[] {
-            treeNode15,
-            treeNode16,
-            treeNode17,
-            treeNode18,
-            treeNode19,
-            treeNode20});
             this.label_title = new System.Windows.Forms.Label();
             this.panel_tool = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel_com_info = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -67,12 +67,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_dataset = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
             this.myDataGridView1 = new YinRan2020.MyDataGridView();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.panel_tool.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel_com_info.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel_dataset.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_title
@@ -101,22 +106,13 @@
             this.toolStrip1.AutoSize = false;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripButton2,
+            this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1224, 48);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 45);
-            this.toolStripButton1.Text = "添加设备";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // treeView1
             // 
@@ -124,22 +120,25 @@
             this.treeView1.Font = new System.Drawing.Font("黑体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.treeView1.Location = new System.Drawing.Point(12, 104);
             this.treeView1.Name = "treeView1";
-            treeNode15.Name = "com1";
-            treeNode15.Text = "串口1";
-            treeNode16.Name = "com2";
-            treeNode16.Text = "串口2";
-            treeNode17.Name = "com3";
-            treeNode17.Text = "串口3";
-            treeNode18.Name = "com4";
-            treeNode18.Text = "串口4";
-            treeNode19.Name = "com5";
-            treeNode19.Text = "串口5";
-            treeNode20.Name = "com6";
-            treeNode20.Text = "串口6";
-            treeNode21.Name = "tongxun";
-            treeNode21.Text = "通讯选择";
+            treeNode1.Name = "com1";
+            treeNode1.Text = "串口1";
+            treeNode2.Name = "com2";
+            treeNode2.Text = "串口2";
+            treeNode3.Name = "com3";
+            treeNode3.Text = "串口3";
+            treeNode4.Name = "com4";
+            treeNode4.Text = "串口4";
+            treeNode5.Name = "com5";
+            treeNode5.Text = "串口5";
+            treeNode6.Name = "com6";
+            treeNode6.Text = "串口6";
+            treeNode7.Name = "tongxun";
+            treeNode7.Text = "通讯选择";
+            treeNode8.Name = "dataset";
+            treeNode8.Text = "数据设置";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode21});
+            treeNode7,
+            treeNode8});
             this.treeView1.Size = new System.Drawing.Size(223, 617);
             this.treeView1.TabIndex = 2;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -324,11 +323,32 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel_dataset);
             this.panel1.Controls.Add(this.myDataGridView1);
             this.panel1.Location = new System.Drawing.Point(242, 256);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(905, 446);
             this.panel1.TabIndex = 4;
+            // 
+            // panel_dataset
+            // 
+            this.panel_dataset.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.panel_dataset.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_dataset.Controls.Add(this.label15);
+            this.panel_dataset.Location = new System.Drawing.Point(20, 66);
+            this.panel_dataset.Name = "panel_dataset";
+            this.panel_dataset.Size = new System.Drawing.Size(906, 145);
+            this.panel_dataset.TabIndex = 16;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label15.Location = new System.Drawing.Point(16, 10);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(88, 26);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "数据设置";
             // 
             // myDataGridView1
             // 
@@ -336,6 +356,16 @@
             this.myDataGridView1.Name = "myDataGridView1";
             this.myDataGridView1.Size = new System.Drawing.Size(897, 712);
             this.myDataGridView1.TabIndex = 0;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 45);
+            this.toolStripButton1.Text = "添加设备";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripButton2
             // 
@@ -347,6 +377,16 @@
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.ToolTipText = "删除";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::YinRan2020.Properties.Resources.xiugai;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 45);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // Deivce_Info
             // 
@@ -368,6 +408,8 @@
             this.panel_com_info.ResumeLayout(false);
             this.panel_com_info.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel_dataset.ResumeLayout(false);
+            this.panel_dataset.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -400,5 +442,8 @@
         private System.Windows.Forms.Panel panel1;
         private MyDataGridView myDataGridView1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.Panel panel_dataset;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }

@@ -41,6 +41,9 @@ namespace YinRan2020
             // 串口信息
             ViewCaoZuo.Object_Position(0.12, 0.1, 0.85, 0.2, panel_com_info, this.Controls);
 
+            // 数据设置标题
+            ViewCaoZuo.Object_Position(0.12, 0.1, 0.85, 0.2, panel_dataset, this.Controls);
+
             // 表格背景
             ViewCaoZuo.Object_Position(0.12, 0.35, 0.85, 0.6, panel1, this.Controls);
 
@@ -105,10 +108,17 @@ namespace YinRan2020
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             // 添加一个数据
-            AddCraft view = new AddCraft();
-            AddCraft.Chejian_Name = chejian_name;
-            view.ShowDialog();
-            Read_Device_Info_Form_DataBase(); // 重新读取表格
+            try
+            {
+                if (treeView1.SelectedNode.Text.Substring(0, 2) == "串口")
+                {
+                    AddCraft view = new AddCraft();
+                    AddCraft.Chejian_Name = chejian_name;
+                    view.ShowDialog();
+                    Read_Device_Info_Form_DataBase(); // 重新读取表格
+                }
+            }
+            catch { }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -209,42 +219,79 @@ namespace YinRan2020
                 {
                     panel_com_info.Visible = false;
                 }
+
+                if(com_name=="数据设置")
+                {
+                    panel_dataset.Visible = true;
+                }
+                else
+                {
+                    panel_dataset.Visible = false;
+                }
             }
             catch { panel_com_info.Visible = false; }
         }
         public  void Read_Device_Info_Form_DataBase()
         {
             // 从数据库里面读取设备数据
-             Clear_Info(); //清空信息
+
+            // 分辩是否是读取的串口还是数据设置
+            if (treeView1.SelectedNode==null) return;
+            if (treeView1.SelectedNode.Text.Substring(0, 2) == "串口")
+            {
+                Clear_Info(); //清空信息
+                try
+                {
+                    // 读取串口信息
+                    string where_cmd = "com_name='" + treeView1.SelectedNode.Text.ToString() + chejian_name + "'";
+
+                    DataTable dt = MainView.builder.Select_Table("com_config", where_cmd);
+                    DataRow dr = dt.Rows[0];
+                    comboBox_chuankouhao.Text = dr[1].ToString();
+                    comboBox_botelv.Text = dr[2].ToString();
+                    comboBox_shujuwei.Text = dr[3].ToString();
+                    comboBox_tingzhiwei.Text = dr[4].ToString();
+                    comboBox_jiaoyanwei.Text = dr[5].ToString();
+                }
+                catch { }
+                try
+                {
+
+
+                    // 读取设备信息
+                    string device_where_cmd = "workshop='" + chejian_name + "' and Com='" + treeView1.SelectedNode.Text.ToString() + "'";
+                    DataTable device_dt = MainView.builder.Select_Table("Device_Info", device_where_cmd);
+                    myDataGridView1.Read_Table(device_dt);
+                    string[] header_array = new string[7];
+                    header_array[0] = "设备ID";
+                    header_array[1] = "设备名称";
+                    header_array[2] = "车间名称";
+                    header_array[3] = "设备型号";
+                    header_array[4] = "通讯串口";
+                    header_array[5] = "设备地址";
+                    header_array[6] = "通讯协议";
+                    myDataGridView1.Set_Header(header_array);  // 设置表格的表头 
+                }
+                catch { }
+            }
             try
             {
-                // 读取串口信息
-                string where_cmd = "com_name='" + treeView1.SelectedNode.Text.ToString() + chejian_name + "'";
+                if (treeView1.SelectedNode.Text.Substring(0, 4) == "数据设置")
+                {
 
-                DataTable dt = MainView.builder.Select_Table("com_config", where_cmd);
-                DataRow dr = dt.Rows[0];
-                comboBox_chuankouhao.Text = dr[1].ToString();
-                comboBox_botelv.Text = dr[2].ToString();
-                comboBox_shujuwei.Text = dr[3].ToString();
-                comboBox_tingzhiwei.Text = dr[4].ToString();
-                comboBox_jiaoyanwei.Text = dr[5].ToString();
-            }catch{}
-            try{
+                    try
+                    {
+                        DataTable dt = MainView.builder.Select_Table("Value_Config");
+                        myDataGridView1.Read_Table(dt);
+                        string[] header_array = new string[3];
+                        header_array[0] = "数据名称";
+                        header_array[1] = "数据类型";
+                        header_array[2] = "数据地址";
+                        myDataGridView1.Set_Header(header_array);
+                    }
+                    catch { }
 
-
-                // 读取设备信息
-                string device_where_cmd = "workshop='" + chejian_name + "' and Com='" + treeView1.SelectedNode.Text.ToString() + "'";
-                DataTable device_dt = MainView.builder.Select_Table("Device_Info", device_where_cmd);
-                myDataGridView1.Read_Table(device_dt);
-                string[] header_array = new string[7];
-                header_array[0] = "设备ID";
-                header_array[1] = "设备名称";
-                header_array[2] = "车间名称";
-                header_array[3] = "设备型号";
-                header_array[4] = "通讯串口";
-                header_array[5] = "设备地址";
-                header_array[6] = "通讯协议";
-                myDataGridView1.Set_Header(header_array);  // 设置表格的表头 
+                }
             }
             catch { }
 
@@ -278,13 +325,15 @@ namespace YinRan2020
         {
             try
             {
-
-                DeleteDevice view = new DeleteDevice();
-                view.Set_Title("是否删除设备“" + myDataGridView1.Selected_Row().Cells[0].Value.ToString() + "”");
-                DialogResult result = view.ShowDialog();
-                if (result == DialogResult.OK)
+                if (treeView1.SelectedNode.Text.Substring(0, 2) == "串口")
                 {
-                    Delete_Device();
+                    DeleteDevice view = new DeleteDevice();
+                    view.Set_Title("是否删除设备“" + myDataGridView1.Selected_Row().Cells[0].Value.ToString() + "”");
+                    DialogResult result = view.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        Delete_Device();
+                    }
                 }
             }
             catch { }
@@ -298,6 +347,32 @@ namespace YinRan2020
                 string where_cmd = "ID='" + dr.Cells[0].Value.ToString() + "'";
                 MainView.builder.Delete("Device_Info", where_cmd);
                 Read_Device_Info_Form_DataBase();
+            }
+            catch { }
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (treeView1.SelectedNode.Text.Substring(0, 4) == "数据设置")
+                {
+                    DataGridViewRow dr = myDataGridView1.Selected_Row();
+                    Config_Value view = new Config_Value();
+                    view.Set_Title(dr.Cells[0].Value.ToString()+"设置");
+                    DialogResult result = view.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        string myvalue_type = Config_Value.Value_Type;
+                        int address = Config_Value.address;
+                        string[] update_cmd = new string[2];
+                        update_cmd[0] = "value_type='" + myvalue_type + "'";
+                        update_cmd[1] = "value_address='" + address.ToString() + "'";
+                        string where_cmd = "value_name='" + dr.Cells[0].Value.ToString() + "'";
+                        MainView.builder.Updata("Value_Config", where_cmd, update_cmd);
+                        Read_Device_Info_Form_DataBase();
+                    }
+                }
             }
             catch { }
         }

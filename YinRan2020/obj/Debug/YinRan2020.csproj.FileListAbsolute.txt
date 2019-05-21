@@ -19,3 +19,6 @@ D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.DeleteDevice.resources
 D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.QiLiuGang.resources
 D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.YiLiuGang_Item.resources
 D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.MyLabel.resources
+D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.Config_Value.resources
+D:\Ranji2019\YinRan2020\bin\Debug\FileOperation.dll
+D:\Ranji2019\YinRan2020\bin\Debug\FileOperation.pdb
