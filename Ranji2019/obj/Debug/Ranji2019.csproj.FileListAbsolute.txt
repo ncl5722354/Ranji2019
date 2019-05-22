@@ -335,6 +335,8 @@ D:\Ranji2019\Ranji2019\obj\Debug\Ranji2019.Properties.Resources.resources
 D:\Ranji2019\Ranji2019\obj\Debug\Ranji2019.csproj.GenerateResource.Cache
 D:\Ranji2019\Ranji2019\obj\Debug\Zongmao_SubView_JuanRan.baml
 D:\Ranji2019\Ranji2019\obj\Debug\Zongmao_SubView_JuanRan.g.cs
+<<<<<<< HEAD
+=======
 D:\程序\Ranji2019-master\Ranji2019\bin\Debug\Ranji2019.exe.config
 D:\程序\Ranji2019-master\Ranji2019\obj\Debug\Ranji2019.exe
 D:\程序\Ranji2019-master\Ranji2019\obj\Debug\Ranji2019.pdb
@@ -372,3 +374,4 @@ D:\程序\Ranji2019-master\Ranji2019\obj\Debug\Zongmao_Subview.baml
 D:\程序\Ranji2019-master\Ranji2019\obj\Debug\Ranji2019.g.resources
 D:\程序\Ranji2019-master\Ranji2019\obj\Debug\Ranji2019.Properties.Resources.resources
 D:\程序\Ranji2019-master\Ranji2019\obj\Debug\Ranji2019.csproj.GenerateResource.Cache
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c

@@ -20,6 +20,11 @@ namespace Ranji2019
     /// </summary>
     public partial class xiangxi : UserControl
     {
+<<<<<<< HEAD
+        public xiangxi()
+        {
+            InitializeComponent();
+=======
         private int machine_num = 0;
 
         // 定义转速1标签
@@ -118,6 +123,7 @@ namespace Ranji2019
             MyLabel_Zhangli_Show.mode = 1;
 
 
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
         }
     }
 }

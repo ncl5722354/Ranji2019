@@ -4,16 +4,28 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
+D:\Ranji2019\Ranji2019\obj\Debug\
+=======
 D:\程序\Ranji2019-master\Ranji2019\obj\Debug\
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
 Ranji2019
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
+D:\Ranji2019\Ranji2019\App.xaml
+11-1703611347
+
+171975192482
+17-1513981384
+=======
 D:\程序\Ranji2019-master\Ranji2019\App.xaml
 11-1703611347
 
 171975192482
 171472697580
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
 MainWindow.xaml;MyLabel.xaml;ShenChanPaiChan_View.xaml;ShengchanPaichan_Item.xaml;ShengchanPaichan_Tiao.xaml;ValueConfig.xaml;ValueConfig_Item.xaml;xiangxi.xaml;Zongmao.xaml;Zongmao_Subview.xaml;Zongmao_SubView_JuanRan.xaml;
 
 False

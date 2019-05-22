@@ -5,8 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+<<<<<<< HEAD
+    <Grid>
+            
+=======
     <Grid Name="maingrid">
         <Image Name="myimage" HorizontalAlignment="Left" Height="223" Margin="66,53,-250,0" VerticalAlignment="Top" Width="484" Source="Resources/ranseji.png" Stretch="Fill"/>
 
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
     </Grid>
 </UserControl>

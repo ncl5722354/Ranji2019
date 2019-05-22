@@ -54,6 +54,8 @@ namespace Ranji2019
           // 转速2显示
         private MyLabel MyLabel_Zhuansu2_Show = new MyLabel(MainWindow.Usercontrol_Config);
 
+<<<<<<< HEAD
+=======
           // 张力标签
         private MyLabel MyLabel_Zhangli_Label = new MyLabel(MainWindow.Usercontrol_Config);
 
@@ -66,6 +68,7 @@ namespace Ranji2019
 
           // 暂停标签 
         private MyLabel MyLabel_Pause_Show = new MyLabel(MainWindow.Usercontrol_Config);
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
         #endregion
 
 
@@ -73,7 +76,10 @@ namespace Ranji2019
         public void Set_Machine_Num(int mynum)
         {
             machine_num = mynum;
+<<<<<<< HEAD
+=======
             // 设置变量名
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
             label_machine_num.Content = mynum.ToString() + "机号";
 
             MyLabel_Wendu_Show.Value_Name = "主缸温度" + machine_num.ToString();
@@ -84,11 +90,14 @@ namespace Ranji2019
 
             MyLabel_Zhuansu2_Show.Value_Name = "转速2" + machine_num.ToString();
 
+<<<<<<< HEAD
+=======
             MyLabel_Zhangli_Show.Value_Name = "张力" + machine_num.ToString();
 
             MyLabel_Start_Show.Value_Name = "开始" + machine_num.ToString();
 
             MyLabel_Pause_Show.Value_Name = "暂停" + machine_num.ToString();
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
             
         }
 
@@ -154,6 +163,8 @@ namespace Ranji2019
             MyLabel_Zhuansu2_Show.Width = MainWindow.screen_width * 0.1;
             MyLabel_Zhuansu2_Show.Height = MainWindow.scree_height * 0.04;
             MyLabel_Zhuansu2_Show.mode = 1;
+<<<<<<< HEAD
+=======
 
             // 张力标签
             maingrid.Children.Add(MyLabel_Zhangli_Label);
@@ -188,6 +199,7 @@ namespace Ranji2019
             MyLabel_Pause_Show.Set_Text("暂停");
             MyLabel_Pause_Show.config_inifile = MainWindow.Color_Config;
 
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
         }
     }
 }

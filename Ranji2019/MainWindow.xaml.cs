@@ -160,9 +160,12 @@ namespace Ranji2019
             // 生产排产窗体
             subviewgird.Children.Add(shenchanpaichan_view);
             all_subview.Add(shenchanpaichan_view);
+<<<<<<< HEAD
+=======
 
             subviewgird.Children.Add(xiangxi_view);
             all_subview.Add(xiangxi_view);
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
            
         }
 
@@ -224,7 +227,10 @@ namespace Ranji2019
             view.Width = subviewgird.Width;
             view.Height = subviewgird.Height;
             view.Visibility = Visibility.Visible;
+<<<<<<< HEAD
+=======
             
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
         }
 
         private void maintreeview_SelectedItemChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
@@ -257,7 +263,10 @@ namespace Ranji2019
                     string value = select_string.Substring(3, select_string.Length - 3);
                     int page = int.Parse(value);
                     // 展示相应的机台号画面
+<<<<<<< HEAD
+=======
                     xiangxi_view.Set_Machine_Num(page);
+>>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
                     Show_View(xiangxi_view);
                 }
             }
