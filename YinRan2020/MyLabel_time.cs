@@ -10,28 +10,21 @@ using System.Windows.Forms;
 
 namespace YinRan2020
 {
-    public partial class MyLabel : UserControl
+    public partial class MyLabel_time : UserControl
     {
-
         private string device_name = "";          // 设备名称属性
         
 
-        private value_name MyValue_Name=value_name.机缸温度;
+        private value_name MyValue_Name=value_name.工艺运行时间;
         public enum value_name
         {
             // 模拟量输出
-            机缸温度,
-            料缸温度,
-            机缸水位,
-            料缸水位,
-            主泵频率,
-            运行段号,
-            提布频率1,
-            提布频率2
+            工艺运行时间,
+            总运行时间
         };
 
 
-        public MyLabel()
+        public MyLabel_time()
         {
             InitializeComponent();
             timer1.Enabled = true;
@@ -93,35 +86,49 @@ namespace YinRan2020
                     DataTable dt_data = MainView.builder.Select_Table("Value_Config",where_data);
                     string Type = dt_data.Rows[0][1].ToString();                      // 数据种类
                     int address = int.Parse(dt_data.Rows[0][2].ToString());           // 数据地址
+
+                    DateTime datetime = DateTime.Parse("00:00:00");
                     
                     if (com_name == "串口1")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian1_com1_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian1_com1_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian1_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口2")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian1_com2_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian1_com2_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian1_com2_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口3")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian1_com3_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian1_com3_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian1_com3_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口4")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian1_com4_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian1_com4_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian1_com4_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口5")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian1_com5_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian1_com5_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian1_com5_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口6")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian1_com6_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian1_com6_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian1_com6_R[machine_num, address].ToString();
                     }
 
@@ -137,8 +144,11 @@ namespace YinRan2020
                         string where_cmd = "value_ID='" + key + "'";
                         DataTable value_dt = MainView.builder.Select_Table("Real_Value_Table", where_cmd);
                         string value_string = value_dt.Rows[0][3].ToString();
-                        double value = double.Parse(value_string);
-                        label1.Text = value.ToString();
+                        int value = int.Parse(value_string);
+                        DateTime datetime = DateTime.Parse("HH:mm:ss");
+                        datetime = datetime.AddSeconds(value);
+
+                        label1.Text = value.ToString("HH:mm:ss");
                     }
                     catch { }
                 }
@@ -155,35 +165,48 @@ namespace YinRan2020
                     DataTable dt_data = MainView.builder.Select_Table("Value_Config", where_data);
                     string Type = dt_data.Rows[0][1].ToString();                      // 数据种类
                     int address = int.Parse(dt_data.Rows[0][2].ToString());           // 数据地址
+                    DateTime datetime = DateTime.Parse("00:00:00");
 
                     if (com_name == "串口1")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian2_com1_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian2_com1_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian2_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口2")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian2_com2_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian2_com2_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian2_com2_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口3")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian2_com3_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian2_com3_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian2_com3_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口4")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian2_com4_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian2_com4_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian2_com4_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口5")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian2_com5_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian2_com5_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian2_com5_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口6")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian2_com6_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian2_com6_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian2_com6_R[machine_num, address].ToString();
                     }
 
@@ -199,8 +222,11 @@ namespace YinRan2020
                         string where_cmd = "value_ID='" + key + "'";
                         DataTable value_dt = MainView.builder.Select_Table("Real_Value_Table", where_cmd);
                         string value_string = value_dt.Rows[0][3].ToString();
-                        double value = double.Parse(value_string);
-                        label1.Text = value.ToString();
+                        int value = int.Parse(value_string);
+                        DateTime datetime = DateTime.Parse("HH:mm:ss");
+                        datetime = datetime.AddSeconds(value);
+
+                        label1.Text = value.ToString("HH:mm:ss");
                     }
                     catch { }
                 }
@@ -216,35 +242,47 @@ namespace YinRan2020
                     DataTable dt_data = MainView.builder.Select_Table("Value_Config", where_data);
                     string Type = dt_data.Rows[0][1].ToString();                      // 数据种类
                     int address = int.Parse(dt_data.Rows[0][2].ToString());           // 数据地址
-
+                    DateTime datetime = DateTime.Parse("00:00:00");
                     if (com_name == "串口1")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian3_com1_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian3_com1_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian3_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口2")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian3_com2_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian3_com2_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian3_com2_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口3")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian3_com3_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian3_com3_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian3_com3_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口4")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian3_com4_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian3_com4_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian3_com4_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口5")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian3_com5_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian3_com5_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian3_com5_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口6")
                     {
-                        if (Type == "DT") label1.Text = Device_Data.chejian3_com6_DT[machine_num, address].ToString();
+                        int time = Device_Data.chejian3_com6_DT[machine_num, address];
+                        datetime = datetime.AddSeconds(time);
+                        if (Type == "DT") label1.Text = datetime.ToString("HH:mm:ss");
                         if (Type == "R") label1.Text = Device_Data.chejian3_com6_R[machine_num, address].ToString();
                     }
 
@@ -260,8 +298,11 @@ namespace YinRan2020
                         string where_cmd = "value_ID='" + key + "'";
                         DataTable value_dt = MainView.builder.Select_Table("Real_Value_Table", where_cmd);
                         string value_string = value_dt.Rows[0][3].ToString();
-                        double value = double.Parse(value_string);
-                        label1.Text = value.ToString();
+                        int value = int.Parse(value_string);
+                        DateTime datetime = DateTime.Parse("HH:mm:ss");
+                        datetime = datetime.AddSeconds(value);
+
+                        label1.Text = value.ToString("HH:mm:ss");
                     }
                     catch { }
                 }
@@ -292,7 +333,5 @@ namespace YinRan2020
         {
 
         }
-
-
     }
 }

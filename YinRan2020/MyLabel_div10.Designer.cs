@@ -1,6 +1,6 @@
 ﻿namespace YinRan2020
 {
-    partial class MyLabel
+    partial class MyLabel_div10
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -36,32 +36,27 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(17, 17);
             this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(188, 63);
+            this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            this.label1.Resize += new System.EventHandler(this.label1_Resize);
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
-            // MyLabel
+            // MyLabel_div10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "MyLabel";
-            this.Size = new System.Drawing.Size(194, 63);
-            this.Resize += new System.EventHandler(this.MyLabel_Resize);
+            this.Name = "MyLabel_div10";
+            this.Size = new System.Drawing.Size(190, 58);
+            this.Resize += new System.EventHandler(this.MyLabel_div10_Resize);
             this.ResumeLayout(false);
 
         }

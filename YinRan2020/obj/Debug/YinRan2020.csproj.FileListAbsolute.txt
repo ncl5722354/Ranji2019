@@ -22,3 +22,6 @@ D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.MyLabel.resources
 D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.Config_Value.resources
 D:\Ranji2019\YinRan2020\bin\Debug\FileOperation.dll
 D:\Ranji2019\YinRan2020\bin\Debug\FileOperation.pdb
+D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.MyLabel_div10.resources
+D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.MyLabel_time.resources
+D:\Ranji2019\YinRan2020\obj\Debug\YinRan2020.MyLabel_Red_Yellow.resources

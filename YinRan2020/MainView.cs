@@ -87,10 +87,31 @@ namespace YinRan2020
                 builder.Insert("Value_Config", insert_cmd);
             }
 
+            //============== 所有的MyLabeltimne 地址存放初始化 ==============//
 
+            foreach (MyLabel_time.value_name name in Enum.GetValues(typeof(MyLabel_time.value_name)))
+            {
+                string[] insert_cmd = new string[3];
+                insert_cmd[0] = name.ToString();
+                insert_cmd[1] = "";
+                insert_cmd[2] = "";
+                builder.Insert("Value_Config", insert_cmd);
+            }
+
+            //============== 所有的MyLabeltimne 地址存放初始化 ==============//
+
+            foreach (MyLabel_Red_Yellow.value_name name in Enum.GetValues(typeof(MyLabel_Red_Yellow.value_name)))
+            {
+                string[] insert_cmd = new string[3];
+                insert_cmd[0] = name.ToString();
+                insert_cmd[1] = "";
+                insert_cmd[2] = "";
+                builder.Insert("Value_Config", insert_cmd);
+            }
 
             //试验
-           // Device_Data.chejian1_com1_DT[11, 44] = 100;
+            Device_Data.chejian1_com1_DT[11, 10] = 3705;
+            Device_Data.chejian1_com1_R[11, 30] = true;
         }
 
         private void init_view()
