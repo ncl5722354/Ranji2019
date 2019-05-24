@@ -35,11 +35,22 @@
             this.label_duanshi = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_zongyunxingshijian = new System.Windows.Forms.Label();
+            this.myLabel_Red_Yellow_jinshui4 = new YinRan2020.MyLabel_Red_Yellow();
+            this.myLabel_Red_Yellow_jinshui3 = new YinRan2020.MyLabel_Red_Yellow();
+            this.myLabel_Red_Yellow_jinshui2 = new YinRan2020.MyLabel_Red_Yellow();
+            this.myLabel_Red_Yellow_jinshui1 = new YinRan2020.MyLabel_Red_Yellow();
+            this.myLabel_Red_Yellow_tingzhi = new YinRan2020.MyLabel_Red_Yellow();
+            this.myLabel_Red_Yellow_zhubeng = new YinRan2020.MyLabel_Red_Yellow();
+            this.myLabel_Red_Yellow_zanting = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_Red_Yellow_start = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_time_zong = new YinRan2020.MyLabel_time();
             this.myLabel_time_gongyi = new YinRan2020.MyLabel_time();
             this.myLabel_div10_shuiwei = new YinRan2020.MyLabel_div10();
             this.myLabel_wendu = new YinRan2020.MyLabel();
+            this.myLabel_Red_Yellow_paishui1 = new YinRan2020.MyLabel_Red_Yellow();
+            this.myLabel_Red_Yellow_paishui2 = new YinRan2020.MyLabel_Red_Yellow();
+            this.myLabel_Red_Yellow_paishui3 = new YinRan2020.MyLabel_Red_Yellow();
+            this.myLabel_Red_Yellow_paishui4 = new YinRan2020.MyLabel_Red_Yellow();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,13 +139,83 @@
             this.label_zongyunxingshijian.Text = "总运行时间";
             this.label_zongyunxingshijian.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // myLabel_Red_Yellow_jinshui4
+            // 
+            this.myLabel_Red_Yellow_jinshui4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_jinshui4.Device_Name = "";
+            this.myLabel_Red_Yellow_jinshui4.Location = new System.Drawing.Point(299, 249);
+            this.myLabel_Red_Yellow_jinshui4.Name = "myLabel_Red_Yellow_jinshui4";
+            this.myLabel_Red_Yellow_jinshui4.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_jinshui4.TabIndex = 18;
+            this.myLabel_Red_Yellow_jinshui4.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.进水3;
+            // 
+            // myLabel_Red_Yellow_jinshui3
+            // 
+            this.myLabel_Red_Yellow_jinshui3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_jinshui3.Device_Name = "";
+            this.myLabel_Red_Yellow_jinshui3.Location = new System.Drawing.Point(299, 223);
+            this.myLabel_Red_Yellow_jinshui3.Name = "myLabel_Red_Yellow_jinshui3";
+            this.myLabel_Red_Yellow_jinshui3.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_jinshui3.TabIndex = 17;
+            this.myLabel_Red_Yellow_jinshui3.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.进水3;
+            // 
+            // myLabel_Red_Yellow_jinshui2
+            // 
+            this.myLabel_Red_Yellow_jinshui2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_jinshui2.Device_Name = "";
+            this.myLabel_Red_Yellow_jinshui2.Location = new System.Drawing.Point(299, 197);
+            this.myLabel_Red_Yellow_jinshui2.Name = "myLabel_Red_Yellow_jinshui2";
+            this.myLabel_Red_Yellow_jinshui2.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_jinshui2.TabIndex = 16;
+            this.myLabel_Red_Yellow_jinshui2.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.进水2;
+            // 
+            // myLabel_Red_Yellow_jinshui1
+            // 
+            this.myLabel_Red_Yellow_jinshui1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_jinshui1.Device_Name = "";
+            this.myLabel_Red_Yellow_jinshui1.Location = new System.Drawing.Point(299, 171);
+            this.myLabel_Red_Yellow_jinshui1.Name = "myLabel_Red_Yellow_jinshui1";
+            this.myLabel_Red_Yellow_jinshui1.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_jinshui1.TabIndex = 15;
+            this.myLabel_Red_Yellow_jinshui1.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.进水1;
+            // 
+            // myLabel_Red_Yellow_tingzhi
+            // 
+            this.myLabel_Red_Yellow_tingzhi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_tingzhi.Device_Name = "";
+            this.myLabel_Red_Yellow_tingzhi.Location = new System.Drawing.Point(482, 125);
+            this.myLabel_Red_Yellow_tingzhi.Name = "myLabel_Red_Yellow_tingzhi";
+            this.myLabel_Red_Yellow_tingzhi.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_tingzhi.TabIndex = 14;
+            this.myLabel_Red_Yellow_tingzhi.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.停止;
+            // 
+            // myLabel_Red_Yellow_zhubeng
+            // 
+            this.myLabel_Red_Yellow_zhubeng.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_zhubeng.Device_Name = "";
+            this.myLabel_Red_Yellow_zhubeng.Location = new System.Drawing.Point(416, 125);
+            this.myLabel_Red_Yellow_zhubeng.Name = "myLabel_Red_Yellow_zhubeng";
+            this.myLabel_Red_Yellow_zhubeng.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_zhubeng.TabIndex = 13;
+            this.myLabel_Red_Yellow_zhubeng.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.主泵;
+            // 
+            // myLabel_Red_Yellow_zanting
+            // 
+            this.myLabel_Red_Yellow_zanting.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_zanting.Device_Name = "";
+            this.myLabel_Red_Yellow_zanting.Location = new System.Drawing.Point(350, 125);
+            this.myLabel_Red_Yellow_zanting.Name = "myLabel_Red_Yellow_zanting";
+            this.myLabel_Red_Yellow_zanting.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_zanting.TabIndex = 12;
+            this.myLabel_Red_Yellow_zanting.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.暂停;
+            // 
             // myLabel_Red_Yellow_start
             // 
             this.myLabel_Red_Yellow_start.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow_start.Device_Name = "";
-            this.myLabel_Red_Yellow_start.Location = new System.Drawing.Point(311, 126);
+            this.myLabel_Red_Yellow_start.Location = new System.Drawing.Point(284, 126);
             this.myLabel_Red_Yellow_start.Name = "myLabel_Red_Yellow_start";
-            this.myLabel_Red_Yellow_start.Size = new System.Drawing.Size(88, 26);
+            this.myLabel_Red_Yellow_start.Size = new System.Drawing.Size(60, 26);
             this.myLabel_Red_Yellow_start.TabIndex = 11;
             this.myLabel_Red_Yellow_start.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.启动;
             // 
@@ -179,12 +260,63 @@
             this.myLabel_wendu.TabIndex = 4;
             this.myLabel_wendu.Value_Name = YinRan2020.MyLabel.value_name.机缸温度;
             // 
+            // myLabel_Red_Yellow_paishui1
+            // 
+            this.myLabel_Red_Yellow_paishui1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_paishui1.Device_Name = "";
+            this.myLabel_Red_Yellow_paishui1.Location = new System.Drawing.Point(365, 171);
+            this.myLabel_Red_Yellow_paishui1.Name = "myLabel_Red_Yellow_paishui1";
+            this.myLabel_Red_Yellow_paishui1.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_paishui1.TabIndex = 19;
+            this.myLabel_Red_Yellow_paishui1.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.排水1;
+            // 
+            // myLabel_Red_Yellow_paishui2
+            // 
+            this.myLabel_Red_Yellow_paishui2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_paishui2.Device_Name = "";
+            this.myLabel_Red_Yellow_paishui2.Location = new System.Drawing.Point(365, 197);
+            this.myLabel_Red_Yellow_paishui2.Name = "myLabel_Red_Yellow_paishui2";
+            this.myLabel_Red_Yellow_paishui2.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_paishui2.TabIndex = 20;
+            this.myLabel_Red_Yellow_paishui2.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.排水2;
+            // 
+            // myLabel_Red_Yellow_paishui3
+            // 
+            this.myLabel_Red_Yellow_paishui3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_paishui3.Device_Name = "";
+            this.myLabel_Red_Yellow_paishui3.Location = new System.Drawing.Point(365, 223);
+            this.myLabel_Red_Yellow_paishui3.Name = "myLabel_Red_Yellow_paishui3";
+            this.myLabel_Red_Yellow_paishui3.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_paishui3.TabIndex = 21;
+            this.myLabel_Red_Yellow_paishui3.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.排水3;
+            // 
+            // myLabel_Red_Yellow_paishui4
+            // 
+            this.myLabel_Red_Yellow_paishui4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_paishui4.Device_Name = "";
+            this.myLabel_Red_Yellow_paishui4.Location = new System.Drawing.Point(365, 249);
+            this.myLabel_Red_Yellow_paishui4.Name = "myLabel_Red_Yellow_paishui4";
+            this.myLabel_Red_Yellow_paishui4.Size = new System.Drawing.Size(60, 26);
+            this.myLabel_Red_Yellow_paishui4.TabIndex = 22;
+            this.myLabel_Red_Yellow_paishui4.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.排水4;
+            // 
             // YiLiuGang_Item
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.myLabel_Red_Yellow_paishui4);
+            this.Controls.Add(this.myLabel_Red_Yellow_paishui3);
+            this.Controls.Add(this.myLabel_Red_Yellow_paishui2);
+            this.Controls.Add(this.myLabel_Red_Yellow_paishui1);
+            this.Controls.Add(this.myLabel_Red_Yellow_jinshui4);
+            this.Controls.Add(this.myLabel_Red_Yellow_jinshui3);
+            this.Controls.Add(this.myLabel_Red_Yellow_jinshui2);
+            this.Controls.Add(this.myLabel_Red_Yellow_jinshui1);
+            this.Controls.Add(this.myLabel_Red_Yellow_tingzhi);
+            this.Controls.Add(this.myLabel_Red_Yellow_zhubeng);
+            this.Controls.Add(this.myLabel_Red_Yellow_zanting);
             this.Controls.Add(this.myLabel_Red_Yellow_start);
             this.Controls.Add(this.myLabel_time_zong);
             this.Controls.Add(this.label_zongyunxingshijian);
@@ -219,5 +351,16 @@
         private System.Windows.Forms.Label label_zongyunxingshijian;
         private MyLabel_time myLabel_time_zong;
         private MyLabel_Red_Yellow myLabel_Red_Yellow_start;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_zanting;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_zhubeng;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_tingzhi;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_jinshui1;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_jinshui2;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_jinshui3;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_jinshui4;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_paishui1;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_paishui2;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_paishui3;
+        private MyLabel_Red_Yellow myLabel_Red_Yellow_paishui4;
     }
 }

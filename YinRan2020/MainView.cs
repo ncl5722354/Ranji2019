@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ViewConfig;  
 using SqlConnect;
 using FileOperation;
+using System.Runtime.InteropServices;
 
 namespace YinRan2020
 {
@@ -20,18 +21,37 @@ namespace YinRan2020
         /// 定义窗体
         /// </summary>
         ///
+        
         zongmao zongmao_view = new zongmao();              // 总貌窗体
         Deivce_Info device_info = new Deivce_Info();       // 设备管理窗体
 
         public static string Connect_Chejian_Num = "";        //连接的车间名称  本软件连接的车间名称,
-        public static IniFile inifile = new IniFile("D:\\config\\YinRan2019config.ini"); 
+        public static IniFile inifile = new IniFile("D:\\config\\YinRan2019config.ini");
+
+        #region 内存回收
+       [DllImport("kernel32.dll", EntryPoint = "SetProcessWorkingSetSize")]
+        public static extern int SetProcessWorkingSetSize(IntPtr process, int minSize, int maxSize);
+        /// <summary>
+        /// 释放内存
+        /// </summary>
+        public static void ClearMemory()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                SetProcessWorkingSetSize(System.Diagnostics.Process.GetCurrentProcess().Handle, -1, -1);
+                // .SetProcessWorkingSetSize();
+            }
+        }
+        #endregion
 
 
         /// <summary>
         /// 定义数据库
         /// </summary>
         /// 
-        public static SQL_Connect_Builder builder = new SQL_Connect_Builder(".", "YinRan2019", 1, 1000);             
+        public static SQL_Connect_Builder builder = new SQL_Connect_Builder(".", "YinRan2019", 1, 10000);             
         public MainView()
         {
             InitializeComponent();
@@ -111,7 +131,9 @@ namespace YinRan2020
 
             //试验
             Device_Data.chejian1_com1_DT[11, 10] = 3705;
-            Device_Data.chejian1_com1_R[11, 30] = true;
+            Device_Data.chejian1_com1_R[12, 15] = true;
+            Device_Data.chejian1_com1_R[10, 20] = true;
+
         }
 
         private void init_view()
@@ -185,6 +207,11 @@ namespace YinRan2020
             form.Top = 0;
             form.Width = panel_bg.Width;
             form.Height = panel_bg.Height;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ClearMemory();
         }
     }
 }

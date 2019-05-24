@@ -42,6 +42,11 @@ namespace ViewConfig
         {
             if (myControls != null)
             {
+                try
+                {
+                    myobject.Parent.Controls.Remove(myobject);
+                }
+                catch { }
                 myControls.Add(myobject);
             }
             Control ParentControl = myobject.Parent;
