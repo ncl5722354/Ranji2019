@@ -96,6 +96,12 @@
     <Compile Include="MyLabel_div10.Designer.cs">
       <DependentUpon>MyLabel_div10.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyLabel_Gongyi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MyLabel_Gongyi.Designer.cs">
+      <DependentUpon>MyLabel_Gongyi.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyLabel_Red_Yellow.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyLabel_div10.resx">
       <DependentUpon>MyLabel_div10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyLabel_Gongyi.resx">
+      <DependentUpon>MyLabel_Gongyi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyLabel_Red_Yellow.resx">
       <DependentUpon>MyLabel_Red_Yellow.cs</DependentUpon>

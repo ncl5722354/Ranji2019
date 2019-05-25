@@ -47,6 +47,11 @@ namespace YinRan2020
         public MyLabel_Red_Yellow()
         {
             InitializeComponent();
+            
+        }
+
+        public void init()
+        {
             timer1.Enabled = true;
         }
 

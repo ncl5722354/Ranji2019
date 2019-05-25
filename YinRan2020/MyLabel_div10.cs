@@ -35,9 +35,14 @@ namespace YinRan2020
         public MyLabel_div10()
         {
             InitializeComponent();
+            
+        }
+        
+
+        public void init()
+        {
             timer1.Enabled = true;
         }
-
 
         // 属性的定义
         public string Device_Name

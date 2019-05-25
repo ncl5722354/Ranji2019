@@ -11,10 +11,9 @@ using System.Threading;
 
 namespace YinRan2020
 {
-    public partial class MyLabel : UserControl
+    public partial class MyLabel_Gongyi : UserControl
     {
-
-        private string device_name = "";          // 设备名称属性
+       private string device_name = "";          // 设备名称属性
         private string show_text = "";
         
 
@@ -34,7 +33,7 @@ namespace YinRan2020
         };
 
 
-        public MyLabel()
+        public MyLabel_Gongyi()
         {
             InitializeComponent();
             
@@ -105,32 +104,32 @@ namespace YinRan2020
 
                     if (com_name == "串口1")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian1_com1_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com1_DT[machine_num, address].ToString());
                         if (Type == "R")  show_text = Device_Data.chejian1_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口2")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian1_com2_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com2_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian1_com2_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口3")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian1_com3_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com3_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian1_com3_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口4")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian1_com4_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com4_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian1_com4_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口5")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian1_com5_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com5_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian1_com5_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口6")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian1_com6_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com6_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian1_com6_R[machine_num, address].ToString();
                     }
 
@@ -167,32 +166,32 @@ namespace YinRan2020
 
                     if (com_name == "串口1")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian2_com1_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian2_com1_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian2_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口2")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian2_com2_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian2_com2_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian2_com2_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口3")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian2_com3_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian2_com3_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian2_com3_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口4")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian2_com4_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian2_com4_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian2_com4_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口5")
                     {
-                        if (Type == "DT")show_text = Device_Data.chejian2_com5_DT[machine_num, address].ToString();
+                        if (Type == "DT")show_text = Get_Gongyi_Value(Device_Data.chejian2_com5_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian2_com5_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口6")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian2_com6_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian2_com6_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian2_com6_R[machine_num, address].ToString();
                     }
 
@@ -228,32 +227,32 @@ namespace YinRan2020
 
                     if (com_name == "串口1")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian3_com1_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com1_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian3_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口2")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian3_com2_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com2_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian3_com2_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口3")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian3_com3_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com3_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian3_com3_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口4")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian3_com4_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com4_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian3_com4_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口5")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian3_com5_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com5_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian3_com5_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口6")
                     {
-                        if (Type == "DT") show_text = Device_Data.chejian3_com6_DT[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com6_DT[machine_num, address].ToString());
                         if (Type == "R") show_text = Device_Data.chejian3_com6_R[machine_num, address].ToString();
                     }
 
@@ -274,8 +273,6 @@ namespace YinRan2020
                     }
                     catch { }
                 }
-
-
             }
             catch { }
         }
@@ -288,20 +285,42 @@ namespace YinRan2020
             label1.Text = show_text;
         }
 
-        
-
-        private void label1_Resize(object sender, EventArgs e)
+        public string Get_Gongyi_Value(string gongyi_num)
         {
+            string gongyi_name = "";
+            switch(gongyi_num)
+            {
+                case "0":
+                    gongyi_name = "无";
+                    break;
+                case "1":
+                    gongyi_name = "工艺1";
+                    break;
+                case "2":
+                    gongyi_name = "工艺2";
+                    break;
+                default:
+                    gongyi_name="无法识别";
+                    break;
 
+            }
+            return gongyi_name;
         }
 
-        private void MyLabel_Resize(object sender, EventArgs e)
+
+
+        private void label1_Resize(object sender, EventArgs e)
         {
             AutoSize = false;
             label1.Top = 0;
             label1.Left = 0;
             label1.Width = this.Width;
             label1.Height = this.Height;
+        }
+
+        private void MyLabel_Resize(object sender, EventArgs e)
+        {
+            
             
         }
 
@@ -309,7 +328,6 @@ namespace YinRan2020
         {
 
         }
-
 
     }
 }
