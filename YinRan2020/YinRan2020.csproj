@@ -53,6 +53,18 @@
     <Compile Include="AddCraft.Designer.cs">
       <DependentUpon>AddCraft.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add_Craft_Name.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Craft_Name.Designer.cs">
+      <DependentUpon>Add_Craft_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Craft_Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Craft_Config.Designer.cs">
+      <DependentUpon>Craft_Config.cs</DependentUpon>
+    </Compile>
     <Compile Include="Device_Data.cs" />
     <Compile Include="Config_Value.cs">
       <SubType>Form</SubType>
@@ -122,6 +134,12 @@
     <Compile Include="QiLiuGang.Designer.cs">
       <DependentUpon>QiLiuGang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Update_Craft_Name.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Craft_Name.Designer.cs">
+      <DependentUpon>Update_Craft_Name.cs</DependentUpon>
+    </Compile>
     <Compile Include="YiLiuGang_Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,8 +155,14 @@
     <EmbeddedResource Include="AddCraft.resx">
       <DependentUpon>AddCraft.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Add_Craft_Name.resx">
+      <DependentUpon>Add_Craft_Name.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Config_Value.resx">
       <DependentUpon>Config_Value.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Craft_Config.resx">
+      <DependentUpon>Craft_Config.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Deivce_Info.resx">
       <DependentUpon>Deivce_Info.cs</DependentUpon>
@@ -179,6 +203,9 @@
     </Compile>
     <EmbeddedResource Include="QiLiuGang.resx">
       <DependentUpon>QiLiuGang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Craft_Name.resx">
+      <DependentUpon>Update_Craft_Name.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YiLiuGang_Item.resx">
       <DependentUpon>YiLiuGang_Item.cs</DependentUpon>
@@ -224,6 +251,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\xiugai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\min.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

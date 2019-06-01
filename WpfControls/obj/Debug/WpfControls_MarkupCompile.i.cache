@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\Ranji2019\WpfControls\obj\Debug\
+D:\程序\YinRan2019\WpfControls\obj\Debug\
 WpfControls
 none
 false
 DEBUG;TRACE
-D:\Ranji2019\WpfControls\App.xaml
+D:\程序\YinRan2019\WpfControls\App.xaml
 5-410398793
 
-141851112427
-13-329162277
+14-8216181
+131251810329
 MainWindow.xaml;MyChart.xaml;MyLabel.xaml;MyOrderDataGridView.xaml;MyTreeView.xaml;
 
 False

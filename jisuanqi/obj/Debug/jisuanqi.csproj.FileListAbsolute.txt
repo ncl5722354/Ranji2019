@@ -42,3 +42,13 @@ D:\程序\组态控制软件\组态与上位机软件\上位机系统\jisuanqi\o
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\jisuanqi\obj\Debug\jisuanqi.csproj.GenerateResource.Cache
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\jisuanqi\obj\Debug\jisuanqi.exe
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\jisuanqi\obj\Debug\jisuanqi.pdb
+D:\程序\YinRan2019\jisuanqi\bin\Debug\jisuanqi.exe.config
+D:\程序\YinRan2019\jisuanqi\bin\Debug\jisuanqi.exe
+D:\程序\YinRan2019\jisuanqi\bin\Debug\jisuanqi.pdb
+D:\程序\YinRan2019\jisuanqi\bin\Debug\ViewConfig.dll
+D:\程序\YinRan2019\jisuanqi\bin\Debug\ViewConfig.pdb
+D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.Form1.resources
+D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.Properties.Resources.resources
+D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.csproj.GenerateResource.Cache
+D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.exe
+D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.pdb
