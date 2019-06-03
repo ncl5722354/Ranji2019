@@ -20,7 +20,7 @@ namespace YinRan2020
         /// <summary>
         /// 定义窗体
         /// </summary>
-        ///
+        
         
         zongmao zongmao_view = new zongmao();              // 总貌窗体
         Deivce_Info device_info = new Deivce_Info();       // 设备管理窗体
@@ -31,9 +31,11 @@ namespace YinRan2020
         #region 内存回收
        [DllImport("kernel32.dll", EntryPoint = "SetProcessWorkingSetSize")]
         public static extern int SetProcessWorkingSetSize(IntPtr process, int minSize, int maxSize);
+
         /// <summary>
         /// 释放内存
         /// </summary>
+        
         public static void ClearMemory()
         {
             GC.Collect();
