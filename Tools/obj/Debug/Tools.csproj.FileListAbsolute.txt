@@ -147,3 +147,12 @@ D:\程序\组态控制软件\组态与上位机软件\上位机系统\Tools\obj\
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\Tools\obj\Debug\Tools.csproj.GenerateResource.Cache
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\Tools\obj\Debug\Tools.dll
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\Tools\obj\Debug\Tools.pdb
+D:\程序\YinRan2019\Tools\bin\Debug\Tools.dll
+D:\程序\YinRan2019\Tools\bin\Debug\Tools.pdb
+D:\程序\YinRan2019\Tools\bin\Debug\FileOperation.dll
+D:\程序\YinRan2019\Tools\bin\Debug\FileOperation.pdb
+D:\程序\YinRan2019\Tools\obj\Debug\Tools.csprojResolveAssemblyReference.cache
+D:\程序\YinRan2019\Tools\obj\Debug\Tools.ToolsView.resources
+D:\程序\YinRan2019\Tools\obj\Debug\Tools.csproj.GenerateResource.Cache
+D:\程序\YinRan2019\Tools\obj\Debug\Tools.dll
+D:\程序\YinRan2019\Tools\obj\Debug\Tools.pdb

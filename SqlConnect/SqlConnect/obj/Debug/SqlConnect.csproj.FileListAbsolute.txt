@@ -78,3 +78,8 @@ D:\Ranji2019\SqlConnect\SqlConnect\obj\Debug\SqlConnect.dll
 D:\Ranji2019\SqlConnect\SqlConnect\obj\Debug\SqlConnect.pdb
 =======
 >>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
+D:\程序\YinRan2019\SqlConnect\SqlConnect\bin\Debug\SqlConnect.dll
+D:\程序\YinRan2019\SqlConnect\SqlConnect\bin\Debug\SqlConnect.pdb
+D:\程序\YinRan2019\SqlConnect\SqlConnect\obj\Debug\SqlConnect.csprojResolveAssemblyReference.cache
+D:\程序\YinRan2019\SqlConnect\SqlConnect\obj\Debug\SqlConnect.dll
+D:\程序\YinRan2019\SqlConnect\SqlConnect\obj\Debug\SqlConnect.pdb

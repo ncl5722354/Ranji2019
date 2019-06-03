@@ -22,9 +22,10 @@ namespace YinRan2020
         /// </summary>
         
         
-        zongmao zongmao_view = new zongmao();              // 总貌窗体
-        Deivce_Info device_info = new Deivce_Info();       // 设备管理窗体
-
+        zongmao zongmao_view = new zongmao();                     // 总貌窗体
+        Deivce_Info device_info = new Deivce_Info();              // 设备管理窗体
+      
+        Craft_Config gongyi_edit_view = new Craft_Config();         // 工艺编辑
         public static string Connect_Chejian_Num = "";        //连接的车间名称  本软件连接的车间名称,
         public static IniFile inifile = new IniFile("D:\\config\\YinRan2019config.ini");
 
@@ -136,6 +137,31 @@ namespace YinRan2020
             Device_Data.chejian1_com1_R[12, 15] = true;
             Device_Data.chejian1_com1_R[10, 20] = true;
 
+
+            // 工艺管理有关数据库
+            //     工艺名称与参数名称之间的关系
+            CreateSqlValueType[] create_gongyi = new CreateSqlValueType[12];
+            create_gongyi[0] = new CreateSqlValueType("nvarchar(50)", "Gongyi_Name", true);
+            create_gongyi[1] = new CreateSqlValueType("nvarchar(50)", "value1_name");
+            create_gongyi[2] = new CreateSqlValueType("nvarchar(50)", "value2_name");
+            create_gongyi[3] = new CreateSqlValueType("nvarchar(50)", "value3_name");
+            create_gongyi[4] = new CreateSqlValueType("nvarchar(50)", "value4_name");
+            create_gongyi[5] = new CreateSqlValueType("nvarchar(50)", "value5_name");
+            create_gongyi[6] = new CreateSqlValueType("nvarchar(50)", "value6_name");
+            create_gongyi[7] = new CreateSqlValueType("nvarchar(50)", "value7_name");
+            create_gongyi[8] = new CreateSqlValueType("nvarchar(50)", "value8_name");
+            create_gongyi[9] = new CreateSqlValueType("nvarchar(50)", "value9_name");
+            create_gongyi[10] = new CreateSqlValueType("nvarchar(50)", "value10_name");
+            create_gongyi[11] = new CreateSqlValueType("nvarchar(max)", "beizhu");
+
+            builder.Create_Table("Craft_Name_Table", create_gongyi);
+            //====================================================
+
+            // 工艺代码表
+            CreateSqlValueType[] create_craft_code = new CreateSqlValueType[2];
+            create_craft_code[0] = new CreateSqlValueType("nvarchar(50)", "Craft_Name", true);
+            create_craft_code[1] = new CreateSqlValueType("nvarchar(50)", "Craft_Code");
+            builder.Create_Table("Craft_Name_Code", create_craft_code);
         }
 
         private void init_view()
@@ -195,6 +221,23 @@ namespace YinRan2020
                     device_info.Read_Device_Info_Form_DataBase();
                     break;
 
+                // 工艺一车间
+                case "gongyiguanli_1chejian":
+                    Show_Chuangti(gongyi_edit_view);
+                    gongyi_edit_view.Set_Title("一车间");
+                    break;
+
+                // 工艺二车间
+                case "gongyiguanli_2chejian":
+                    Show_Chuangti(gongyi_edit_view);
+                    gongyi_edit_view.Set_Title("两车间");
+                    break;
+
+                // 工艺三车间
+                case "gongyiguanli_3chejian":
+                    Show_Chuangti(gongyi_edit_view);
+                    gongyi_edit_view.Set_Title("三车间");
+                    break;
             }
 
         }

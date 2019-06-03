@@ -26,6 +26,8 @@ namespace SqlConnect
             connStr.IntegratedSecurity = true;               // true是以windows方式进行访问，false是以用户名密码的方式进行访问
             connStr.MinPoolSize = minpoolsize;               // 设置最小的连接数
             connStr.MaxPoolSize = maxpoolsize;               // 设置最大的连接数
+            connStr.UserID = "sa";
+            connStr.Password = "liao";
         }
 
         // 创建表
