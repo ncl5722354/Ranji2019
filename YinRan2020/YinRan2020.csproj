@@ -53,6 +53,30 @@
     <Compile Include="AddCraft.Designer.cs">
       <DependentUpon>AddCraft.cs</DependentUpon>
     </Compile>
+    <Compile Include="Add_CraftDuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_CraftDuan.Designer.cs">
+      <DependentUpon>Add_CraftDuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Craft_Code.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Craft_Code.Designer.cs">
+      <DependentUpon>Add_Craft_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Craft_Final.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Craft_Final.Designer.cs">
+      <DependentUpon>Add_Craft_Final.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Craft_info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Craft_info.Designer.cs">
+      <DependentUpon>Add_Craft_info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Add_Craft_Name.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +158,24 @@
     <Compile Include="QiLiuGang.Designer.cs">
       <DependentUpon>QiLiuGang.cs</DependentUpon>
     </Compile>
+    <Compile Include="UpdateCraft_Code.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateCraft_Code.Designer.cs">
+      <DependentUpon>UpdateCraft_Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_CraftDuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_CraftDuan.Designer.cs">
+      <DependentUpon>Update_CraftDuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Craft_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Craft_Info.Designer.cs">
+      <DependentUpon>Update_Craft_Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Update_Craft_Name.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +196,18 @@
     </Compile>
     <EmbeddedResource Include="AddCraft.resx">
       <DependentUpon>AddCraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_CraftDuan.resx">
+      <DependentUpon>Add_CraftDuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Craft_Code.resx">
+      <DependentUpon>Add_Craft_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Craft_Final.resx">
+      <DependentUpon>Add_Craft_Final.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Craft_info.resx">
+      <DependentUpon>Add_Craft_info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Add_Craft_Name.resx">
       <DependentUpon>Add_Craft_Name.cs</DependentUpon>
@@ -203,6 +257,15 @@
     </Compile>
     <EmbeddedResource Include="QiLiuGang.resx">
       <DependentUpon>QiLiuGang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateCraft_Code.resx">
+      <DependentUpon>UpdateCraft_Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_CraftDuan.resx">
+      <DependentUpon>Update_CraftDuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Craft_Info.resx">
+      <DependentUpon>Update_Craft_Info.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update_Craft_Name.resx">
       <DependentUpon>Update_Craft_Name.cs</DependentUpon>

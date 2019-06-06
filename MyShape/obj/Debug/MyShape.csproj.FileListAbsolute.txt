@@ -96,6 +96,7 @@ D:\程序\组态控制软件\组态与上位机软件\上位机系统\MyShape\ob
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\MyShape\obj\Debug\MyShape.pdb
 D:\程序\YinRan2019\MyShape\bin\Debug\MyShape.dll
 D:\程序\YinRan2019\MyShape\bin\Debug\MyShape.pdb
+D:\程序\YinRan2019\MyShape\obj\Debug\MyShape.csprojResolveAssemblyReference.cache
 D:\程序\YinRan2019\MyShape\obj\Debug\MyShape.Line.resources
 D:\程序\YinRan2019\MyShape\obj\Debug\MyShape.csproj.GenerateResource.Cache
 D:\程序\YinRan2019\MyShape\obj\Debug\MyShape.dll

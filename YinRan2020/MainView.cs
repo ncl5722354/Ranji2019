@@ -20,7 +20,7 @@ namespace YinRan2020
         /// <summary>
         /// 定义窗体
         /// </summary>
-        ///
+        
         
         zongmao zongmao_view = new zongmao();                     // 总貌窗体
         Deivce_Info device_info = new Deivce_Info();              // 设备管理窗体
@@ -32,9 +32,11 @@ namespace YinRan2020
         #region 内存回收
        [DllImport("kernel32.dll", EntryPoint = "SetProcessWorkingSetSize")]
         public static extern int SetProcessWorkingSetSize(IntPtr process, int minSize, int maxSize);
+
         /// <summary>
         /// 释放内存
         /// </summary>
+        
         public static void ClearMemory()
         {
             GC.Collect();
@@ -52,13 +54,13 @@ namespace YinRan2020
         /// 定义数据库
         /// </summary>
         /// 
-        public static SQL_Connect_Builder builder = new SQL_Connect_Builder("192.168.1.2", "pdw3", 1, 10000);             
+        public static SQL_Connect_Builder builder = new SQL_Connect_Builder(".", "YinRan2019", 1, 100000);             
         public MainView()
         {
             InitializeComponent();
             init_view();
             init_database();
-            Connect_Chejian_Num = inifile.IniReadValue("连接", "车间号");              // 读取本机的车间号
+            Connect_Chejian_Num = inifile.IniReadValue("连接", "车间号");                    // 读取本机的车间号
             if (Connect_Chejian_Num == "")
             {
                 inifile.IniWriteValue("连接", "车间号", "1");
@@ -150,10 +152,16 @@ namespace YinRan2020
             create_gongyi[8] = new CreateSqlValueType("nvarchar(50)", "value8_name");
             create_gongyi[9] = new CreateSqlValueType("nvarchar(50)", "value9_name");
             create_gongyi[10] = new CreateSqlValueType("nvarchar(50)", "value10_name");
-            create_gongyi[11] = new CreateSqlValueType("nvarchar(max)", "beizhu");
+            create_gongyi[11] = new CreateSqlValueType("nvarchar(255)", "beizhu");
 
             builder.Create_Table("Craft_Name_Table", create_gongyi);
             //====================================================
+
+            // 工艺代码表
+            CreateSqlValueType[] create_craft_code = new CreateSqlValueType[2];
+            create_craft_code[0] = new CreateSqlValueType("nvarchar(50)", "Craft_Name", true);
+            create_craft_code[1] = new CreateSqlValueType("nvarchar(50)", "Craft_Code");
+            builder.Create_Table("Craft_Name_Code", create_craft_code);
         }
 
         private void init_view()

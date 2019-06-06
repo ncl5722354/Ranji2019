@@ -52,3 +52,4 @@ D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.Properties.Resources.resources
 D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.csproj.GenerateResource.Cache
 D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.exe
 D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.pdb
+D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.csprojResolveAssemblyReference.cache
