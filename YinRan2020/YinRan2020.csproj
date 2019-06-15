@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YinRan2020</RootNamespace>
     <AssemblyName>YinRan2020</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -107,6 +108,12 @@
     </Compile>
     <Compile Include="DeleteDevice.Designer.cs">
       <DependentUpon>DeleteDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Update_Craft_Final.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Craft_Final.Designer.cs">
+      <DependentUpon>Update_Craft_Final.cs</DependentUpon>
     </Compile>
     <Compile Include="MainView.cs">
       <SubType>Form</SubType>
@@ -223,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteDevice.resx">
       <DependentUpon>DeleteDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Craft_Final.resx">
+      <DependentUpon>Update_Craft_Final.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
