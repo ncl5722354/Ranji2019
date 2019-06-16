@@ -5,9 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 using ViewConfig;
+
 
 namespace YinRan2020
 {
@@ -46,7 +47,19 @@ namespace YinRan2020
             // 总貌中显示设备的信息
             for (int i = 0; i < 6; i++)
             {
-                tabControl1.TabPages[i].Controls.Clear();
+
+                //tabControl1.TabPages[i].Controls.Clear();
+                int count = tabControl1.TabPages[i].Controls.Count;
+
+                for (int j = 0; j < count;j++)
+                {
+                    Control control = (Control)tabControl1.TabPages[i].Controls[0];
+                    tabControl1.TabPages[i].Controls.Remove(control);
+                    control.Dispose();
+                }
+
+                    //tabControl1.TabPages[i].Controls.Clear();
+                    GC.Collect();
                 // 读取本车间的名称，并从com1到com6在数据库中读取设备信息
                 //string keyname = tabControl1.TabPages[i].Name + CheJian_Name;
                 string where_cmd = "workshop='" + CheJian_Name + "' and Com='" + tabControl1.TabPages[i].Text + "'";

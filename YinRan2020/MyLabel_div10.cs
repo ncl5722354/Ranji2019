@@ -5,14 +5,16 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace YinRan2020
 {
     public partial class MyLabel_div10 : UserControl
     {
         private string device_name = "";          // 设备名称属性
+        private string show_text = "";
         
 
         private value_name MyValue_Name=value_name.机缸温度;
@@ -33,9 +35,14 @@ namespace YinRan2020
         public MyLabel_div10()
         {
             InitializeComponent();
+            
+        }
+        
+
+        public void init()
+        {
             timer1.Enabled = true;
         }
-
 
         // 属性的定义
         public string Device_Name
@@ -96,7 +103,7 @@ namespace YinRan2020
             label1.Height = this.Height;
         }
 
-        private void timer1_Tick_1(object sender, EventArgs e)
+        private void thread()
         {
             try
             {
@@ -131,33 +138,33 @@ namespace YinRan2020
 
                         if (com_name == "串口1")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian1_com1_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian1_com1_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian1_com1_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian1_com1_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口2")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian1_com2_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian1_com2_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian1_com2_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian1_com2_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口3")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian1_com3_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian1_com3_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian1_com3_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian1_com3_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口4")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian1_com4_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian1_com4_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian1_com4_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian1_com4_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口5")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian1_com5_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian1_com5_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian1_com5_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian1_com5_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口6")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian1_com6_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian1_com6_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian1_com6_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian1_com6_R[machine_num, address].ToString();
                         }
 
                         // 在主程序上进行实时数据对实时数据库的保存
@@ -174,7 +181,7 @@ namespace YinRan2020
                             string value_string = value_dt.Rows[0][3].ToString();
                             double value = double.Parse(value_string);
                             value = value / 10;
-                            label1.Text = value.ToString();
+                            show_text = value.ToString();
                         }
                         catch { }
                     }
@@ -194,33 +201,33 @@ namespace YinRan2020
 
                         if (com_name == "串口1")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian2_com1_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian2_com1_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian2_com1_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian2_com1_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口2")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian2_com2_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian2_com2_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian2_com2_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian2_com2_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口3")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian2_com3_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian2_com3_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian2_com3_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian2_com3_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口4")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian2_com4_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian2_com4_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian2_com4_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian2_com4_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口5")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian2_com5_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian2_com5_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian2_com5_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian2_com5_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口6")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian2_com6_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian2_com6_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian2_com6_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian2_com6_R[machine_num, address].ToString();
                         }
 
                         // 在主程序上进行实时数据对实时数据库的保存
@@ -237,7 +244,7 @@ namespace YinRan2020
                             string value_string = value_dt.Rows[0][3].ToString();
                             double value = double.Parse(value_string);
                             value = value / 10;
-                            label1.Text = value.ToString();
+                            show_text = value.ToString();
                         }
                         catch { }
                     }
@@ -256,33 +263,33 @@ namespace YinRan2020
 
                         if (com_name == "串口1")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian3_com1_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian3_com1_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian3_com1_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian3_com1_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口2")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian3_com2_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian3_com2_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian3_com2_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian3_com2_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口3")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian3_com3_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian3_com3_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian3_com3_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian3_com3_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口4")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian3_com4_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian3_com4_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian3_com4_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian3_com4_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口5")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian3_com5_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian3_com5_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian3_com5_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian3_com5_R[machine_num, address].ToString();
                         }
                         if (com_name == "串口6")
                         {
-                            if (Type == "DT") label1.Text = ((double)(Device_Data.chejian3_com6_DT[machine_num, address]) / 10).ToString("f2");
-                            if (Type == "R") label1.Text = Device_Data.chejian3_com6_R[machine_num, address].ToString();
+                            if (Type == "DT") show_text = ((double)(Device_Data.chejian3_com6_DT[machine_num, address]) / 10).ToString("f2");
+                            if (Type == "R") show_text = Device_Data.chejian3_com6_R[machine_num, address].ToString();
                         }
 
                         // 在主程序上进行实时数据对实时数据库的保存
@@ -299,7 +306,7 @@ namespace YinRan2020
                             string value_string = value_dt.Rows[0][3].ToString();
                             double value = double.Parse(value_string);
                             value = value / 10;
-                            label1.Text = value.ToString();
+                            show_text = value.ToString();
                         }
                         catch { }
                     }
@@ -308,6 +315,13 @@ namespace YinRan2020
                 catch { }
             }
             catch { }
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            Thread mythread = new Thread(thread);
+            mythread.Start();
+            label1.Text = show_text;
         }
     }
 }

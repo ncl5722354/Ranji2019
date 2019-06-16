@@ -140,3 +140,9 @@ D:\程序\Ranji2019-master\FileOperation\obj\Debug\FileOperation.csproj.ResolveC
 D:\程序\Ranji2019-master\FileOperation\obj\Debug\FileOperation.dll
 D:\程序\Ranji2019-master\FileOperation\obj\Debug\FileOperation.pdb
 >>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
+D:\程序\YinRan2019\FileOperation\bin\Debug\FileOperation.dll
+D:\程序\YinRan2019\FileOperation\bin\Debug\FileOperation.pdb
+D:\程序\YinRan2019\FileOperation\obj\Debug\FileOperation.csprojResolveAssemblyReference.cache
+D:\程序\YinRan2019\FileOperation\obj\Debug\FileOperation.csproj.ResolveComReference.cache
+D:\程序\YinRan2019\FileOperation\obj\Debug\FileOperation.dll
+D:\程序\YinRan2019\FileOperation\obj\Debug\FileOperation.pdb

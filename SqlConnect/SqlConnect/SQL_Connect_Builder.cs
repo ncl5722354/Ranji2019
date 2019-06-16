@@ -26,6 +26,8 @@ namespace SqlConnect
             connStr.IntegratedSecurity = true;               // true是以windows方式进行访问，false是以用户名密码的方式进行访问
             connStr.MinPoolSize = minpoolsize;               // 设置最小的连接数
             connStr.MaxPoolSize = maxpoolsize;               // 设置最大的连接数
+            connStr.UserID = "sa";
+            connStr.Password = "liao";
         }
 
         // 创建表
@@ -159,8 +161,9 @@ namespace SqlConnect
             }
         }                                            // 向数据库中添加信息
 
-        public void Delete(string table_name,string where_condition="")
+        public bool Delete(string table_name,string where_condition="")
         {
+            bool result = false;
             using(SqlConnection conn=new SqlConnection(connStr.ConnectionString))
             {
                 conn.Open();
@@ -179,10 +182,13 @@ namespace SqlConnect
                 try
                 {
                     cmd.ExecuteNonQuery();
+                    result = true;
                 }
                 catch { }
                 conn.Close();
+
             }
+            return result;
         }                                          // 删除
 
         public bool Updata(string table_name,string where_condition,string[] updata_value)

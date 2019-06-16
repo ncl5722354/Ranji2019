@@ -116,6 +116,7 @@
             this.label_caidanliebiao = new System.Windows.Forms.Label();
             this.label_title = new System.Windows.Forms.Label();
             this.panel_bg = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // treeView1
@@ -365,6 +366,12 @@
             this.panel_bg.Size = new System.Drawing.Size(1084, 506);
             this.panel_bg.TabIndex = 3;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -387,6 +394,7 @@
         private System.Windows.Forms.Label label_caidanliebiao;
         private System.Windows.Forms.Label label_title;
         private System.Windows.Forms.Panel panel_bg;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

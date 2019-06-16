@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\程序\组态控制软件\组态与上位机软件\上位机系统\WPFDataStruct\obj\Debug\
+D:\程序\Ranji2019-master\WPFDataStruct\obj\Debug\
 WPFDataStruct
 none
 false
-DEBUG;TRACE
-D:\程序\组态控制软件\组态与上位机软件\上位机系统\WPFDataStruct\App.xaml
+CODE_ANALYSIS;DEBUG;TRACE
+D:\程序\Ranji2019-master\WPFDataStruct\App.xaml
 22021279262
 
 9-559785213
-14-1056796378
+14-2077758735
 MainWindow.xaml;SubWindow.xaml;
 
 False
