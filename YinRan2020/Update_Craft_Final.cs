@@ -37,6 +37,7 @@ namespace YinRan2020
         public Update_Craft_Final()
         {
             InitializeComponent();
+            label_gongyi_name.Text = Craft_Name;
             label_value1.Text = canshu1_shuoming;
             label_value2.Text = canshu2_shuoming;
             label_value3.Text = canshu3_shuoming;
