@@ -313,8 +313,6 @@ D:\程序\Ranji2019-master\WpfBrowser_warningsystem\bin\Debug\WpfBrowser_warning
 D:\程序\Ranji2019-master\WpfBrowser_warningsystem\bin\Debug\WpfBrowser_warningsystem.xbap
 D:\程序\Ranji2019-master\WpfBrowser_warningsystem\bin\Debug\WpfBrowser_warningsystem.exe
 D:\程序\Ranji2019-master\WpfBrowser_warningsystem\bin\Debug\WpfBrowser_warningsystem.pdb
-D:\程序\Ranji2019-master\WpfBrowser_warningsystem\bin\Debug\WpfBrowser_warningsystem.exe.CodeAnalysisLog.xml
-D:\程序\Ranji2019-master\WpfBrowser_warningsystem\bin\Debug\WpfBrowser_warningsystem.exe.lastcodeanalysissucceeded
 D:\程序\Ranji2019-master\WpfBrowser_warningsystem\bin\Debug\FileOperation.dll
 D:\程序\Ranji2019-master\WpfBrowser_warningsystem\bin\Debug\String_Caozuo.dll
 D:\程序\Ranji2019-master\WpfBrowser_warningsystem\bin\Debug\FileOperation.pdb

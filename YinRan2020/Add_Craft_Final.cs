@@ -44,7 +44,7 @@ namespace YinRan2020
         {
             InitializeComponent();
 
-            comboBox_craft.Items.Clear();
+            
 
             comboBox_craft.Items.Clear();
             try

@@ -346,8 +346,6 @@ D:\程序\YinRan2019\Shuini\obj\Debug\Shuini.pdb
 D:\程序\Ranji2019-master\Shuini\bin\Debug\Shuini.exe.config
 D:\程序\Ranji2019-master\Shuini\bin\Debug\Shuini.exe
 D:\程序\Ranji2019-master\Shuini\bin\Debug\Shuini.pdb
-D:\程序\Ranji2019-master\Shuini\bin\Debug\Shuini.exe.CodeAnalysisLog.xml
-D:\程序\Ranji2019-master\Shuini\bin\Debug\Shuini.exe.lastcodeanalysissucceeded
 D:\程序\Ranji2019-master\Shuini\bin\Debug\Communication.dll
 D:\程序\Ranji2019-master\Shuini\bin\Debug\FileOperation.dll
 D:\程序\Ranji2019-master\Shuini\bin\Debug\ViewConfig.dll

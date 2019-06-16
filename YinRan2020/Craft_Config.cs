@@ -901,7 +901,7 @@ namespace YinRan2020
                 DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
 
 
-                string key = dr.Cells[0].Value.ToString();
+                string key = dr.Cells[1].Value.ToString();
                 string where_cmd = "Gongyi_Name='" + key + "'";
                 DataTable dt = MainView.builder.Select_Table("Craft_Name_Table", where_cmd);
                 if (dt == null)
@@ -920,21 +920,51 @@ namespace YinRan2020
                 else
                 {
                     DataRow dr1 = dt.Rows[0];
-                    Update_Craft_Final.canshu1 = dr1[1].ToString();
-                    Update_Craft_Final.canshu2 = dr1[2].ToString();
-                    Update_Craft_Final.canshu3 = dr1[3].ToString();
-                    Update_Craft_Final.canshu4 = dr1[4].ToString();
-                    Update_Craft_Final.canshu5 = dr1[5].ToString();
-                    Update_Craft_Final.canshu6 = dr1[6].ToString();
-                    Update_Craft_Final.canshu7 = dr1[7].ToString();
-                    Update_Craft_Final.canshu8 = dr1[8].ToString();
-                    Update_Craft_Final.canshu9 = dr1[9].ToString();
-                    Update_Craft_Final.canshu10 = dr1[10].ToString();
+                    
+                    
+                    Update_Craft_Final.Craft_Name = dr.Cells[1].Value.ToString();
+                    Update_Craft_Final.canshu1 = dr.Cells[3].Value.ToString();
+                    Update_Craft_Final.canshu2 = dr.Cells[5].Value.ToString();
+                    Update_Craft_Final.canshu3 = dr.Cells[7].Value.ToString();
+                    Update_Craft_Final.canshu4 = dr.Cells[9].Value.ToString();
+                    Update_Craft_Final.canshu5 = dr.Cells[11].Value.ToString();
+                    Update_Craft_Final.canshu6 = dr.Cells[13].Value.ToString();
+                    Update_Craft_Final.canshu7 = dr.Cells[15].Value.ToString();
+                    Update_Craft_Final.canshu8 = dr.Cells[17].Value.ToString();
+                    Update_Craft_Final.canshu9 = dr.Cells[19].Value.ToString();
+                    Update_Craft_Final.canshu10 = dr.Cells[21].Value.ToString();
+
+                    Update_Craft_Final.canshu1_shuoming = dr.Cells[2].Value.ToString();
+                    Update_Craft_Final.canshu2_shuoming = dr.Cells[4].Value.ToString();
+                    Update_Craft_Final.canshu3_shuoming = dr.Cells[6].Value.ToString();
+                    Update_Craft_Final.canshu4_shuoming = dr.Cells[8].Value.ToString();
+                    Update_Craft_Final.canshu5_shuoming = dr.Cells[10].Value.ToString();
+                    Update_Craft_Final.canshu6_shuoming = dr.Cells[12].Value.ToString();
+                    Update_Craft_Final.canshu7_shuoming = dr.Cells[14].Value.ToString();
+                    Update_Craft_Final.canshu8_shuoming = dr.Cells[16].Value.ToString();
+                    Update_Craft_Final.canshu9_shuoming = dr.Cells[18].Value.ToString();
+                    Update_Craft_Final.canshu10_shuoming = dr.Cells[20].Value.ToString();
+
 
                     Update_Craft_Final view = new Update_Craft_Final();
                     DialogResult result = view.ShowDialog();
 
+                    string where_cmd1 = "ID='" + dr.Cells[0].Value.ToString() + "'";
+                    string[] update_cmd = new string[10];
+                    update_cmd[0] = "value1='" + Update_Craft_Final.canshu1 + "'";
+                    update_cmd[1] = "value2='" + Update_Craft_Final.canshu2 + "'";
+                    update_cmd[2] = "value3='" + Update_Craft_Final.canshu3 + "'";
+                    update_cmd[3] = "value4='" + Update_Craft_Final.canshu4 + "'";
+                    update_cmd[4] = "value5='" + Update_Craft_Final.canshu5 + "'";
+                    update_cmd[5] = "value6='" + Update_Craft_Final.canshu6 + "'";
+                    update_cmd[6] = "value7='" + Update_Craft_Final.canshu7 + "'";
+                    update_cmd[7] = "value8='" + Update_Craft_Final.canshu8 + "'";
+                    update_cmd[8] = "value9='" + Update_Craft_Final.canshu9 + "'";
+                    update_cmd[9] = "value10='" + Update_Craft_Final.canshu10 + "'";
 
+                    MainView.builder.Updata(craft_name, where_cmd1, update_cmd);
+
+                    ReFlash_Gongyi_Fanal(craft_name);
                 }
 
 

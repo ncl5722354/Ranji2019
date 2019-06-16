@@ -113,3 +113,7 @@ D:\程序\Ranji2019-master\YinRan2020\obj\Debug\YinRan2020.Update_CraftDuan.reso
 D:\程序\Ranji2019-master\YinRan2020\obj\Debug\YinRan2020.Update_Craft_Info.resources
 D:\程序\Ranji2019-master\YinRan2020\obj\Debug\YinRan2020.Update_Craft_Name.resources
 D:\程序\Ranji2019-master\YinRan2020\obj\Debug\YinRan2020.shengchanpaishan.resources
+D:\程序\Ranji2019-master\YinRan2020\bin\Debug\Communication.dll
+D:\程序\Ranji2019-master\YinRan2020\bin\Debug\String_Caozuo.dll
+D:\程序\Ranji2019-master\YinRan2020\bin\Debug\Communication.pdb
+D:\程序\Ranji2019-master\YinRan2020\bin\Debug\String_Caozuo.pdb

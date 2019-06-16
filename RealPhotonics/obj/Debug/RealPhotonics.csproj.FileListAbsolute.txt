@@ -727,8 +727,6 @@ D:\程序\YinRan2019\RealPhotonics\obj\Debug\RealPhotonics.pdb
 D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\RealPhotonics.exe.config
 D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\RealPhotonics.exe
 D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\RealPhotonics.pdb
-D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\RealPhotonics.exe.CodeAnalysisLog.xml
-D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\RealPhotonics.exe.lastcodeanalysissucceeded
 D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\Communication.dll
 D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\DataGridViewCaoZuo.dll
 D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\FileOperation.dll

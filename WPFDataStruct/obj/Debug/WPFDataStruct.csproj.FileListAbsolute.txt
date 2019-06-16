@@ -248,8 +248,6 @@ D:\程序\YinRan2019\WPFDataStruct\obj\Debug\WPFDataStruct.pdb
 D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\WPFDataStruct.exe.config
 D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\WPFDataStruct.exe
 D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\WPFDataStruct.pdb
-D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\WPFDataStruct.exe.CodeAnalysisLog.xml
-D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\WPFDataStruct.exe.lastcodeanalysissucceeded
 D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\SqlConnect.dll
 D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\WpfControls.exe
 D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\SqlConnect.pdb
