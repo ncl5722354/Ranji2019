@@ -198,6 +198,12 @@
     <Compile Include="Update_Craft_Name.Designer.cs">
       <DependentUpon>Update_Craft_Name.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xiangxi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Xiangxi.Designer.cs">
+      <DependentUpon>Xiangxi.cs</DependentUpon>
+    </Compile>
     <Compile Include="YiLiuGang_Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Update_Craft_Name.resx">
       <DependentUpon>Update_Craft_Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xiangxi.resx">
+      <DependentUpon>Xiangxi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="YiLiuGang_Item.resx">
       <DependentUpon>YiLiuGang_Item.cs</DependentUpon>

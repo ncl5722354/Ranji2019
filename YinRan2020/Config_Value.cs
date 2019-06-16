@@ -40,5 +40,10 @@ namespace YinRan2020
             this.DialogResult = DialogResult.OK;
             this.Dispose();
         }
+
+        private void Config_Value_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
