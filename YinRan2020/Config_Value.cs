@@ -34,11 +34,24 @@ namespace YinRan2020
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Text == "") { MessageBox.Show("数据类型不能为空!"); return; }
-            Value_Type = comboBox1.Text;
-            address = (int)numericUpDown1.Value;
-            this.DialogResult = DialogResult.OK;
-            this.Dispose();
+            try
+            {
+                if (comboBox1.Text == "") { MessageBox.Show("数据类型不能为空!"); return; }
+                Value_Type = comboBox1.Text;
+                if (Value_Type == "DT")
+                    address = int.Parse(textBox1.Text);
+                else if (Value_Type == "R")
+                    address = Convert.ToInt16(textBox1.Text, 16);
+
+                this.DialogResult = DialogResult.OK;
+                this.Dispose();
+            }
+            catch { MessageBox.Show("输入有误！"); }
+        }
+
+        private void Config_Value_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

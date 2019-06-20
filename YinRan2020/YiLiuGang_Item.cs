@@ -15,6 +15,7 @@ namespace YinRan2020
     {
         
         public string JiGang_Name = "";
+        public event EventHandler MyClick = null;
         public YiLiuGang_Item()
         {
             InitializeComponent();
@@ -144,6 +145,14 @@ namespace YinRan2020
         private void YiLiuGang_Item_Resize(object sender, EventArgs e)
         {
             init_view();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (MyClick != null)
+            {
+                MyClick(this, new EventArgs());
+            }
         }
     }
 }

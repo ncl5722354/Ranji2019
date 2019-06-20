@@ -137,7 +137,7 @@ namespace YinRan2020
                 create_cmd[11] = new CreateSqlValueType("nvarchar(50)", "value10");
                 create_cmd[12] = new CreateSqlValueType("nvarchar(50)", "beizhu");
 
-                MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0'), create_cmd);
+               // MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0'), create_cmd);
             }
 
             //dataGridView1.RowCount = 1;

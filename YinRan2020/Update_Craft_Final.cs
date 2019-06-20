@@ -37,7 +37,18 @@ namespace YinRan2020
         public Update_Craft_Final()
         {
             InitializeComponent();
-            label_gongyi_name.Text = Craft_Name;
+
+            comboBox_craft.Items.Clear();
+            try
+            {
+                DataTable dt = MainView.builder.Select_Table("Craft_Name_Table");
+                foreach (DataRow dr in dt.Rows)
+                {
+                    comboBox_craft.Items.Add(dr[0].ToString());
+                }
+            }
+            catch { }
+            comboBox_craft.Text = Craft_Name;
             label_value1.Text = canshu1_shuoming;
             label_value2.Text = canshu2_shuoming;
             label_value3.Text = canshu3_shuoming;
@@ -85,6 +96,45 @@ namespace YinRan2020
             canshu10 = textBox_value10.Text;
             this.DialogResult = DialogResult.OK;
             this.Dispose();
+        }
+
+        private void Update_Craft_Final_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_craft_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string key = comboBox_craft.Text;
+            string where_cmd = "Gongyi_Name='" + key + "'";
+            DataTable dt = MainView.builder.Select_Table("Craft_Name_Table", where_cmd);
+            if (dt == null)
+            {
+                label_value1.Text = "参数1说明";
+                label_value2.Text = "参数2说明";
+                label_value3.Text = "参数3说明";
+                label_value4.Text = "参数4说明";
+                label_value5.Text = "参数5说明";
+                label_value6.Text = "参数6说明";
+                label_value7.Text = "参数7说明";
+                label_value8.Text = "参数8说明";
+                label_value9.Text = "参数9说明";
+                label_value10.Text = "参数10说明";
+            }
+            else
+            {
+                DataRow dr = dt.Rows[0];
+                label_value1.Text = dr[1].ToString();
+                label_value2.Text = dr[2].ToString();
+                label_value3.Text = dr[3].ToString();
+                label_value4.Text = dr[4].ToString();
+                label_value5.Text = dr[5].ToString();
+                label_value6.Text = dr[6].ToString();
+                label_value7.Text = dr[7].ToString();
+                label_value8.Text = dr[8].ToString();
+                label_value9.Text = dr[9].ToString();
+                label_value10.Text = dr[10].ToString();
+            }
         }
     }
 }

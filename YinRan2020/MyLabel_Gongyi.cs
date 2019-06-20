@@ -109,28 +109,28 @@ namespace YinRan2020
                     }
                     if (com_name == "串口2")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com2_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian1_com2_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian1_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口3")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com3_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian1_com3_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian1_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口4")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com4_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian1_com4_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian1_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口5")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com5_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian1_com5_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian1_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口6")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com6_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian1_com6_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian1_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian1_com1_R[machine_num, address].ToString();
                     }
 
                     // 在主程序上进行实时数据对实时数据库的保存
@@ -232,28 +232,28 @@ namespace YinRan2020
                     }
                     if (com_name == "串口2")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com2_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian3_com2_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian3_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口3")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com3_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian3_com3_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian3_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口4")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com4_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian3_com4_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian3_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口5")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com5_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian3_com5_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian3_com1_R[machine_num, address].ToString();
                     }
                     if (com_name == "串口6")
                     {
-                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com6_DT[machine_num, address].ToString());
-                        if (Type == "R") show_text = Device_Data.chejian3_com6_R[machine_num, address].ToString();
+                        if (Type == "DT") show_text = Get_Gongyi_Value(Device_Data.chejian3_com1_DT[machine_num, address].ToString());
+                        if (Type == "R") show_text = Device_Data.chejian3_com1_R[machine_num, address].ToString();
                     }
 
                     // 在主程序上进行实时数据对实时数据库的保存

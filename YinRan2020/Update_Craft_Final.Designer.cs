@@ -53,7 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label_title = new System.Windows.Forms.Label();
-            this.label_gongyi_name = new System.Windows.Forms.Label();
+            this.comboBox_craft = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -251,7 +251,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label_gongyi_name);
+            this.panel1.Controls.Add(this.comboBox_craft);
             this.panel1.Controls.Add(this.textBox_value10);
             this.panel1.Controls.Add(this.label_value10);
             this.panel1.Controls.Add(this.textBox_value9);
@@ -290,14 +290,14 @@
             this.label_title.Text = "label1";
             this.label_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label_gongyi_name
+            // comboBox_craft
             // 
-            this.label_gongyi_name.AutoSize = true;
-            this.label_gongyi_name.Location = new System.Drawing.Point(158, 31);
-            this.label_gongyi_name.Name = "label_gongyi_name";
-            this.label_gongyi_name.Size = new System.Drawing.Size(56, 16);
-            this.label_gongyi_name.TabIndex = 22;
-            this.label_gongyi_name.Text = "label2";
+            this.comboBox_craft.FormattingEnabled = true;
+            this.comboBox_craft.Location = new System.Drawing.Point(154, 28);
+            this.comboBox_craft.Name = "comboBox_craft";
+            this.comboBox_craft.Size = new System.Drawing.Size(172, 24);
+            this.comboBox_craft.TabIndex = 22;
+            this.comboBox_craft.SelectedIndexChanged += new System.EventHandler(this.comboBox_craft_SelectedIndexChanged);
             // 
             // Update_Craft_Final
             // 
@@ -311,6 +311,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Update_Craft_Final";
             this.Text = "修改工艺";
+            this.Load += new System.EventHandler(this.Update_Craft_Final_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -344,6 +345,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label_title;
-        private System.Windows.Forms.Label label_gongyi_name;
+        private System.Windows.Forms.ComboBox comboBox_craft;
     }
 }

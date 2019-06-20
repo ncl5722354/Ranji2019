@@ -146,7 +146,7 @@ namespace YinRan2020
                        // if (Type == "DT") //label1.Text = Device_Data.chejian1_com2_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian1_com2_R[machine_num, address];
+                            bool result = Device_Data.chejian1_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else
@@ -158,7 +158,7 @@ namespace YinRan2020
                        // if (Type == "DT") //label1.Text = Device_Data.chejian1_com3_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian1_com3_R[machine_num, address];
+                            bool result = Device_Data.chejian1_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else
@@ -170,7 +170,7 @@ namespace YinRan2020
                        // if (Type == "DT") //label1.Text = Device_Data.chejian1_com4_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian1_com4_R[machine_num, address];
+                            bool result = Device_Data.chejian1_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else
@@ -182,7 +182,7 @@ namespace YinRan2020
                         //if (Type == "DT") label1.Text = Device_Data.chejian1_com5_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian1_com5_R[machine_num, address];
+                            bool result = Device_Data.chejian1_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else
@@ -194,7 +194,7 @@ namespace YinRan2020
                        // if (Type == "DT") label1.Text = Device_Data.chejian1_com6_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian1_com6_R[machine_num, address];
+                            bool result = Device_Data.chejian1_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else
@@ -358,7 +358,7 @@ namespace YinRan2020
                        // if (Type == "DT") label1.Text = Device_Data.chejian3_com2_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian3_com2_R[machine_num, address];
+                            bool result = Device_Data.chejian3_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else
@@ -370,7 +370,7 @@ namespace YinRan2020
                       //  if (Type == "DT") label1.Text = Device_Data.chejian3_com3_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian3_com3_R[machine_num, address];
+                            bool result = Device_Data.chejian3_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else
@@ -382,7 +382,7 @@ namespace YinRan2020
                        // if (Type == "DT") label1.Text = Device_Data.chejian3_com4_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian3_com4_R[machine_num, address];
+                            bool result = Device_Data.chejian3_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else
@@ -394,7 +394,7 @@ namespace YinRan2020
                        // if (Type == "DT") label1.Text = Device_Data.chejian3_com5_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian3_com5_R[machine_num, address];
+                            bool result = Device_Data.chejian3_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else
@@ -406,7 +406,7 @@ namespace YinRan2020
                        // if (Type == "DT") label1.Text = Device_Data.chejian3_com6_DT[machine_num, address].ToString();
                         if (Type == "R")
                         {
-                            bool result = Device_Data.chejian3_com6_R[machine_num, address];
+                            bool result = Device_Data.chejian3_com1_R[machine_num, address];
                             if (result == false)
                                 show_color = System.Drawing.Color.Red;
                             else

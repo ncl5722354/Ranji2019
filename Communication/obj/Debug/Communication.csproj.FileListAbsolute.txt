@@ -152,3 +152,13 @@ D:\程序\YinRan2019\Communication\bin\Debug\String_Caozuo.pdb
 D:\程序\YinRan2019\Communication\obj\Debug\Communication.csprojResolveAssemblyReference.cache
 D:\程序\YinRan2019\Communication\obj\Debug\Communication.dll
 D:\程序\YinRan2019\Communication\obj\Debug\Communication.pdb
+D:\程序\Ranji2019-master\Communication\bin\Debug\Communication.dll.config
+D:\程序\Ranji2019-master\Communication\bin\Debug\Communication.dll
+D:\程序\Ranji2019-master\Communication\bin\Debug\Communication.pdb
+D:\程序\Ranji2019-master\Communication\bin\Debug\Communication.dll.CodeAnalysisLog.xml
+D:\程序\Ranji2019-master\Communication\bin\Debug\Communication.dll.lastcodeanalysissucceeded
+D:\程序\Ranji2019-master\Communication\bin\Debug\String_Caozuo.dll
+D:\程序\Ranji2019-master\Communication\bin\Debug\String_Caozuo.pdb
+D:\程序\Ranji2019-master\Communication\obj\Debug\Communication.csprojResolveAssemblyReference.cache
+D:\程序\Ranji2019-master\Communication\obj\Debug\Communication.dll
+D:\程序\Ranji2019-master\Communication\obj\Debug\Communication.pdb

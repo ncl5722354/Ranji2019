@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>YinRan2020</RootNamespace>
     <AssemblyName>YinRan2020</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,12 +32,14 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -108,6 +111,13 @@
     </Compile>
     <Compile Include="DeleteDevice.Designer.cs">
       <DependentUpon>DeleteDevice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="port_modbus.cs" />
+    <Compile Include="shengchanpaishan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="shengchanpaishan.Designer.cs">
+      <DependentUpon>shengchanpaishan.cs</DependentUpon>
     </Compile>
     <Compile Include="Update_Craft_Final.cs">
       <SubType>Form</SubType>
@@ -189,6 +199,12 @@
     <Compile Include="Update_Craft_Name.Designer.cs">
       <DependentUpon>Update_Craft_Name.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xiangxi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Xiangxi.Designer.cs">
+      <DependentUpon>Xiangxi.cs</DependentUpon>
+    </Compile>
     <Compile Include="YiLiuGang_Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteDevice.resx">
       <DependentUpon>DeleteDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shengchanpaishan.resx">
+      <DependentUpon>shengchanpaishan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update_Craft_Final.resx">
       <DependentUpon>Update_Craft_Final.cs</DependentUpon>
@@ -280,6 +299,9 @@
     <EmbeddedResource Include="Update_Craft_Name.resx">
       <DependentUpon>Update_Craft_Name.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Xiangxi.resx">
+      <DependentUpon>Xiangxi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="YiLiuGang_Item.resx">
       <DependentUpon>YiLiuGang_Item.cs</DependentUpon>
     </EmbeddedResource>
@@ -300,6 +322,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Communication\Communication.csproj">
+      <Project>{34d706df-dff9-43fd-ab56-6be52d53a671}</Project>
+      <Name>Communication</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FileOperation\FileOperation.csproj">
       <Project>{9ed43ee0-8a99-4c7d-bbac-464573da4dd9}</Project>
       <Name>FileOperation</Name>

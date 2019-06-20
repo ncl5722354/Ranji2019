@@ -53,3 +53,16 @@ D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.csproj.GenerateResource.Cache
 D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.exe
 D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.pdb
 D:\程序\YinRan2019\jisuanqi\obj\Debug\jisuanqi.csprojResolveAssemblyReference.cache
+D:\程序\Ranji2019-master\jisuanqi\bin\Debug\jisuanqi.exe.config
+D:\程序\Ranji2019-master\jisuanqi\bin\Debug\jisuanqi.exe
+D:\程序\Ranji2019-master\jisuanqi\bin\Debug\jisuanqi.pdb
+D:\程序\Ranji2019-master\jisuanqi\bin\Debug\jisuanqi.exe.CodeAnalysisLog.xml
+D:\程序\Ranji2019-master\jisuanqi\bin\Debug\jisuanqi.exe.lastcodeanalysissucceeded
+D:\程序\Ranji2019-master\jisuanqi\bin\Debug\ViewConfig.dll
+D:\程序\Ranji2019-master\jisuanqi\bin\Debug\ViewConfig.pdb
+D:\程序\Ranji2019-master\jisuanqi\obj\Debug\jisuanqi.csprojResolveAssemblyReference.cache
+D:\程序\Ranji2019-master\jisuanqi\obj\Debug\jisuanqi.Form1.resources
+D:\程序\Ranji2019-master\jisuanqi\obj\Debug\jisuanqi.Properties.Resources.resources
+D:\程序\Ranji2019-master\jisuanqi\obj\Debug\jisuanqi.csproj.GenerateResource.Cache
+D:\程序\Ranji2019-master\jisuanqi\obj\Debug\jisuanqi.exe
+D:\程序\Ranji2019-master\jisuanqi\obj\Debug\jisuanqi.pdb
