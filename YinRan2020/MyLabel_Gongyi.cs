@@ -13,7 +13,7 @@ namespace YinRan2020
 {
     public partial class MyLabel_Gongyi : UserControl
     {
-       private string device_name = "";          // 设备名称属性
+        private string device_name = "";          // 设备名称属性
         private string show_text = "";
         
 

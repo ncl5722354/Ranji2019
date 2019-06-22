@@ -93,3 +93,4 @@ D:\程序\YinRan2019\YinRan2020\bin\Debug\Communication.pdb
 D:\程序\YinRan2019\YinRan2020\bin\Debug\String_Caozuo.pdb
 D:\程序\YinRan2019\YinRan2020\obj\Debug\YinRan2020.shengchanpaishan.resources
 D:\程序\YinRan2019\YinRan2020\obj\Debug\YinRan2020.Xiangxi.resources
+D:\程序\YinRan2019\YinRan2020\obj\Debug\YinRan2020.Red_Green_zhifan_Button.resources

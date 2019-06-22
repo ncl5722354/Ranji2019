@@ -113,6 +113,12 @@
       <DependentUpon>DeleteDevice.cs</DependentUpon>
     </Compile>
     <Compile Include="port_modbus.cs" />
+    <Compile Include="Red_Green_zhifan_Button.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Red_Green_zhifan_Button.Designer.cs">
+      <DependentUpon>Red_Green_zhifan_Button.cs</DependentUpon>
+    </Compile>
     <Compile Include="shengchanpaishan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DeleteDevice.resx">
       <DependentUpon>DeleteDevice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Red_Green_zhifan_Button.resx">
+      <DependentUpon>Red_Green_zhifan_Button.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="shengchanpaishan.resx">
       <DependentUpon>shengchanpaishan.cs</DependentUpon>

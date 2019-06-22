@@ -49,6 +49,7 @@ namespace YinRan2020
                     array[count] = (byte)sp.ReadByte();
                     count++;
                     if (array[0] == 0) break;
+                    if (array[1] >= 0x80) break;
                     if (count > array[2] + 4 && (array[1] == 3 || array[1] == 1))
                     {
                         break;
@@ -84,6 +85,18 @@ namespace YinRan2020
 
 
                 Device_Data.chejian3_com1_jicun[array[0], start_address] = array[4];
+
+                if(array[4]==0)
+                {
+                    Device_Data.chejian3_com1_R[array[0], start_address] = false;
+                }
+                else
+                {
+                    Device_Data.chejian3_com1_R[array[0], start_address] = true;
+                }
+
+                
+
                
             }
             if (array[1] == 6)
@@ -97,11 +110,13 @@ namespace YinRan2020
             }
             if (array[1] == 16)
             {
-                //Detail.step = Detail.step + 1;
-                //if (array[2] == Detail.xiazai_data1 / 256 && array[3] == Detail.xiazai_data1 % 256) Detail.step = 1;
-                //if (array[2] == Detail.xiazai_data2 / 256 && array[3] == Detail.xiazai_data2 % 256) Detail.step = 2;
-                //if (array[2] == Detail.xiazai_data3 / 256 && array[3] == Detail.xiazai_data3 % 256) Detail.step = 3;
-                //if (array[2] == Detail.xiazai_data4 / 256 && array[3] == Detail.xiazai_data4 % 256) Detail.step = 4;
+                Red_Green_zhifan_Button.step = Red_Green_zhifan_Button.step + 1;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data1 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data1 % 256) Red_Green_zhifan_Button.step = 1;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data2 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data2 % 256) Red_Green_zhifan_Button.step = 2;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data3 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data3 % 256) Red_Green_zhifan_Button.step = 3;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data4 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data4 % 256) Red_Green_zhifan_Button.step = 4;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data5 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data5 % 256) Red_Green_zhifan_Button.step = 5;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data6 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data6 % 256) Red_Green_zhifan_Button.step = 6;
             }
             if (send_machine_num == array[0] && send_gongnengma == array[1] && send_is == true && receive_is == false)
             {
@@ -133,7 +148,7 @@ namespace YinRan2020
                     //读取R的值
                     int highaddress = send_address_high;
                     int lowaddress = send_address_low;
-                    int start_address = (256 * highaddress + lowaddress) / 8;
+                    int start_address = (256 * highaddress + lowaddress - 0x800) / 8;
 
                     int data_num = array[2];
                     for (int i = 0; i < data_num; i++)
@@ -158,7 +173,7 @@ namespace YinRan2020
                                 Device_Data.chejian3_com1_R[array[0], start_address / 2 * 16 + i / 2 * 16 + j] = true;
                             }
                             
-                            //RealTime_data.R_jicun[array[0], start_address / 2 * 16 + i / 2 * 16 + j] = int.Parse(erjinzhi.Substring(15 - j, 1));
+                            
                         }
                     }
                 }

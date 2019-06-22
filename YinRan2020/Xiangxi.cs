@@ -200,6 +200,20 @@ namespace YinRan2020
             myLabel_Red_Yellow9.Device_Name = name;
             myLabel_Red_Yellow9.init();
 
+            red_Green_zhifan_Button_shouzidong.Device_Name = name;
+            red_Green_zhifan_Button_shouzidong.init();
+
+            red_Green_zhifan_Button1.Device_Name = name;
+            red_Green_zhifan_Button1.init();
+
+            red_Green_zhifan_Button2.Device_Name = name;
+            red_Green_zhifan_Button2.init();
+
+            red_Green_zhifan_Button3.Device_Name = name;
+            red_Green_zhifan_Button3.init();
+
+            red_Green_zhifan_Button4.Device_Name = name;
+            red_Green_zhifan_Button4.init();
         }
 
         private void ReFlash_Gongyi_Fanal(string gongyi_name)
@@ -249,6 +263,16 @@ namespace YinRan2020
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void red_Green_zhifan_Button_shouzidong_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void red_Green_zhifan_Button1_Load(object sender, EventArgs e)
         {
 
         }

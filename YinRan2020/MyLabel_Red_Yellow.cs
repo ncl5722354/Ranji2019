@@ -40,7 +40,9 @@ namespace YinRan2020
             排气,
             主泵,
             循环,
-            搅拌
+            搅拌,
+            手自动,
+            料手自动
         };
 
 
@@ -444,6 +446,11 @@ namespace YinRan2020
             Thread mythread = new Thread(thread);
             mythread.Start();
             label1.BackColor = show_color;
+        }
+
+        private void MyLabel_Red_Yellow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

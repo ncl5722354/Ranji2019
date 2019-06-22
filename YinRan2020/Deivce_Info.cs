@@ -23,12 +23,12 @@ namespace YinRan2020
         ///  六个串口
         /// </summary>
 
-        port_moudbus modbus1 = new port_moudbus();
-        port_moudbus modbus2 = new port_moudbus();
-        port_moudbus modbus3 = new port_moudbus();
-        port_moudbus modbus4 = new port_moudbus();
-        port_moudbus modbus5 = new port_moudbus();
-        port_moudbus modbus6 = new port_moudbus();
+        public  static port_moudbus modbus1 = new port_moudbus();
+        public static  port_moudbus modbus2 = new port_moudbus();
+        public static  port_moudbus modbus3 = new port_moudbus();
+        public static  port_moudbus modbus4 = new port_moudbus();
+        public static  port_moudbus modbus5 = new port_moudbus();
+        public static  port_moudbus modbus6 = new port_moudbus();
 
         public Deivce_Info()
         {

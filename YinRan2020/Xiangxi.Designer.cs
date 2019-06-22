@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.textBox_danhao = new System.Windows.Forms.TextBox();
             this.button_read_gongyi = new System.Windows.Forms.Button();
             this.label_title = new System.Windows.Forms.Label();
@@ -90,11 +90,19 @@
             this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.red_Green_zhifan_Button4 = new YinRan2020.Red_Green_zhifan_Button();
+            this.red_Green_zhifan_Button3 = new YinRan2020.Red_Green_zhifan_Button();
+            this.red_Green_zhifan_Button2 = new YinRan2020.Red_Green_zhifan_Button();
+            this.red_Green_zhifan_Button1 = new YinRan2020.Red_Green_zhifan_Button();
+            this.red_Green_zhifan_Button_shouzidong = new YinRan2020.Red_Green_zhifan_Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.progressBar_down = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_exe)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_danhao
@@ -149,21 +157,21 @@
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chart1.BorderSkin.BorderWidth = 3;
-            chartArea3.AxisX.LabelStyle.Format = "“yyyy-MM-dd HH:mm:ss”";
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            legend3.Title = "温度曲线";
-            this.chart1.Legends.Add(legend3);
+            chartArea1.AxisX.LabelStyle.Format = "“yyyy-MM-dd HH:mm:ss”";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            legend1.Title = "温度曲线";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(12, 406);
             this.chart1.Name = "chart1";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Color = System.Drawing.Color.Red;
-            series3.Legend = "Legend1";
-            series3.Name = "机缸温度";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            this.chart1.Series.Add(series3);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Red;
+            series1.Legend = "Legend1";
+            series1.Name = "机缸温度";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(1362, 160);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
@@ -438,7 +446,7 @@
             this.dataGridView_craft.Location = new System.Drawing.Point(648, 24);
             this.dataGridView_craft.Name = "dataGridView_craft";
             this.dataGridView_craft.RowTemplate.Height = 23;
-            this.dataGridView_craft.Size = new System.Drawing.Size(454, 330);
+            this.dataGridView_craft.Size = new System.Drawing.Size(434, 330);
             this.dataGridView_craft.TabIndex = 9;
             // 
             // Column9
@@ -586,7 +594,7 @@
             this.Column34,
             this.Column35,
             this.Column36});
-            this.dataGridView_exe.Location = new System.Drawing.Point(1108, 24);
+            this.dataGridView_exe.Location = new System.Drawing.Point(1088, 24);
             this.dataGridView_exe.Name = "dataGridView_exe";
             this.dataGridView_exe.RowTemplate.Height = 23;
             this.dataGridView_exe.Size = new System.Drawing.Size(270, 330);
@@ -625,16 +633,101 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.progressBar_down);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.red_Green_zhifan_Button4);
+            this.panel2.Controls.Add(this.red_Green_zhifan_Button3);
+            this.panel2.Controls.Add(this.red_Green_zhifan_Button2);
+            this.panel2.Controls.Add(this.red_Green_zhifan_Button1);
+            this.panel2.Controls.Add(this.red_Green_zhifan_Button_shouzidong);
             this.panel2.Location = new System.Drawing.Point(484, 572);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(404, 157);
             this.panel2.TabIndex = 11;
             // 
+            // red_Green_zhifan_Button4
+            // 
+            this.red_Green_zhifan_Button4.Device_Name = "";
+            this.red_Green_zhifan_Button4.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button4.Location = new System.Drawing.Point(89, 45);
+            this.red_Green_zhifan_Button4.Mode = 0;
+            this.red_Green_zhifan_Button4.Name = "red_Green_zhifan_Button4";
+            this.red_Green_zhifan_Button4.Size = new System.Drawing.Size(80, 39);
+            this.red_Green_zhifan_Button4.TabIndex = 4;
+            this.red_Green_zhifan_Button4.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button4.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.主泵;
+            // 
+            // red_Green_zhifan_Button3
+            // 
+            this.red_Green_zhifan_Button3.Device_Name = "";
+            this.red_Green_zhifan_Button3.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button3.Location = new System.Drawing.Point(89, 3);
+            this.red_Green_zhifan_Button3.Mode = 0;
+            this.red_Green_zhifan_Button3.Name = "red_Green_zhifan_Button3";
+            this.red_Green_zhifan_Button3.Size = new System.Drawing.Size(80, 39);
+            this.red_Green_zhifan_Button3.TabIndex = 3;
+            this.red_Green_zhifan_Button3.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button3.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.暂停;
+            // 
+            // red_Green_zhifan_Button2
+            // 
+            this.red_Green_zhifan_Button2.Device_Name = "";
+            this.red_Green_zhifan_Button2.False_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button2.Location = new System.Drawing.Point(3, 90);
+            this.red_Green_zhifan_Button2.Mode = 1;
+            this.red_Green_zhifan_Button2.Name = "red_Green_zhifan_Button2";
+            this.red_Green_zhifan_Button2.Size = new System.Drawing.Size(80, 39);
+            this.red_Green_zhifan_Button2.TabIndex = 2;
+            this.red_Green_zhifan_Button2.True_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button2.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.停止;
+            // 
+            // red_Green_zhifan_Button1
+            // 
+            this.red_Green_zhifan_Button1.Device_Name = "";
+            this.red_Green_zhifan_Button1.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button1.Location = new System.Drawing.Point(3, 45);
+            this.red_Green_zhifan_Button1.Mode = 1;
+            this.red_Green_zhifan_Button1.Name = "red_Green_zhifan_Button1";
+            this.red_Green_zhifan_Button1.Size = new System.Drawing.Size(80, 39);
+            this.red_Green_zhifan_Button1.TabIndex = 1;
+            this.red_Green_zhifan_Button1.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button1.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.启动;
+            this.red_Green_zhifan_Button1.Load += new System.EventHandler(this.red_Green_zhifan_Button1_Load);
+            // 
+            // red_Green_zhifan_Button_shouzidong
+            // 
+            this.red_Green_zhifan_Button_shouzidong.Device_Name = "";
+            this.red_Green_zhifan_Button_shouzidong.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button_shouzidong.Location = new System.Drawing.Point(3, 3);
+            this.red_Green_zhifan_Button_shouzidong.Mode = 0;
+            this.red_Green_zhifan_Button_shouzidong.Name = "red_Green_zhifan_Button_shouzidong";
+            this.red_Green_zhifan_Button_shouzidong.Size = new System.Drawing.Size(80, 39);
+            this.red_Green_zhifan_Button_shouzidong.TabIndex = 0;
+            this.red_Green_zhifan_Button_shouzidong.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button_shouzidong.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.手自动;
+            this.red_Green_zhifan_Button_shouzidong.Load += new System.EventHandler(this.red_Green_zhifan_Button_shouzidong_Load);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(203, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "下载进度";
+            // 
+            // progressBar_down
+            // 
+            this.progressBar_down.Location = new System.Drawing.Point(205, 45);
+            this.progressBar_down.Name = "progressBar_down";
+            this.progressBar_down.Size = new System.Drawing.Size(169, 23);
+            this.progressBar_down.TabIndex = 6;
+            // 
             // Xiangxi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1300, 788);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dataGridView_exe);
             this.Controls.Add(this.dataGridView_craft);
@@ -653,6 +746,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_exe)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -719,5 +814,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
         private System.Windows.Forms.Panel panel2;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button_shouzidong;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button3;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button2;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button1;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar_down;
     }
 }
