@@ -5,11 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 using ViewConfig;
 using SqlConnect;
 using System.IO.Ports;
+using Communication;
 
 namespace YinRan2020
 {
@@ -17,6 +18,17 @@ namespace YinRan2020
     {
         private string chejian_name;
         SerialPort sp_test = new SerialPort();                               // 串口检测单位
+
+        /// <summary>
+        ///  六个串口
+        /// </summary>
+
+        public  static port_moudbus modbus1 = new port_moudbus();
+        public static  port_moudbus modbus2 = new port_moudbus();
+        public static  port_moudbus modbus3 = new port_moudbus();
+        public static  port_moudbus modbus4 = new port_moudbus();
+        public static  port_moudbus modbus5 = new port_moudbus();
+        public static  port_moudbus modbus6 = new port_moudbus();
 
         public Deivce_Info()
         {
@@ -78,6 +90,15 @@ namespace YinRan2020
             comboBox_jiaoyanwei.Items.Add("none");
             comboBox_jiaoyanwei.Items.Add("odd");
             comboBox_jiaoyanwei.Items.Add("even");
+
+            modbus1.com_num = 1;
+            modbus2.com_num = 2;
+            modbus3.com_num = 3;
+            modbus4.com_num = 4;
+            modbus5.com_num = 5;
+            modbus6.com_num = 6;
+
+            Read_All_Com();
         }
 
         public void Set_Chenjian(string name)
@@ -231,6 +252,76 @@ namespace YinRan2020
             }
             catch { panel_com_info.Visible = false; }
         }
+
+        public void Read_All_Com()
+        {
+            for (int i = 1; i <= 6; i++)
+            {
+                try
+                {
+                    string where_cmd = "com_name='" + "串口" + i.ToString() + "三车间'";
+
+                    DataTable dt = MainView.builder.Select_Table("com_config", where_cmd);
+
+                    DataRow dr = dt.Rows[0];
+                    if (i == 1)
+                    {
+                        try
+                        {
+                            modbus1.sp_config(dr[1].ToString(), dr[2].ToString(), dr[5].ToString(), dr[3].ToString(), dr[4].ToString());
+                        }
+                        catch { }
+                       
+                    }
+                    if (i == 2)
+                    {
+                        try
+                        {
+                            modbus2.sp_config(dr[1].ToString(), dr[2].ToString(), dr[5].ToString(), dr[3].ToString(), dr[4].ToString());
+                        }
+                        catch { }
+
+                    }
+                    if (i == 3)
+                    {
+                        try
+                        {
+                            modbus3.sp_config(dr[1].ToString(), dr[2].ToString(), dr[5].ToString(), dr[3].ToString(), dr[4].ToString());
+                        }
+                        catch { }
+
+                    }
+                    if (i == 4)
+                    {
+                        try
+                        {
+                            modbus4.sp_config(dr[1].ToString(), dr[2].ToString(), dr[5].ToString(), dr[3].ToString(), dr[4].ToString());
+                        }
+                        catch { }
+
+                    }
+                    if (i == 5)
+                    {
+                        try
+                        {
+                            modbus5.sp_config(dr[1].ToString(), dr[2].ToString(), dr[5].ToString(), dr[3].ToString(), dr[4].ToString());
+                        }
+                        catch { }
+
+                    }
+                    if (i == 6)
+                    {
+                        try
+                        {
+                            modbus6.sp_config(dr[1].ToString(), dr[2].ToString(), dr[5].ToString(), dr[3].ToString(), dr[4].ToString());
+                        }
+                        catch { }
+
+                    }
+                }
+                catch { }
+            }
+        }
         public  void Read_Device_Info_Form_DataBase()
         {
             // 从数据库里面读取设备数据
@@ -377,6 +468,114 @@ namespace YinRan2020
             catch { }
         }
 
-           
+        private void timer_send1_Tick(object sender, EventArgs e)
+        {
+            if (modbus1.sp.IsOpen == true)
+            {
+                if (modbus1.cmd_num > 11)
+                {
+                    modbus1.cmd_num = 1;
+                    modbus1.send_machine_num = modbus1.send_machine_num + 1;
+                }
+                if (modbus1.send_machine_num > 70) modbus1.send_machine_num = 1;
+                if (modbus1.send_is == false && modbus1.receive_is == false)
+                {
+                    //串口1没有数据发送 发送数据
+                    //com1_biaozhi.BackColor = System.Drawing.Color.Red;
+                    string where_cmd = "Address='" + modbus1.send_machine_num.ToString() + "' and Com='串口1'";
+                    DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                    while (dt==null || dt.Rows.Count==0)
+                    {
+                        modbus1.send_machine_num = modbus1.send_machine_num + 1; //换下一号
+                        if (modbus1.send_machine_num > 70)
+                        {
+                            modbus1.send_machine_num = 1;
+                            return;
+                        }
+                        where_cmd = "Address='" + modbus1.send_machine_num.ToString() + "' and Com='串口1'";
+                        dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                    }
+
+                    string cmd = MainView.inifile.IniReadValue("CMD", "cmd" + modbus1.cmd_num);
+                    cmd = modbus1.send_machine_num.ToString("X").PadLeft(2, '0') + cmd;
+                    modbus1.send_address_high = gethighaddress(cmd);
+                    modbus1.send_address_low = getlowaddress(cmd);
+                    modbus1.send_gongnengma = getgongnengma(cmd);
+                    if (modbus1.xunjian_is == true)
+                    {
+                        //modbus1.sp.DiscardInBuffer();
+                        modbus1.send_data(cmd);
+                        modbus1.time_out = 0;
+                        modbus1.send_is = true;
+                    }
+                }
+                if (modbus1.send_is == true && modbus1.receive_is == false)
+                {
+                    modbus1.time_out = modbus1.time_out + 1;
+                    if (modbus1.time_out > 50)
+                    {
+                        //超时了
+                        modbus1.send_is = false;
+
+                        modbus1.send_machine_num = modbus1.send_machine_num + 1;
+                        modbus1.cmd_num = 1;
+
+                    }
+                }
+                if (modbus1.send_is == true && modbus1.receive_is == true)
+                {
+                    modbus1.cmd_num = modbus1.cmd_num + 1;
+                    modbus1.time_out = 0;
+                    modbus1.send_is = false;
+                    modbus1.receive_is = false;
+                }
+            }
+        }
+        private int gethighaddress(string cmd)
+        {
+            // 从命令里面获得高位地址
+            int highaddress = 0;
+            try
+            {
+                string address_string = cmd.Substring(4, 4);
+                int address_int = Convert.ToInt32(address_string, 16);
+                highaddress = address_int / 256;
+            }
+            catch
+            {
+            }
+            return highaddress;
+        }
+
+        private int getlowaddress(string cmd)
+        {
+            // 从命令里面获得低位地址
+            int lowaddress = 0;
+            try
+            {
+                string address_string = cmd.Substring(4, 4);
+                int address_int = Convert.ToInt32(address_string, 16);
+                lowaddress = address_int % 256;
+            }
+            catch
+            {
+            }
+            return lowaddress;
+        }
+
+        private int getgongnengma(string cmd)
+        {
+            // 从命令里面获得功能码
+            int gongnengma = 0;
+            try
+            {
+                gongnengma = int.Parse(cmd.Substring(2, 2));
+            }
+            catch
+            {
+            }
+            return gongnengma;
+        }
+
     }
 }

@@ -102,3 +102,12 @@ D:\程序\YinRan2019\voice\obj\Debug\voice.voiceControls.resources
 D:\程序\YinRan2019\voice\obj\Debug\voice.csproj.GenerateResource.Cache
 D:\程序\YinRan2019\voice\obj\Debug\voice.dll
 D:\程序\YinRan2019\voice\obj\Debug\voice.pdb
+D:\程序\Ranji2019-master\voice\bin\Debug\voice.dll
+D:\程序\Ranji2019-master\voice\bin\Debug\voice.pdb
+D:\程序\Ranji2019-master\voice\bin\Debug\voice.dll.CodeAnalysisLog.xml
+D:\程序\Ranji2019-master\voice\bin\Debug\voice.dll.lastcodeanalysissucceeded
+D:\程序\Ranji2019-master\voice\obj\Debug\voice.csprojResolveAssemblyReference.cache
+D:\程序\Ranji2019-master\voice\obj\Debug\voice.voiceControls.resources
+D:\程序\Ranji2019-master\voice\obj\Debug\voice.csproj.GenerateResource.Cache
+D:\程序\Ranji2019-master\voice\obj\Debug\voice.dll
+D:\程序\Ranji2019-master\voice\obj\Debug\voice.pdb

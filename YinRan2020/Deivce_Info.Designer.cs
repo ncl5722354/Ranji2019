@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deivce_Info));
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("串口1");
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("串口2");
             System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("串口3");
@@ -43,10 +44,12 @@
             treeNode5,
             treeNode6});
             System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("数据设置");
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Deivce_Info));
             this.label_title = new System.Windows.Forms.Label();
             this.panel_tool = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.panel_com_info = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -69,10 +72,13 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_dataset = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
+            this.timer_send1 = new System.Windows.Forms.Timer(this.components);
+            this.timer_send2 = new System.Windows.Forms.Timer(this.components);
+            this.timer_send3 = new System.Windows.Forms.Timer(this.components);
+            this.timer_send4 = new System.Windows.Forms.Timer(this.components);
+            this.timer_send5 = new System.Windows.Forms.Timer(this.components);
+            this.timer_send6 = new System.Windows.Forms.Timer(this.components);
             this.myDataGridView1 = new YinRan2020.MyDataGridView();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.panel_tool.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel_com_info.SuspendLayout();
@@ -113,6 +119,37 @@
             this.toolStrip1.Size = new System.Drawing.Size(1224, 48);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 45);
+            this.toolStripButton1.Text = "添加设备";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 45);
+            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.ToolTipText = "删除";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = global::YinRan2020.Properties.Resources.xiugai;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(23, 45);
+            this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // treeView1
             // 
@@ -350,6 +387,36 @@
             this.label15.TabIndex = 0;
             this.label15.Text = "数据设置";
             // 
+            // timer_send1
+            // 
+            this.timer_send1.Enabled = true;
+            this.timer_send1.Interval = 20;
+            this.timer_send1.Tick += new System.EventHandler(this.timer_send1_Tick);
+            // 
+            // timer_send2
+            // 
+            this.timer_send2.Enabled = true;
+            this.timer_send2.Interval = 20;
+            // 
+            // timer_send3
+            // 
+            this.timer_send3.Enabled = true;
+            this.timer_send3.Interval = 20;
+            // 
+            // timer_send4
+            // 
+            this.timer_send4.Enabled = true;
+            this.timer_send4.Interval = 20;
+            // 
+            // timer_send5
+            // 
+            this.timer_send5.Enabled = true;
+            this.timer_send5.Interval = 20;
+            // 
+            // timer_send6
+            // 
+            this.timer_send6.Enabled = true;
+            // 
             // myDataGridView1
             // 
             this.myDataGridView1.Location = new System.Drawing.Point(3, 3);
@@ -357,42 +424,11 @@
             this.myDataGridView1.Size = new System.Drawing.Size(897, 712);
             this.myDataGridView1.TabIndex = 0;
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 45);
-            this.toolStripButton1.Text = "添加设备";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 45);
-            this.toolStripButton2.Text = "toolStripButton2";
-            this.toolStripButton2.ToolTipText = "删除";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = global::YinRan2020.Properties.Resources.xiugai;
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 45);
-            this.toolStripButton3.Text = "toolStripButton3";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
-            // 
             // Deivce_Info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1301, 742);
+            this.ClientSize = new System.Drawing.Size(1300, 742);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_com_info);
             this.Controls.Add(this.treeView1);
@@ -445,5 +481,11 @@
         private System.Windows.Forms.Panel panel_dataset;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.Timer timer_send1;
+        private System.Windows.Forms.Timer timer_send2;
+        private System.Windows.Forms.Timer timer_send3;
+        private System.Windows.Forms.Timer timer_send4;
+        private System.Windows.Forms.Timer timer_send5;
+        private System.Windows.Forms.Timer timer_send6;
     }
 }

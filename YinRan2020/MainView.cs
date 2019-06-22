@@ -5,9 +5,9 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
-using ViewConfig;  
+using ViewConfig;
 using SqlConnect;
 using FileOperation;
 using System.Runtime.InteropServices;
@@ -24,8 +24,13 @@ namespace YinRan2020
         
         zongmao zongmao_view = new zongmao();                     // 总貌窗体
         Deivce_Info device_info = new Deivce_Info();              // 设备管理窗体
-      
+        
         Craft_Config gongyi_edit_view = new Craft_Config();         // 工艺编辑
+        shengchanpaishan shengchan_view = new shengchanpaishan();   // 生产排产
+
+        Xiangxi xiangxi_view = new Xiangxi();                       // 详细页面
+
+
         public static string Connect_Chejian_Num = "";        //连接的车间名称  本软件连接的车间名称,
         public static IniFile inifile = new IniFile("D:\\config\\YinRan2019config.ini");
 
@@ -54,17 +59,18 @@ namespace YinRan2020
         /// 定义数据库
         /// </summary>
         /// 
-        public static SQL_Connect_Builder builder = new SQL_Connect_Builder(".", "YinRan2019", 1, 10000);             
+        public static SQL_Connect_Builder builder = new SQL_Connect_Builder(".", "YinRan2019", 1, 100000);             
         public MainView()
         {
             InitializeComponent();
             init_view();
             init_database();
-            Connect_Chejian_Num = inifile.IniReadValue("连接", "车间号");              // 读取本机的车间号
+            Connect_Chejian_Num = inifile.IniReadValue("连接", "车间号");                    // 读取本机的车间号
             if (Connect_Chejian_Num == "")
             {
                 inifile.IniWriteValue("连接", "车间号", "1");
             }
+
         }
 
         private void init_database()
@@ -152,16 +158,32 @@ namespace YinRan2020
             create_gongyi[8] = new CreateSqlValueType("nvarchar(50)", "value8_name");
             create_gongyi[9] = new CreateSqlValueType("nvarchar(50)", "value9_name");
             create_gongyi[10] = new CreateSqlValueType("nvarchar(50)", "value10_name");
-            create_gongyi[11] = new CreateSqlValueType("nvarchar(max)", "beizhu");
+            create_gongyi[11] = new CreateSqlValueType("nvarchar(255)", "beizhu");
 
             builder.Create_Table("Craft_Name_Table", create_gongyi);
-            //====================================================
+
+
+
+            //=============================================================================
 
             // 工艺代码表
             CreateSqlValueType[] create_craft_code = new CreateSqlValueType[2];
             create_craft_code[0] = new CreateSqlValueType("nvarchar(50)", "Craft_Name", true);
             create_craft_code[1] = new CreateSqlValueType("nvarchar(50)", "Craft_Code");
             builder.Create_Table("Craft_Name_Code", create_craft_code);
+
+
+            //===============================================================================
+
+            // 生产排产
+            CreateSqlValueType[] shenchanpaichan_crate_sql_type = new CreateSqlValueType[3];
+            shenchanpaichan_crate_sql_type[0] = new CreateSqlValueType("nvarchar(50)", "ID", true);
+            shenchanpaichan_crate_sql_type[1] = new CreateSqlValueType("nvarchar(50)", "state");
+            shenchanpaichan_crate_sql_type[2] = new CreateSqlValueType("nvarchar(50)","工艺名");
+            builder.Create_Table("Shengchanpaichan", shenchanpaichan_crate_sql_type);
+
+
+            //===============================================================================
         }
 
         private void init_view()
@@ -177,6 +199,9 @@ namespace YinRan2020
             ViewCaoZuo.Object_Position(0.01, 0, 1, 0.05, label_title, this.Controls);
 
             ViewCaoZuo.Object_Position(0.12, 0.06, 0.85, 0.84, panel_bg, this.Controls);
+
+            zongmao_view.Click_Yiliu += new EventHandler(Show_xiangxi_Yiliu);
+            zongmao_view.Click_Qiliu += new EventHandler(Show_xiangxi_Qiliu);
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -238,6 +263,22 @@ namespace YinRan2020
                     Show_Chuangti(gongyi_edit_view);
                     gongyi_edit_view.Set_Title("三车间");
                     break;
+                
+                // 一车间排产
+                case "shengchan_1chejian":
+                    Show_Chuangti(shengchan_view);
+                    shengchan_view.Set_Title("一车间排产");
+                    break;
+                // 二车间排产
+                case "shengchan_2chejian":
+                    Show_Chuangti(shengchan_view);
+                    shengchan_view.Set_Title("二车间排产");
+                    break;
+                // 三车间排产
+                case "shengchan_3chejian":
+                    Show_Chuangti(shengchan_view);
+                    shengchan_view.Set_Title("三车间排产");
+                    break;
             }
 
         }
@@ -257,6 +298,22 @@ namespace YinRan2020
         private void timer1_Tick(object sender, EventArgs e)
         {
             ClearMemory();
+        }
+
+        private void Show_xiangxi_Yiliu(object sender,EventArgs e)
+        {
+            Show_Chuangti(xiangxi_view);
+            xiangxi_view.Set_Yiliu();
+            YiLiuGang_Item item = (YiLiuGang_Item)sender;
+            xiangxi_view.Set_Title(item.JiGang_Name);
+        }
+
+        private void Show_xiangxi_Qiliu(object sender,EventArgs e)
+        {
+            Show_Chuangti(xiangxi_view);
+            xiangxi_view.Set_Qiliu();
+            QiLiuGang item = (QiLiuGang)sender;
+            xiangxi_view.Set_Title(item.JiGang_Name);
         }
     }
 }

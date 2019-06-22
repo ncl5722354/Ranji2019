@@ -5,15 +5,17 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 using System.Windows.Forms;
 using ViewConfig;
+
 
 namespace YinRan2020
 {
     public partial class zongmao : Form
     {
-
+        public event EventHandler Click_Yiliu = null;
+        public event EventHandler Click_Qiliu = null;
         public string CheJian_Name="";
         public zongmao()
         {
@@ -69,6 +71,7 @@ namespace YinRan2020
                     if (dr[3].ToString() == "溢流缸")
                     {
                         YiLiuGang_Item item = new YiLiuGang_Item();
+                        item.MyClick += new EventHandler(Click_Yiliu);
                         item.Set_Title(dr[0].ToString());
                         ViewCaoZuo.Object_Position(0.01 + (j % 3) * 0.3, 0.01 + (j / 3) * 0.3, 0.3, 0.3, item, tabControl1.TabPages[i].Controls);
                     }
@@ -77,17 +80,21 @@ namespace YinRan2020
                     {
                         QiLiuGang item = new QiLiuGang();
                         item.Set_Title(dr[0].ToString());
+                        item.MyClick += new EventHandler(Click_Qiliu);
                         ViewCaoZuo.Object_Position(0.01 + (j % 3) * 0.3, 0.01 + (j / 3) * 0.3, 0.3, 0.3, item, tabControl1.TabPages[i].Controls);
                     }
                 }
             }
-            
-
-           
-
-           
         }
 
+        private void Show_Yiliu(object sender,EventArgs e)
+        {
+            Click_Yiliu(sender, e);
+        }
 
+        private void Show_Qiliu(object sender,EventArgs e)
+        {
+            Click_Qiliu(sender, e);
+        }
     }
 }

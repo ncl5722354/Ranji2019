@@ -1,4 +1,4 @@
-D:\新版立体货架\Litihuojia\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
+﻿D:\新版立体货架\Litihuojia\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
 D:\新版立体货架\Litihuojia\ViewConfig\bin\Debug\ViewConfig.dll
 D:\新版立体货架\Litihuojia\ViewConfig\bin\Debug\ViewConfig.pdb
 D:\新版立体货架\Litihuojia\ViewConfig\obj\Debug\ViewConfig.dll
@@ -97,16 +97,14 @@ D:\程序\组态控制软件\组态与上位机软件\上位机系统\ViewConfig
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\ViewConfig\obj\Debug\ViewConfig.dll
 D:\程序\组态控制软件\组态与上位机软件\上位机系统\ViewConfig\obj\Debug\ViewConfig.pdb
-<<<<<<< HEAD
-D:\Ranji2019\ViewConfig\bin\Debug\ViewConfig.dll
-D:\Ranji2019\ViewConfig\bin\Debug\ViewConfig.pdb
-D:\Ranji2019\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
-D:\Ranji2019\ViewConfig\obj\Debug\ViewConfig.dll
-D:\Ranji2019\ViewConfig\obj\Debug\ViewConfig.pdb
-=======
->>>>>>> faf0363c8b660ee6bed408897fdc14387bfc404c
+D:\程序\Ranji2019-master\ViewConfig\bin\Debug\ViewConfig.dll
+D:\程序\Ranji2019-master\ViewConfig\bin\Debug\ViewConfig.pdb
+D:\程序\Ranji2019-master\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
+D:\程序\Ranji2019-master\ViewConfig\obj\Debug\ViewConfig.dll
+D:\程序\Ranji2019-master\ViewConfig\obj\Debug\ViewConfig.pdb
 D:\程序\YinRan2019\ViewConfig\bin\Debug\ViewConfig.dll
 D:\程序\YinRan2019\ViewConfig\bin\Debug\ViewConfig.pdb
 D:\程序\YinRan2019\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
 D:\程序\YinRan2019\ViewConfig\obj\Debug\ViewConfig.dll
 D:\程序\YinRan2019\ViewConfig\obj\Debug\ViewConfig.pdb
+>>>>>>> b466f3af229b9bbc78d3eb337c851bf1ea386853

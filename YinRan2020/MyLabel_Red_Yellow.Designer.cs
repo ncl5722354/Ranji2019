@@ -56,6 +56,7 @@
             this.Controls.Add(this.label1);
             this.Name = "MyLabel_Red_Yellow";
             this.Size = new System.Drawing.Size(199, 65);
+            this.Load += new System.EventHandler(this.MyLabel_Red_Yellow_Load);
             this.Resize += new System.EventHandler(this.MyLabel_Red_Yellow_Resize);
             this.ResumeLayout(false);
 
