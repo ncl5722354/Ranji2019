@@ -309,8 +309,8 @@ namespace YinRan2020
                     DataRow dr = dt.Rows[0];
                     Red_Green_zhifan_Button.down_data3[i] = int.Parse(dr[1].ToString());
                     Red_Green_zhifan_Button.down_data4[i] = int.Parse(dataGridView_exe[3, i].Value.ToString());
-                    Red_Green_zhifan_Button.down_date5[i] = int.Parse(dataGridView_exe[4, i].Value.ToString());
-                    Red_Green_zhifan_Button.down_date6[i] = i;
+                    Red_Green_zhifan_Button.down_data5[i] = int.Parse(dataGridView_exe[4, i].Value.ToString());
+                    Red_Green_zhifan_Button.down_data6[i] = i;
                 }
             }
             catch { throw; }

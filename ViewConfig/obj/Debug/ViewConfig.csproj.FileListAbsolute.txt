@@ -1,4 +1,4 @@
-﻿D:\新版立体货架\Litihuojia\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
+D:\新版立体货架\Litihuojia\ViewConfig\obj\Debug\ViewConfig.csprojResolveAssemblyReference.cache
 D:\新版立体货架\Litihuojia\ViewConfig\bin\Debug\ViewConfig.dll
 D:\新版立体货架\Litihuojia\ViewConfig\bin\Debug\ViewConfig.pdb
 D:\新版立体货架\Litihuojia\ViewConfig\obj\Debug\ViewConfig.dll

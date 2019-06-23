@@ -110,13 +110,30 @@ namespace YinRan2020
             }
             if (array[1] == 16)
             {
-                Red_Green_zhifan_Button.step = Red_Green_zhifan_Button.step + 1;
+                //Red_Green_zhifan_Button.step = Red_Green_zhifan_Button.step + 1;
                 if (array[2] == Red_Green_zhifan_Button.xiazai_data1 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data1 % 256) Red_Green_zhifan_Button.step = 1;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data11 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data11 % 256) Red_Green_zhifan_Button.step = 11;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data12 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data12 % 256) Red_Green_zhifan_Button.step = 12;
+
                 if (array[2] == Red_Green_zhifan_Button.xiazai_data2 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data2 % 256) Red_Green_zhifan_Button.step = 2;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data21 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data21 % 256) Red_Green_zhifan_Button.step = 21;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data22 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data22 % 256) Red_Green_zhifan_Button.step = 22;
+
                 if (array[2] == Red_Green_zhifan_Button.xiazai_data3 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data3 % 256) Red_Green_zhifan_Button.step = 3;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data31 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data31 % 256) Red_Green_zhifan_Button.step = 31;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data32 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data32 % 256) Red_Green_zhifan_Button.step = 32;
+
                 if (array[2] == Red_Green_zhifan_Button.xiazai_data4 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data4 % 256) Red_Green_zhifan_Button.step = 4;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data41 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data41 % 256) Red_Green_zhifan_Button.step = 41;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data42 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data42 % 256) Red_Green_zhifan_Button.step = 42;
+
                 if (array[2] == Red_Green_zhifan_Button.xiazai_data5 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data5 % 256) Red_Green_zhifan_Button.step = 5;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data51 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data51 % 256) Red_Green_zhifan_Button.step = 51;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data52 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data52 % 256) Red_Green_zhifan_Button.step = 52;
+
                 if (array[2] == Red_Green_zhifan_Button.xiazai_data6 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data6 % 256) Red_Green_zhifan_Button.step = 6;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data61 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data61 % 256) Red_Green_zhifan_Button.step = 61;
+                if (array[2] == Red_Green_zhifan_Button.xiazai_data62 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data6 % 256) Red_Green_zhifan_Button.step = 62;
             }
             if (send_machine_num == array[0] && send_gongnengma == array[1] && send_is == true && receive_is == false)
             {
