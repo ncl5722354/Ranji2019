@@ -98,6 +98,7 @@ namespace YinRan2020
                     }
 
                     all_table.Add(dt_xiangxi);
+                }
 
                     foreach (DataTable dt1 in all_table)
                     {
@@ -125,7 +126,7 @@ namespace YinRan2020
                     }
 
                 }
-            }
+            
             catch { }
         }
 
@@ -275,6 +276,44 @@ namespace YinRan2020
         private void red_Green_zhifan_Button1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void red_Green_zhifan_Button1_Click(object sender, EventArgs e)
+        {
+            //dataGridView_exe
+            
+        }
+
+        private void red_Green_zhifan_Button1_MouseDown(object sender, MouseEventArgs e)
+        {
+           
+        }
+
+        private void red_Green_zhifan_Button1_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void red_Green_zhifan_Button1_Qidong(object sender, EventArgs e)
+        {
+            Red_Green_zhifan_Button.datacount = dataGridView_exe.Rows.Count;
+            try
+            {
+                for (int i = 0; i < dataGridView_exe.Rows.Count; i++)
+                {
+                    Red_Green_zhifan_Button.down_data1[i] = int.Parse(dataGridView_exe[0, i].Value.ToString());
+                    Red_Green_zhifan_Button.down_data2[i] = int.Parse(dataGridView_exe[1, i].Value.ToString());
+
+                    string where_cmd = "Craft_Name='" + dataGridView_exe[2, i].Value.ToString() + "'";
+                    DataTable dt = MainView.builder.Select_Table("Craft_Name_Code", where_cmd);
+                    DataRow dr = dt.Rows[0];
+                    Red_Green_zhifan_Button.down_data3[i] = int.Parse(dr[1].ToString());
+                    Red_Green_zhifan_Button.down_data4[i] = int.Parse(dataGridView_exe[3, i].Value.ToString());
+                    Red_Green_zhifan_Button.down_data5[i] = int.Parse(dataGridView_exe[4, i].Value.ToString());
+                    Red_Green_zhifan_Button.down_data6[i] = i;
+                }
+            }
+            catch { throw; }
         }
     }
 }

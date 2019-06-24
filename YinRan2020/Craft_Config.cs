@@ -137,7 +137,7 @@ namespace YinRan2020
                 create_cmd[11] = new CreateSqlValueType("nvarchar(50)", "value10");
                 create_cmd[12] = new CreateSqlValueType("nvarchar(50)", "beizhu");
 
-               // MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0'), create_cmd);
+              // MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0'), create_cmd);
             }
 
             //dataGridView1.RowCount = 1;
@@ -323,16 +323,16 @@ namespace YinRan2020
         ///
         /// xiangxi:   序号  参数1  参数2  工艺  主泵频率  提布频率 
         /// 
-        /// shuoming： 1     单个单元或整列   参数地址      行数      列数
-        ///            2     单个单元或整列   参数地址      行数      列数
-        ///            3     单个单元或整列   参数地址      行数      列数
-        ///            4     单个单元或整列   参数地址      行数      列数
-        ///            5     单个单元或整列   参数地址      行数      列数
-        ///            6     单个单元或整列   参数地址      行数      列数
-        ///            7     单个单元或整列   参数地址      行数      列数
-        ///            8     单个单元或整列   参数地址      行数      列数       
-        ///            9     单个单元或整列   参数地址      行数      列数
-        ///           10     单个单元或整列   参数地址      行数      列数
+        /// shuoming： 1     单个单元或整列   参数地址      行数      列数 
+        ///            2     单个单元或整列   参数地址      行数      列数 
+        ///            3     单个单元或整列   参数地址      行数      列数 
+        ///            4     单个单元或整列   参数地址      行数      列数 
+        ///            5     单个单元或整列   参数地址      行数      列数 
+        ///            6     单个单元或整列   参数地址      行数      列数 
+        ///            7     单个单元或整列   参数地址      行数      列数 
+        ///            8     单个单元或整列   参数地址      行数      列数 
+        ///            9     单个单元或整列   参数地址      行数      列数 
+        ///           10     单个单元或整列   参数地址      行数      列数 
         ///           
 
 

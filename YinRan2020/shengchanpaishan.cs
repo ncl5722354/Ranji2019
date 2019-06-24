@@ -39,6 +39,11 @@ namespace YinRan2020
 
             }
 
+            ViewCaoZuo.Object_Position(0.01, 0.15, 0.75, 0.15, panel1, this.Controls);
+            ViewCaoZuo.Object_Position(0.01, 0.35, 0.75, 0.6, panel2, this.Controls);
+            ViewCaoZuo.Object_Position(0.8, 0.15, 0.15, 0.8, panel_datagridview, this.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1, 1, 0.9, dataGridView_craft, panel2.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1, 1, 0.9, dataGridView1, panel_datagridview.Controls);
 
             // 
             ReFlush_GongDan_List();
