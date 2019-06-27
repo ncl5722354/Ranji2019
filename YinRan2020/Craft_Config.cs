@@ -373,13 +373,15 @@ namespace YinRan2020
             // 没有xiangxi这张表
             if (xiangxi == null)
             {
-                CreateSqlValueType[] create_cmd = new CreateSqlValueType[9];
+                CreateSqlValueType[] create_cmd = new CreateSqlValueType[7];
                 create_cmd[0] = new CreateSqlValueType("int", "ID", true);
                 create_cmd[1] = new CreateSqlValueType("nvarchar(50)", "value1");
                 create_cmd[2] = new CreateSqlValueType("nvarchar(50)", "value2");
                 create_cmd[3] = new CreateSqlValueType("nvarchar(50)", "Craft");
                 create_cmd[4] = new CreateSqlValueType("nvarchar(50)", "zhubenpinlv");
                 create_cmd[5] = new CreateSqlValueType("nvarchar(50)", "tibupinlv");
+                create_cmd[6] = new CreateSqlValueType("nvarchar(50)","fengjipinlv");
+               
                 MainView.builder.Create_Table(craft_name + "xiangxi", create_cmd);
             }
 
@@ -464,13 +466,14 @@ namespace YinRan2020
                 DataTable xiangxi = MainView.builder.Select_Table(craft_name + "xiangxi");
                 int rowcount = xiangxi.Rows.Count;
                 rowcount++;
-                string[] insert_cmd = new string[6];
+                string[] insert_cmd = new string[7];
                 insert_cmd[0] = rowcount.ToString();
                 insert_cmd[1] = Add_CraftDuan.value1;
                 insert_cmd[2] = Add_CraftDuan.value2;
                 insert_cmd[3] = Add_CraftDuan.craft_name;
                 insert_cmd[4] = Add_CraftDuan.zhubengpinlv;
                 insert_cmd[5] = Add_CraftDuan.tibupinlv;
+                insert_cmd[6] = Add_CraftDuan.fengjipinlv;
                 MainView.builder.Insert(craft_name + "xiangxi", insert_cmd);
                 ReFlush_Xiangxi(craft_name);
             }
@@ -535,18 +538,20 @@ namespace YinRan2020
                 Update_CraftDuan.craft_name = dr.Cells[3].Value.ToString();
                 Update_CraftDuan.zhubengpinlv = dr.Cells[4].Value.ToString();
                 Update_CraftDuan.tibupinlv = dr.Cells[5].Value.ToString();
+                Update_CraftDuan.fengjipinlv = dr.Cells[6].Value.ToString();
 
                 Update_CraftDuan view = new Update_CraftDuan();
                 view.Set_Title("更新工艺段 " + comboBox_gongyi.Text);
                 DialogResult result = view.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    string[] update_cmd = new string[5];
+                    string[] update_cmd = new string[6];
                     update_cmd[0] = "value1='" + Update_CraftDuan.value1 + "'";
                     update_cmd[1] = "value2='" + Update_CraftDuan.value2 + "'";
                     update_cmd[2] = "Craft='" + Update_CraftDuan.craft_name + "'";
                     update_cmd[3] = "zhubenpinlv='" + Update_CraftDuan.zhubengpinlv + "'";
                     update_cmd[4] = "tibupinlv='" + Update_CraftDuan.tibupinlv + "'";
+                    update_cmd[5] = "fengjipinlv='" + Update_CraftDuan.fengjipinlv + "'";
                     string where_cmd = "ID='" + Update_CraftDuan.ID + "'";
 
                     MainView.builder.Updata(craft_name + "xiangxi", where_cmd, update_cmd);
@@ -968,6 +973,93 @@ namespace YinRan2020
                 }
 
 
+
+            }
+            catch { }
+        }
+
+        private void toolStripButton16_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // 选择的工艺名称
+                string craft_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                // 选择的行
+                DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
+
+                string id = dr.Cells[0].Value.ToString();
+                //string key = dr.Cells[1].Value.ToString();
+                //string where_cmd = "Gongyi_Name='" + key + "'";
+                //DataTable dt = MainView.builder.Select_Table("Craft_Name_Table", where_cmd);
+
+                Add_Craft_Final view = new Add_Craft_Final();
+
+                int selected_index_int = int.Parse(dr.Cells[0].Value.ToString());
+
+
+                DialogResult reslut = view.ShowDialog();
+                if (reslut == DialogResult.OK)
+                {
+
+                    // 将所有后面的ID号加1
+                    try
+                    {
+                        DataTable dt = MainView.builder.Select_Table(craft_name);
+                        //foreach (DataRow mydr in dt.Rows)
+                        //{
+                        for (int i = dt.Rows.Count - 1; i >= 0; i--)
+                        {
+                            DataRow mydr = dt.Rows[i];
+                            if (int.Parse(mydr[0].ToString()) >= selected_index_int + 1)
+                            {
+                                string[] update_cmd = new string[1];
+                                int myindex = int.Parse(mydr[0].ToString());
+                                update_cmd[0] = "ID='" + (myindex + 1).ToString() + "'";
+
+                                string update_where_cmd = "ID='" + myindex.ToString() + "'";
+                                MainView.builder.Updata(craft_name, update_where_cmd, update_cmd);
+
+                            }
+                        }
+                        //}
+                    }
+                    catch { }
+
+
+
+                    string where_cmd = "ID='" + dr.Cells[0].Value.ToString() + "'";
+                    // bool is_delete = MainView.builder.Delete(craft_name, where_cmd);
+
+                    //
+                    //int rows = dt.Rows.Count;
+                    string[] insert_cmd = new string[13];
+                    insert_cmd[0] = (selected_index_int + 1).ToString();
+                    insert_cmd[1] = Add_Craft_Final.gongyi;
+                    insert_cmd[2] = Add_Craft_Final.value1;
+                    insert_cmd[3] = Add_Craft_Final.value2;
+                    insert_cmd[4] = Add_Craft_Final.value3;
+                    insert_cmd[5] = Add_Craft_Final.value4;
+                    insert_cmd[6] = Add_Craft_Final.value5;
+                    insert_cmd[7] = Add_Craft_Final.value6;
+                    insert_cmd[8] = Add_Craft_Final.value7;
+                    insert_cmd[9] = Add_Craft_Final.value8;
+                    insert_cmd[10] = Add_Craft_Final.value9;
+                    insert_cmd[11] = Add_Craft_Final.value10;
+                    insert_cmd[12] = "";
+
+                    bool is_delete = MainView.builder.Insert(craft_name, insert_cmd);
+
+
+
+
+
+
+
+
+
+                    ReFlash_Gongyi_Fanal(craft_name);
+                }
 
             }
             catch { }

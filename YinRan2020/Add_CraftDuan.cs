@@ -17,6 +17,7 @@ namespace YinRan2020
         public static string craft_name = "";
         public static string zhubengpinlv = "";
         public static string tibupinlv = "";
+        public static string fengjipinlv = "";
 
         public Add_CraftDuan()
         {
@@ -47,11 +48,13 @@ namespace YinRan2020
             if (comboBox_craft.Text == "") { MessageBox.Show("工艺不能为空！"); return; }
             if (textBox_zhubengpinlv.Text == "") { MessageBox.Show("主泵频率不能为空！"); return; }
             if (textBox_tibupinlv.Text == "") { MessageBox.Show("提布频率不能为空！"); return; }
+            if (textBox_fengjipinlv.Text == "") { MessageBox.Show("风机频率不能为空！"); return; }
             value1 = textBox_value1.Text;
             value2 = textBox_value2.Text;
             craft_name = comboBox_craft.Text;
             zhubengpinlv = textBox_zhubengpinlv.Text;
             tibupinlv = textBox_tibupinlv.Text;
+            fengjipinlv=textBox_fengjipinlv.Text;
             DialogResult = DialogResult.OK;
             this.Dispose();
         }

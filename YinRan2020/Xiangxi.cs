@@ -161,6 +161,11 @@ namespace YinRan2020
             label_title.Text = name;
             JiGang_Name = name;
 
+
+            string where_cmd = "ID='" + JiGang_Name + "'";
+            DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+            machine_num = int.Parse(dt.Rows[0][5].ToString());
+
             myLabel_Red_Yellow_jinshui.Device_Name = name;
             myLabel_Red_Yellow_jinshui.init();
 
@@ -242,6 +247,12 @@ namespace YinRan2020
             red_Green_zhifan_Button4.Device_Name = name;
             red_Green_zhifan_Button4.init();
 
+            myLabel_Red_Yellow_shengwen.Device_Name = name;
+            myLabel_Red_Yellow_shengwen.init();
+
+            myLabel_Red_Yellow_lengque.Device_Name = name;
+            myLabel_Red_Yellow_lengque.init();
+
             myLabel_wendu.Device_Name = name;
             myLabel_wendu.init();
 
@@ -256,6 +267,19 @@ namespace YinRan2020
 
             myLabel_zongtime.Device_Name = name;
             myLabel_zongtime.init();
+
+            
+
+            string linshi_where_cmd="machine_num='"+machine_num.ToString()+"'";
+            DataTable linshitable = MainView.builder.Select_Table("linshi_craft", linshi_where_cmd);
+            try
+            {
+                textBox_danhao.Text=linshitable.Rows[0][1].ToString();
+                ReFlash_Gongyi_Fanal("工艺"+textBox_danhao.Text);
+                ReFlush_Exe_Craft();
+
+            }
+            catch { }
         }
 
         private void ReFlash_Gongyi_Fanal(string gongyi_name)
@@ -307,6 +331,16 @@ namespace YinRan2020
                 }
             }
             catch { }
+
+            try
+            {
+                string[] update_cmd = new string[1];
+                update_cmd[0] = "craft_table='" + textBox_danhao.Text + "'";
+
+                string where_cmd = "machine_num='"+machine_num.ToString()+"'";
+                MainView.builder.Updata("linshi_craft", where_cmd, update_cmd);
+            }
+            catch { }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -356,7 +390,7 @@ namespace YinRan2020
                     Red_Green_zhifan_Button.down_data3[i] = int.Parse(dr[1].ToString());
                     Red_Green_zhifan_Button.down_data4[i] = int.Parse(dataGridView_exe[3, i].Value.ToString());
                     Red_Green_zhifan_Button.down_data5[i] = int.Parse(dataGridView_exe[4, i].Value.ToString());
-                    Red_Green_zhifan_Button.down_data6[i] = i;
+                    Red_Green_zhifan_Button.down_data6[i] = int.Parse(dataGridView_exe[5, i].Value.ToString());
                 }
             }
             catch { throw; }

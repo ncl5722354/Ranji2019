@@ -60,7 +60,7 @@ namespace YinRan2020
         /// 定义数据库
         /// </summary>
         /// 
-        public static SQL_Connect_Builder builder = new SQL_Connect_Builder("192.168.1.2", "pdw3", 1, 100000);             
+        public static SQL_Connect_Builder builder = new SQL_Connect_Builder(".", "YinRan2019", 1, 100000);             
         public MainView()
         {
             InitializeComponent();
@@ -199,7 +199,19 @@ namespace YinRan2020
                 builder.Insert("start_time", insert_cmd);
             }
 
-            // 
+            // 临时工艺表
+            CreateSqlValueType[] linshi_craft = new CreateSqlValueType[3];
+            linshi_craft[0] = new CreateSqlValueType("int", "machine_num");
+            linshi_craft[1] = new CreateSqlValueType("nvarchar(50)","craft_table");
+            builder.Create_Table("linshi_craft", linshi_craft);
+
+            for(int i=1;i<=100;i++)
+            {
+                string[] insert_cmd = new string[2];
+                insert_cmd[0] = i.ToString();
+                insert_cmd[1] = "";
+                builder.Insert("linshi_craft", insert_cmd);
+            }
         }
 
         private void init_view()
