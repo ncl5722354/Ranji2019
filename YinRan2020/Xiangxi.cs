@@ -8,30 +8,56 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections;
+using ViewConfig;
 
 namespace YinRan2020
 {
     public partial class Xiangxi : Form
     {
         public string JiGang_Name = "";
+
+        public static int old_duan = -1;
+
+        public static int loadcount = 0;
+
+        int machine_num = 0;
         public Xiangxi()
         {
             InitializeComponent();
+            init_view();
+        }
+
+        public void init_view()
+        {
+            ViewCaoZuo.Object_Position(0.01, 0.1, 0.9, 0.35, chart1, this.Controls);
+
+            ViewCaoZuo.Object_Position(0.27, 0.5, 0.5, 0.49, dataGridView_craft, this.Controls);
+
+            ViewCaoZuo.Object_Position(0.8, 0.5, 0.2, 0.05, textBox_danhao, this.Controls);
+
+            ViewCaoZuo.Object_Position(0.8, 0.56, 0.2, 0.03, button_read_gongyi, this.Controls);
+
+            ViewCaoZuo.Object_Position(0.01, 0.5, 0.25, 0.49, panel1, this.Controls);
+
+            //ViewCaoZuo.Object_Position(0.4, 0.6, 0.35, 0.35, panel2, this.Controls);
+
+            ViewCaoZuo.Object_Position(0.8, 0.65, 0.23, 0.34, panel3, this.Controls);
         }
 
         public void Set_Yiliu()
         {
-            pictureBox1.Image = Properties.Resources.未标题_1;
+            //pictureBox1.Image = Properties.Resources.未标题_1;
         }
 
         public void Set_Qiliu()
         {
-            pictureBox1.Image = Properties.Resources._1;
+            //pictureBox1.Image = Properties.Resources._1;
         }
 
 
         private void button_read_gongyi_Click(object sender, EventArgs e)
         {
+           
             try
             {
                 dataGridView_craft.RowCount = 1;
@@ -215,12 +241,28 @@ namespace YinRan2020
 
             red_Green_zhifan_Button4.Device_Name = name;
             red_Green_zhifan_Button4.init();
+
+            myLabel_wendu.Device_Name = name;
+            myLabel_wendu.init();
+
+            myLabel_shuiwei.Device_Name = name;
+            myLabel_shuiwei.init();
+
+            myLabel_liaogangshuiwei.Device_Name = name;
+            myLabel_liaogangshuiwei.init();
+
+            myLabel_duantime.Device_Name = name;
+            myLabel_duantime.init();
+
+            myLabel_zongtime.Device_Name = name;
+            myLabel_zongtime.init();
         }
 
         private void ReFlash_Gongyi_Fanal(string gongyi_name)
         {
             try
             {
+                int duan_count = 0;
                 dataGridView_craft.RowCount = 1;
                 for (int i = 0; i < dataGridView_craft.ColumnCount; i++)
                 {
@@ -258,6 +300,10 @@ namespace YinRan2020
                     dataGridView_craft[16, i].Value = dr[8].ToString();
                     dataGridView_craft[18, i].Value = dr[9].ToString();
                     dataGridView_craft[20, i].Value = dr[10].ToString();
+
+                    DataTable sub_gongyi = MainView.builder.Select_Table(dataGridView_craft[1, i].Value + "xiangxi");
+                    duan_count = duan_count + sub_gongyi.Rows.Count;
+                    dataGridView_craft[23, i].Value = duan_count.ToString();
                 }
             }
             catch { }
@@ -314,6 +360,197 @@ namespace YinRan2020
                 }
             }
             catch { throw; }
+        }
+
+        private void Xiangxi_Resize(object sender, EventArgs e)
+        {
+            init_view();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (Red_Green_zhifan_Button.step == 0)
+                progressBar_down.Value = 0;
+             if (Red_Green_zhifan_Button.step == 1)
+                 progressBar_down.Value = 5;
+             if (Red_Green_zhifan_Button.step == 11)
+                 progressBar_down.Value = 10;
+            if (Red_Green_zhifan_Button.step == 12)
+                progressBar_down.Value = 15;
+            if (Red_Green_zhifan_Button.step == 2)
+                progressBar_down.Value = 20;
+            if (Red_Green_zhifan_Button.step == 21)
+                progressBar_down.Value = 25;
+            if (Red_Green_zhifan_Button.step == 22)
+                progressBar_down.Value = 30;
+            if (Red_Green_zhifan_Button.step == 3)
+                progressBar_down.Value = 35;
+            if (Red_Green_zhifan_Button.step == 31)
+                progressBar_down.Value = 40;
+            if (Red_Green_zhifan_Button.step == 32)
+                progressBar_down.Value = 45;
+            if (Red_Green_zhifan_Button.step == 4)
+                progressBar_down.Value = 50;
+            if (Red_Green_zhifan_Button.step == 41)
+                progressBar_down.Value = 55;
+            if (Red_Green_zhifan_Button.step == 42)
+                progressBar_down.Value = 60;
+            if (Red_Green_zhifan_Button.step == 5)
+                progressBar_down.Value = 65;
+            if (Red_Green_zhifan_Button.step == 51)
+                progressBar_down.Value = 70;
+            if (Red_Green_zhifan_Button.step == 52)
+                progressBar_down.Value = 75;
+            if (Red_Green_zhifan_Button.step == 6)
+                progressBar_down.Value = 80;
+            if (Red_Green_zhifan_Button.step == 61)
+                progressBar_down.Value = 85;
+            if (Red_Green_zhifan_Button.step == 62)
+                progressBar_down.Value = 90;
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            show_chart();
+        }
+
+        private void show_chart()
+        {
+            try
+            {
+                chart1.Series[0].Points.Clear();
+                string where_cmd = "ID='" + JiGang_Name + "'";
+                DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                machine_num = int.Parse(dt.Rows[0][5].ToString());
+                string where_cmd1 = "machine_num='" + machine_num.ToString() + "'";
+                DataTable starttimedt = MainView.builder.Select_Table("start_time", where_cmd1);
+
+                DateTime starttime = DateTime.Parse(starttimedt.Rows[0][1].ToString());
+                DateTime startendtime = starttime.AddHours(5);
+
+                chart1.ChartAreas[0].AxisX.Minimum = starttime.ToOADate();
+                chart1.ChartAreas[0].AxisX.Maximum = startendtime.ToOADate();
+
+                string where_cmd2="machine_num='"+machine_num.ToString()+"' and value_name='机缸温度' and value_time>='"+starttime.ToString("yyyy-MM-dd HH:mm:ss")+"' and value_time<'"+startendtime.ToString("yyyy-MM-dd HH:mm:ss")+"'";
+                DataTable dt1 = MainView.builder.Select_Table("save_info", where_cmd2);
+
+                foreach (DataRow row in dt1.Rows)
+                {
+                    DateTime nowtime = DateTime.Parse(row[3].ToString());
+                    double value=double.Parse(row[4].ToString());
+                    chart1.Series[0].Points.AddXY(nowtime.ToOADate(), value);
+                }
+
+                
+            }
+            catch { }
+        }
+
+        private void timer_duan_Tick(object sender, EventArgs e)
+        {
+            string where_cmd = "value_name='运行段号'";
+            DataTable dt = MainView.builder.Select_Table("Value_Config", where_cmd);
+
+            try
+            {
+                int duan_value = int.Parse(dt.Rows[0][2].ToString());
+                int duan = Device_Data.chejian3_com1_DT[machine_num, duan_value];
+                for (int j = 0; j < dataGridView_craft.ColumnCount; j++)
+                {
+                    dataGridView_craft.Rows[0].Cells[j].Style.BackColor = System.Drawing.Color.Gray;
+                }
+                if(duan!=old_duan)
+                {
+                    for(int i=0;i<dataGridView_craft.Rows.Count;i++)
+                    {
+
+                        // 工艺前
+                        int duancount = int.Parse(dataGridView_craft[23, i].Value.ToString());
+
+
+
+
+                        if(duancount<=duan)
+                        {
+                            for(int j=0;j<dataGridView_craft.ColumnCount;j++)
+                            {
+
+                                
+                                dataGridView_craft.Rows[i+1].Cells[j].Style.BackColor = System.Drawing.Color.Gray;
+                            }
+                        }
+                        else
+                        {
+                            for (int j = 0; j < dataGridView_craft.ColumnCount; j++)
+                            {
+                                dataGridView_craft.Rows[i+1].Cells[j].Style.BackColor = System.Drawing.Color.White;
+                            }
+                        }
+                    }
+                }
+            }
+            catch { }
+
+        }
+
+        private void button_tiaoduan_Click(object sender, EventArgs e)
+        {
+            //读取地址
+            string where_cmd = "value_name='运行段号'";
+            DataTable dt = MainView.builder.Select_Table("Value_Config", where_cmd);
+
+            // 读取串口号
+            string where_cmd1 = "ID='" + JiGang_Name + "'";
+            DataTable dt_com = MainView.builder.Select_Table("Device_Info", where_cmd1);
+
+            try
+            {
+                int tiaoduan_address = int.Parse(dt.Rows[0][2].ToString());
+                string chuankou = dt_com.Rows[0][4].ToString();
+
+               // DataGridViewSelectedRowCollection rows = dataGridView_craft.SelectedRows;
+                int rowindex = dataGridView_craft.SelectedCells[0].RowIndex;
+                port_moudbus modbus = null;
+                if (chuankou == "串口1")
+                {
+                    modbus = Deivce_Info.modbus1;
+                }
+                if (chuankou == "串口2")
+                {
+                    modbus = Deivce_Info.modbus2;
+                }
+                if (chuankou == "串口3")
+                {
+                    modbus = Deivce_Info.modbus3;
+                }
+                if (chuankou == "串口4")
+                {
+                    modbus = Deivce_Info.modbus4;
+                }
+                if (chuankou == "串口5")
+                {
+                    modbus = Deivce_Info.modbus5;
+                }
+                if (chuankou == "串口6")
+                {
+                    modbus = Deivce_Info.modbus6;
+                }
+
+
+                if(rowindex==0)
+                {
+                    modbus.Send_Write_Cmd6(machine_num, tiaoduan_address.ToString("X").PadLeft(4, '0'), "0000");
+                }
+                else
+                {
+                    int duan = int.Parse(dataGridView_craft[23, rowindex - 1].Value.ToString());
+                    modbus.Send_Write_Cmd6(machine_num, tiaoduan_address.ToString("X").PadLeft(4, '0'), duan.ToString("X").PadLeft(4,'0'));
+                }
+
+                
+            }
+            catch { }
+
         }
     }
 }

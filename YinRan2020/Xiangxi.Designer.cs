@@ -28,17 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.textBox_danhao = new System.Windows.Forms.TextBox();
             this.button_read_gongyi = new System.Windows.Forms.Button();
             this.label_title = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView_craft = new System.Windows.Forms.DataGridView();
+            this.dataGridView_exe = new System.Windows.Forms.DataGridView();
+            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.progressBar_down = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.button_tiaoduan = new System.Windows.Forms.Button();
+            this.timer_duan = new System.Windows.Forms.Timer(this.components);
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,26 +79,23 @@
             this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView_exe = new System.Windows.Forms.DataGridView();
-            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.progressBar_down = new System.Windows.Forms.ProgressBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.red_Green_zhifan_Button4 = new YinRan2020.Red_Green_zhifan_Button();
-            this.red_Green_zhifan_Button3 = new YinRan2020.Red_Green_zhifan_Button();
-            this.red_Green_zhifan_Button2 = new YinRan2020.Red_Green_zhifan_Button();
-            this.red_Green_zhifan_Button1 = new YinRan2020.Red_Green_zhifan_Button();
-            this.red_Green_zhifan_Button_shouzidong = new YinRan2020.Red_Green_zhifan_Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.myLabel_zongtime = new YinRan2020.MyLabel_time();
+            this.myLabel_duantime = new YinRan2020.MyLabel_time();
+            this.myLabel_liaogangshuiwei = new YinRan2020.MyLabel_div10();
+            this.myLabel_shuiwei = new YinRan2020.MyLabel_div10();
+            this.myLabel_wendu = new YinRan2020.MyLabel();
             this.myLabel_Red_Yellow20 = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_Red_Yellow19 = new YinRan2020.MyLabel_Red_Yellow();
+            this.red_Green_zhifan_Button3 = new YinRan2020.Red_Green_zhifan_Button();
+            this.red_Green_zhifan_Button4 = new YinRan2020.Red_Green_zhifan_Button();
+            this.red_Green_zhifan_Button2 = new YinRan2020.Red_Green_zhifan_Button();
             this.myLabel_Red_Yellow18 = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_Red_Yellow17 = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_Red_Yellow16 = new YinRan2020.MyLabel_Red_Yellow();
+            this.red_Green_zhifan_Button1 = new YinRan2020.Red_Green_zhifan_Button();
             this.myLabel_Red_Yellow15 = new YinRan2020.MyLabel_Red_Yellow();
+            this.red_Green_zhifan_Button_shouzidong = new YinRan2020.Red_Green_zhifan_Button();
             this.myLabel_Red_Yellow14 = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_Red_Yellow13 = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_Red_Yellow12 = new YinRan2020.MyLabel_Red_Yellow();
@@ -97,12 +111,11 @@
             this.myLabel_Red_Yellow2 = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_Red_Yellow1 = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_Red_Yellow_jinshui = new YinRan2020.MyLabel_Red_Yellow();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_exe)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_danhao
@@ -118,7 +131,7 @@
             this.button_read_gongyi.Name = "button_read_gongyi";
             this.button_read_gongyi.Size = new System.Drawing.Size(145, 23);
             this.button_read_gongyi.TabIndex = 2;
-            this.button_read_gongyi.Text = "读取工艺";
+            this.button_read_gongyi.Text = "读取工单信息";
             this.button_read_gongyi.UseVisualStyleBackColor = true;
             this.button_read_gongyi.Click += new System.EventHandler(this.button_read_gongyi_Click);
             // 
@@ -133,27 +146,11 @@
             this.label_title.Text = "label1";
             this.label_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1069, 377);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "下载工艺";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(617, 304);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // chart1
             // 
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chart1.BorderlineWidth = 2;
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chart1.BorderSkin.BorderWidth = 3;
@@ -163,29 +160,37 @@
             legend1.Name = "Legend1";
             legend1.Title = "温度曲线";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(12, 406);
+            this.chart1.Location = new System.Drawing.Point(12, 68);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             series1.Color = System.Drawing.Color.Red;
             series1.Legend = "Legend1";
             series1.Name = "机缸温度";
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(1362, 160);
+            this.chart1.Size = new System.Drawing.Size(628, 257);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button_tiaoduan);
+            this.panel1.Controls.Add(this.progressBar_down);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow20);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow19);
+            this.panel1.Controls.Add(this.red_Green_zhifan_Button3);
+            this.panel1.Controls.Add(this.red_Green_zhifan_Button4);
+            this.panel1.Controls.Add(this.red_Green_zhifan_Button2);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow18);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow17);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow16);
+            this.panel1.Controls.Add(this.red_Green_zhifan_Button1);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow15);
+            this.panel1.Controls.Add(this.red_Green_zhifan_Button_shouzidong);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow14);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow13);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow12);
@@ -201,9 +206,9 @@
             this.panel1.Controls.Add(this.myLabel_Red_Yellow2);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow1);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow_jinshui);
-            this.panel1.Location = new System.Drawing.Point(53, 572);
+            this.panel1.Location = new System.Drawing.Point(53, 431);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(420, 157);
+            this.panel1.Size = new System.Drawing.Size(271, 325);
             this.panel1.TabIndex = 8;
             // 
             // dataGridView_craft
@@ -232,12 +237,183 @@
             this.Column27,
             this.Column28,
             this.Column29,
-            this.Column30});
+            this.Column30,
+            this.Column1});
             this.dataGridView_craft.Location = new System.Drawing.Point(648, 24);
             this.dataGridView_craft.Name = "dataGridView_craft";
             this.dataGridView_craft.RowTemplate.Height = 23;
             this.dataGridView_craft.Size = new System.Drawing.Size(434, 330);
             this.dataGridView_craft.TabIndex = 9;
+            // 
+            // dataGridView_exe
+            // 
+            this.dataGridView_exe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_exe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column32,
+            this.Column33,
+            this.Column34,
+            this.Column35,
+            this.Column36});
+            this.dataGridView_exe.Location = new System.Drawing.Point(1088, 24);
+            this.dataGridView_exe.Name = "dataGridView_exe";
+            this.dataGridView_exe.RowTemplate.Height = 23;
+            this.dataGridView_exe.Size = new System.Drawing.Size(286, 330);
+            this.dataGridView_exe.TabIndex = 10;
+            this.dataGridView_exe.Visible = false;
+            // 
+            // Column32
+            // 
+            this.Column32.HeaderText = "参数1";
+            this.Column32.Name = "Column32";
+            this.Column32.Width = 40;
+            // 
+            // Column33
+            // 
+            this.Column33.HeaderText = "参数2";
+            this.Column33.Name = "Column33";
+            this.Column33.Width = 40;
+            // 
+            // Column34
+            // 
+            this.Column34.HeaderText = "工艺代码";
+            this.Column34.Name = "Column34";
+            this.Column34.Width = 60;
+            // 
+            // Column35
+            // 
+            this.Column35.HeaderText = "主泵频率";
+            this.Column35.Name = "Column35";
+            this.Column35.Width = 40;
+            // 
+            // Column36
+            // 
+            this.Column36.HeaderText = "提布频率";
+            this.Column36.Name = "Column36";
+            this.Column36.Width = 40;
+            // 
+            // progressBar_down
+            // 
+            this.progressBar_down.Location = new System.Drawing.Point(3, 277);
+            this.progressBar_down.Name = "progressBar_down";
+            this.progressBar_down.Size = new System.Drawing.Size(169, 23);
+            this.progressBar_down.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 261);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "下载进度";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.myLabel_zongtime);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.myLabel_duantime);
+            this.panel3.Controls.Add(this.myLabel_liaogangshuiwei);
+            this.panel3.Controls.Add(this.myLabel_shuiwei);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.myLabel_wendu);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(963, 446);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(288, 256);
+            this.panel3.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.White;
+            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label6.Location = new System.Drawing.Point(3, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(115, 29);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "总时间";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(3, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 29);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "段时间";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Blue;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(3, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 38);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "料缸水位(cm)";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Blue;
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.ForeColor = System.Drawing.SystemColors.Control;
+            this.label3.Location = new System.Drawing.Point(3, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(115, 33);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "机缸水位(cm)";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Red;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.Location = new System.Drawing.Point(3, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 33);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "机缸温度(℃)";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 2000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // button_tiaoduan
+            // 
+            this.button_tiaoduan.Location = new System.Drawing.Point(186, 235);
+            this.button_tiaoduan.Name = "button_tiaoduan";
+            this.button_tiaoduan.Size = new System.Drawing.Size(70, 23);
+            this.button_tiaoduan.TabIndex = 21;
+            this.button_tiaoduan.Text = "跳段";
+            this.button_tiaoduan.UseVisualStyleBackColor = true;
+            this.button_tiaoduan.Click += new System.EventHandler(this.button_tiaoduan_Click);
+            // 
+            // timer_duan
+            // 
+            this.timer_duan.Enabled = true;
+            this.timer_duan.Tick += new System.EventHandler(this.timer_duan_Tick);
             // 
             // Column9
             // 
@@ -375,153 +551,67 @@
             this.Column30.HeaderText = "备注";
             this.Column30.Name = "Column30";
             // 
-            // dataGridView_exe
+            // Column1
             // 
-            this.dataGridView_exe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_exe.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column32,
-            this.Column33,
-            this.Column34,
-            this.Column35,
-            this.Column36});
-            this.dataGridView_exe.Location = new System.Drawing.Point(1088, 24);
-            this.dataGridView_exe.Name = "dataGridView_exe";
-            this.dataGridView_exe.RowTemplate.Height = 23;
-            this.dataGridView_exe.Size = new System.Drawing.Size(286, 330);
-            this.dataGridView_exe.TabIndex = 10;
+            this.Column1.HeaderText = "段数";
+            this.Column1.Name = "Column1";
             // 
-            // Column32
+            // myLabel_zongtime
             // 
-            this.Column32.HeaderText = "参数1";
-            this.Column32.Name = "Column32";
-            this.Column32.Width = 40;
+            this.myLabel_zongtime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_zongtime.Device_Name = "";
+            this.myLabel_zongtime.Location = new System.Drawing.Point(121, 156);
+            this.myLabel_zongtime.Name = "myLabel_zongtime";
+            this.myLabel_zongtime.Size = new System.Drawing.Size(102, 29);
+            this.myLabel_zongtime.TabIndex = 11;
+            this.myLabel_zongtime.Value_Name = YinRan2020.MyLabel_time.value_name.总运行时间;
             // 
-            // Column33
+            // myLabel_duantime
             // 
-            this.Column33.HeaderText = "参数2";
-            this.Column33.Name = "Column33";
-            this.Column33.Width = 40;
+            this.myLabel_duantime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_duantime.Device_Name = "";
+            this.myLabel_duantime.Location = new System.Drawing.Point(121, 127);
+            this.myLabel_duantime.Name = "myLabel_duantime";
+            this.myLabel_duantime.Size = new System.Drawing.Size(102, 29);
+            this.myLabel_duantime.TabIndex = 9;
+            this.myLabel_duantime.Value_Name = YinRan2020.MyLabel_time.value_name.工艺运行时间;
             // 
-            // Column34
+            // myLabel_liaogangshuiwei
             // 
-            this.Column34.HeaderText = "工艺代码";
-            this.Column34.Name = "Column34";
-            this.Column34.Width = 60;
+            this.myLabel_liaogangshuiwei.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_liaogangshuiwei.Device_Name = "";
+            this.myLabel_liaogangshuiwei.Location = new System.Drawing.Point(121, 89);
+            this.myLabel_liaogangshuiwei.Name = "myLabel_liaogangshuiwei";
+            this.myLabel_liaogangshuiwei.Size = new System.Drawing.Size(102, 38);
+            this.myLabel_liaogangshuiwei.TabIndex = 8;
+            this.myLabel_liaogangshuiwei.Value_Name = YinRan2020.MyLabel_div10.value_name.料缸水位;
             // 
-            // Column35
+            // myLabel_shuiwei
             // 
-            this.Column35.HeaderText = "主泵频率";
-            this.Column35.Name = "Column35";
-            this.Column35.Width = 40;
+            this.myLabel_shuiwei.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_shuiwei.Device_Name = "";
+            this.myLabel_shuiwei.Location = new System.Drawing.Point(121, 56);
+            this.myLabel_shuiwei.Name = "myLabel_shuiwei";
+            this.myLabel_shuiwei.Size = new System.Drawing.Size(102, 33);
+            this.myLabel_shuiwei.TabIndex = 7;
+            this.myLabel_shuiwei.Value_Name = YinRan2020.MyLabel_div10.value_name.机缸水位;
             // 
-            // Column36
+            // myLabel_wendu
             // 
-            this.Column36.HeaderText = "提布频率";
-            this.Column36.Name = "Column36";
-            this.Column36.Width = 40;
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.progressBar_down);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.red_Green_zhifan_Button4);
-            this.panel2.Controls.Add(this.red_Green_zhifan_Button3);
-            this.panel2.Controls.Add(this.red_Green_zhifan_Button2);
-            this.panel2.Controls.Add(this.red_Green_zhifan_Button1);
-            this.panel2.Controls.Add(this.red_Green_zhifan_Button_shouzidong);
-            this.panel2.Location = new System.Drawing.Point(484, 572);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(404, 157);
-            this.panel2.TabIndex = 11;
-            // 
-            // progressBar_down
-            // 
-            this.progressBar_down.Location = new System.Drawing.Point(205, 45);
-            this.progressBar_down.Name = "progressBar_down";
-            this.progressBar_down.Size = new System.Drawing.Size(169, 23);
-            this.progressBar_down.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(203, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "下载进度";
-            // 
-            // red_Green_zhifan_Button4
-            // 
-            this.red_Green_zhifan_Button4.Device_Name = "";
-            this.red_Green_zhifan_Button4.False_Color = System.Drawing.Color.Red;
-            this.red_Green_zhifan_Button4.Location = new System.Drawing.Point(89, 45);
-            this.red_Green_zhifan_Button4.Mode = 0;
-            this.red_Green_zhifan_Button4.Name = "red_Green_zhifan_Button4";
-            this.red_Green_zhifan_Button4.Size = new System.Drawing.Size(80, 39);
-            this.red_Green_zhifan_Button4.TabIndex = 4;
-            this.red_Green_zhifan_Button4.True_Color = System.Drawing.Color.Yellow;
-            this.red_Green_zhifan_Button4.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.主泵;
-            // 
-            // red_Green_zhifan_Button3
-            // 
-            this.red_Green_zhifan_Button3.Device_Name = "";
-            this.red_Green_zhifan_Button3.False_Color = System.Drawing.Color.Red;
-            this.red_Green_zhifan_Button3.Location = new System.Drawing.Point(89, 3);
-            this.red_Green_zhifan_Button3.Mode = 0;
-            this.red_Green_zhifan_Button3.Name = "red_Green_zhifan_Button3";
-            this.red_Green_zhifan_Button3.Size = new System.Drawing.Size(80, 39);
-            this.red_Green_zhifan_Button3.TabIndex = 3;
-            this.red_Green_zhifan_Button3.True_Color = System.Drawing.Color.Yellow;
-            this.red_Green_zhifan_Button3.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.暂停;
-            // 
-            // red_Green_zhifan_Button2
-            // 
-            this.red_Green_zhifan_Button2.Device_Name = "";
-            this.red_Green_zhifan_Button2.False_Color = System.Drawing.Color.Yellow;
-            this.red_Green_zhifan_Button2.Location = new System.Drawing.Point(3, 90);
-            this.red_Green_zhifan_Button2.Mode = 0;
-            this.red_Green_zhifan_Button2.Name = "red_Green_zhifan_Button2";
-            this.red_Green_zhifan_Button2.Size = new System.Drawing.Size(80, 39);
-            this.red_Green_zhifan_Button2.TabIndex = 2;
-            this.red_Green_zhifan_Button2.True_Color = System.Drawing.Color.Red;
-            this.red_Green_zhifan_Button2.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.停止;
-            // 
-            // red_Green_zhifan_Button1
-            // 
-            this.red_Green_zhifan_Button1.Device_Name = "";
-            this.red_Green_zhifan_Button1.False_Color = System.Drawing.Color.Red;
-            this.red_Green_zhifan_Button1.Location = new System.Drawing.Point(3, 45);
-            this.red_Green_zhifan_Button1.Mode = 1;
-            this.red_Green_zhifan_Button1.Name = "red_Green_zhifan_Button1";
-            this.red_Green_zhifan_Button1.Size = new System.Drawing.Size(80, 39);
-            this.red_Green_zhifan_Button1.TabIndex = 1;
-            this.red_Green_zhifan_Button1.True_Color = System.Drawing.Color.Yellow;
-            this.red_Green_zhifan_Button1.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.启动;
-            this.red_Green_zhifan_Button1.Qidong += new System.EventHandler(this.red_Green_zhifan_Button1_Qidong);
-            this.red_Green_zhifan_Button1.Load += new System.EventHandler(this.red_Green_zhifan_Button1_Load);
-            this.red_Green_zhifan_Button1.Click += new System.EventHandler(this.red_Green_zhifan_Button1_Click);
-            this.red_Green_zhifan_Button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.red_Green_zhifan_Button1_MouseDown);
-            this.red_Green_zhifan_Button1.MouseEnter += new System.EventHandler(this.red_Green_zhifan_Button1_MouseEnter);
-            // 
-            // red_Green_zhifan_Button_shouzidong
-            // 
-            this.red_Green_zhifan_Button_shouzidong.Device_Name = "";
-            this.red_Green_zhifan_Button_shouzidong.False_Color = System.Drawing.Color.Red;
-            this.red_Green_zhifan_Button_shouzidong.Location = new System.Drawing.Point(3, 3);
-            this.red_Green_zhifan_Button_shouzidong.Mode = 0;
-            this.red_Green_zhifan_Button_shouzidong.Name = "red_Green_zhifan_Button_shouzidong";
-            this.red_Green_zhifan_Button_shouzidong.Size = new System.Drawing.Size(80, 39);
-            this.red_Green_zhifan_Button_shouzidong.TabIndex = 0;
-            this.red_Green_zhifan_Button_shouzidong.True_Color = System.Drawing.Color.Yellow;
-            this.red_Green_zhifan_Button_shouzidong.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.手自动;
-            this.red_Green_zhifan_Button_shouzidong.Load += new System.EventHandler(this.red_Green_zhifan_Button_shouzidong_Load);
+            this.myLabel_wendu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_wendu.Device_Name = "";
+            this.myLabel_wendu.Location = new System.Drawing.Point(121, 23);
+            this.myLabel_wendu.Margin = new System.Windows.Forms.Padding(0);
+            this.myLabel_wendu.Name = "myLabel_wendu";
+            this.myLabel_wendu.Size = new System.Drawing.Size(102, 33);
+            this.myLabel_wendu.TabIndex = 1;
+            this.myLabel_wendu.Value_Name = YinRan2020.MyLabel.value_name.机缸温度;
             // 
             // myLabel_Red_Yellow20
             // 
             this.myLabel_Red_Yellow20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow20.Device_Name = "";
-            this.myLabel_Red_Yellow20.Location = new System.Drawing.Point(225, 119);
+            this.myLabel_Red_Yellow20.Location = new System.Drawing.Point(3, 235);
             this.myLabel_Red_Yellow20.Name = "myLabel_Red_Yellow20";
             this.myLabel_Red_Yellow20.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow20.TabIndex = 20;
@@ -531,17 +621,53 @@
             // 
             this.myLabel_Red_Yellow19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow19.Device_Name = "";
-            this.myLabel_Red_Yellow19.Location = new System.Drawing.Point(225, 90);
+            this.myLabel_Red_Yellow19.Location = new System.Drawing.Point(77, 206);
             this.myLabel_Red_Yellow19.Name = "myLabel_Red_Yellow19";
             this.myLabel_Red_Yellow19.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow19.TabIndex = 19;
             this.myLabel_Red_Yellow19.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.循环;
             // 
+            // red_Green_zhifan_Button3
+            // 
+            this.red_Green_zhifan_Button3.Device_Name = "";
+            this.red_Green_zhifan_Button3.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button3.Location = new System.Drawing.Point(186, 177);
+            this.red_Green_zhifan_Button3.Mode = 0;
+            this.red_Green_zhifan_Button3.Name = "red_Green_zhifan_Button3";
+            this.red_Green_zhifan_Button3.Size = new System.Drawing.Size(70, 23);
+            this.red_Green_zhifan_Button3.TabIndex = 3;
+            this.red_Green_zhifan_Button3.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button3.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.暂停;
+            // 
+            // red_Green_zhifan_Button4
+            // 
+            this.red_Green_zhifan_Button4.Device_Name = "";
+            this.red_Green_zhifan_Button4.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button4.Location = new System.Drawing.Point(186, 119);
+            this.red_Green_zhifan_Button4.Mode = 0;
+            this.red_Green_zhifan_Button4.Name = "red_Green_zhifan_Button4";
+            this.red_Green_zhifan_Button4.Size = new System.Drawing.Size(70, 23);
+            this.red_Green_zhifan_Button4.TabIndex = 4;
+            this.red_Green_zhifan_Button4.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button4.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.主泵;
+            // 
+            // red_Green_zhifan_Button2
+            // 
+            this.red_Green_zhifan_Button2.Device_Name = "";
+            this.red_Green_zhifan_Button2.False_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button2.Location = new System.Drawing.Point(186, 206);
+            this.red_Green_zhifan_Button2.Mode = 0;
+            this.red_Green_zhifan_Button2.Name = "red_Green_zhifan_Button2";
+            this.red_Green_zhifan_Button2.Size = new System.Drawing.Size(70, 23);
+            this.red_Green_zhifan_Button2.TabIndex = 2;
+            this.red_Green_zhifan_Button2.True_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button2.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.停止;
+            // 
             // myLabel_Red_Yellow18
             // 
             this.myLabel_Red_Yellow18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow18.Device_Name = "";
-            this.myLabel_Red_Yellow18.Location = new System.Drawing.Point(225, 61);
+            this.myLabel_Red_Yellow18.Location = new System.Drawing.Point(77, 177);
             this.myLabel_Red_Yellow18.Name = "myLabel_Red_Yellow18";
             this.myLabel_Red_Yellow18.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow18.TabIndex = 18;
@@ -551,7 +677,7 @@
             // 
             this.myLabel_Red_Yellow17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow17.Device_Name = "";
-            this.myLabel_Red_Yellow17.Location = new System.Drawing.Point(151, 90);
+            this.myLabel_Red_Yellow17.Location = new System.Drawing.Point(77, 90);
             this.myLabel_Red_Yellow17.Name = "myLabel_Red_Yellow17";
             this.myLabel_Red_Yellow17.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow17.TabIndex = 17;
@@ -561,27 +687,57 @@
             // 
             this.myLabel_Red_Yellow16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow16.Device_Name = "";
-            this.myLabel_Red_Yellow16.Location = new System.Drawing.Point(225, 32);
+            this.myLabel_Red_Yellow16.Location = new System.Drawing.Point(77, 148);
             this.myLabel_Red_Yellow16.Name = "myLabel_Red_Yellow16";
             this.myLabel_Red_Yellow16.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow16.TabIndex = 16;
             this.myLabel_Red_Yellow16.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.料缸排水;
             // 
+            // red_Green_zhifan_Button1
+            // 
+            this.red_Green_zhifan_Button1.Device_Name = "";
+            this.red_Green_zhifan_Button1.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button1.Location = new System.Drawing.Point(186, 148);
+            this.red_Green_zhifan_Button1.Mode = 1;
+            this.red_Green_zhifan_Button1.Name = "red_Green_zhifan_Button1";
+            this.red_Green_zhifan_Button1.Size = new System.Drawing.Size(70, 23);
+            this.red_Green_zhifan_Button1.TabIndex = 1;
+            this.red_Green_zhifan_Button1.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button1.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.启动;
+            this.red_Green_zhifan_Button1.Qidong += new System.EventHandler(this.red_Green_zhifan_Button1_Qidong);
+            this.red_Green_zhifan_Button1.Load += new System.EventHandler(this.red_Green_zhifan_Button1_Load);
+            this.red_Green_zhifan_Button1.Click += new System.EventHandler(this.red_Green_zhifan_Button1_Click);
+            this.red_Green_zhifan_Button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.red_Green_zhifan_Button1_MouseDown);
+            this.red_Green_zhifan_Button1.MouseEnter += new System.EventHandler(this.red_Green_zhifan_Button1_MouseEnter);
+            // 
             // myLabel_Red_Yellow15
             // 
             this.myLabel_Red_Yellow15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow15.Device_Name = "";
-            this.myLabel_Red_Yellow15.Location = new System.Drawing.Point(225, 3);
+            this.myLabel_Red_Yellow15.Location = new System.Drawing.Point(77, 119);
             this.myLabel_Red_Yellow15.Name = "myLabel_Red_Yellow15";
             this.myLabel_Red_Yellow15.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow15.TabIndex = 15;
             this.myLabel_Red_Yellow15.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.料缸进水;
             // 
+            // red_Green_zhifan_Button_shouzidong
+            // 
+            this.red_Green_zhifan_Button_shouzidong.Device_Name = "";
+            this.red_Green_zhifan_Button_shouzidong.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button_shouzidong.Location = new System.Drawing.Point(186, 90);
+            this.red_Green_zhifan_Button_shouzidong.Mode = 0;
+            this.red_Green_zhifan_Button_shouzidong.Name = "red_Green_zhifan_Button_shouzidong";
+            this.red_Green_zhifan_Button_shouzidong.Size = new System.Drawing.Size(70, 23);
+            this.red_Green_zhifan_Button_shouzidong.TabIndex = 0;
+            this.red_Green_zhifan_Button_shouzidong.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button_shouzidong.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.手自动;
+            this.red_Green_zhifan_Button_shouzidong.Load += new System.EventHandler(this.red_Green_zhifan_Button_shouzidong_Load);
+            // 
             // myLabel_Red_Yellow14
             // 
             this.myLabel_Red_Yellow14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow14.Device_Name = "";
-            this.myLabel_Red_Yellow14.Location = new System.Drawing.Point(151, 32);
+            this.myLabel_Red_Yellow14.Location = new System.Drawing.Point(77, 32);
             this.myLabel_Red_Yellow14.Name = "myLabel_Red_Yellow14";
             this.myLabel_Red_Yellow14.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow14.TabIndex = 14;
@@ -591,7 +747,7 @@
             // 
             this.myLabel_Red_Yellow13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow13.Device_Name = "";
-            this.myLabel_Red_Yellow13.Location = new System.Drawing.Point(151, 3);
+            this.myLabel_Red_Yellow13.Location = new System.Drawing.Point(77, 3);
             this.myLabel_Red_Yellow13.Name = "myLabel_Red_Yellow13";
             this.myLabel_Red_Yellow13.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow13.TabIndex = 13;
@@ -601,7 +757,7 @@
             // 
             this.myLabel_Red_Yellow12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow12.Device_Name = "";
-            this.myLabel_Red_Yellow12.Location = new System.Drawing.Point(151, 61);
+            this.myLabel_Red_Yellow12.Location = new System.Drawing.Point(77, 61);
             this.myLabel_Red_Yellow12.Name = "myLabel_Red_Yellow12";
             this.myLabel_Red_Yellow12.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow12.TabIndex = 12;
@@ -611,7 +767,7 @@
             // 
             this.myLabel_Red_Yellow11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow11.Device_Name = "";
-            this.myLabel_Red_Yellow11.Location = new System.Drawing.Point(334, 61);
+            this.myLabel_Red_Yellow11.Location = new System.Drawing.Point(151, 61);
             this.myLabel_Red_Yellow11.Name = "myLabel_Red_Yellow11";
             this.myLabel_Red_Yellow11.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow11.TabIndex = 11;
@@ -621,7 +777,7 @@
             // 
             this.myLabel_Red_Yellow10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow10.Device_Name = "";
-            this.myLabel_Red_Yellow10.Location = new System.Drawing.Point(334, 32);
+            this.myLabel_Red_Yellow10.Location = new System.Drawing.Point(151, 32);
             this.myLabel_Red_Yellow10.Name = "myLabel_Red_Yellow10";
             this.myLabel_Red_Yellow10.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow10.TabIndex = 10;
@@ -631,7 +787,7 @@
             // 
             this.myLabel_Red_Yellow9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow9.Device_Name = "";
-            this.myLabel_Red_Yellow9.Location = new System.Drawing.Point(334, 3);
+            this.myLabel_Red_Yellow9.Location = new System.Drawing.Point(151, 3);
             this.myLabel_Red_Yellow9.Name = "myLabel_Red_Yellow9";
             this.myLabel_Red_Yellow9.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow9.TabIndex = 9;
@@ -641,7 +797,7 @@
             // 
             this.myLabel_Red_Yellow8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow8.Device_Name = "";
-            this.myLabel_Red_Yellow8.Location = new System.Drawing.Point(3, 119);
+            this.myLabel_Red_Yellow8.Location = new System.Drawing.Point(77, 235);
             this.myLabel_Red_Yellow8.Name = "myLabel_Red_Yellow8";
             this.myLabel_Red_Yellow8.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow8.TabIndex = 8;
@@ -651,7 +807,7 @@
             // 
             this.myLabel_Red_Yellow7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow7.Device_Name = "";
-            this.myLabel_Red_Yellow7.Location = new System.Drawing.Point(77, 90);
+            this.myLabel_Red_Yellow7.Location = new System.Drawing.Point(3, 206);
             this.myLabel_Red_Yellow7.Name = "myLabel_Red_Yellow7";
             this.myLabel_Red_Yellow7.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow7.TabIndex = 7;
@@ -661,7 +817,7 @@
             // 
             this.myLabel_Red_Yellow6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow6.Device_Name = "";
-            this.myLabel_Red_Yellow6.Location = new System.Drawing.Point(77, 61);
+            this.myLabel_Red_Yellow6.Location = new System.Drawing.Point(3, 177);
             this.myLabel_Red_Yellow6.Name = "myLabel_Red_Yellow6";
             this.myLabel_Red_Yellow6.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow6.TabIndex = 6;
@@ -671,7 +827,7 @@
             // 
             this.myLabel_Red_Yellow5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow5.Device_Name = "";
-            this.myLabel_Red_Yellow5.Location = new System.Drawing.Point(77, 32);
+            this.myLabel_Red_Yellow5.Location = new System.Drawing.Point(3, 148);
             this.myLabel_Red_Yellow5.Name = "myLabel_Red_Yellow5";
             this.myLabel_Red_Yellow5.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow5.TabIndex = 5;
@@ -681,7 +837,7 @@
             // 
             this.myLabel_Red_Yellow4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.myLabel_Red_Yellow4.Device_Name = "";
-            this.myLabel_Red_Yellow4.Location = new System.Drawing.Point(77, 3);
+            this.myLabel_Red_Yellow4.Location = new System.Drawing.Point(3, 119);
             this.myLabel_Red_Yellow4.Name = "myLabel_Red_Yellow4";
             this.myLabel_Red_Yellow4.Size = new System.Drawing.Size(68, 23);
             this.myLabel_Red_Yellow4.TabIndex = 4;
@@ -731,27 +887,25 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1522, 788);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView_exe);
             this.Controls.Add(this.dataGridView_craft);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label_title);
             this.Controls.Add(this.button_read_gongyi);
             this.Controls.Add(this.textBox_danhao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Xiangxi";
             this.Text = "Xiangxi";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Resize += new System.EventHandler(this.Xiangxi_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_exe)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -762,8 +916,6 @@
         private System.Windows.Forms.TextBox textBox_danhao;
         private System.Windows.Forms.Button button_read_gongyi;
         private System.Windows.Forms.Label label_title;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Panel panel1;
         private MyLabel_Red_Yellow myLabel_Red_Yellow_jinshui;
@@ -788,6 +940,34 @@
         private MyLabel_Red_Yellow myLabel_Red_Yellow9;
         private MyLabel_Red_Yellow myLabel_Red_Yellow8;
         private System.Windows.Forms.DataGridView dataGridView_craft;
+        private System.Windows.Forms.DataGridView dataGridView_exe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button_shouzidong;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button3;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button2;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button1;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar_down;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private MyLabel myLabel_wendu;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private MyLabel_div10 myLabel_shuiwei;
+        private MyLabel_div10 myLabel_liaogangshuiwei;
+        private MyLabel_time myLabel_duantime;
+        private MyLabel_time myLabel_zongtime;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Button button_tiaoduan;
+        private System.Windows.Forms.Timer timer_duan;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
@@ -811,19 +991,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
-        private System.Windows.Forms.DataGridView dataGridView_exe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column33;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
-        private System.Windows.Forms.Panel panel2;
-        private Red_Green_zhifan_Button red_Green_zhifan_Button_shouzidong;
-        private Red_Green_zhifan_Button red_Green_zhifan_Button3;
-        private Red_Green_zhifan_Button red_Green_zhifan_Button2;
-        private Red_Green_zhifan_Button red_Green_zhifan_Button1;
-        private Red_Green_zhifan_Button red_Green_zhifan_Button4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar_down;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

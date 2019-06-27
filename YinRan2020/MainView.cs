@@ -11,6 +11,7 @@ using ViewConfig;
 using SqlConnect;
 using FileOperation;
 using System.Runtime.InteropServices;
+using System.Threading;
 
 namespace YinRan2020
 {
@@ -59,7 +60,7 @@ namespace YinRan2020
         /// 定义数据库
         /// </summary>
         /// 
-        public static SQL_Connect_Builder builder = new SQL_Connect_Builder(".", "YinRan2019", 1, 100000);             
+        public static SQL_Connect_Builder builder = new SQL_Connect_Builder("192.168.1.2", "pdw3", 1, 100000);             
         public MainView()
         {
             InitializeComponent();
@@ -184,6 +185,21 @@ namespace YinRan2020
 
 
             //===============================================================================
+            // 启动日期
+            CreateSqlValueType[] qidongriqi = new CreateSqlValueType[2];
+            qidongriqi[0] = new CreateSqlValueType("int","machine_num");
+            qidongriqi[1] = new CreateSqlValueType("datetime", "start_time");
+
+            builder.Create_Table("start_time",qidongriqi);
+            for(int i=1;i<=100;i++)
+            {
+                string[] insert_cmd = new string[2];
+                insert_cmd[0] = i.ToString();
+                insert_cmd[1] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                builder.Insert("start_time", insert_cmd);
+            }
+
+            // 
         }
 
         private void init_view()
@@ -300,6 +316,43 @@ namespace YinRan2020
             ClearMemory();
         }
 
+        private void Save_Info()
+        {
+            // 温度信息保存
+            CreateSqlValueType[] createsaveinfo = new CreateSqlValueType[5];
+            createsaveinfo[0] = new CreateSqlValueType("nvarchar(50)", "ID", true);
+            createsaveinfo[1] = new CreateSqlValueType("int", "machine_num");
+            createsaveinfo[2] = new CreateSqlValueType("nvarchar(50)", "value_name");
+            createsaveinfo[3] = new CreateSqlValueType("datetime", "value_time");
+            createsaveinfo[4] = new CreateSqlValueType("nvarchar(50)","value");
+
+            MainView.builder.Create_Table("save_info", createsaveinfo);
+
+            string where_cmd = "value_name='机缸温度'";
+
+            DataTable dt = MainView.builder.Select_Table("Value_Config", where_cmd);
+
+            int wendu_address = 0;
+
+            try
+            {
+                wendu_address = int.Parse(dt.Rows[0][2].ToString());
+            }
+            catch { return; }
+
+            for (int i = 1; i < 100; i++)
+            {
+                string[] insert_cmd = new string[5];
+                insert_cmd[0] = DateTime.Now.ToString("yyyyMMddHHmmss") + i.ToString();
+                insert_cmd[1] = i.ToString();
+                insert_cmd[2] = "机缸温度";
+                insert_cmd[3] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                insert_cmd[4] = Device_Data.chejian3_com1_DT[i, wendu_address].ToString();
+
+                MainView.builder.Insert("save_info", insert_cmd);
+            }
+        }
+
         private void Show_xiangxi_Yiliu(object sender,EventArgs e)
         {
             Show_Chuangti(xiangxi_view);
@@ -314,6 +367,12 @@ namespace YinRan2020
             xiangxi_view.Set_Qiliu();
             QiLiuGang item = (QiLiuGang)sender;
             xiangxi_view.Set_Title(item.JiGang_Name);
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            Thread thread = new Thread(Save_Info);
+            thread.Start();
         }
     }
 }

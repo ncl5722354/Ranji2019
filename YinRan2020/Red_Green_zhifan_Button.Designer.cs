@@ -56,6 +56,7 @@
             this.Name = "Red_Green_zhifan_Button";
             this.Size = new System.Drawing.Size(231, 53);
             this.AutoSizeChanged += new System.EventHandler(this.Red_Green_zhifan_Button_AutoSizeChanged);
+            this.Load += new System.EventHandler(this.Red_Green_zhifan_Button_Load);
             this.Click += new System.EventHandler(this.Red_Green_zhifan_Button_Click);
             this.Resize += new System.EventHandler(this.Red_Green_zhifan_Button_Resize);
             this.ResumeLayout(false);

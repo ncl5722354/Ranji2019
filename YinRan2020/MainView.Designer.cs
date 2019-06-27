@@ -29,87 +29,87 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("用户编辑");
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("权限编辑", 2, 2);
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("组织架构", 3, 3);
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("冻结用户", 4, 4);
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("用户操作记录", 5, 5);
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("用户管理", new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode3,
-            treeNode4,
-            treeNode5});
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("实时生产总览", 8, 8);
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("详细生产情况", 9, 9);
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("设备连接设置", 10, 10);
-            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("生产历史记录", 11, 11);
-            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("一车间", 7, 7, new System.Windows.Forms.TreeNode[] {
-            treeNode7,
-            treeNode8,
-            treeNode9,
-            treeNode10});
-            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("实时生产总览", 8, 8);
-            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("详细生产情况", 9, 9);
-            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("设备连接设置", 10, 10);
-            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("生产历史记录", 11, 11);
-            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("二车间", 7, 7, new System.Windows.Forms.TreeNode[] {
-            treeNode12,
-            treeNode13,
-            treeNode14,
-            treeNode15});
-            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("实时生产总览", 8, 8);
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("详细生产情况", 9, 9);
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("设备连接设置", 10, 10);
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("生产历史记录", 11, 11);
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("三车间", 7, 7, new System.Windows.Forms.TreeNode[] {
-            treeNode17,
-            treeNode18,
-            treeNode19,
-            treeNode20});
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("染色管理", 6, 6, new System.Windows.Forms.TreeNode[] {
-            treeNode11,
-            treeNode16,
-            treeNode21});
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("一车间", 7, 7);
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("二车间", 7, 7);
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("三车间", 7, 7);
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("工艺管理", 12, 12, new System.Windows.Forms.TreeNode[] {
-            treeNode23,
-            treeNode24,
-            treeNode25});
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("水能管理", 14, 14);
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("电能管理", 15, 15);
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("蒸汽管理", 16, 16);
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("一车间", 7, 7, new System.Windows.Forms.TreeNode[] {
-            treeNode27,
-            treeNode28,
-            treeNode29});
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("水能管理", 14, 14);
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("电能管理", 15, 15);
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("蒸汽管理", 16, 16);
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("二车间", 7, 7, new System.Windows.Forms.TreeNode[] {
-            treeNode31,
-            treeNode32,
-            treeNode33});
-            System.Windows.Forms.TreeNode treeNode35 = new System.Windows.Forms.TreeNode("水能管理", 14, 14);
-            System.Windows.Forms.TreeNode treeNode36 = new System.Windows.Forms.TreeNode("电能", 15, 15);
-            System.Windows.Forms.TreeNode treeNode37 = new System.Windows.Forms.TreeNode("蒸汽管理", 16, 16);
-            System.Windows.Forms.TreeNode treeNode38 = new System.Windows.Forms.TreeNode("三车间", 7, 7, new System.Windows.Forms.TreeNode[] {
-            treeNode35,
-            treeNode36,
-            treeNode37});
-            System.Windows.Forms.TreeNode treeNode39 = new System.Windows.Forms.TreeNode("能源管理", 13, 13, new System.Windows.Forms.TreeNode[] {
-            treeNode30,
-            treeNode34,
-            treeNode38});
-            System.Windows.Forms.TreeNode treeNode40 = new System.Windows.Forms.TreeNode("一车间", 7, 7);
-            System.Windows.Forms.TreeNode treeNode41 = new System.Windows.Forms.TreeNode("二车间", 7, 7);
-            System.Windows.Forms.TreeNode treeNode42 = new System.Windows.Forms.TreeNode("三车间", 7, 7);
-            System.Windows.Forms.TreeNode treeNode43 = new System.Windows.Forms.TreeNode("生产排产", 17, 17, new System.Windows.Forms.TreeNode[] {
-            treeNode40,
-            treeNode41,
-            treeNode42});
+            System.Windows.Forms.TreeNode treeNode44 = new System.Windows.Forms.TreeNode("用户编辑");
+            System.Windows.Forms.TreeNode treeNode45 = new System.Windows.Forms.TreeNode("权限编辑", 2, 2);
+            System.Windows.Forms.TreeNode treeNode46 = new System.Windows.Forms.TreeNode("组织架构", 3, 3);
+            System.Windows.Forms.TreeNode treeNode47 = new System.Windows.Forms.TreeNode("冻结用户", 4, 4);
+            System.Windows.Forms.TreeNode treeNode48 = new System.Windows.Forms.TreeNode("用户操作记录", 5, 5);
+            System.Windows.Forms.TreeNode treeNode49 = new System.Windows.Forms.TreeNode("用户管理", new System.Windows.Forms.TreeNode[] {
+            treeNode44,
+            treeNode45,
+            treeNode46,
+            treeNode47,
+            treeNode48});
+            System.Windows.Forms.TreeNode treeNode50 = new System.Windows.Forms.TreeNode("实时生产总览", 8, 8);
+            System.Windows.Forms.TreeNode treeNode51 = new System.Windows.Forms.TreeNode("详细生产情况", 9, 9);
+            System.Windows.Forms.TreeNode treeNode52 = new System.Windows.Forms.TreeNode("设备连接设置", 10, 10);
+            System.Windows.Forms.TreeNode treeNode53 = new System.Windows.Forms.TreeNode("生产历史记录", 11, 11);
+            System.Windows.Forms.TreeNode treeNode54 = new System.Windows.Forms.TreeNode("一车间", 7, 7, new System.Windows.Forms.TreeNode[] {
+            treeNode50,
+            treeNode51,
+            treeNode52,
+            treeNode53});
+            System.Windows.Forms.TreeNode treeNode55 = new System.Windows.Forms.TreeNode("实时生产总览", 8, 8);
+            System.Windows.Forms.TreeNode treeNode56 = new System.Windows.Forms.TreeNode("详细生产情况", 9, 9);
+            System.Windows.Forms.TreeNode treeNode57 = new System.Windows.Forms.TreeNode("设备连接设置", 10, 10);
+            System.Windows.Forms.TreeNode treeNode58 = new System.Windows.Forms.TreeNode("生产历史记录", 11, 11);
+            System.Windows.Forms.TreeNode treeNode59 = new System.Windows.Forms.TreeNode("二车间", 7, 7, new System.Windows.Forms.TreeNode[] {
+            treeNode55,
+            treeNode56,
+            treeNode57,
+            treeNode58});
+            System.Windows.Forms.TreeNode treeNode60 = new System.Windows.Forms.TreeNode("实时生产总览", 8, 8);
+            System.Windows.Forms.TreeNode treeNode61 = new System.Windows.Forms.TreeNode("详细生产情况", 9, 9);
+            System.Windows.Forms.TreeNode treeNode62 = new System.Windows.Forms.TreeNode("设备连接设置", 10, 10);
+            System.Windows.Forms.TreeNode treeNode63 = new System.Windows.Forms.TreeNode("生产历史记录", 11, 11);
+            System.Windows.Forms.TreeNode treeNode64 = new System.Windows.Forms.TreeNode("三车间", 7, 7, new System.Windows.Forms.TreeNode[] {
+            treeNode60,
+            treeNode61,
+            treeNode62,
+            treeNode63});
+            System.Windows.Forms.TreeNode treeNode65 = new System.Windows.Forms.TreeNode("染色管理", 6, 6, new System.Windows.Forms.TreeNode[] {
+            treeNode54,
+            treeNode59,
+            treeNode64});
+            System.Windows.Forms.TreeNode treeNode66 = new System.Windows.Forms.TreeNode("一车间", 7, 7);
+            System.Windows.Forms.TreeNode treeNode67 = new System.Windows.Forms.TreeNode("二车间", 7, 7);
+            System.Windows.Forms.TreeNode treeNode68 = new System.Windows.Forms.TreeNode("三车间", 7, 7);
+            System.Windows.Forms.TreeNode treeNode69 = new System.Windows.Forms.TreeNode("工艺管理", 12, 12, new System.Windows.Forms.TreeNode[] {
+            treeNode66,
+            treeNode67,
+            treeNode68});
+            System.Windows.Forms.TreeNode treeNode70 = new System.Windows.Forms.TreeNode("水能管理", 14, 14);
+            System.Windows.Forms.TreeNode treeNode71 = new System.Windows.Forms.TreeNode("电能管理", 15, 15);
+            System.Windows.Forms.TreeNode treeNode72 = new System.Windows.Forms.TreeNode("蒸汽管理", 16, 16);
+            System.Windows.Forms.TreeNode treeNode73 = new System.Windows.Forms.TreeNode("一车间", 7, 7, new System.Windows.Forms.TreeNode[] {
+            treeNode70,
+            treeNode71,
+            treeNode72});
+            System.Windows.Forms.TreeNode treeNode74 = new System.Windows.Forms.TreeNode("水能管理", 14, 14);
+            System.Windows.Forms.TreeNode treeNode75 = new System.Windows.Forms.TreeNode("电能管理", 15, 15);
+            System.Windows.Forms.TreeNode treeNode76 = new System.Windows.Forms.TreeNode("蒸汽管理", 16, 16);
+            System.Windows.Forms.TreeNode treeNode77 = new System.Windows.Forms.TreeNode("二车间", 7, 7, new System.Windows.Forms.TreeNode[] {
+            treeNode74,
+            treeNode75,
+            treeNode76});
+            System.Windows.Forms.TreeNode treeNode78 = new System.Windows.Forms.TreeNode("水能管理", 14, 14);
+            System.Windows.Forms.TreeNode treeNode79 = new System.Windows.Forms.TreeNode("电能", 15, 15);
+            System.Windows.Forms.TreeNode treeNode80 = new System.Windows.Forms.TreeNode("蒸汽管理", 16, 16);
+            System.Windows.Forms.TreeNode treeNode81 = new System.Windows.Forms.TreeNode("三车间", 7, 7, new System.Windows.Forms.TreeNode[] {
+            treeNode78,
+            treeNode79,
+            treeNode80});
+            System.Windows.Forms.TreeNode treeNode82 = new System.Windows.Forms.TreeNode("能源管理", 13, 13, new System.Windows.Forms.TreeNode[] {
+            treeNode73,
+            treeNode77,
+            treeNode81});
+            System.Windows.Forms.TreeNode treeNode83 = new System.Windows.Forms.TreeNode("一车间", 7, 7);
+            System.Windows.Forms.TreeNode treeNode84 = new System.Windows.Forms.TreeNode("二车间", 7, 7);
+            System.Windows.Forms.TreeNode treeNode85 = new System.Windows.Forms.TreeNode("三车间", 7, 7);
+            System.Windows.Forms.TreeNode treeNode86 = new System.Windows.Forms.TreeNode("生产排产", 17, 17, new System.Windows.Forms.TreeNode[] {
+            treeNode83,
+            treeNode84,
+            treeNode85});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainView));
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -117,6 +117,7 @@
             this.label_title = new System.Windows.Forms.Label();
             this.panel_bg = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // treeView1
@@ -127,183 +128,183 @@
             this.treeView1.ImageList = this.imageList1;
             this.treeView1.Location = new System.Drawing.Point(12, 77);
             this.treeView1.Name = "treeView1";
-            treeNode1.ImageKey = "userguanli.png";
-            treeNode1.Name = "useredit";
-            treeNode1.SelectedImageIndex = 1;
-            treeNode1.Text = "用户编辑";
-            treeNode2.ImageIndex = 2;
-            treeNode2.Name = "节点4";
-            treeNode2.SelectedImageIndex = 2;
-            treeNode2.Text = "权限编辑";
-            treeNode3.ImageIndex = 3;
-            treeNode3.Name = "orginazition";
-            treeNode3.SelectedImageIndex = 3;
-            treeNode3.Text = "组织架构";
-            treeNode4.ImageIndex = 4;
-            treeNode4.Name = "forbidenuser";
-            treeNode4.SelectedImageIndex = 4;
-            treeNode4.Text = "冻结用户";
-            treeNode5.ImageIndex = 5;
-            treeNode5.Name = "usercaozuojilu";
-            treeNode5.SelectedImageIndex = 5;
-            treeNode5.Text = "用户操作记录";
-            treeNode6.ForeColor = System.Drawing.Color.Black;
-            treeNode6.Name = "userconfig";
-            treeNode6.Text = "用户管理";
-            treeNode7.ImageIndex = 8;
-            treeNode7.Name = "1chejianrealtimeshengchan";
-            treeNode7.SelectedImageIndex = 8;
-            treeNode7.Text = "实时生产总览";
-            treeNode8.ImageIndex = 9;
-            treeNode8.Name = "1chejianxiangxishengchan";
-            treeNode8.SelectedImageIndex = 9;
-            treeNode8.Text = "详细生产情况";
-            treeNode9.ImageIndex = 10;
-            treeNode9.Name = "1chejiantongxun";
-            treeNode9.SelectedImageIndex = 10;
-            treeNode9.Text = "设备连接设置";
-            treeNode10.ImageIndex = 11;
-            treeNode10.Name = "1chejianshenchanjilu";
-            treeNode10.SelectedImageIndex = 11;
-            treeNode10.Text = "生产历史记录";
-            treeNode11.ImageIndex = 7;
-            treeNode11.Name = "ranse_1chenjian";
-            treeNode11.SelectedImageIndex = 7;
-            treeNode11.Text = "一车间";
-            treeNode12.ImageIndex = 8;
-            treeNode12.Name = "2chejianrealtimeshengchan";
-            treeNode12.SelectedImageIndex = 8;
-            treeNode12.Text = "实时生产总览";
-            treeNode13.ImageIndex = 9;
-            treeNode13.Name = "2chejianxiangxishengchan";
-            treeNode13.SelectedImageIndex = 9;
-            treeNode13.Text = "详细生产情况";
-            treeNode14.ImageIndex = 10;
-            treeNode14.Name = "2chejiantongxun";
-            treeNode14.SelectedImageIndex = 10;
-            treeNode14.Text = "设备连接设置";
-            treeNode15.ImageIndex = 11;
-            treeNode15.Name = "2chejianshenchanjilu";
-            treeNode15.SelectedImageIndex = 11;
-            treeNode15.Text = "生产历史记录";
-            treeNode16.ImageIndex = 7;
-            treeNode16.Name = "ranse_2chejian";
-            treeNode16.SelectedImageIndex = 7;
-            treeNode16.Text = "二车间";
-            treeNode17.ImageIndex = 8;
-            treeNode17.Name = "3chejianrealtimeshengchan";
-            treeNode17.SelectedImageIndex = 8;
-            treeNode17.Text = "实时生产总览";
-            treeNode18.ImageIndex = 9;
-            treeNode18.Name = "3chejianxiangxishengchan";
-            treeNode18.SelectedImageIndex = 9;
-            treeNode18.Text = "详细生产情况";
-            treeNode19.ImageIndex = 10;
-            treeNode19.Name = "3chejiantongxun";
-            treeNode19.SelectedImageIndex = 10;
-            treeNode19.Text = "设备连接设置";
-            treeNode20.ImageIndex = 11;
-            treeNode20.Name = "3chejianshenchanjilu";
-            treeNode20.SelectedImageIndex = 11;
-            treeNode20.Text = "生产历史记录";
-            treeNode21.ImageIndex = 7;
-            treeNode21.Name = "3chejiantongxun";
-            treeNode21.SelectedImageIndex = 7;
-            treeNode21.Text = "三车间";
-            treeNode22.ImageIndex = 6;
-            treeNode22.Name = "ranseguanli";
-            treeNode22.SelectedImageIndex = 6;
-            treeNode22.Text = "染色管理";
-            treeNode23.ImageIndex = 7;
-            treeNode23.Name = "gongyiguanli_1chejian";
-            treeNode23.SelectedImageIndex = 7;
-            treeNode23.Text = "一车间";
-            treeNode24.ImageIndex = 7;
-            treeNode24.Name = "gongyiguanli_2chejian";
-            treeNode24.SelectedImageIndex = 7;
-            treeNode24.Text = "二车间";
-            treeNode25.ImageIndex = 7;
-            treeNode25.Name = "gongyiguanli_3chejian";
-            treeNode25.SelectedImageIndex = 7;
-            treeNode25.Text = "三车间";
-            treeNode26.ImageIndex = 12;
-            treeNode26.Name = "gongyiguanli";
-            treeNode26.SelectedImageIndex = 12;
-            treeNode26.Text = "工艺管理";
-            treeNode27.ImageIndex = 14;
-            treeNode27.Name = "shuineng_1chejian";
-            treeNode27.SelectedImageIndex = 14;
-            treeNode27.Text = "水能管理";
-            treeNode28.ImageIndex = 15;
-            treeNode28.Name = "dianneng_1chejian";
-            treeNode28.SelectedImageIndex = 15;
-            treeNode28.Text = "电能管理";
-            treeNode29.ImageIndex = 16;
-            treeNode29.Name = "qiti_1chejian";
-            treeNode29.SelectedImageIndex = 16;
-            treeNode29.Text = "蒸汽管理";
-            treeNode30.ImageIndex = 7;
-            treeNode30.Name = "nengyuanguanli_1chejian";
-            treeNode30.SelectedImageIndex = 7;
-            treeNode30.Text = "一车间";
-            treeNode31.ImageIndex = 14;
-            treeNode31.Name = "shuineng_2chejian";
-            treeNode31.SelectedImageIndex = 14;
-            treeNode31.Text = "水能管理";
-            treeNode32.ImageIndex = 15;
-            treeNode32.Name = "dianneng_2chejian";
-            treeNode32.SelectedImageIndex = 15;
-            treeNode32.Text = "电能管理";
-            treeNode33.ImageIndex = 16;
-            treeNode33.Name = "qiti_2chejian";
-            treeNode33.SelectedImageIndex = 16;
-            treeNode33.Text = "蒸汽管理";
-            treeNode34.ImageIndex = 7;
-            treeNode34.Name = "nengyuanguanli_2chejian";
-            treeNode34.SelectedImageIndex = 7;
-            treeNode34.Text = "二车间";
-            treeNode35.ImageIndex = 14;
-            treeNode35.Name = "shuineng_3chejian";
-            treeNode35.SelectedImageIndex = 14;
-            treeNode35.Text = "水能管理";
-            treeNode36.ImageIndex = 15;
-            treeNode36.Name = "dianneng_3chejian";
-            treeNode36.SelectedImageIndex = 15;
-            treeNode36.Text = "电能";
-            treeNode37.ImageIndex = 16;
-            treeNode37.Name = "qiti_3chejian";
-            treeNode37.SelectedImageIndex = 16;
-            treeNode37.Text = "蒸汽管理";
-            treeNode38.ImageIndex = 7;
-            treeNode38.Name = "nengyuanguanli_3chejian";
-            treeNode38.SelectedImageIndex = 7;
-            treeNode38.Text = "三车间";
-            treeNode39.ImageIndex = 13;
-            treeNode39.Name = "nengyuanguanli";
-            treeNode39.SelectedImageIndex = 13;
-            treeNode39.Text = "能源管理";
-            treeNode40.ImageIndex = 7;
-            treeNode40.Name = "shengchan_1chejian";
-            treeNode40.SelectedImageIndex = 7;
-            treeNode40.Text = "一车间";
-            treeNode41.ImageIndex = 7;
-            treeNode41.Name = "shengchan_2chejian";
-            treeNode41.SelectedImageIndex = 7;
-            treeNode41.Text = "二车间";
-            treeNode42.ImageIndex = 7;
-            treeNode42.Name = "shengchan_3chejian";
-            treeNode42.SelectedImageIndex = 7;
-            treeNode42.Text = "三车间";
-            treeNode43.ImageIndex = 17;
-            treeNode43.Name = "shengchanjihua";
-            treeNode43.SelectedImageIndex = 17;
-            treeNode43.Text = "生产排产";
+            treeNode44.ImageKey = "userguanli.png";
+            treeNode44.Name = "useredit";
+            treeNode44.SelectedImageIndex = 1;
+            treeNode44.Text = "用户编辑";
+            treeNode45.ImageIndex = 2;
+            treeNode45.Name = "节点4";
+            treeNode45.SelectedImageIndex = 2;
+            treeNode45.Text = "权限编辑";
+            treeNode46.ImageIndex = 3;
+            treeNode46.Name = "orginazition";
+            treeNode46.SelectedImageIndex = 3;
+            treeNode46.Text = "组织架构";
+            treeNode47.ImageIndex = 4;
+            treeNode47.Name = "forbidenuser";
+            treeNode47.SelectedImageIndex = 4;
+            treeNode47.Text = "冻结用户";
+            treeNode48.ImageIndex = 5;
+            treeNode48.Name = "usercaozuojilu";
+            treeNode48.SelectedImageIndex = 5;
+            treeNode48.Text = "用户操作记录";
+            treeNode49.ForeColor = System.Drawing.Color.Black;
+            treeNode49.Name = "userconfig";
+            treeNode49.Text = "用户管理";
+            treeNode50.ImageIndex = 8;
+            treeNode50.Name = "1chejianrealtimeshengchan";
+            treeNode50.SelectedImageIndex = 8;
+            treeNode50.Text = "实时生产总览";
+            treeNode51.ImageIndex = 9;
+            treeNode51.Name = "1chejianxiangxishengchan";
+            treeNode51.SelectedImageIndex = 9;
+            treeNode51.Text = "详细生产情况";
+            treeNode52.ImageIndex = 10;
+            treeNode52.Name = "1chejiantongxun";
+            treeNode52.SelectedImageIndex = 10;
+            treeNode52.Text = "设备连接设置";
+            treeNode53.ImageIndex = 11;
+            treeNode53.Name = "1chejianshenchanjilu";
+            treeNode53.SelectedImageIndex = 11;
+            treeNode53.Text = "生产历史记录";
+            treeNode54.ImageIndex = 7;
+            treeNode54.Name = "ranse_1chenjian";
+            treeNode54.SelectedImageIndex = 7;
+            treeNode54.Text = "一车间";
+            treeNode55.ImageIndex = 8;
+            treeNode55.Name = "2chejianrealtimeshengchan";
+            treeNode55.SelectedImageIndex = 8;
+            treeNode55.Text = "实时生产总览";
+            treeNode56.ImageIndex = 9;
+            treeNode56.Name = "2chejianxiangxishengchan";
+            treeNode56.SelectedImageIndex = 9;
+            treeNode56.Text = "详细生产情况";
+            treeNode57.ImageIndex = 10;
+            treeNode57.Name = "2chejiantongxun";
+            treeNode57.SelectedImageIndex = 10;
+            treeNode57.Text = "设备连接设置";
+            treeNode58.ImageIndex = 11;
+            treeNode58.Name = "2chejianshenchanjilu";
+            treeNode58.SelectedImageIndex = 11;
+            treeNode58.Text = "生产历史记录";
+            treeNode59.ImageIndex = 7;
+            treeNode59.Name = "ranse_2chejian";
+            treeNode59.SelectedImageIndex = 7;
+            treeNode59.Text = "二车间";
+            treeNode60.ImageIndex = 8;
+            treeNode60.Name = "3chejianrealtimeshengchan";
+            treeNode60.SelectedImageIndex = 8;
+            treeNode60.Text = "实时生产总览";
+            treeNode61.ImageIndex = 9;
+            treeNode61.Name = "3chejianxiangxishengchan";
+            treeNode61.SelectedImageIndex = 9;
+            treeNode61.Text = "详细生产情况";
+            treeNode62.ImageIndex = 10;
+            treeNode62.Name = "3chejiantongxun";
+            treeNode62.SelectedImageIndex = 10;
+            treeNode62.Text = "设备连接设置";
+            treeNode63.ImageIndex = 11;
+            treeNode63.Name = "3chejianshenchanjilu";
+            treeNode63.SelectedImageIndex = 11;
+            treeNode63.Text = "生产历史记录";
+            treeNode64.ImageIndex = 7;
+            treeNode64.Name = "3chejiantongxun";
+            treeNode64.SelectedImageIndex = 7;
+            treeNode64.Text = "三车间";
+            treeNode65.ImageIndex = 6;
+            treeNode65.Name = "ranseguanli";
+            treeNode65.SelectedImageIndex = 6;
+            treeNode65.Text = "染色管理";
+            treeNode66.ImageIndex = 7;
+            treeNode66.Name = "gongyiguanli_1chejian";
+            treeNode66.SelectedImageIndex = 7;
+            treeNode66.Text = "一车间";
+            treeNode67.ImageIndex = 7;
+            treeNode67.Name = "gongyiguanli_2chejian";
+            treeNode67.SelectedImageIndex = 7;
+            treeNode67.Text = "二车间";
+            treeNode68.ImageIndex = 7;
+            treeNode68.Name = "gongyiguanli_3chejian";
+            treeNode68.SelectedImageIndex = 7;
+            treeNode68.Text = "三车间";
+            treeNode69.ImageIndex = 12;
+            treeNode69.Name = "gongyiguanli";
+            treeNode69.SelectedImageIndex = 12;
+            treeNode69.Text = "工艺管理";
+            treeNode70.ImageIndex = 14;
+            treeNode70.Name = "shuineng_1chejian";
+            treeNode70.SelectedImageIndex = 14;
+            treeNode70.Text = "水能管理";
+            treeNode71.ImageIndex = 15;
+            treeNode71.Name = "dianneng_1chejian";
+            treeNode71.SelectedImageIndex = 15;
+            treeNode71.Text = "电能管理";
+            treeNode72.ImageIndex = 16;
+            treeNode72.Name = "qiti_1chejian";
+            treeNode72.SelectedImageIndex = 16;
+            treeNode72.Text = "蒸汽管理";
+            treeNode73.ImageIndex = 7;
+            treeNode73.Name = "nengyuanguanli_1chejian";
+            treeNode73.SelectedImageIndex = 7;
+            treeNode73.Text = "一车间";
+            treeNode74.ImageIndex = 14;
+            treeNode74.Name = "shuineng_2chejian";
+            treeNode74.SelectedImageIndex = 14;
+            treeNode74.Text = "水能管理";
+            treeNode75.ImageIndex = 15;
+            treeNode75.Name = "dianneng_2chejian";
+            treeNode75.SelectedImageIndex = 15;
+            treeNode75.Text = "电能管理";
+            treeNode76.ImageIndex = 16;
+            treeNode76.Name = "qiti_2chejian";
+            treeNode76.SelectedImageIndex = 16;
+            treeNode76.Text = "蒸汽管理";
+            treeNode77.ImageIndex = 7;
+            treeNode77.Name = "nengyuanguanli_2chejian";
+            treeNode77.SelectedImageIndex = 7;
+            treeNode77.Text = "二车间";
+            treeNode78.ImageIndex = 14;
+            treeNode78.Name = "shuineng_3chejian";
+            treeNode78.SelectedImageIndex = 14;
+            treeNode78.Text = "水能管理";
+            treeNode79.ImageIndex = 15;
+            treeNode79.Name = "dianneng_3chejian";
+            treeNode79.SelectedImageIndex = 15;
+            treeNode79.Text = "电能";
+            treeNode80.ImageIndex = 16;
+            treeNode80.Name = "qiti_3chejian";
+            treeNode80.SelectedImageIndex = 16;
+            treeNode80.Text = "蒸汽管理";
+            treeNode81.ImageIndex = 7;
+            treeNode81.Name = "nengyuanguanli_3chejian";
+            treeNode81.SelectedImageIndex = 7;
+            treeNode81.Text = "三车间";
+            treeNode82.ImageIndex = 13;
+            treeNode82.Name = "nengyuanguanli";
+            treeNode82.SelectedImageIndex = 13;
+            treeNode82.Text = "能源管理";
+            treeNode83.ImageIndex = 7;
+            treeNode83.Name = "shengchan_1chejian";
+            treeNode83.SelectedImageIndex = 7;
+            treeNode83.Text = "一车间";
+            treeNode84.ImageIndex = 7;
+            treeNode84.Name = "shengchan_2chejian";
+            treeNode84.SelectedImageIndex = 7;
+            treeNode84.Text = "二车间";
+            treeNode85.ImageIndex = 7;
+            treeNode85.Name = "shengchan_3chejian";
+            treeNode85.SelectedImageIndex = 7;
+            treeNode85.Text = "三车间";
+            treeNode86.ImageIndex = 17;
+            treeNode86.Name = "shengchanjihua";
+            treeNode86.SelectedImageIndex = 17;
+            treeNode86.Text = "生产排产";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode22,
-            treeNode26,
-            treeNode39,
-            treeNode43});
+            treeNode49,
+            treeNode65,
+            treeNode69,
+            treeNode82,
+            treeNode86});
             this.treeView1.SelectedImageIndex = 0;
             this.treeView1.Size = new System.Drawing.Size(175, 483);
             this.treeView1.TabIndex = 0;
@@ -372,6 +373,12 @@
             this.timer1.Interval = 2000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 10000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -395,6 +402,7 @@
         private System.Windows.Forms.Label label_title;
         private System.Windows.Forms.Panel panel_bg;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 
