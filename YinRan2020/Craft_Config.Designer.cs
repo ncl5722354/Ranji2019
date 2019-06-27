@@ -49,23 +49,12 @@
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView_xiangxi = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_gongyiduan_info = new System.Windows.Forms.Panel();
             this.button_read_gongyiduan = new System.Windows.Forms.Button();
             this.comboBox_gongyi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView_exe = new System.Windows.Forms.DataGridView();
-            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_craft = new System.Windows.Forms.Panel();
             this.toolStrip5 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
@@ -104,6 +93,19 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft_name)).BeginInit();
@@ -356,47 +358,13 @@
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8});
+            this.Column8,
+            this.Column38});
             this.dataGridView_xiangxi.Location = new System.Drawing.Point(3, 64);
             this.dataGridView_xiangxi.Name = "dataGridView_xiangxi";
             this.dataGridView_xiangxi.RowTemplate.Height = 23;
             this.dataGridView_xiangxi.Size = new System.Drawing.Size(357, 355);
             this.dataGridView_xiangxi.TabIndex = 0;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "ID";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 30;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "参数1";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 50;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "参数2";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 50;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "工艺";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "主泵频率";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 50;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "提布频率";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 50;
             // 
             // panel_gongyiduan_info
             // 
@@ -458,42 +426,13 @@
             this.Column33,
             this.Column34,
             this.Column35,
-            this.Column36});
+            this.Column36,
+            this.Column37});
             this.dataGridView_exe.Location = new System.Drawing.Point(680, 8);
             this.dataGridView_exe.Name = "dataGridView_exe";
             this.dataGridView_exe.RowTemplate.Height = 23;
             this.dataGridView_exe.Size = new System.Drawing.Size(270, 402);
             this.dataGridView_exe.TabIndex = 2;
-            // 
-            // Column32
-            // 
-            this.Column32.HeaderText = "参数1";
-            this.Column32.Name = "Column32";
-            this.Column32.Width = 40;
-            // 
-            // Column33
-            // 
-            this.Column33.HeaderText = "参数2";
-            this.Column33.Name = "Column33";
-            this.Column33.Width = 40;
-            // 
-            // Column34
-            // 
-            this.Column34.HeaderText = "工艺代码";
-            this.Column34.Name = "Column34";
-            this.Column34.Width = 60;
-            // 
-            // Column35
-            // 
-            this.Column35.HeaderText = "主泵频率";
-            this.Column35.Name = "Column35";
-            this.Column35.Width = 40;
-            // 
-            // Column36
-            // 
-            this.Column36.HeaderText = "提布频率";
-            this.Column36.Name = "Column36";
-            this.Column36.Width = 40;
             // 
             // panel_craft
             // 
@@ -803,6 +742,81 @@
             this.toolStripButton6.Text = "修改";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
+            // Column32
+            // 
+            this.Column32.HeaderText = "参数1";
+            this.Column32.Name = "Column32";
+            this.Column32.Width = 40;
+            // 
+            // Column33
+            // 
+            this.Column33.HeaderText = "参数2";
+            this.Column33.Name = "Column33";
+            this.Column33.Width = 40;
+            // 
+            // Column34
+            // 
+            this.Column34.HeaderText = "工艺代码";
+            this.Column34.Name = "Column34";
+            this.Column34.Width = 60;
+            // 
+            // Column35
+            // 
+            this.Column35.HeaderText = "主泵频率";
+            this.Column35.Name = "Column35";
+            this.Column35.Width = 40;
+            // 
+            // Column36
+            // 
+            this.Column36.HeaderText = "提布频率";
+            this.Column36.Name = "Column36";
+            this.Column36.Width = 40;
+            // 
+            // Column37
+            // 
+            this.Column37.HeaderText = "风机频率";
+            this.Column37.Name = "Column37";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "ID";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 30;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "参数1";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 50;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "参数2";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 50;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "工艺";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "主泵频率";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 50;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "提布频率";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 50;
+            // 
+            // Column38
+            // 
+            this.Column38.HeaderText = "风机频率";
+            this.Column38.Name = "Column38";
+            // 
             // Craft_Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -879,12 +893,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.Panel panel_info;
         private System.Windows.Forms.ToolStrip toolStrip4;
         private System.Windows.Forms.DataGridView dataGridView_info;
@@ -922,10 +930,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
         private System.Windows.Forms.DataGridView dataGridView_exe;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column38;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column33;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column34;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
     }
 }

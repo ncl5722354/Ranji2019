@@ -373,13 +373,15 @@ namespace YinRan2020
             // 没有xiangxi这张表
             if (xiangxi == null)
             {
-                CreateSqlValueType[] create_cmd = new CreateSqlValueType[9];
+                CreateSqlValueType[] create_cmd = new CreateSqlValueType[7];
                 create_cmd[0] = new CreateSqlValueType("int", "ID", true);
                 create_cmd[1] = new CreateSqlValueType("nvarchar(50)", "value1");
                 create_cmd[2] = new CreateSqlValueType("nvarchar(50)", "value2");
                 create_cmd[3] = new CreateSqlValueType("nvarchar(50)", "Craft");
                 create_cmd[4] = new CreateSqlValueType("nvarchar(50)", "zhubenpinlv");
                 create_cmd[5] = new CreateSqlValueType("nvarchar(50)", "tibupinlv");
+                create_cmd[6] = new CreateSqlValueType("nvarchar(50)","fengjipinlv");
+               
                 MainView.builder.Create_Table(craft_name + "xiangxi", create_cmd);
             }
 
@@ -464,13 +466,14 @@ namespace YinRan2020
                 DataTable xiangxi = MainView.builder.Select_Table(craft_name + "xiangxi");
                 int rowcount = xiangxi.Rows.Count;
                 rowcount++;
-                string[] insert_cmd = new string[6];
+                string[] insert_cmd = new string[7];
                 insert_cmd[0] = rowcount.ToString();
                 insert_cmd[1] = Add_CraftDuan.value1;
                 insert_cmd[2] = Add_CraftDuan.value2;
                 insert_cmd[3] = Add_CraftDuan.craft_name;
                 insert_cmd[4] = Add_CraftDuan.zhubengpinlv;
                 insert_cmd[5] = Add_CraftDuan.tibupinlv;
+                insert_cmd[6] = Add_CraftDuan.fengjipinlv;
                 MainView.builder.Insert(craft_name + "xiangxi", insert_cmd);
                 ReFlush_Xiangxi(craft_name);
             }
@@ -535,18 +538,20 @@ namespace YinRan2020
                 Update_CraftDuan.craft_name = dr.Cells[3].Value.ToString();
                 Update_CraftDuan.zhubengpinlv = dr.Cells[4].Value.ToString();
                 Update_CraftDuan.tibupinlv = dr.Cells[5].Value.ToString();
+                Update_CraftDuan.fengjipinlv = dr.Cells[6].Value.ToString();
 
                 Update_CraftDuan view = new Update_CraftDuan();
                 view.Set_Title("更新工艺段 " + comboBox_gongyi.Text);
                 DialogResult result = view.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    string[] update_cmd = new string[5];
+                    string[] update_cmd = new string[6];
                     update_cmd[0] = "value1='" + Update_CraftDuan.value1 + "'";
                     update_cmd[1] = "value2='" + Update_CraftDuan.value2 + "'";
                     update_cmd[2] = "Craft='" + Update_CraftDuan.craft_name + "'";
                     update_cmd[3] = "zhubenpinlv='" + Update_CraftDuan.zhubengpinlv + "'";
                     update_cmd[4] = "tibupinlv='" + Update_CraftDuan.tibupinlv + "'";
+                    update_cmd[5] = "fengjipinlv='" + Update_CraftDuan.fengjipinlv + "'";
                     string where_cmd = "ID='" + Update_CraftDuan.ID + "'";
 
                     MainView.builder.Updata(craft_name + "xiangxi", where_cmd, update_cmd);

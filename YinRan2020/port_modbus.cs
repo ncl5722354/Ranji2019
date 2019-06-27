@@ -111,6 +111,7 @@ namespace YinRan2020
             if (array[1] == 16)
             {
                 //Red_Green_zhifan_Button.step = Red_Green_zhifan_Button.step + 1;
+                Xiangxi.loadcount = 0;
                 if (array[2] == Red_Green_zhifan_Button.xiazai_data1 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data1 % 256) Red_Green_zhifan_Button.step = 1;
                 if (array[2] == Red_Green_zhifan_Button.xiazai_data11 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data11 % 256) Red_Green_zhifan_Button.step = 11;
                 if (array[2] == Red_Green_zhifan_Button.xiazai_data12 / 256 && array[3] == Red_Green_zhifan_Button.xiazai_data12 % 256) Red_Green_zhifan_Button.step = 12;
