@@ -48,6 +48,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "MyDataGridView";
             this.Size = new System.Drawing.Size(1090, 712);
+            this.Load += new System.EventHandler(this.MyDataGridView_Load);
             this.Resize += new System.EventHandler(this.MyDataGridView_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

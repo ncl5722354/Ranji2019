@@ -145,7 +145,7 @@ namespace YinRan2020
 
 
             // 工艺管理有关数据库
-            //     工艺名称与参数名称之间的关系
+            // 工艺名称与参数名称之间的关系
             CreateSqlValueType[] create_gongyi = new CreateSqlValueType[12];
             create_gongyi[0] = new CreateSqlValueType("nvarchar(50)", "Gongyi_Name", true);
             create_gongyi[1] = new CreateSqlValueType("nvarchar(50)", "value1_name");

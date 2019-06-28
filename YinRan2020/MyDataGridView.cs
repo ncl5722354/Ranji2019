@@ -84,5 +84,10 @@ namespace YinRan2020
         {
             return dataGridView1.SelectedRows[0];
         }
+
+        private void MyDataGridView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
