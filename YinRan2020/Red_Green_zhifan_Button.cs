@@ -100,7 +100,9 @@ namespace YinRan2020
             循环,
             搅拌,
             手自动,
-            料缸手自动
+            料缸手自动,
+            请求运行,
+            请求暂停
         };
         private void thread()
         {

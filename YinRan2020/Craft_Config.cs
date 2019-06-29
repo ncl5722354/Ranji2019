@@ -139,6 +139,28 @@ namespace YinRan2020
 
               // MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0'), create_cmd);
             }
+            for (int i = 1; i <= 300; i++)
+            {
+                listBox_gongyi.Items.Add("工艺" + i.ToString().PadLeft(3, '0')+"气流");
+
+                // 建立300个工艺库
+                CreateSqlValueType[] create_cmd = new CreateSqlValueType[13];
+                create_cmd[0] = new CreateSqlValueType("int", "ID", true);
+                create_cmd[1] = new CreateSqlValueType("nvarchar(50)", "craft_name");
+                create_cmd[2] = new CreateSqlValueType("nvarchar(50)", "value1");
+                create_cmd[3] = new CreateSqlValueType("nvarchar(50)", "value2");
+                create_cmd[4] = new CreateSqlValueType("nvarchar(50)", "value3");
+                create_cmd[5] = new CreateSqlValueType("nvarchar(50)", "value4");
+                create_cmd[6] = new CreateSqlValueType("nvarchar(50)", "value5");
+                create_cmd[7] = new CreateSqlValueType("nvarchar(50)", "value6");
+                create_cmd[8] = new CreateSqlValueType("nvarchar(50)", "value7");
+                create_cmd[9] = new CreateSqlValueType("nvarchar(50)", "value8");
+                create_cmd[10] = new CreateSqlValueType("nvarchar(50)", "value9");
+                create_cmd[11] = new CreateSqlValueType("nvarchar(50)", "value10");
+                create_cmd[12] = new CreateSqlValueType("nvarchar(50)", "beizhu");
+
+                MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0')+"气流", create_cmd);
+            }
 
             //dataGridView1.RowCount = 1;
             dataGridView_craft_name.ColumnCount = 12;

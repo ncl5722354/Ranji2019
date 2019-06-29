@@ -268,7 +268,11 @@ namespace YinRan2020
             myLabel_zongtime.Device_Name = name;
             myLabel_zongtime.init();
 
-            
+            red_Green_zhifan_Button_qingqiukaishi.Device_Name = name;
+            red_Green_zhifan_Button_qingqiukaishi.init();
+
+            red_Green_zhifan_Button_zanting.Device_Name = name;
+            red_Green_zhifan_Button_zanting.init();
 
             string linshi_where_cmd="machine_num='"+machine_num.ToString()+"'";
             DataTable linshitable = MainView.builder.Select_Table("linshi_craft", linshi_where_cmd);

@@ -38,6 +38,11 @@ namespace YinRan2020
                 comboBox_gongyihao.Items.Add("工艺" + i.ToString().PadLeft(3, '0'));
 
             }
+            for (int i = 1; i <= 300; i++)
+            {
+                comboBox_gongyihao.Items.Add("工艺" + i.ToString().PadLeft(3, '0')+"气流");
+
+            }
 
             ViewCaoZuo.Object_Position(0.01, 0.15, 0.75, 0.15, panel1, this.Controls);
             ViewCaoZuo.Object_Position(0.01, 0.35, 0.75, 0.6, panel2, this.Controls);

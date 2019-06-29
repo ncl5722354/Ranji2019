@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.textBox_danhao = new System.Windows.Forms.TextBox();
             this.button_read_gongyi = new System.Windows.Forms.Button();
             this.label_title = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.myLabel_Red_Yellow_lengque = new YinRan2020.MyLabel_Red_Yellow();
             this.myLabel_Red_Yellow_shengwen = new YinRan2020.MyLabel_Red_Yellow();
             this.button_tiaoduan = new System.Windows.Forms.Button();
             this.progressBar_down = new System.Windows.Forms.ProgressBar();
@@ -113,7 +114,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer_duan = new System.Windows.Forms.Timer(this.components);
-            this.myLabel_Red_Yellow_lengque = new YinRan2020.MyLabel_Red_Yellow();
+            this.red_Green_zhifan_Button_qingqiukaishi = new YinRan2020.Red_Green_zhifan_Button();
+            this.red_Green_zhifan_Button_zanting = new YinRan2020.Red_Green_zhifan_Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft)).BeginInit();
@@ -157,21 +159,21 @@
             this.chart1.BorderSkin.BackColor = System.Drawing.Color.Transparent;
             this.chart1.BorderSkin.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chart1.BorderSkin.BorderWidth = 3;
-            chartArea2.AxisX.LabelStyle.Format = "“yyyy-MM-dd HH:mm:ss”";
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            legend2.Title = "温度曲线";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.AxisX.LabelStyle.Format = "“yyyy-MM-dd HH:mm:ss”";
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            legend1.Title = "温度曲线";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(12, 68);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Color = System.Drawing.Color.Red;
-            series2.Legend = "Legend1";
-            series2.Name = "机缸温度";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-            this.chart1.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Red;
+            series1.Legend = "Legend1";
+            series1.Name = "机缸温度";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(628, 257);
             this.chart1.TabIndex = 7;
             this.chart1.Text = "chart1";
@@ -180,6 +182,8 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.red_Green_zhifan_Button_zanting);
+            this.panel1.Controls.Add(this.red_Green_zhifan_Button_qingqiukaishi);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow_lengque);
             this.panel1.Controls.Add(this.myLabel_Red_Yellow_shengwen);
             this.panel1.Controls.Add(this.button_tiaoduan);
@@ -216,6 +220,16 @@
             this.panel1.Size = new System.Drawing.Size(271, 380);
             this.panel1.TabIndex = 8;
             // 
+            // myLabel_Red_Yellow_lengque
+            // 
+            this.myLabel_Red_Yellow_lengque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.myLabel_Red_Yellow_lengque.Device_Name = "";
+            this.myLabel_Red_Yellow_lengque.Location = new System.Drawing.Point(77, 264);
+            this.myLabel_Red_Yellow_lengque.Name = "myLabel_Red_Yellow_lengque";
+            this.myLabel_Red_Yellow_lengque.Size = new System.Drawing.Size(68, 23);
+            this.myLabel_Red_Yellow_lengque.TabIndex = 23;
+            this.myLabel_Red_Yellow_lengque.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.冷却;
+            // 
             // myLabel_Red_Yellow_shengwen
             // 
             this.myLabel_Red_Yellow_shengwen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -238,9 +252,9 @@
             // 
             // progressBar_down
             // 
-            this.progressBar_down.Location = new System.Drawing.Point(-1, 321);
+            this.progressBar_down.Location = new System.Drawing.Point(-1, 328);
             this.progressBar_down.Name = "progressBar_down";
-            this.progressBar_down.Size = new System.Drawing.Size(169, 23);
+            this.progressBar_down.Size = new System.Drawing.Size(257, 23);
             this.progressBar_down.TabIndex = 6;
             // 
             // myLabel_Red_Yellow20
@@ -904,15 +918,29 @@
             this.timer_duan.Enabled = true;
             this.timer_duan.Tick += new System.EventHandler(this.timer_duan_Tick);
             // 
-            // myLabel_Red_Yellow_lengque
+            // red_Green_zhifan_Button_qingqiukaishi
             // 
-            this.myLabel_Red_Yellow_lengque.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.myLabel_Red_Yellow_lengque.Device_Name = "";
-            this.myLabel_Red_Yellow_lengque.Location = new System.Drawing.Point(77, 264);
-            this.myLabel_Red_Yellow_lengque.Name = "myLabel_Red_Yellow_lengque";
-            this.myLabel_Red_Yellow_lengque.Size = new System.Drawing.Size(68, 23);
-            this.myLabel_Red_Yellow_lengque.TabIndex = 23;
-            this.myLabel_Red_Yellow_lengque.Value_Name = YinRan2020.MyLabel_Red_Yellow.value_name.冷却;
+            this.red_Green_zhifan_Button_qingqiukaishi.Device_Name = "";
+            this.red_Green_zhifan_Button_qingqiukaishi.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button_qingqiukaishi.Location = new System.Drawing.Point(161, 264);
+            this.red_Green_zhifan_Button_qingqiukaishi.Mode = 2;
+            this.red_Green_zhifan_Button_qingqiukaishi.Name = "red_Green_zhifan_Button_qingqiukaishi";
+            this.red_Green_zhifan_Button_qingqiukaishi.Size = new System.Drawing.Size(95, 30);
+            this.red_Green_zhifan_Button_qingqiukaishi.TabIndex = 24;
+            this.red_Green_zhifan_Button_qingqiukaishi.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button_qingqiukaishi.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.请求运行;
+            // 
+            // red_Green_zhifan_Button_zanting
+            // 
+            this.red_Green_zhifan_Button_zanting.Device_Name = "";
+            this.red_Green_zhifan_Button_zanting.False_Color = System.Drawing.Color.Red;
+            this.red_Green_zhifan_Button_zanting.Location = new System.Drawing.Point(161, 295);
+            this.red_Green_zhifan_Button_zanting.Mode = 2;
+            this.red_Green_zhifan_Button_zanting.Name = "red_Green_zhifan_Button_zanting";
+            this.red_Green_zhifan_Button_zanting.Size = new System.Drawing.Size(95, 30);
+            this.red_Green_zhifan_Button_zanting.TabIndex = 25;
+            this.red_Green_zhifan_Button_zanting.True_Color = System.Drawing.Color.Yellow;
+            this.red_Green_zhifan_Button_zanting.Value_Name = YinRan2020.Red_Green_zhifan_Button.value_name.请求暂停;
             // 
             // Xiangxi
             // 
@@ -1026,5 +1054,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private MyLabel_Red_Yellow myLabel_Red_Yellow_shengwen;
         private MyLabel_Red_Yellow myLabel_Red_Yellow_lengque;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button_qingqiukaishi;
+        private Red_Green_zhifan_Button red_Green_zhifan_Button_zanting;
     }
 }
