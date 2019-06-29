@@ -112,6 +112,12 @@
     <Compile Include="DeleteDevice.Designer.cs">
       <DependentUpon>DeleteDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
     <Compile Include="port_modbus.cs" />
     <Compile Include="Red_Green_zhifan_Button.cs">
       <SubType>UserControl</SubType>
@@ -253,6 +259,9 @@
     <EmbeddedResource Include="DeleteDevice.resx">
       <DependentUpon>DeleteDevice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Red_Green_zhifan_Button.resx">
       <DependentUpon>Red_Green_zhifan_Button.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,6 +377,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\horizontal_insert_rule_24px_6779_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

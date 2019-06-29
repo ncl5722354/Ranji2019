@@ -386,5 +386,65 @@ namespace YinRan2020
             Thread thread = new Thread(Save_Info);
             thread.Start();
         }
+
+        public void play_stop_qingqiu(int machine_num)
+        {
+            if (player1.playState != WMPLib.WMPPlayState.wmppsPlaying && player1.playState != WMPLib.WMPPlayState.wmppsTransitioning)
+            {
+                player1.URL = "D:/config/wav/" + machine_num.ToString().PadLeft(2,'0') + "0.wav";
+                player1.Ctlcontrols.play();
+            }
+        }
+        public void play_start_qingqiu(int machine_num)
+        {
+            if (player1.playState != WMPLib.WMPPlayState.wmppsPlaying && player1.playState != WMPLib.WMPPlayState.wmppsTransitioning)
+            {
+                player1.URL = "D:/config/wav/"+machine_num.ToString().PadLeft(2,'0') + ".WAV";
+                player1.Ctlcontrols.play();
+            }
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+
+                string where_cmd_start = "value_name='请求运行'";
+                string where_cmd_stop = "value_name='请求暂停'";
+
+                DataTable start_table = MainView.builder.Select_Table("Value_Config", where_cmd_start);
+                DataTable stop_table = MainView.builder.Select_Table("Value_Config", where_cmd_stop);
+                try
+                {
+                    int start_address = int.Parse(start_table.Rows[0][2].ToString());
+                    int stop_address = int.Parse(stop_table.Rows[0][2].ToString());
+
+
+                    if(Device_Data.chejian3_com1_R[i,start_address]==true)
+                    {
+                        play_start_qingqiu(i);
+                        return;
+                    }
+                    if (Device_Data.chejian3_com1_R[i, stop_address] == true)
+                    {
+                        play_stop_qingqiu(i);
+                        return;
+                    }
+
+                }
+                catch { }
+
+                //if (int.Parse(get_value_R_DT(i, "请求开始")) != 0)
+                //{
+                //    play_start_qingqiu(i);
+                //    return;
+                //}
+                //if (int.Parse(get_value_R_DT(i, "请求暂停")) != 0)
+                //{
+                //    play_stop_qingqiu(i);
+                //    return;
+                //}
+            }
+        }
     }
 }

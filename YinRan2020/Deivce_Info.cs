@@ -406,7 +406,9 @@ namespace YinRan2020
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-
+            Password view = new Password();
+            DialogResult reslut = view.ShowDialog();
+            if(reslut==DialogResult.OK)
             Read_Device_Info_Form_DataBase();
 
 

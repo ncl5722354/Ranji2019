@@ -116,8 +116,12 @@
             this.label_caidanliebiao = new System.Windows.Forms.Label();
             this.label_title = new System.Windows.Forms.Label();
             this.panel_bg = new System.Windows.Forms.Panel();
+            this.player1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.panel_bg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.player1)).BeginInit();
             this.SuspendLayout();
             // 
             // treeView1
@@ -362,10 +366,21 @@
             // 
             this.panel_bg.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel_bg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_bg.Controls.Add(this.player1);
             this.panel_bg.Location = new System.Drawing.Point(193, 54);
             this.panel_bg.Name = "panel_bg";
             this.panel_bg.Size = new System.Drawing.Size(1084, 506);
             this.panel_bg.TabIndex = 3;
+            // 
+            // player1
+            // 
+            this.player1.Enabled = true;
+            this.player1.Location = new System.Drawing.Point(180, 60);
+            this.player1.Name = "player1";
+            this.player1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player1.OcxState")));
+            this.player1.Size = new System.Drawing.Size(406, 112);
+            this.player1.TabIndex = 0;
+            this.player1.Visible = false;
             // 
             // timer1
             // 
@@ -379,6 +394,12 @@
             this.timer2.Interval = 10000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Interval = 1000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -390,6 +411,8 @@
             this.Controls.Add(this.treeView1);
             this.Name = "MainView";
             this.Text = "印染厂控制管理系统";
+            this.panel_bg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.player1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -403,6 +426,8 @@
         private System.Windows.Forms.Panel panel_bg;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private AxWMPLib.AxWindowsMediaPlayer player1;
+        private System.Windows.Forms.Timer timer3;
     }
 }
 
