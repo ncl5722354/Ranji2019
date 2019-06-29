@@ -70,6 +70,16 @@ namespace YinRan2020
 
                 ReFlash_Gongyi_Fanal("工艺" + textBox_danhao.Text);
                 ReFlush_Exe_Craft();
+
+
+                // 执行工单号需要记录
+
+                string[] update_cmd = new string[1];
+                update_cmd[0] = "gongdanhao='"+textBox_danhao.Text+"'";
+
+                string where_cmd = "machine_num='" + machine_num.ToString() + "'";
+
+                MainView.builder.Updata("gongdan", where_cmd, update_cmd);
             }
             catch { }
         }
@@ -397,7 +407,7 @@ namespace YinRan2020
                     Red_Green_zhifan_Button.down_data6[i] = int.Parse(dataGridView_exe[5, i].Value.ToString());
                 }
             }
-            catch { throw; }
+            catch { throw;}
         }
 
         private void Xiangxi_Resize(object sender, EventArgs e)
@@ -480,6 +490,39 @@ namespace YinRan2020
                 }
 
                 
+            }
+            catch { }
+
+
+            // 显示操作
+            try
+            {
+                chart1.Series[1].Points.Clear();
+                string where_cmd = "ID='" + JiGang_Name + "'";
+                DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                machine_num = int.Parse(dt.Rows[0][5].ToString());
+                string where_cmd1 = "machine_num='" + machine_num.ToString() + "'";
+                DataTable starttimedt = MainView.builder.Select_Table("start_time", where_cmd1);
+
+                DateTime starttime = DateTime.Parse(starttimedt.Rows[0][1].ToString());
+                DateTime startendtime = starttime.AddHours(5);
+                string where_cmd2 = "machine_num='" + machine_num.ToString() + "' and mytime>='" + starttime.ToString("yyyy-MM-dd HH:mm:ss") + "' and mytime<='" + startendtime.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+                DataTable dt1 = MainView.builder.Select_Table("caozuo_save", where_cmd2);
+
+                foreach(DataRow dr in dt1.Rows)
+                {
+                    try
+                    {
+                        DateTime nowtime = DateTime.Parse(dr[2].ToString());
+                        chart1.Series[1].Points.AddXY(nowtime.ToOADate(), 160);
+                        
+                        chart1.Series[1].Points[chart1.Series[1].Points.Count - 1].Label = dr[4].ToString() + " " + dr[5].ToString();
+                        //chart1.Series[1].Points[chart1.Series[1].Points.Count - 1].IsValueShownAsLabel = true;
+                    }
+                    catch { }
+                }
+
+
             }
             catch { }
         }

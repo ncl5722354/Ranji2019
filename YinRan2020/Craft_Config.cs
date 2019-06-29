@@ -80,12 +80,41 @@ namespace YinRan2020
 
         private void init_view()
         {
+            ViewCaoZuo.Object_Position(0, 0.15, 1, 0.85, tabControl1, this.Controls);
+
+            //ViewCaoZuo.Object_Position(0, 0, 1, 1, tabControl1.TabPages[0], tabControl1.Controls);
+            //ViewCaoZuo.Object_Position(0, 0, 1, 1, tabControl1.TabPages[1], tabControl1.Controls);
+            //ViewCaoZuo.Object_Position(0, 0, 1, 1, tabControl1.TabPages[2], tabControl1.Controls);
+            //ViewCaoZuo.Object_Position(0, 0, 1, 1, tabControl1.TabPages[3], tabControl1.Controls);
+
+            tabControl1.TabPages[0].Left = 0;
+            tabControl1.TabPages[0].Top = 0;
+            tabControl1.TabPages[0].Width = tabControl1.Width;
+            tabControl1.TabPages[0].Height =(int)(tabControl1.Height*0.9);
+
+            tabControl1.TabPages[1].Left = 0;
+            tabControl1.TabPages[1].Top = 0;
+            tabControl1.TabPages[1].Width = tabControl1.Width;
+            tabControl1.TabPages[1].Height = (int)(tabControl1.Height * 0.9);
+
+            tabControl1.TabPages[2].Left = 0;
+            tabControl1.TabPages[2].Top = 0;
+            tabControl1.TabPages[2].Width = tabControl1.Width;
+            tabControl1.TabPages[2].Height = (int)(tabControl1.Height * 0.9);
+
+            tabControl1.TabPages[3].Left = 0;
+            tabControl1.TabPages[3].Top = 0;
+            tabControl1.TabPages[3].Width = tabControl1.Width;
+            tabControl1.TabPages[3].Height = (int)(tabControl1.Height * 0.9);
+
+
+
             ViewCaoZuo.Object_Position(0.37, 0.01, 0.26, 0.15, label_title, this.Controls);
 
-            ViewCaoZuo.Object_Position(0, 0.15, 1, 0.75, tabControl1, this.Controls);
+            
 
             // 工艺名称对应表格
-            ViewCaoZuo.Object_Position(0, 0.1, 1, 0.85, dataGridView_craft_name, tabControl1.TabPages[0].Controls);
+            ViewCaoZuo.Object_Position(0, 0.15, 1, 0.85, dataGridView_craft_name, tabControl1.TabPages[0].Controls);
 
             // 工艺代码对应表格
             ViewCaoZuo.Object_Position(0, 0.1, 1, 0.85, dataGridView_craft_code, tabControl1.TabPages[3].Controls);
@@ -97,7 +126,7 @@ namespace YinRan2020
 
             //xiangxi
 
-            ViewCaoZuo.Object_Position(0.3, 0.05, 0.4, 0.9, panel_xiangxi, tabControl1.TabPages[1].Controls);
+            ViewCaoZuo.Object_Position(0.23, 0.05, 0.5, 0.9, panel_xiangxi, tabControl1.TabPages[1].Controls);
             ViewCaoZuo.Object_Position(0, 0.1, 1, 0.9, dataGridView_xiangxi, panel_xiangxi.Controls);
 
             // info
@@ -110,11 +139,16 @@ namespace YinRan2020
 
 
             // datagridview_craft
-            ViewCaoZuo.Object_Position(0.25, 0.1, 0.5, 0.9, panel_craft, tabControl1.TabPages[2].Controls);
+            ViewCaoZuo.Object_Position(0.22, 0.1, 0.5, 0.9, panel_craft, tabControl1.TabPages[2].Controls);
             ViewCaoZuo.Object_Position(0, 0.05, 1, 0.9, dataGridView_craft, panel_craft.Controls);
             ViewCaoZuo.Object_Position(0.76, 0.1, 0.23, 0.9, dataGridView_exe, tabControl1.TabPages[2].Controls);
             //
+
+
             
+            
+             
+
 
             listBox_gongyi.Items.Clear();
             for (int i = 1; i <= 300; i++)
@@ -1085,6 +1119,61 @@ namespace YinRan2020
 
             }
             catch { }
+        }
+
+        private void dataGridView_xiangxi_Click(object sender, EventArgs e)
+        {
+            selected_datagridview_cells(sender);
+        }
+
+
+        // 点击表格中的格之后，选择一行
+        public void selected_datagridview_cells(object sender)
+        {
+            try
+            {
+                DataGridView datagridview = (DataGridView)sender;
+                int selected_index = datagridview.SelectedCells[0].RowIndex;
+
+                for (int i = 0; i < datagridview.Rows.Count; i++)
+                {
+                    if(i==selected_index)
+                    {
+                        datagridview.Rows[i].Selected = true;
+                    }
+                    else
+                    {
+                        datagridview.Rows[i].Selected = false;
+                    }
+                }
+
+            }
+            catch { }
+        }
+
+        private void dataGridView_info_Click(object sender, EventArgs e)
+        {
+            selected_datagridview_cells(sender);
+        }
+
+        private void dataGridView_craft_name_Click(object sender, EventArgs e)
+        {
+            selected_datagridview_cells(sender);
+        }
+
+        private void dataGridView_craft_Click(object sender, EventArgs e)
+        {
+            selected_datagridview_cells(sender);
+        }
+
+        private void dataGridView_exe_Click(object sender, EventArgs e)
+        {
+            selected_datagridview_cells(sender);
+        }
+
+        private void dataGridView_craft_code_Click(object sender, EventArgs e)
+        {
+            selected_datagridview_cells(sender);
         }
     }
 }

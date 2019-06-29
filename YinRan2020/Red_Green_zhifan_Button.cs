@@ -1173,6 +1173,30 @@ namespace YinRan2020
                             {
                                 Deivce_Info.modbus6.Send_Write_Cmd5(machine_num, (address + 2048).ToString("X").PadLeft(4, '0'), "00ff");
                             }
+
+                            /*********************************************************************************/
+
+                            // 段号
+                            string where_cmd1="machine_num='"+machine_num.ToString()+"'";
+                            DataTable  danhao_table=MainView.builder.Select_Table("gongdan",where_cmd1);
+                             
+                            string danhao="";
+                            try
+                            {
+                                danhao=danhao_table.Rows[0][1].ToString();
+                            }
+                            catch{}
+                           
+                            string[] insert_cmd = new string[6];
+                            insert_cmd[0] = DateTime.Now.ToString("yyyyMMddHHmmss") + machine_num.ToString();
+                            insert_cmd[1] = machine_num.ToString();
+                            insert_cmd[2] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                            insert_cmd[3] = danhao;
+                            insert_cmd[4] = Value_Name.ToString();
+                            insert_cmd[5] = "开启";
+
+                            MainView.builder.Insert("caozuo_save", insert_cmd);
+
                         }
                         catch { }
                     }
@@ -1208,6 +1232,29 @@ namespace YinRan2020
                             {
                                 Deivce_Info.modbus6.Send_Write_Cmd5(machine_num, (address + 2048).ToString("X").PadLeft(4, '0'), "0000");
                             }
+
+                            /*********************************************************************************/
+
+                            // 段号
+                            string where_cmd1 = "machine_num='" + machine_num.ToString() + "'";
+                            DataTable danhao_table = MainView.builder.Select_Table("gongdan", where_cmd1);
+
+                            string danhao = "";
+                            try
+                            {
+                                danhao = danhao_table.Rows[0][1].ToString();
+                            }
+                            catch { }
+
+                            string[] insert_cmd = new string[6];
+                            insert_cmd[0] = DateTime.Now.ToString("yyyyMMddHHmmss") + machine_num.ToString();
+                            insert_cmd[1] = machine_num.ToString();
+                            insert_cmd[2] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                            insert_cmd[3] = danhao;
+                            insert_cmd[4] = Value_Name.ToString();
+                            insert_cmd[5] = "关闭";
+
+                            MainView.builder.Insert("caozuo_save", insert_cmd);
                         }
                         catch { }
                     }
@@ -1223,6 +1270,32 @@ namespace YinRan2020
                     string where_cmd = "ID='" + device_name + "'";
                     DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
 
+
+
+
+                    /*********************************************************************************/
+
+                    // 段号
+                    string where_cmd1 = "machine_num='" + machine_num.ToString() + "'";
+                    DataTable danhao_table = MainView.builder.Select_Table("gongdan", where_cmd1);
+
+                    string danhao = "";
+                    try
+                    {
+                        danhao = danhao_table.Rows[0][1].ToString();
+                    }
+                    catch { }
+
+                    string[] insert_cmd = new string[6];
+                    insert_cmd[0] = DateTime.Now.ToString("yyyyMMddHHmmss") + machine_num.ToString();
+                    insert_cmd[1] = machine_num.ToString();
+                    insert_cmd[2] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    insert_cmd[3] = danhao;
+                    insert_cmd[4] = Value_Name.ToString();
+                    insert_cmd[5] = "开启";
+
+                    MainView.builder.Insert("caozuo_save", insert_cmd);
+
                         if(MyValue_Name==value_name.启动)
                         {
 
@@ -1233,9 +1306,9 @@ namespace YinRan2020
                                 {
                                     Qidong(this, new EventArgs());
                                 }
-                                catch
+                                catch(Exception x)
                                 {
-                                    MessageBox.Show("工艺出现错误!");
+                                    MessageBox.Show("工艺错误！");
                                     return;
                                 }
                             }
@@ -1394,6 +1467,30 @@ namespace YinRan2020
                         {
                             Deivce_Info.modbus6.Send_Write_Cmd5(machine_num, (address + 2048).ToString("X").PadLeft(4, '0'), "0000");
                         }
+
+
+                        /*********************************************************************************/
+
+                        // 段号
+                        string where_cmd1 = "machine_num='" + machine_num.ToString() + "'";
+                        DataTable danhao_table = MainView.builder.Select_Table("gongdan", where_cmd1);
+
+                        string danhao = "";
+                        try
+                        {
+                            danhao = danhao_table.Rows[0][1].ToString();
+                        }
+                        catch { }
+
+                        string[] insert_cmd = new string[6];
+                        insert_cmd[0] = DateTime.Now.ToString("yyyyMMddHHmmss") + machine_num.ToString();
+                        insert_cmd[1] = machine_num.ToString();
+                        insert_cmd[2] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                        insert_cmd[3] = danhao;
+                        insert_cmd[4] = Value_Name.ToString();
+                        insert_cmd[5] = "关闭";
+
+                        MainView.builder.Insert("caozuo_save", insert_cmd);
                     }
                     catch { }
 

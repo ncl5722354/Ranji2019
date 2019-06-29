@@ -212,6 +212,41 @@ namespace YinRan2020
                 insert_cmd[1] = "";
                 builder.Insert("linshi_craft", insert_cmd);
             }
+
+
+            // 执行的工单号
+            // 机号  工单号
+            CreateSqlValueType[] gongdan_exe = new CreateSqlValueType[2];
+            gongdan_exe[0] = new CreateSqlValueType("int", "machine_num");
+            gongdan_exe[1] = new CreateSqlValueType("nvarchar(50)","gongdanhao");
+            builder.Create_Table("gongdan", gongdan_exe);
+
+            for(int i=1;i<=100;i++)
+            {
+                string[] insert_cmd = new string[2];
+                insert_cmd[0] = i.ToString();
+                insert_cmd[1] = "";
+                builder.Insert("gongdan",insert_cmd);
+            }
+
+            //
+
+            // 操作记录表
+
+            // 操作记录ID="机号+时间" 机号  time="时间" 工单号="" 变量=""  动作="";
+
+            // **单独开发工艺运行情况记录**
+
+            CreateSqlValueType[] caozuo_create = new CreateSqlValueType[6];
+            caozuo_create[0] = new CreateSqlValueType("nvarchar(50)", "ID", true);
+            caozuo_create[1] = new CreateSqlValueType("int","machine_num");
+            caozuo_create[2] = new CreateSqlValueType("datetime","mytime");
+            caozuo_create[3] = new CreateSqlValueType("nvarchar(50)", "gongdanhao");
+            caozuo_create[4] = new CreateSqlValueType("nvarchar(50)", "bianliang");
+            caozuo_create[5] = new CreateSqlValueType("nvarchar(50)", "dongzuo");
+
+            builder.Create_Table("caozuo_save",caozuo_create);
+            // 
         }
 
         private void init_view()
@@ -434,16 +469,7 @@ namespace YinRan2020
                 }
                 catch { }
 
-                //if (int.Parse(get_value_R_DT(i, "请求开始")) != 0)
-                //{
-                //    play_start_qingqiu(i);
-                //    return;
-                //}
-                //if (int.Parse(get_value_R_DT(i, "请求暂停")) != 0)
-                //{
-                //    play_stop_qingqiu(i);
-                //    return;
-                //}
+                
             }
         }
     }
