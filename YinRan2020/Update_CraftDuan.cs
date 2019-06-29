@@ -18,6 +18,8 @@ namespace YinRan2020
         public static string zhubengpinlv = "";
         public static string tibupinlv = "";
         public static string ID = "";
+        public static string fengjipinlv = "";
+
         public Update_CraftDuan()
         {
             InitializeComponent();
@@ -26,6 +28,7 @@ namespace YinRan2020
             comboBox_craft.Text = craft_name;
             textBox_zhubengpinlv.Text = zhubengpinlv;
             textBox_tibupinlv.Text = tibupinlv;
+            textBox_fengjipinlv.Text = fengjipinlv;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,6 +39,7 @@ namespace YinRan2020
             craft_name = comboBox_craft.Text;
             zhubengpinlv = textBox_zhubengpinlv.Text;
             tibupinlv = textBox_tibupinlv.Text;
+            fengjipinlv = textBox_fengjipinlv.Text;
             DialogResult = DialogResult.OK;
 
             this.Dispose();

@@ -12,17 +12,6 @@ namespace YinRan2020
 {
     public partial class Red_Green_zhifan_Button : UserControl
     {
-
-        /// <summary>
-        ///  mode = 0 置反
-        ///  mode = 1 置1
-        ///  mode = 2 置2
-        ///  truecolor
-        ///  falsecolor
-        /// </summary>
-        /// 
-
-
         private string device_name = "";          // 设备名称属性
         private Color truecolor;
         private Color falsecolor;
@@ -33,19 +22,42 @@ namespace YinRan2020
         bool value = false;
 
         public  static int step = 0;
-        public  static int xiazai_data1 = 2000; 
-        public  static int xiazai_data2 = 2500;
-        public  static int xiazai_data3 = 3000;
-        public  static int xiazai_data4 = 3500;
-        public  static int xiazai_data5 = 4000;
-        public  static int xiazai_data6 = 4500;
+        // 参数1
+        public static int xiazai_data1 = 2000;
+        public static int xiazai_data11 = 2100;
+        public static int xiazai_data12 = 2200;
 
-        public static  int[] down_data1 = new int[1000];
-        public static  int[] down_data2 = new int[1000];
-        public static  int[] down_data3 = new int[1000];
-        public static  int[] down_data4 = new int[1000];
-        public static  int[] down_date5 = new int[1000];
-        public static  int[] down_date6 = new int[1000];
+        // 参数2
+        public static int xiazai_data2 = 2500;
+        public static int xiazai_data21 = 2600;
+        public static int xiazai_data22 = 2700;
+
+        // 工艺代码
+        public static int xiazai_data3 = 3000;
+        public static int xiazai_data31 = 3100;
+        public static int xiazai_data32 = 3200;
+
+        // 主泵频率
+        public static int xiazai_data4 = 3500;
+        public static int xiazai_data41 = 3600;
+        public static int xiazai_data42 = 3700;
+
+        // 替补频率
+        public static int xiazai_data5 = 4000;
+        public static int xiazai_data51 = 4100;
+        public static int xiazai_data52 = 4200;
+
+        // 风机频率
+        public static int xiazai_data6 = 4500;
+        public static int xiazai_data61 = 4700;
+        public static int xiazai_data62 = 4800;
+
+        public static  int[] down_data1 = new int[2000];
+        public static  int[] down_data2 = new int[2000];
+        public static  int[] down_data3 = new int[2000];
+        public static  int[] down_data4 = new int[2000];
+        public static  int[] down_data5 = new int[2000];
+        public static  int[] down_data6 = new int[2000];
 
         public static int datacount = 0;
 
@@ -515,6 +527,598 @@ namespace YinRan2020
             Thread mythread = new Thread(thread);
             mythread.Start();
             button1.BackColor = show_color;
+
+            port_moudbus mymodbus = null;
+
+            string  where_cmd = "ID='" + device_name + "'";
+            DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+
+            try
+            {
+                // int address = int.Parse(dt.Rows[0][5].ToString());
+                if (dt.Rows[0][4].ToString() == "串口1")
+                {
+                    mymodbus = Deivce_Info.modbus1;
+                }
+                if (dt.Rows[0][4].ToString() == "串口2")
+                {
+                    mymodbus = Deivce_Info.modbus2;
+                }
+                if (dt.Rows[0][4].ToString() == "串口3")
+                {
+                    mymodbus = Deivce_Info.modbus3;
+                }
+                if (dt.Rows[0][4].ToString() == "串口4")
+                {
+                    mymodbus = Deivce_Info.modbus4;
+                }
+                if (dt.Rows[0][4].ToString() == "串口5")
+                {
+                    mymodbus = Deivce_Info.modbus5;
+                }
+                if (dt.Rows[0][4].ToString() == "串口6")
+                {
+                    mymodbus = Deivce_Info.modbus6;
+                }
+            }
+            catch { }
+
+            if (MyValue_Name == value_name.启动)
+            {
+                Xiangxi.loadcount++;
+                #region                       // 下载第一步
+                if (step == 1 && datacount <= 100)
+                {
+                    // 直接下载第二步
+                    try
+                    {
+                        mymodbus.Send_Write_Cmd16(machine_num, datacount, xiazai_data2.ToString("X").PadLeft(4, '0'), down_data2);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 1 && datacount > 100 && datacount <= 200)
+                {
+                    // 下载100以后的地址
+                    int mycount = datacount - 100;
+                    try
+                    {
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data1[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data11.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+
+                if (step == 1 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载100-200以后的地址
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data1[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data11.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 11 && datacount > 100 && datacount <= 200)
+                {
+                    try
+                    {
+                        // 下载完100以后，直接下载下一步
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data2.ToString("X").PadLeft(4, '0'), down_data2);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 11 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完100-200,再下载200以后
+                        int mycount = datacount - 200;
+                        try
+                        {
+                            int[] mydata = new int[1000];
+                            for (int i = 0; i < 1000; i++)
+                            {
+                                mydata[i] = down_data1[i + 200];
+                            }
+                            mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data12.ToString("X").PadLeft(4, '0'), mydata);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+
+                if (step == 12 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完200以后，直接下载下一条
+                        try
+                        {
+                            mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data2.ToString("X").PadLeft(4, '0'), down_data2);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+                #endregion
+
+                #region                       // 下载第二步
+                if (step == 2 && datacount <= 100)
+                {
+                    // 直接下载第三步
+                    try
+                    {
+                        mymodbus.Send_Write_Cmd16(machine_num, datacount, xiazai_data3.ToString("X").PadLeft(4, '0'), down_data3);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 2 && datacount > 100 && datacount <= 200)
+                {
+                    // 下载100以后的地址
+                    int mycount = datacount - 100;
+                    try
+                    {
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data2[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data21.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+
+                if (step == 2 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载100-200以后的地址
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data2[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data21.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 21 && datacount > 100 && datacount <= 200)
+                {
+                    try
+                    {
+                        // 下载完100以后，直接下载下一步
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data3.ToString("X").PadLeft(4, '0'), down_data3);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 21 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完100-200,再下载200以后
+                        int mycount = datacount - 200;
+                        try
+                        {
+                            int[] mydata = new int[1000];
+                            for (int i = 0; i < 1000; i++)
+                            {
+                                mydata[i] = down_data2[i + 200];
+                            }
+                            mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data22.ToString("X").PadLeft(4, '0'), mydata);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+
+                if (step == 22 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完200以后，直接下载下一条
+                        try
+                        {
+                            mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data3.ToString("X").PadLeft(4, '0'), down_data3);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+                #endregion
+
+                #region                       // 下载第三步
+                if (step == 3 && datacount <= 100)
+                {
+                    // 直接下载第四步
+                    try
+                    {
+                        mymodbus.Send_Write_Cmd16(machine_num, datacount, xiazai_data4.ToString("X").PadLeft(4, '0'), down_data4);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 3 && datacount > 100 && datacount <= 200)
+                {
+                    // 下载100以后的地址
+                    int mycount = datacount - 100;
+                    try
+                    {
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data3[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data31.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+
+                if (step == 3 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载100-200以后的地址
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data3[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data31.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 31 && datacount > 100 && datacount <= 200)
+                {
+                    try
+                    {
+                        // 下载完100以后，直接下载下一步
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data4.ToString("X").PadLeft(4, '0'), down_data4);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 31 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完100-200,再下载200以后
+                        int mycount = datacount - 200;
+                        try
+                        {
+                            int[] mydata = new int[1000];
+                            for (int i = 0; i < 1000; i++)
+                            {
+                                mydata[i] = down_data3[i + 200];
+                            }
+                            mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data32.ToString("X").PadLeft(4, '0'), mydata);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+
+                if (step == 32 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完200以后，直接下载下一条
+                        try
+                        {
+                            mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data4.ToString("X").PadLeft(4, '0'), down_data4);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+                #endregion
+
+                #region                       // 下载第四步
+                if (step == 4 && datacount <= 100)
+                {
+                    // 直接下载第四步
+                    try
+                    {
+                        mymodbus.Send_Write_Cmd16(machine_num, datacount, xiazai_data5.ToString("X").PadLeft(4, '0'), down_data5);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 4 && datacount > 100 && datacount <= 200)
+                {
+                    // 下载100以后的地址
+                    int mycount = datacount - 100;
+                    try
+                    {
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data4[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data41.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+
+                if (step == 4 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载100-200以后的地址
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data4[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data41.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 41 && datacount > 100 && datacount <= 200)
+                {
+                    try
+                    {
+                        // 下载完100以后，直接下载下一步
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data5.ToString("X").PadLeft(4, '0'), down_data5);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 41 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完100-200,再下载200以后
+                        int mycount = datacount - 200;
+                        try
+                        {
+                            int[] mydata = new int[1000];
+                            for (int i = 0; i < 1000; i++)
+                            {
+                                mydata[i] = down_data4[i + 200];
+                            }
+                            mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data42.ToString("X").PadLeft(4, '0'), mydata);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+
+                if (step == 42 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完200以后，直接下载下一条
+                        try
+                        {
+                            mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data5.ToString("X").PadLeft(4, '0'), down_data5);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+                #endregion
+
+                #region                       // 下载第五步
+                if (step == 5 && datacount <= 100)
+                {
+                    // 直接下载第四步
+                    try
+                    {
+                        mymodbus.Send_Write_Cmd16(machine_num, datacount, xiazai_data6.ToString("X").PadLeft(4, '0'), down_data6);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 5 && datacount > 100 && datacount <= 200)
+                {
+                    // 下载100以后的地址
+                    int mycount = datacount - 100;
+                    try
+                    {
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data5[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data51.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+
+                if (step == 5 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载100-200以后的地址
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data5[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data51.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 51 && datacount > 100 && datacount <= 200)
+                {
+                    try
+                    {
+                        // 下载完100以后，直接下载下一步
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data6.ToString("X").PadLeft(4, '0'), down_data6);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 51 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完100-200,再下载200以后
+                        int mycount = datacount - 200;
+                        try
+                        {
+                            int[] mydata = new int[1000];
+                            for (int i = 0; i < 1000; i++)
+                            {
+                                mydata[i] = down_data5[i + 200];
+                            }
+                            mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data52.ToString("X").PadLeft(4, '0'), mydata);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+
+                if (step == 52 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完200以后，直接下载下一条
+                        try
+                        {
+                            mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data6.ToString("X").PadLeft(4, '0'), down_data6);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+                #endregion
+
+                #region                       // 下载第六步
+                if (step == 6 && datacount <= 100)
+                {
+                    // 直接下载第六步
+                    try
+                    {
+                        mymodbus.Send_Write_Cmd5(machine_num, (address + 2048).ToString("X").PadLeft(4, '0'), "FF00");
+
+
+
+                        string[] update_cmd = new string[1];
+                        update_cmd[0] = "start_time='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+
+                        string where_cmd1 = "machine_num='" + machine_num.ToString() + "'";
+                        MainView.builder.Updata("start_time", where_cmd1, update_cmd);
+                        
+
+                        step = 0;
+                    }
+                    catch { return; }
+                }
+
+                if (step == 6 && datacount > 100 && datacount <= 200)
+                {
+                    // 下载100以后的地址
+                    int mycount = datacount - 100;
+                    try
+                    {
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data6[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data61.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+
+                if (step == 6 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载100-200以后的地址
+                        int[] mydata = new int[1000];
+                        for (int i = 0; i < 1000; i++)
+                        {
+                            mydata[i] = down_data6[i + 100];
+                        }
+                        mymodbus.Send_Write_Cmd16(machine_num, 100, xiazai_data61.ToString("X").PadLeft(4, '0'), mydata);
+                    }
+                    catch { return; }
+                }
+
+                if (step == 61 && datacount > 100 && datacount <= 200)
+                {
+                    try
+                    {
+                        // 下载完100以后，直接下载下一步
+                        mymodbus.Send_Write_Cmd5(machine_num, (address + 2048).ToString("X").PadLeft(4, '0'), "FF00");
+                        string[] update_cmd = new string[1];
+                        update_cmd[0] = "start_time='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+
+                        string where_cmd1 = "machine_num=" + machine_num.ToString() + "'";
+                        MainView.builder.Updata("start_time", where_cmd1, update_cmd);
+                        
+                        step = 0;
+                    }
+                    catch { return; }
+                }
+
+                if (step == 61 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完100-200,再下载200以后
+                        int mycount = datacount - 200;
+                        try
+                        {
+                            int[] mydata = new int[1000];
+                            for (int i = 0; i < 1000; i++)
+                            {
+                                mydata[i] = down_data6[i + 200];
+                            }
+                            mymodbus.Send_Write_Cmd16(machine_num, mycount, xiazai_data62.ToString("X").PadLeft(4, '0'), mydata);
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+
+                if (step == 62 && datacount > 200)
+                {
+                    try
+                    {
+                        // 下载完200以后，直接下载下一条
+                        try
+                        {
+                            mymodbus.Send_Write_Cmd5(machine_num, (address + 2048).ToString("X").PadLeft(4, '0'), "FF00");
+                            string[] update_cmd = new string[1];
+                            update_cmd[0] = "start_time='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+
+                            string where_cmd1 = "machine_num=" + machine_num.ToString() + "'";
+                            MainView.builder.Updata("start_time", where_cmd1, update_cmd);
+                            
+                            step = 0;
+                        }
+                        catch { return; }
+                    }
+                    catch { return; }
+                }
+                #endregion
+            }
         }
 
         private void Red_Green_zhifan_Button_Resize(object sender, EventArgs e)
@@ -640,28 +1244,70 @@ namespace YinRan2020
                                 // int address = int.Parse(dt.Rows[0][5].ToString());
                                 if (dt.Rows[0][4].ToString() == "串口1")
                                 {
-                                    Deivce_Info.modbus1.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    if (datacount <= 100)
+                                    {
+                                        Deivce_Info.modbus1.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
+                                    if(datacount>100)
+                                    {
+                                        Deivce_Info.modbus1.Send_Write_Cmd16(machine_num, 100, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
                                    
                                 }
                                 if (dt.Rows[0][4].ToString() == "串口2")
                                 {
-                                    Deivce_Info.modbus2.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    if (datacount <= 100)
+                                    {
+                                        Deivce_Info.modbus2.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
+                                    if (datacount > 100)
+                                    {
+                                        Deivce_Info.modbus2.Send_Write_Cmd16(machine_num, 100, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
                                 }
                                 if (dt.Rows[0][4].ToString() == "串口3")
                                 {
-                                    Deivce_Info.modbus3.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    if (datacount <= 100)
+                                    {
+                                        Deivce_Info.modbus3.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
+                                    if (datacount > 100)
+                                    {
+                                        Deivce_Info.modbus3.Send_Write_Cmd16(machine_num, 100, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
                                 }
                                 if (dt.Rows[0][4].ToString() == "串口4")
                                 {
-                                    Deivce_Info.modbus4.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    if (datacount <= 100)
+                                    {
+                                        Deivce_Info.modbus4.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
+                                    if (datacount > 100)
+                                    {
+                                        Deivce_Info.modbus4.Send_Write_Cmd16(machine_num, 100, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
                                 }
                                 if (dt.Rows[0][4].ToString() == "串口5")
                                 {
-                                    Deivce_Info.modbus5.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    if (datacount <= 100)
+                                    {
+                                        Deivce_Info.modbus5.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
+                                    if (datacount > 100)
+                                    {
+                                        Deivce_Info.modbus5.Send_Write_Cmd16(machine_num, 100, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
                                 }
                                 if (dt.Rows[0][4].ToString() == "串口6")
                                 {
-                                    Deivce_Info.modbus6.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    if (datacount <= 100)
+                                    {
+                                        Deivce_Info.modbus6.Send_Write_Cmd16(machine_num, datacount, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
+                                    if (datacount > 100)
+                                    {
+                                        Deivce_Info.modbus6.Send_Write_Cmd16(machine_num, 100, xiazai_data1.ToString("X").PadLeft(4, '0'), down_data1);
+                                    }
                                 }
                             }
                             catch { }
@@ -757,7 +1403,12 @@ namespace YinRan2020
 
         private void Red_Green_zhifan_Button_Click(object sender, EventArgs e)
         {
-            int a = 0;
+           
+        }
+
+        private void Red_Green_zhifan_Button_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
