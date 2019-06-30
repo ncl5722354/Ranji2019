@@ -247,6 +247,19 @@ namespace YinRan2020
 
             builder.Create_Table("caozuo_save",caozuo_create);
             // 
+
+            // 跳段记录
+            // 记录 ID="机号+时间" 机号 时间 工单 跳段  跳段内容
+            CreateSqlValueType[] tiaoduan_save = new CreateSqlValueType[6];
+            tiaoduan_save[0] = new CreateSqlValueType("nvarchar(50)", "ID", true);
+            tiaoduan_save[1] = new CreateSqlValueType("int","machine_num");
+            tiaoduan_save[2] = new CreateSqlValueType("datetime","mytime");
+            tiaoduan_save[3] = new CreateSqlValueType("nvarchar(50)","gongdan");
+            tiaoduan_save[4] = new CreateSqlValueType("nvarchar(50)","tiaoduan");
+            tiaoduan_save[5] = new CreateSqlValueType("nvarchar(max)","tiaoduanneirong");
+
+            builder.Create_Table("tiaoduan_save", tiaoduan_save);
+
         }
 
         private void init_view()
@@ -470,6 +483,79 @@ namespace YinRan2020
                 catch { }
 
                 
+            }
+        }
+
+        private void timer_tiaoduan_save_Tick(object sender, EventArgs e)
+        {
+            save_tiaoduan();
+        }
+
+        public void save_tiaoduan()
+        {
+            for(int i=1;i<=100;i++)
+            {
+                string where_duan_save = "machine_num='" + i.ToString() + "'";
+                DataTable dt_duan_save = MainView.builder.Select_Table("tiaoduan_save",where_duan_save);
+                if(dt_duan_save==null)
+                {
+                    // 开始的信号
+                    try
+                    {
+                        // 读取期待工单地址
+                        string where_qidong = "value_name='启动'";
+                        DataTable qidong_table = MainView.builder.Select_Table("Value_Config", where_qidong);
+                        int qidong_address = int.Parse(qidong_table.Rows[0][2].ToString());
+                        if (Device_Data.chejian3_com1_R[i, qidong_address] == true)
+                        {
+                            // 插入
+                            string[] insert_cmd = new string[6];
+                            insert_cmd[0] = DateTime.Now.ToString("yyyyMMddHHmmss") + DateTime.Now.Millisecond.ToString() + i.ToString();
+                            insert_cmd[1] = i.ToString();
+                            insert_cmd[2] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+                            // 读取工单号
+                            string where_gongdan_cmd = "machine_num='" + i.ToString() + "'";
+                            DataTable gongdan_table = MainView.builder.Select_Table("gongdan", where_gongdan_cmd);
+
+                            string gongdanname = gongdan_table.Rows[0][1].ToString();
+                            insert_cmd[3] = gongdanname;
+
+                            //  读取现在的段号
+                            string where_cmd_nowduan = "value_name='运行段号'";
+                            DataTable dt_nowduan = MainView.builder.Select_Table("Value_Config", where_cmd_nowduan);
+
+
+                            int duan_value = int.Parse(dt_nowduan.Rows[0][2].ToString());
+                            int duan = Device_Data.chejian3_com1_DT[i, duan_value];
+
+                            // 读取临时表格
+
+                            DataTable linshigongdan = MainView.builder.Select_Table("工艺"+gongdanname);
+
+                            int zongduancount = 0;
+                            string gongyistring = "";
+                            for (int j = 0; j < linshigongdan.Rows.Count;j++)
+                            {
+                                DataRow dr = linshigongdan.Rows[j];
+                                // 单个工艺的段号
+                            }
+
+
+
+
+                                //
+                           insert_cmd[4] = "";
+
+                        }
+
+                    }
+                    catch { }
+                }
+                else if(dt_duan_save.Rows.Count==0)
+                {
+
+                }
             }
         }
     }
