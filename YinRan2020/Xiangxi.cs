@@ -525,6 +525,39 @@ namespace YinRan2020
 
             }
             catch { }
+
+
+            // 跳段操作
+            try
+            {
+                chart1.Series[2].Points.Clear();
+                string where_cmd = "ID='" + JiGang_Name + "'";
+                DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                machine_num = int.Parse(dt.Rows[0][5].ToString());
+                string where_cmd1 = "machine_num='" + machine_num.ToString() + "'";
+                DataTable starttimedt = MainView.builder.Select_Table("start_time", where_cmd1);
+
+                DateTime starttime = DateTime.Parse(starttimedt.Rows[0][1].ToString());
+                DateTime startendtime = starttime.AddHours(5);
+                string where_cmd2 = "machine_num='" + machine_num.ToString() + "' and mytime>='" + starttime.ToString("yyyy-MM-dd HH:mm:ss") + "' and mytime<='" + startendtime.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+                DataTable dt1 = MainView.builder.Select_Table("tiaoduan_save", where_cmd2);
+
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    try
+                    {
+                        DateTime nowtime = DateTime.Parse(dr[2].ToString());
+                        chart1.Series[2].Points.AddXY(nowtime.ToOADate(), 250);
+
+                        chart1.Series[2].Points[chart1.Series[2].Points.Count - 1].Label = " 段号:" + dr[4].ToString();
+                        //chart1.Series[1].Points[chart1.Series[1].Points.Count - 1].IsValueShownAsLabel = true;
+                    }
+                    catch { }
+                }
+
+
+            }
+            catch { }
         }
 
         private void timer_duan_Tick(object sender, EventArgs e)
