@@ -151,7 +151,7 @@ namespace YinRan2020
 
 
             listBox_gongyi.Items.Clear();
-            for (int i = 1; i <= 300; i++)
+            for (int i = 1; i <= 400; i++)
             {
                 listBox_gongyi.Items.Add("工艺" + i.ToString().PadLeft(3, '0'));
 
@@ -171,9 +171,9 @@ namespace YinRan2020
                 create_cmd[11] = new CreateSqlValueType("nvarchar(50)", "value10");
                 create_cmd[12] = new CreateSqlValueType("nvarchar(50)", "beizhu");
 
-              // MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0'), create_cmd);
+               MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0'), create_cmd);
             }
-            for (int i = 1; i <= 300; i++)
+            for (int i = 1; i <= 400; i++)
             {
                 listBox_gongyi.Items.Add("工艺" + i.ToString().PadLeft(3, '0')+"气流");
 

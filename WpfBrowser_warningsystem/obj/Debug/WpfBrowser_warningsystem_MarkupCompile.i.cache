@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\程序\Ranji2019-master\WpfBrowser_warningsystem\obj\Debug\
+D:\程序\YinRan2019\WpfBrowser_warningsystem\obj\Debug\
 WpfBrowser_warningsystem
 none
 true
 DEBUG;TRACE
-D:\程序\Ranji2019-master\WpfBrowser_warningsystem\App.xaml
+D:\程序\YinRan2019\WpfBrowser_warningsystem\App.xaml
 191450149344
 
-29-1777173431
-21949262625
+29555001300
+211645637219
 ChaFenView.xaml;DataList.xaml;DataQushi.xaml;DiZhuang_Item.xaml;Login.xaml;MainWindow.xaml;Map_Set.xaml;myline.xaml;MyView.xaml;Point_Set_View.xaml;putong.xaml;putongpoint.xaml;QuXian_View.xaml;Report.xaml;Value_Set.xaml;WarnInfo.xaml;warninginfo.xaml;Warning_List.xaml;ZhuZi.xaml;
 
-True
+False
 
