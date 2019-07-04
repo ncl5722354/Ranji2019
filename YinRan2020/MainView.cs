@@ -23,7 +23,10 @@ namespace YinRan2020
         /// </summary>
         
         
-        zongmao zongmao_view = new zongmao();                     // 总貌窗体
+        //zongmao zongmao_view = new zongmao();                     // 总貌窗体
+        //zongmao zongmao_view2 = new zongmao();                    // 二车间总貌
+        zongmao zongmao_view3 = new zongmao();                    // 三车间总貌
+
         Deivce_Info device_info = new Deivce_Info();              // 设备管理窗体
         
         Craft_Config gongyi_edit_view = new Craft_Config();         // 工艺编辑
@@ -264,6 +267,11 @@ namespace YinRan2020
 
         }
 
+        private void Return_To_MainView(object sender,EventArgs e)
+        {
+            Show_Chuangti(zongmao_view3);
+        }
+
         private void init_view()
         {
             // 初始化操作
@@ -278,8 +286,27 @@ namespace YinRan2020
 
             ViewCaoZuo.Object_Position(0.12, 0.06, 0.85, 0.84, panel_bg, this.Controls);
 
-            zongmao_view.Click_Yiliu += new EventHandler(Show_xiangxi_Yiliu);
-            zongmao_view.Click_Qiliu += new EventHandler(Show_xiangxi_Qiliu);
+            //zongmao_view.Click_Yiliu += new EventHandler(Show_xiangxi_Yiliu);
+            //zongmao_view.Click_Qiliu += new EventHandler(Show_xiangxi_Qiliu);
+
+            //zongmao_view2.Click_Yiliu += new EventHandler(Show_xiangxi_Yiliu);
+            //zongmao_view2.Click_Qiliu += new EventHandler(Show_xiangxi_Qiliu);
+
+            zongmao_view3.Click_Yiliu += new EventHandler(Show_xiangxi_Yiliu);
+            zongmao_view3.Click_Qiliu += new EventHandler(Show_xiangxi_Qiliu);
+
+
+            xiangxi_view.return_to_zongmao += new EventHandler(Return_To_MainView);
+
+            // 初始化总貌
+            //zongmao_view.Set_Chejian("一车间");
+            //zongmao_view.ReSet_Device_Info();    // 显示总貌信息
+
+            //zongmao_view2.Set_Chejian("二车间");
+            //zongmao_view2.ReSet_Device_Info();
+
+            zongmao_view3.Set_Chejian("三车间");
+            zongmao_view3.ReSet_Device_Info();
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -289,21 +316,18 @@ namespace YinRan2020
             {
                     //总貌一车间
                 case "1chejianrealtimeshengchan":
-                    Show_Chuangti(zongmao_view);
-                    zongmao_view.Set_Chejian("一车间");
-                    zongmao_view.ReSet_Device_Info();    // 显示总貌信息
+                    //Show_Chuangti(zongmao_view);
+                    
                     break;
                     // 总貌二车间
                 case "2chejianrealtimeshengchan":
-                    Show_Chuangti(zongmao_view);
-                    zongmao_view.Set_Chejian("二车间");
-                    zongmao_view.ReSet_Device_Info();   // 显示总貌信息
+                    //Show_Chuangti(zongmao_view2);
+                   
                     break;
                     //  总貌三车间
                 case "3chejianrealtimeshengchan":
-                    Show_Chuangti(zongmao_view);
-                    zongmao_view.Set_Chejian("三车间");
-                    zongmao_view.ReSet_Device_Info();   // 显示总貌信息
+                    Show_Chuangti(zongmao_view3);
+                   
                     break;
                     // 通讯设置1车间
                 case "1chejiantongxun":

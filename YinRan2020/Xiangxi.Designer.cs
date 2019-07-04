@@ -86,6 +86,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer_duan = new System.Windows.Forms.Timer(this.components);
+            this.button_return = new System.Windows.Forms.Button();
             this.myLabel_zongtime = new YinRan2020.MyLabel_time();
             this.myLabel_duantime = new YinRan2020.MyLabel_time();
             this.myLabel_liaogangshuiwei = new YinRan2020.MyLabel_div10();
@@ -180,6 +181,7 @@
             series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
             series2.ChartArea = "ChartArea1";
             series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series2.Enabled = false;
             series2.IsValueShownAsLabel = true;
             series2.Label = "#LABEL";
             series2.Legend = "Legend1";
@@ -189,6 +191,7 @@
             series2.YValuesPerPoint = 2;
             series3.ChartArea = "ChartArea1";
             series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Point;
+            series3.Enabled = false;
             series3.Label = "#LABEL";
             series3.Legend = "Legend1";
             series3.Name = "跳段";
@@ -299,9 +302,11 @@
             this.dataGridView_craft.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView_craft.Location = new System.Drawing.Point(648, 24);
             this.dataGridView_craft.Name = "dataGridView_craft";
+            this.dataGridView_craft.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dataGridView_craft.RowTemplate.Height = 23;
             this.dataGridView_craft.Size = new System.Drawing.Size(434, 330);
             this.dataGridView_craft.TabIndex = 9;
+            this.dataGridView_craft.Click += new System.EventHandler(this.dataGridView_craft_Click);
             // 
             // Column9
             // 
@@ -313,12 +318,13 @@
             // 
             this.Column31.HeaderText = "工艺";
             this.Column31.Name = "Column31";
+            this.Column31.Width = 150;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "参数1说明";
             this.Column10.Name = "Column10";
-            this.Column10.Width = 60;
+            this.Column10.Width = 150;
             // 
             // Column11
             // 
@@ -330,7 +336,7 @@
             // 
             this.Column12.HeaderText = "参数2说明";
             this.Column12.Name = "Column12";
-            this.Column12.Width = 60;
+            this.Column12.Width = 150;
             // 
             // Column13
             // 
@@ -342,7 +348,7 @@
             // 
             this.Column14.HeaderText = "参数3说明";
             this.Column14.Name = "Column14";
-            this.Column14.Width = 60;
+            this.Column14.Width = 150;
             // 
             // Column15
             // 
@@ -354,7 +360,7 @@
             // 
             this.Column16.HeaderText = "参数4说明";
             this.Column16.Name = "Column16";
-            this.Column16.Width = 60;
+            this.Column16.Width = 150;
             // 
             // Column17
             // 
@@ -366,7 +372,7 @@
             // 
             this.Column18.HeaderText = "参数5说明";
             this.Column18.Name = "Column18";
-            this.Column18.Width = 60;
+            this.Column18.Width = 150;
             // 
             // Column19
             // 
@@ -378,7 +384,7 @@
             // 
             this.Column20.HeaderText = "参数6说明";
             this.Column20.Name = "Column20";
-            this.Column20.Width = 60;
+            this.Column20.Width = 150;
             // 
             // Column21
             // 
@@ -390,7 +396,7 @@
             // 
             this.Column22.HeaderText = "参数7说明";
             this.Column22.Name = "Column22";
-            this.Column22.Width = 60;
+            this.Column22.Width = 150;
             // 
             // Column23
             // 
@@ -402,7 +408,7 @@
             // 
             this.Column24.HeaderText = "参数8说明";
             this.Column24.Name = "Column24";
-            this.Column24.Width = 60;
+            this.Column24.Width = 150;
             // 
             // Column25
             // 
@@ -414,7 +420,7 @@
             // 
             this.Column26.HeaderText = "参数9说明";
             this.Column26.Name = "Column26";
-            this.Column26.Width = 60;
+            this.Column26.Width = 150;
             // 
             // Column27
             // 
@@ -426,7 +432,7 @@
             // 
             this.Column28.HeaderText = "参数10说明";
             this.Column28.Name = "Column28";
-            this.Column28.Width = 60;
+            this.Column28.Width = 150;
             // 
             // Column29
             // 
@@ -603,6 +609,17 @@
             // 
             this.timer_duan.Enabled = true;
             this.timer_duan.Tick += new System.EventHandler(this.timer_duan_Tick);
+            // 
+            // button_return
+            // 
+            this.button_return.BackColor = System.Drawing.Color.GreenYellow;
+            this.button_return.Location = new System.Drawing.Point(976, 40);
+            this.button_return.Name = "button_return";
+            this.button_return.Size = new System.Drawing.Size(129, 37);
+            this.button_return.TabIndex = 14;
+            this.button_return.Text = "返回";
+            this.button_return.UseVisualStyleBackColor = false;
+            this.button_return.Click += new System.EventHandler(this.button_return_Click);
             // 
             // myLabel_zongtime
             // 
@@ -980,6 +997,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 788);
+            this.Controls.Add(this.button_return);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView_exe);
             this.Controls.Add(this.dataGridView_craft);
@@ -991,6 +1009,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Xiangxi";
             this.Text = "Xiangxi";
+            this.Load += new System.EventHandler(this.Xiangxi_Load);
             this.Resize += new System.EventHandler(this.Xiangxi_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -1061,6 +1080,13 @@
         private MyLabel_Red_Yellow myLabel_Red_Yellow_lengque;
         private Red_Green_zhifan_Button red_Green_zhifan_Button_qingqiukaishi;
         private Red_Green_zhifan_Button red_Green_zhifan_Button_zanting;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button button_return;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
@@ -1085,11 +1111,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column32;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column33;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
