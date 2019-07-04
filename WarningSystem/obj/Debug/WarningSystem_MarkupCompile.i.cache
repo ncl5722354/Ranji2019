@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\程序\YinRan2019\WarningSystem\obj\Debug\
+D:\程序\Ranji2019-master\WarningSystem\obj\Debug\
 WarningSystem
 none
 false
 DEBUG;TRACE
-D:\程序\YinRan2019\WarningSystem\App.xaml
+D:\程序\Ranji2019-master\WarningSystem\App.xaml
 201900212768
 
-32-6199921
-23-1585000121
+321956592644
+232100713218
 ChaFenView.xaml;DataList.xaml;DataQushi.xaml;DiZhuang_Item.xaml;myline.xaml;Login.xaml;MainWindow.xaml;Map_Set.xaml;MyView.xaml;Point_Set_View.xaml;putong.xaml;putongpoint.xaml;QuXian_View.xaml;Report.xaml;Value_Set.xaml;WarnInfo.xaml;warninginfo.xaml;Warning_List.xaml;WarnPoint.xaml;ZhuZi.xaml;
 
 True

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ViewConfig;
 using SqlConnect;
 using System.Collections;
+using System.Data.OleDb;
 
 namespace YinRan2020
 {
@@ -1174,6 +1175,42 @@ namespace YinRan2020
         private void dataGridView_craft_code_Click(object sender, EventArgs e)
         {
             selected_datagridview_cells(sender);
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            // 读取access数据库将工艺与工艺号插入到相应的数据库中
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Access文件|*.mdb";
+            ofd.ValidateNames = true;
+            ofd.CheckPathExists = true;
+            ofd.CheckFileExists = true;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string strFileName = ofd.FileName;
+                //strFileName = strFileName.Replace("\\","\\\\");
+                MessageBox.Show(strFileName);
+                string connect_text = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + strFileName;
+                OleDbConnection conn;
+                OleDbCommand da;
+                string cmd = "select 名称,代码 from 工艺代码表";
+                conn = new OleDbConnection(connect_text);
+                OleDbDataAdapter odda = new OleDbDataAdapter(cmd, conn);
+                DataSet ds = new DataSet("ds");
+                odda.Fill(ds, "工艺代码表");
+
+                // 将表插入到工艺代码表中
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    DataRow dr = ds.Tables[0].Rows[i];
+
+                    string[] inser_cmd = new string[2];
+                    inser_cmd[0] = dr[0].ToString();
+                    inser_cmd[1] = dr[1].ToString();
+                    MainView.builder.Insert("Craft_Name_Code", inser_cmd);
+                    
+                }
+            }
         }
     }
 }
