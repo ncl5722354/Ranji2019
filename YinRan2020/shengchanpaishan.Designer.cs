@@ -75,24 +75,12 @@
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_gongyiinfo = new System.Windows.Forms.Panel();
-            this.label_gongyititle = new System.Windows.Forms.Label();
-            this.label_canshu1 = new System.Windows.Forms.Label();
-            this.label_canshu2 = new System.Windows.Forms.Label();
-            this.label_canshu3 = new System.Windows.Forms.Label();
-            this.label_canshu4 = new System.Windows.Forms.Label();
-            this.label_canshu5 = new System.Windows.Forms.Label();
-            this.label_canshu6 = new System.Windows.Forms.Label();
-            this.label_canshu7 = new System.Windows.Forms.Label();
-            this.label_canshu8 = new System.Windows.Forms.Label();
-            this.label_canshu9 = new System.Windows.Forms.Label();
-            this.label_canshu10 = new System.Windows.Forms.Label();
             this.panel_datagridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft)).BeginInit();
-            this.panel_gongyiinfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_title
@@ -485,153 +473,10 @@
             // panel_gongyiinfo
             // 
             this.panel_gongyiinfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu10);
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu9);
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu8);
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu7);
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu6);
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu5);
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu4);
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu3);
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu2);
-            this.panel_gongyiinfo.Controls.Add(this.label_canshu1);
-            this.panel_gongyiinfo.Controls.Add(this.label_gongyititle);
             this.panel_gongyiinfo.Location = new System.Drawing.Point(668, 286);
             this.panel_gongyiinfo.Name = "panel_gongyiinfo";
             this.panel_gongyiinfo.Size = new System.Drawing.Size(258, 481);
             this.panel_gongyiinfo.TabIndex = 4;
-            // 
-            // label_gongyititle
-            // 
-            this.label_gongyititle.BackColor = System.Drawing.SystemColors.Highlight;
-            this.label_gongyititle.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_gongyititle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_gongyititle.Location = new System.Drawing.Point(3, 0);
-            this.label_gongyititle.Name = "label_gongyititle";
-            this.label_gongyititle.Size = new System.Drawing.Size(254, 48);
-            this.label_gongyititle.TabIndex = 0;
-            this.label_gongyititle.Text = "工艺段名称";
-            this.label_gongyititle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu1
-            // 
-            this.label_canshu1.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu1.Location = new System.Drawing.Point(4, 67);
-            this.label_canshu1.Name = "label_canshu1";
-            this.label_canshu1.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu1.TabIndex = 1;
-            this.label_canshu1.Text = "参数1";
-            this.label_canshu1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu2
-            // 
-            this.label_canshu2.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu2.Location = new System.Drawing.Point(3, 107);
-            this.label_canshu2.Name = "label_canshu2";
-            this.label_canshu2.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu2.TabIndex = 2;
-            this.label_canshu2.Text = "参数2";
-            this.label_canshu2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu3
-            // 
-            this.label_canshu3.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu3.Location = new System.Drawing.Point(3, 143);
-            this.label_canshu3.Name = "label_canshu3";
-            this.label_canshu3.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu3.TabIndex = 3;
-            this.label_canshu3.Text = "参数3";
-            this.label_canshu3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu4
-            // 
-            this.label_canshu4.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu4.Location = new System.Drawing.Point(3, 182);
-            this.label_canshu4.Name = "label_canshu4";
-            this.label_canshu4.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu4.TabIndex = 4;
-            this.label_canshu4.Text = "参数4";
-            this.label_canshu4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu5
-            // 
-            this.label_canshu5.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu5.Location = new System.Drawing.Point(3, 220);
-            this.label_canshu5.Name = "label_canshu5";
-            this.label_canshu5.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu5.TabIndex = 5;
-            this.label_canshu5.Text = "参数5";
-            this.label_canshu5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu6
-            // 
-            this.label_canshu6.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu6.Location = new System.Drawing.Point(3, 260);
-            this.label_canshu6.Name = "label_canshu6";
-            this.label_canshu6.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu6.TabIndex = 6;
-            this.label_canshu6.Text = "参数6";
-            this.label_canshu6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu7
-            // 
-            this.label_canshu7.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu7.Location = new System.Drawing.Point(3, 302);
-            this.label_canshu7.Name = "label_canshu7";
-            this.label_canshu7.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu7.TabIndex = 7;
-            this.label_canshu7.Text = "参数7";
-            this.label_canshu7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu8
-            // 
-            this.label_canshu8.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu8.Location = new System.Drawing.Point(3, 342);
-            this.label_canshu8.Name = "label_canshu8";
-            this.label_canshu8.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu8.TabIndex = 8;
-            this.label_canshu8.Text = "参数8";
-            this.label_canshu8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu9
-            // 
-            this.label_canshu9.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu9.Location = new System.Drawing.Point(3, 383);
-            this.label_canshu9.Name = "label_canshu9";
-            this.label_canshu9.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu9.TabIndex = 9;
-            this.label_canshu9.Text = "参数9";
-            this.label_canshu9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label_canshu10
-            // 
-            this.label_canshu10.BackColor = System.Drawing.Color.Cyan;
-            this.label_canshu10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label_canshu10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_canshu10.Location = new System.Drawing.Point(3, 424);
-            this.label_canshu10.Name = "label_canshu10";
-            this.label_canshu10.Size = new System.Drawing.Size(100, 23);
-            this.label_canshu10.TabIndex = 10;
-            this.label_canshu10.Text = "参数10";
-            this.label_canshu10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // shengchanpaishan
             // 
@@ -655,7 +500,6 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft)).EndInit();
-            this.panel_gongyiinfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -709,16 +553,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
         private System.Windows.Forms.Panel panel_gongyiinfo;
-        private System.Windows.Forms.Label label_gongyititle;
-        private System.Windows.Forms.Label label_canshu1;
-        private System.Windows.Forms.Label label_canshu4;
-        private System.Windows.Forms.Label label_canshu3;
-        private System.Windows.Forms.Label label_canshu2;
-        private System.Windows.Forms.Label label_canshu6;
-        private System.Windows.Forms.Label label_canshu5;
-        private System.Windows.Forms.Label label_canshu7;
-        private System.Windows.Forms.Label label_canshu10;
-        private System.Windows.Forms.Label label_canshu9;
-        private System.Windows.Forms.Label label_canshu8;
     }
 }

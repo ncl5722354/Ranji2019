@@ -18,6 +18,7 @@ namespace YinRan2020
     {
 
         public string Title = "";
+        public int pre_selected_index = 0;
         public Craft_Config()
         {
             InitializeComponent();
@@ -140,17 +141,15 @@ namespace YinRan2020
 
 
             // datagridview_craft
-            ViewCaoZuo.Object_Position(0.22, 0.1, 0.5, 0.9, panel_craft, tabControl1.TabPages[2].Controls);
+            ViewCaoZuo.Object_Position(0.22, 0.1, 0.4, 0.9, panel_craft, tabControl1.TabPages[2].Controls);
             ViewCaoZuo.Object_Position(0, 0.05, 1, 0.9, dataGridView_craft, panel_craft.Controls);
-            ViewCaoZuo.Object_Position(0.76, 0.1, 0.23, 0.9, dataGridView_exe, tabControl1.TabPages[2].Controls);
-            //
+            ViewCaoZuo.Object_Position(0.67, 0.1, 0.33, 0.25, dataGridView_exe, tabControl1.TabPages[2].Controls);
+            ViewCaoZuo.Object_Position(0.67, 0.40, 0.33, 0.59, panel_craft_info, tabControl1.TabPages[2].Controls);
 
-
+            ViewCaoZuo.Object_Position(0.64, 0.36, 0.1, 0.05, label_select_gongyi, tabControl1.TabPages[2].Controls);
+            ViewCaoZuo.Object_Position(0.75, 0.36, 0.2, 0.05, comboBox_select_gongyi, tabControl1.TabPages[2].Controls);
             
             
-             
-
-
             listBox_gongyi.Items.Clear();
             for (int i = 1; i <= 400; i++)
             {
@@ -228,6 +227,19 @@ namespace YinRan2020
             dataGridView_info.Columns[2].Width = 60;
             dataGridView_info.Columns[3].Width = 60;
             dataGridView_info.Columns[4].Width = 60;
+
+
+            // 升温 降温 保温 进水 排水 水洗 进料 过程
+
+            comboBox_select_gongyi.Items.Clear();
+            comboBox_select_gongyi.Items.Add("升温");
+            comboBox_select_gongyi.Items.Add("降温");
+            comboBox_select_gongyi.Items.Add("保温");
+            comboBox_select_gongyi.Items.Add("进水");
+            comboBox_select_gongyi.Items.Add("排水");
+            comboBox_select_gongyi.Items.Add("水洗");
+            comboBox_select_gongyi.Items.Add("进料");
+            comboBox_select_gongyi.Items.Add("过程");
         }
 
         public void Set_Title(string title)
@@ -809,6 +821,20 @@ namespace YinRan2020
                     dataGridView_craft[18, i].Value = dr[9].ToString();
                     dataGridView_craft[20, i].Value = dr[10].ToString();
                 }
+                // 设置选中以前的行
+                for (int i = 0; i < dataGridView_craft.Rows.Count; i++)
+                {
+                    if (i == pre_selected_index)
+                    {
+                        dataGridView_craft.Rows[i].Selected = true;
+                        
+                    }
+                    else
+                    {
+                        dataGridView_craft.Rows[i].Selected = false;
+                    }
+                }
+                dataGridView_craft.CurrentCell = dataGridView_craft.Rows[pre_selected_index].Cells[0];
             }
             catch { }
         }
@@ -1127,6 +1153,10 @@ namespace YinRan2020
         private void dataGridView_xiangxi_Click(object sender, EventArgs e)
         {
             selected_datagridview_cells(sender);
+
+           
+            
+
         }
 
 
@@ -1167,6 +1197,42 @@ namespace YinRan2020
         private void dataGridView_craft_Click(object sender, EventArgs e)
         {
             selected_datagridview_cells(sender);
+            DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
+            pre_selected_index = dataGridView_craft.SelectedRows[0].Cells[0].RowIndex;
+            panel_craft_info.Controls.Clear();
+            if (dr.Cells[1].Value.ToString() == "升温")
+            {
+                Shengwen_subview.gongyi_name=listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                Shengwen_subview.ID = dr.Cells[0].Value.ToString();
+                Shengwen_subview.start_wendu = dr.Cells[3].Value.ToString();
+                Shengwen_subview.end_wendu = dr.Cells[5].Value.ToString();
+                Shengwen_subview.shengwen_time = dr.Cells[7].Value.ToString();
+                Shengwen_subview.zhubengpinlv = dr.Cells[9].Value.ToString();
+                Shengwen_subview.tibupinlv = dr.Cells[11].Value.ToString();
+                Shengwen_subview.fengjipinlv = dr.Cells[13].Value.ToString();
+                Shengwen_subview view = new Shengwen_subview();
+                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                view.change += new EventHandler(ReFlush_Craft_Return);
+            }
+            if(dr.Cells[1].Value.ToString()=="保温")
+            {
+                baowen_view.ID = dr.Cells[0].Value.ToString();
+                baowen_view.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                baowen_view.baowenwendu = dr.Cells[3].Value.ToString();
+                baowen_view.baowenshijian = dr.Cells[5].Value.ToString();
+                baowen_view.zhubengpinlv = dr.Cells[7].Value.ToString();
+                baowen_view.tibupinlv = dr.Cells[9].Value.ToString();
+                baowen_view.fengjipinlv = dr.Cells[11].Value.ToString();
+                baowen_view view = new baowen_view();
+                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                view.change += new EventHandler(ReFlush_Craft_Return);
+            }
+        }
+
+        private void ReFlush_Craft_Return(object sender,EventArgs e)
+        {
+            string selected_gongyi= listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+            ReFlash_Gongyi_Fanal(selected_gongyi);
         }
 
         private void dataGridView_exe_Click(object sender, EventArgs e)
@@ -1758,6 +1824,8 @@ namespace YinRan2020
                                 wenkonggongyi_name="保温";
                             }
                             Console.WriteLine(wenkonggongyi_name);
+                            if (wenkonggongyi_name != "保温")
+                            {
                                 string[] insert_cmd = new string[12];
                                 insert_cmd[0] = wenkonggongyi_name;
                                 insert_cmd[1] = "起始温度";
@@ -1772,6 +1840,24 @@ namespace YinRan2020
                                 insert_cmd[10] = "";
                                 insert_cmd[11] = "";
                                 MainView.builder.Insert("Craft_Name_Table", insert_cmd);
+                            }
+                            else if(wenkonggongyi_name == "保温")
+                            {
+                                string[] insert_cmd = new string[12];
+                                insert_cmd[0] = wenkonggongyi_name;
+                                insert_cmd[1] = "保温温度";
+                                insert_cmd[2] = "保温时间";
+                                insert_cmd[3] = "主泵频率";
+                                insert_cmd[4] = "提布频率";
+                                insert_cmd[5] = "风机频率";
+                                insert_cmd[6] = "";
+                                insert_cmd[7] = "";
+                                insert_cmd[8] = "";
+                                insert_cmd[9] = "";
+                                insert_cmd[10] = "";
+                                insert_cmd[11] = "";
+                                MainView.builder.Insert("Craft_Name_Table", insert_cmd);
+                            }
 
                                 // 创建xiangxi 有两行
                                 CreateSqlValueType[] create_cmd = new CreateSqlValueType[7];
@@ -1822,6 +1908,7 @@ namespace YinRan2020
 
                             // 插入 info
                             // 起始温度
+
                             string[] insert_cmd_info1 = new string[5];
                             insert_cmd_info1[0] = "1";
                             insert_cmd_info1[1] = "单个";
@@ -1831,47 +1918,101 @@ namespace YinRan2020
                             MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info1);
 
                             // 目标温度
-                            string[] insert_cmd_info11 = new string[5];
-                            insert_cmd_info11[0] = "2";
-                            insert_cmd_info11[1] = "单个";
-                            insert_cmd_info11[2] = "2";
-                            insert_cmd_info11[3] = "2";
-                            insert_cmd_info11[4] = "1";
-                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info11);
+
+                            if (wenkonggongyi_name != "保温")
+                            {
+                                string[] insert_cmd_info11 = new string[5];
+                                insert_cmd_info11[0] = "2";
+                                insert_cmd_info11[1] = "单个";
+                                insert_cmd_info11[2] = "2";
+                                insert_cmd_info11[3] = "2";
+                                insert_cmd_info11[4] = "1";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info11);
+                            }
+                            if (wenkonggongyi_name == "保温")
+                            {
+                                string[] insert_cmd_info11 = new string[5];
+                                insert_cmd_info11[0] = "1";
+                                insert_cmd_info11[1] = "单个";
+                                insert_cmd_info11[2] = "2";
+                                insert_cmd_info11[3] = "2";
+                                insert_cmd_info11[4] = "1";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info11);
+                            }
 
                             // 目标时间
+                            if (wenkonggongyi_name != "保温")
+                            {
+                                string[] insert_cmd_info12 = new string[5];
+                                insert_cmd_info12[0] = "3";
+                                insert_cmd_info12[1] = "单个";
+                                insert_cmd_info12[2] = "3";
+                                insert_cmd_info12[3] = "1";
+                                insert_cmd_info12[4] = "2";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info12);
+                            }
+                            if (wenkonggongyi_name == "保温")
+                            {
+                                string[] insert_cmd_info12 = new string[5];
+                                insert_cmd_info12[0] = "2";
+                                insert_cmd_info12[1] = "单个";
+                                insert_cmd_info12[2] = "3";
+                                insert_cmd_info12[3] = "1";
+                                insert_cmd_info12[4] = "2";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info12);
+                            }
+                            if (wenkonggongyi_name != "保温")
+                            {
+                                string[] insert_cmd_info2 = new string[5];
+                                insert_cmd_info2[0] = "4";
+                                insert_cmd_info2[1] = "整列";
+                                insert_cmd_info2[2] = "4";
+                                insert_cmd_info2[3] = "0";
+                                insert_cmd_info2[4] = "4";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info2);
 
-                            string[] insert_cmd_info12 = new string[5];
-                            insert_cmd_info12[0] = "3";
-                            insert_cmd_info12[1] = "单个";
-                            insert_cmd_info12[2] = "3";
-                            insert_cmd_info12[3] = "1";
-                            insert_cmd_info12[4] = "2";
-                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info12);
+                                string[] insert_cmd_info3 = new string[5];
+                                insert_cmd_info3[0] = "5";
+                                insert_cmd_info3[1] = "整列";
+                                insert_cmd_info3[2] = "5";
+                                insert_cmd_info3[3] = "0";
+                                insert_cmd_info3[4] = "5";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info3);
 
-                            string[] insert_cmd_info2 = new string[5];
-                            insert_cmd_info2[0] = "4";
-                            insert_cmd_info2[1] = "整列";
-                            insert_cmd_info2[2] = "4";
-                            insert_cmd_info2[3] = "0";
-                            insert_cmd_info2[4] = "4";
-                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info2);
+                                string[] insert_cmd_info4 = new string[5];
+                                insert_cmd_info4[0] = "6";
+                                insert_cmd_info4[1] = "整列";
+                                insert_cmd_info4[2] = "6";
+                                insert_cmd_info4[3] = "0";
+                                insert_cmd_info4[4] = "6";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info4);
+                            }
+                            if (wenkonggongyi_name == "保温")
+                            {
+                                string[] insert_cmd_info2 = new string[5];
+                                insert_cmd_info2[0] = "3";
+                                insert_cmd_info2[1] = "整列";
+                                insert_cmd_info2[2] = "3";
+                                insert_cmd_info2[3] = "0";
+                                insert_cmd_info2[4] = "4";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info2);
 
-                            string[] insert_cmd_info3 = new string[5];
-                            insert_cmd_info3[0] = "5";
-                            insert_cmd_info3[1] = "整列";
-                            insert_cmd_info3[2] = "5";
-                            insert_cmd_info3[3] = "0";
-                            insert_cmd_info3[4] = "5";
-                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info3);
+                                string[] insert_cmd_info3 = new string[5];
+                                insert_cmd_info3[0] = "4";
+                                insert_cmd_info3[1] = "整列";
+                                insert_cmd_info3[2] = "4";
+                                insert_cmd_info3[3] = "0";
+                                insert_cmd_info3[4] = "5";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info3);
 
-                            string[] insert_cmd_info4 = new string[5];
-                            insert_cmd_info4[0] = "6";
-                            insert_cmd_info4[1] = "整列";
-                            insert_cmd_info4[2] = "6";
-                            insert_cmd_info4[3] = "0";
-                            insert_cmd_info4[4] = "6";
-                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info4);
+                                string[] insert_cmd_info4 = new string[5];
+                                insert_cmd_info4[0] = "5";
+                                insert_cmd_info4[1] = "整列";
+                                insert_cmd_info4[2] = "5";
+                                insert_cmd_info4[3] = "0";
+                                insert_cmd_info4[4] = "6";
+                                MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info4);
+                            }
 
 
                             // 向工艺中插入
@@ -2065,6 +2206,60 @@ namespace YinRan2020
 
 
                 }
+            }
+        }
+
+        private void dataGridView_xiangxi_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView_xiangxi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView_craft_SelectionChanged(object sender, EventArgs e)
+        {
+           
+            
+        }
+
+        private void comboBox_select_gongyi_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void comboBox_select_gongyi_TextUpdate(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox_select_gongyi_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void comboBox_select_gongyi_DropDownClosed(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
+            if (comboBox_select_gongyi.Text == "升温")
+            {
+                Shengwen_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                Shengwen_subview.ID = dr.Cells[0].Value.ToString();
+
+                Shengwen_subview view = new Shengwen_subview();
+                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                view.change += new EventHandler(ReFlush_Craft_Return);
+            }
+            if (comboBox_select_gongyi.Text == "保温")
+            {
+                baowen_view.ID = dr.Cells[0].Value.ToString();
+                baowen_view.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                baowen_view view = new baowen_view();
+                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                view.change += new EventHandler(ReFlush_Craft_Return);
             }
         }
     }

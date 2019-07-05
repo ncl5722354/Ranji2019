@@ -47,18 +47,18 @@ namespace YinRan2020
             ViewCaoZuo.Object_Position(0, 0.1, 1, 0.9, dataGridView1, panel_datagridview.Controls);
             ViewCaoZuo.Object_Position(0.51, 0.55, 0.48, 0.44, panel_gongyiinfo, this.Controls);
 
-            // panel_gongyinfo里的信息
-            ViewCaoZuo.Object_Position(0, 0, 1, 0.1, label_gongyititle, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1, 0.3, 0.08, label_canshu1, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1 + 0.08, 0.3, 0.08, label_canshu2, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 2, 0.3, 0.08, label_canshu3, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 3, 0.3, 0.08, label_canshu4, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 4, 0.3, 0.08, label_canshu5, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 5, 0.3, 0.08, label_canshu6, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 6, 0.3, 0.08, label_canshu7, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 7, 0.3, 0.08, label_canshu8, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 8, 0.3, 0.08, label_canshu9, panel_gongyiinfo.Controls);
-            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 9, 0.3, 0.08, label_canshu10, panel_gongyiinfo.Controls);
+            //// panel_gongyinfo里的信息
+            //ViewCaoZuo.Object_Position(0, 0, 1, 0.1, label_gongyititle, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1, 0.3, 0.08, label_canshu1, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08, 0.3, 0.08, label_canshu2, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 2, 0.3, 0.08, label_canshu3, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 3, 0.3, 0.08, label_canshu4, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 4, 0.3, 0.08, label_canshu5, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 5, 0.3, 0.08, label_canshu6, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 6, 0.3, 0.08, label_canshu7, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 7, 0.3, 0.08, label_canshu8, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 8, 0.3, 0.08, label_canshu9, panel_gongyiinfo.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 9, 0.3, 0.08, label_canshu10, panel_gongyiinfo.Controls);
             // 
             ReFlush_GongDan_List();
         }

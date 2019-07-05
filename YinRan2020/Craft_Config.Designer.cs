@@ -61,6 +61,7 @@
             this.comboBox_gongyi = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel_craft_info = new System.Windows.Forms.Panel();
             this.dataGridView_exe = new System.Windows.Forms.DataGridView();
             this.Column32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,6 +110,8 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.label_select_gongyi = new System.Windows.Forms.Label();
+            this.comboBox_select_gongyi = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft_name)).BeginInit();
@@ -372,6 +375,8 @@
             this.dataGridView_xiangxi.RowTemplate.Height = 23;
             this.dataGridView_xiangxi.Size = new System.Drawing.Size(357, 355);
             this.dataGridView_xiangxi.TabIndex = 0;
+            this.dataGridView_xiangxi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_xiangxi_CellClick);
+            this.dataGridView_xiangxi.SelectionChanged += new System.EventHandler(this.dataGridView_xiangxi_SelectionChanged);
             this.dataGridView_xiangxi.Click += new System.EventHandler(this.dataGridView_xiangxi_Click);
             // 
             // Column3
@@ -455,6 +460,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.comboBox_select_gongyi);
+            this.tabPage3.Controls.Add(this.label_select_gongyi);
+            this.tabPage3.Controls.Add(this.panel_craft_info);
             this.tabPage3.Controls.Add(this.dataGridView_exe);
             this.tabPage3.Controls.Add(this.panel_craft);
             this.tabPage3.Controls.Add(this.listBox_gongyi);
@@ -465,6 +473,14 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "工艺设置";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel_craft_info
+            // 
+            this.panel_craft_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_craft_info.Location = new System.Drawing.Point(680, 169);
+            this.panel_craft_info.Name = "panel_craft_info";
+            this.panel_craft_info.Size = new System.Drawing.Size(270, 297);
+            this.panel_craft_info.TabIndex = 3;
             // 
             // dataGridView_exe
             // 
@@ -479,7 +495,7 @@
             this.dataGridView_exe.Location = new System.Drawing.Point(689, 8);
             this.dataGridView_exe.Name = "dataGridView_exe";
             this.dataGridView_exe.RowTemplate.Height = 23;
-            this.dataGridView_exe.Size = new System.Drawing.Size(270, 320);
+            this.dataGridView_exe.Size = new System.Drawing.Size(270, 86);
             this.dataGridView_exe.TabIndex = 2;
             this.dataGridView_exe.Click += new System.EventHandler(this.dataGridView_exe_Click);
             // 
@@ -629,6 +645,7 @@
             this.dataGridView_craft.RowTemplate.Height = 23;
             this.dataGridView_craft.Size = new System.Drawing.Size(378, 333);
             this.dataGridView_craft.TabIndex = 0;
+            this.dataGridView_craft.SelectionChanged += new System.EventHandler(this.dataGridView_craft_SelectionChanged);
             this.dataGridView_craft.Click += new System.EventHandler(this.dataGridView_craft_Click);
             // 
             // Column9
@@ -855,6 +872,27 @@
             this.toolStripButton6.Text = "修改";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
+            // label_select_gongyi
+            // 
+            this.label_select_gongyi.AutoSize = true;
+            this.label_select_gongyi.Location = new System.Drawing.Point(689, 112);
+            this.label_select_gongyi.Name = "label_select_gongyi";
+            this.label_select_gongyi.Size = new System.Drawing.Size(65, 20);
+            this.label_select_gongyi.TabIndex = 4;
+            this.label_select_gongyi.Text = "选择工艺";
+            // 
+            // comboBox_select_gongyi
+            // 
+            this.comboBox_select_gongyi.FormattingEnabled = true;
+            this.comboBox_select_gongyi.Location = new System.Drawing.Point(760, 109);
+            this.comboBox_select_gongyi.Name = "comboBox_select_gongyi";
+            this.comboBox_select_gongyi.Size = new System.Drawing.Size(190, 28);
+            this.comboBox_select_gongyi.TabIndex = 5;
+            this.comboBox_select_gongyi.TextUpdate += new System.EventHandler(this.comboBox_select_gongyi_TextUpdate);
+            this.comboBox_select_gongyi.DropDownClosed += new System.EventHandler(this.comboBox_select_gongyi_DropDownClosed);
+            this.comboBox_select_gongyi.SelectedValueChanged += new System.EventHandler(this.comboBox_select_gongyi_SelectedValueChanged);
+            this.comboBox_select_gongyi.TextChanged += new System.EventHandler(this.comboBox_select_gongyi_TextChanged);
+            // 
             // Craft_Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -886,6 +924,7 @@
             this.panel_gongyiduan_info.ResumeLayout(false);
             this.panel_gongyiduan_info.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_exe)).EndInit();
             this.panel_craft.ResumeLayout(false);
             this.panel_craft.PerformLayout();
@@ -985,6 +1024,10 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
 
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+
+        private System.Windows.Forms.Panel panel_craft_info;
+        private System.Windows.Forms.Label label_select_gongyi;
+        private System.Windows.Forms.ComboBox comboBox_select_gongyi;
 
     }
 }
