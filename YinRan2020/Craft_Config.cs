@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ViewConfig;
 using SqlConnect;
 using System.Collections;
+using System.Data.OleDb;
 
 namespace YinRan2020
 {
@@ -139,11 +140,27 @@ namespace YinRan2020
 
 
             // datagridview_craft
-            ViewCaoZuo.Object_Position(0.22, 0.1, 0.5, 0.9, panel_craft, tabControl1.TabPages[2].Controls);
+            ViewCaoZuo.Object_Position(0.22, 0.1, 0.4, 0.9, panel_craft, tabControl1.TabPages[2].Controls);
             ViewCaoZuo.Object_Position(0, 0.05, 1, 0.9, dataGridView_craft, panel_craft.Controls);
-            ViewCaoZuo.Object_Position(0.76, 0.1, 0.23, 0.9, dataGridView_exe, tabControl1.TabPages[2].Controls);
-            //
+            ViewCaoZuo.Object_Position(0.67, 0.1, 0.33, 0.25, dataGridView_exe, tabControl1.TabPages[2].Controls);
+            ViewCaoZuo.Object_Position(0.67, 0.40, 0.33, 0.59, panel_craft_info, tabControl1.TabPages[2].Controls);
+           // ViewCaoZuo.Object_Position(0, 0, 1, 0.1, label_craft_title, panel_craft_info.Controls);
 
+            //ViewCaoZuo.Object_Position(0, 0.1, 0.2, 0.08, label_value1, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08, 0.2, 0.08, label_value2, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 2, 0.2, 0.08, label_value3, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 3, 0.2, 0.08, label_value4, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 4, 0.2, 0.08, label_value5, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 5, 0.2, 0.08, label_value6, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 6, 0.2, 0.08, label_value7, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 7, 0.2, 0.08, label_value8, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 8, 0.2, 0.08, label_value9, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 9, 0.2, 0.08, label_value10, panel_craft_info.Controls);
+
+            //ViewCaoZuo.Object_Position(0.21, 0.1, 0.2, 0.08, textBox_value1, panel_craft_info.Controls);
+            //ViewCaoZuo.Object_Position(0.21, 0.1, 0.2, 0.08, textBox_value1, panel_craft_info.Controls);
+            //
+            
 
             
             
@@ -151,7 +168,7 @@ namespace YinRan2020
 
 
             listBox_gongyi.Items.Clear();
-            for (int i = 1; i <= 300; i++)
+            for (int i = 1; i <= 400; i++)
             {
                 listBox_gongyi.Items.Add("工艺" + i.ToString().PadLeft(3, '0'));
 
@@ -171,9 +188,9 @@ namespace YinRan2020
                 create_cmd[11] = new CreateSqlValueType("nvarchar(50)", "value10");
                 create_cmd[12] = new CreateSqlValueType("nvarchar(50)", "beizhu");
 
-              // MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0'), create_cmd);
+//               MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0'), create_cmd);
             }
-            for (int i = 1; i <= 300; i++)
+            for (int i = 1; i <= 400; i++)
             {
                 listBox_gongyi.Items.Add("工艺" + i.ToString().PadLeft(3, '0')+"气流");
 
@@ -193,7 +210,7 @@ namespace YinRan2020
                 create_cmd[11] = new CreateSqlValueType("nvarchar(50)", "value10");
                 create_cmd[12] = new CreateSqlValueType("nvarchar(50)", "beizhu");
 
-                MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0')+"气流", create_cmd);
+  //              MainView.builder.Create_Table("工艺" + i.ToString().PadLeft(3, '0')+"气流", create_cmd);
             }
 
             //dataGridView1.RowCount = 1;
@@ -759,8 +776,9 @@ namespace YinRan2020
                     insert_cmd[11] = Add_Craft_Final.value10;
                     insert_cmd[12] = "";
                     MainView.builder.Insert(selected_gongyi, insert_cmd);
+                    ReFlash_Gongyi_Fanal(selected_gongyi);
                 }
-                ReFlash_Gongyi_Fanal(selected_gongyi);
+               
             }
             catch { }
         }
@@ -1011,17 +1029,18 @@ namespace YinRan2020
                     DialogResult result = view.ShowDialog();
 
                     string where_cmd1 = "ID='" + dr.Cells[0].Value.ToString() + "'";
-                    string[] update_cmd = new string[10];
-                    update_cmd[0] = "value1='" + Update_Craft_Final.canshu1 + "'";
-                    update_cmd[1] = "value2='" + Update_Craft_Final.canshu2 + "'";
-                    update_cmd[2] = "value3='" + Update_Craft_Final.canshu3 + "'";
-                    update_cmd[3] = "value4='" + Update_Craft_Final.canshu4 + "'";
-                    update_cmd[4] = "value5='" + Update_Craft_Final.canshu5 + "'";
-                    update_cmd[5] = "value6='" + Update_Craft_Final.canshu6 + "'";
-                    update_cmd[6] = "value7='" + Update_Craft_Final.canshu7 + "'";
-                    update_cmd[7] = "value8='" + Update_Craft_Final.canshu8 + "'";
-                    update_cmd[8] = "value9='" + Update_Craft_Final.canshu9 + "'";
-                    update_cmd[9] = "value10='" + Update_Craft_Final.canshu10 + "'";
+                    string[] update_cmd = new string[11];
+                    update_cmd[0] = "craft_name='" + Update_Craft_Final.Craft_Name + "'";
+                    update_cmd[1] = "value1='" + Update_Craft_Final.canshu1 + "'";
+                    update_cmd[2] = "value2='" + Update_Craft_Final.canshu2 + "'";
+                    update_cmd[3] = "value3='" + Update_Craft_Final.canshu3 + "'";
+                    update_cmd[4] = "value4='" + Update_Craft_Final.canshu4 + "'";
+                    update_cmd[5] = "value5='" + Update_Craft_Final.canshu5 + "'";
+                    update_cmd[6] = "value6='" + Update_Craft_Final.canshu6 + "'";
+                    update_cmd[7] = "value7='" + Update_Craft_Final.canshu7 + "'";
+                    update_cmd[8] = "value8='" + Update_Craft_Final.canshu8 + "'";
+                    update_cmd[9] = "value9='" + Update_Craft_Final.canshu9 + "'";
+                    update_cmd[10] = "value10='" + Update_Craft_Final.canshu10 + "'";
 
                     MainView.builder.Updata(craft_name, where_cmd1, update_cmd);
 
@@ -1124,6 +1143,10 @@ namespace YinRan2020
         private void dataGridView_xiangxi_Click(object sender, EventArgs e)
         {
             selected_datagridview_cells(sender);
+
+           
+            
+
         }
 
 
@@ -1164,6 +1187,20 @@ namespace YinRan2020
         private void dataGridView_craft_Click(object sender, EventArgs e)
         {
             selected_datagridview_cells(sender);
+            DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
+            panel_craft_info.Controls.Clear();
+            if (dr.Cells[1].Value.ToString() == "升温")
+            {
+                Shengwen_subview.start_wendu = dr.Cells[3].Value.ToString();
+                Shengwen_subview.end_wendu = dr.Cells[5].Value.ToString();
+                Shengwen_subview.shengwen_time = dr.Cells[7].Value.ToString();
+                Shengwen_subview.zhubengpinlv = dr.Cells[9].Value.ToString();
+                Shengwen_subview.tibupinlv = dr.Cells[11].Value.ToString();
+                Shengwen_subview.fengjipinlv = dr.Cells[13].Value.ToString();
+                Shengwen_subview view = new Shengwen_subview();
+                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+
+            }
         }
 
         private void dataGridView_exe_Click(object sender, EventArgs e)
@@ -1174,6 +1211,909 @@ namespace YinRan2020
         private void dataGridView_craft_code_Click(object sender, EventArgs e)
         {
             selected_datagridview_cells(sender);
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+            // 读取access数据库将工艺与工艺号插入到相应的数据库中
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Access文件|*.mdb";
+            ofd.ValidateNames = true;
+            ofd.CheckPathExists = true;
+            ofd.CheckFileExists = true;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string strFileName = ofd.FileName;
+                //strFileName = strFileName.Replace("\\","\\\\");
+                MessageBox.Show(strFileName);
+                string connect_text = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + strFileName;
+                OleDbConnection conn;
+                OleDbCommand da;
+                string cmd = "select 名称,代码 from 工艺代码表";
+                conn = new OleDbConnection(connect_text);
+                OleDbDataAdapter odda = new OleDbDataAdapter(cmd, conn);
+                DataSet ds = new DataSet("ds");
+                odda.Fill(ds, "工艺代码表");
+
+                // 将表插入到工艺代码表中
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    DataRow dr = ds.Tables[0].Rows[i];
+                    string[] insert_cmd = new string[2];
+                    insert_cmd[0] = dr[0].ToString();
+                    insert_cmd[1] = dr[1].ToString();
+                    MainView.builder.Insert("Craft_Name_Code", insert_cmd);
+                }
+            }
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            string selected_gongyi = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Access文件|*.mdb";
+            ofd.ValidateNames = true;
+            ofd.CheckPathExists = true;
+            ofd.CheckFileExists = true;
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string strFileName = ofd.FileName;
+                //strFileName = strFileName.Replace("\\","\\\\");
+                //MessageBox.Show(strFileName);
+                string connect_text = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + strFileName;
+                OleDbConnection conn;
+                OleDbCommand da;
+                string cmd = "select * from 控制参数表";
+                conn = new OleDbConnection(connect_text);
+                OleDbDataAdapter odda = new OleDbDataAdapter(cmd, conn);
+                DataSet ds = new DataSet("ds");
+                odda.Fill(ds, "控制参数表");
+
+
+                // 清空相应的表
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    MainView.builder.Delete(selected_gongyi);
+                }
+                // 将表插入到工艺代码表中
+
+                int index_count = 0;
+                string oldgongyi = "";
+                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    DataRow dr = ds.Tables[0].Rows[i];
+                    string gongyi_name=dr[6].ToString();
+                    //string str = "";
+
+                    //for (int j = 0; j < dr.ItemArray.Length; j++)
+                    //{
+                    //    str = str + j + ":" + dr[j].ToString() + " ";
+                    //}
+                    //Console.WriteLine(str);
+
+
+                    //========================================== 进水 排水 类============================================================
+                    if (
+                        gongyi_name == "停泵进水一" || gongyi_name == "停泵进水二" || gongyi_name == "停泵进水三" || gongyi_name == "停泵进水四" || gongyi_name == "停泵进水五" ||
+                        gongyi_name == "停泵排水一" || gongyi_name == "停泵排水二" || gongyi_name == "停泵排水三" || gongyi_name == "停泵排水四" || gongyi_name == "停泵排水五" ||
+                        gongyi_name == "机缸进水一" || gongyi_name == "机缸进水二" || gongyi_name == "机缸进水三" || gongyi_name == "机缸进水四" || gongyi_name == "机缸进水五" ||
+                        gongyi_name == "机缸排水一" || gongyi_name == "机缸排水二" || gongyi_name == "机缸排水三" || gongyi_name == "机缸排水四" || gongyi_name == "机缸排水五" 
+                        )
+                    {
+                        // 创建Craft_Name_Table 
+                        string[] insert_cmd = new string[12];
+                        insert_cmd[0] = gongyi_name;
+                        insert_cmd[1] = "目标水位";
+                        insert_cmd[2] = "主泵频率";
+                        insert_cmd[3] = "提布频率";
+                        insert_cmd[4] = "风机频率";
+                        insert_cmd[5] = "";
+                        insert_cmd[6] = "";
+                        insert_cmd[7] = "";
+                        insert_cmd[8] = "";
+                        insert_cmd[9] = "";
+                        insert_cmd[10] = "";
+                        insert_cmd[11] = "";
+                        MainView.builder.Insert("Craft_Name_Table", insert_cmd);
+
+
+                        // 创建xiangxi 只有一行
+                        CreateSqlValueType[] create_cmd = new CreateSqlValueType[7];
+                        create_cmd[0] = new CreateSqlValueType("int", "ID", true);
+                        create_cmd[1] = new CreateSqlValueType("nvarchar(50)", "value1");
+                        create_cmd[2] = new CreateSqlValueType("nvarchar(50)", "value2");
+                        create_cmd[3] = new CreateSqlValueType("nvarchar(50)", "Craft");
+                        create_cmd[4] = new CreateSqlValueType("nvarchar(50)", "zhubenpinlv");
+                        create_cmd[5] = new CreateSqlValueType("nvarchar(50)", "tibupinlv");
+                        create_cmd[6] = new CreateSqlValueType("nvarchar(50)", "fengjipinlv");
+                        MainView.builder.Create_Table(gongyi_name + "xiangxi", create_cmd);
+
+                        string[] insert_cmd_xiangxi = new string[7];
+                        insert_cmd_xiangxi[0] = "1";
+                        insert_cmd_xiangxi[1] = "0";
+                        insert_cmd_xiangxi[2] = "0";
+                        insert_cmd_xiangxi[3] = gongyi_name;
+                        insert_cmd_xiangxi[4] = "0";
+                        insert_cmd_xiangxi[5] = "0";
+                        insert_cmd_xiangxi[6] = "0";
+                        MainView.builder.Insert(gongyi_name + "xiangxi", insert_cmd_xiangxi);
+
+                        // 创建 info 
+
+                        CreateSqlValueType[] create_cmd_info = new CreateSqlValueType[5];
+                        create_cmd_info[0] = new CreateSqlValueType("nvarchar(50)", "ID",true);
+                        create_cmd_info[1] = new CreateSqlValueType("nvarchar(50)", "mode");
+                        create_cmd_info[2] = new CreateSqlValueType("nvarchar(50)", "address");
+                        create_cmd_info[3] = new CreateSqlValueType("nvarchar(50)", "row_index");
+                        create_cmd_info[4] = new CreateSqlValueType("nvarchar(50)", "col_index");
+                        MainView.builder.Create_Table(gongyi_name + "info", create_cmd_info);
+
+                        // 插入 info
+                        string[] insert_cmd_info1 = new string[5];
+                        insert_cmd_info1[0] = "1";
+                        insert_cmd_info1[1] = "单个";
+                        insert_cmd_info1[2] = "1";
+                        insert_cmd_info1[3] = "1";
+                        insert_cmd_info1[4] = "1";
+                        MainView.builder.Insert(gongyi_name + "info",insert_cmd_info1);
+
+                        string[] insert_cmd_info2 = new string[5];
+                        insert_cmd_info2[0] = "2";
+                        insert_cmd_info2[1] = "整列";
+                        insert_cmd_info2[2] = "2";
+                        insert_cmd_info2[3] = "0";
+                        insert_cmd_info2[4] = "4";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info2);
+
+                        string[] insert_cmd_info3 = new string[5];
+                        insert_cmd_info3[0] = "3";
+                        insert_cmd_info3[1] = "整列";
+                        insert_cmd_info3[2] = "3";
+                        insert_cmd_info3[3] = "0";
+                        insert_cmd_info3[4] = "5";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info3);
+
+                        string[] insert_cmd_info4 = new string[5];
+                        insert_cmd_info4[0] = "4";
+                        insert_cmd_info4[1] = "整列";
+                        insert_cmd_info4[2] = "4";
+                        insert_cmd_info4[3] = "0";
+                        insert_cmd_info4[4] = "6";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info4);
+
+
+                        // 向工艺中插入
+                        index_count++;
+                        string[] insert_gongyi = new string[13];
+                        insert_gongyi[0] = index_count.ToString();
+                        insert_gongyi[1] = gongyi_name;
+                        insert_gongyi[2] = dr[3].ToString();         // 温度
+                        insert_gongyi[3] = dr[7].ToString();         // 主泵频率
+                        insert_gongyi[4] = dr[11].ToString();        // 提布频率
+                        insert_gongyi[5] = dr[10].ToString();        // 风机频率
+                        MainView.builder.Insert(selected_gongyi, insert_gongyi);
+                        oldgongyi = gongyi_name;
+
+                    }
+                    else if (gongyi_name == "结束" || gongyi_name == "取样" || gongyi_name == "出布" || gongyi_name=="自动暂停" || gongyi_name=="停泵取样" || gongyi_name=="进布")           // 机缸过程类
+                    {
+                        // 过程类
+                        // 创建Craft_Name_Table 
+                        string[] insert_cmd = new string[12];
+                        insert_cmd[0] = gongyi_name;
+                        insert_cmd[1] = "主泵频率";
+                        insert_cmd[2] = "提布频率";
+                        insert_cmd[3] = "风机频率";
+                        insert_cmd[4] = "";
+                        insert_cmd[5] = "";
+                        insert_cmd[6] = "";
+                        insert_cmd[7] = "";
+                        insert_cmd[8] = "";
+                        insert_cmd[9] = "";
+                        insert_cmd[10] = "";
+                        insert_cmd[11] = "";
+                        MainView.builder.Insert("Craft_Name_Table", insert_cmd);
+
+
+                        // 创建xiangxi 只有一行
+                        CreateSqlValueType[] create_cmd = new CreateSqlValueType[7];
+                        create_cmd[0] = new CreateSqlValueType("int", "ID", true);
+                        create_cmd[1] = new CreateSqlValueType("nvarchar(50)", "value1");
+                        create_cmd[2] = new CreateSqlValueType("nvarchar(50)", "value2");
+                        create_cmd[3] = new CreateSqlValueType("nvarchar(50)", "Craft");
+                        create_cmd[4] = new CreateSqlValueType("nvarchar(50)", "zhubenpinlv");
+                        create_cmd[5] = new CreateSqlValueType("nvarchar(50)", "tibupinlv");
+                        create_cmd[6] = new CreateSqlValueType("nvarchar(50)", "fengjipinlv");
+                        MainView.builder.Create_Table(gongyi_name + "xiangxi", create_cmd);
+
+                        string[] insert_cmd_xiangxi = new string[7];
+                        insert_cmd_xiangxi[0] = "1";
+                        insert_cmd_xiangxi[1] = "0";
+                        insert_cmd_xiangxi[2] = "0";
+                        insert_cmd_xiangxi[3] = gongyi_name;
+                        insert_cmd_xiangxi[4] = "0";
+                        insert_cmd_xiangxi[5] = "0";
+                        insert_cmd_xiangxi[6] = "0";
+                        MainView.builder.Insert(gongyi_name + "xiangxi", insert_cmd_xiangxi);
+
+                        // 创建 info 
+
+                        CreateSqlValueType[] create_cmd_info = new CreateSqlValueType[5];
+                        create_cmd_info[0] = new CreateSqlValueType("nvarchar(50)", "ID",true);
+                        create_cmd_info[1] = new CreateSqlValueType("nvarchar(50)", "mode");
+                        create_cmd_info[2] = new CreateSqlValueType("nvarchar(50)", "address");
+                        create_cmd_info[3] = new CreateSqlValueType("nvarchar(50)", "row_index");
+                        create_cmd_info[4] = new CreateSqlValueType("nvarchar(50)", "col_index");
+                        MainView.builder.Create_Table(gongyi_name + "info", create_cmd_info);
+
+                        // 插入 info
+                        
+                        string[] insert_cmd_info2 = new string[5];
+                        insert_cmd_info2[0] = "1";
+                        insert_cmd_info2[1] = "整列";
+                        insert_cmd_info2[2] = "1";
+                        insert_cmd_info2[3] = "0";
+                        insert_cmd_info2[4] = "4";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info2);
+
+                        string[] insert_cmd_info3 = new string[5];
+                        insert_cmd_info3[0] = "2";
+                        insert_cmd_info3[1] = "整列";
+                        insert_cmd_info3[2] = "2";
+                        insert_cmd_info3[3] = "0";
+                        insert_cmd_info3[4] = "5";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info3);
+
+                        string[] insert_cmd_info4 = new string[5];
+                        insert_cmd_info4[0] = "3";
+                        insert_cmd_info4[1] = "整列";
+                        insert_cmd_info4[2] = "3";
+                        insert_cmd_info4[3] = "0";
+                        insert_cmd_info4[4] = "6";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info4);
+
+
+                        // 向工艺中插入
+                        index_count++;
+                        string[] insert_gongyi = new string[13];
+                        insert_gongyi[0] = index_count.ToString();
+                        insert_gongyi[1] = gongyi_name;
+                        insert_gongyi[2] = dr[7].ToString();           // 主泵频率
+                        insert_gongyi[3] = dr[11].ToString();          // 提布频率
+                        insert_gongyi[4] = dr[10].ToString();          // 风机频率
+                        MainView.builder.Insert(selected_gongyi, insert_gongyi);
+                        oldgongyi = gongyi_name;
+
+                    }
+
+                    else if (gongyi_name == "染机运行一" || gongyi_name == "染机运行二" || gongyi_name == "染机运行三")           // 机缸运行类
+                    {
+                        // 过程类
+                        // 创建Craft_Name_Table 
+                        string[] insert_cmd = new string[12];
+                        insert_cmd[0] = gongyi_name;
+                        insert_cmd[1] = "运行时间";
+                        insert_cmd[2] = "主泵频率";
+                        insert_cmd[3] = "提布频率";
+                        insert_cmd[4] = "风机频率";
+                        insert_cmd[5] = "";
+                        insert_cmd[6] = "";
+                        insert_cmd[7] = "";
+                        insert_cmd[8] = "";
+                        insert_cmd[9] = "";
+                        insert_cmd[10] = "";
+                        insert_cmd[11] = "";
+                        MainView.builder.Insert("Craft_Name_Table", insert_cmd);
+
+
+                        // 创建xiangxi 只有一行
+                        CreateSqlValueType[] create_cmd = new CreateSqlValueType[7];
+                        create_cmd[0] = new CreateSqlValueType("int", "ID", true);
+                        create_cmd[1] = new CreateSqlValueType("nvarchar(50)", "value1");
+                        create_cmd[2] = new CreateSqlValueType("nvarchar(50)", "value2");
+                        create_cmd[3] = new CreateSqlValueType("nvarchar(50)", "Craft");
+                        create_cmd[4] = new CreateSqlValueType("nvarchar(50)", "zhubenpinlv");
+                        create_cmd[5] = new CreateSqlValueType("nvarchar(50)", "tibupinlv");
+                        create_cmd[6] = new CreateSqlValueType("nvarchar(50)", "fengjipinlv");
+                        MainView.builder.Create_Table(gongyi_name + "xiangxi", create_cmd);
+
+                        string[] insert_cmd_xiangxi = new string[7];
+                        insert_cmd_xiangxi[0] = "1";
+                        insert_cmd_xiangxi[1] = "0";
+                        insert_cmd_xiangxi[2] = "0";
+                        insert_cmd_xiangxi[3] = gongyi_name;
+                        insert_cmd_xiangxi[4] = "0";
+                        insert_cmd_xiangxi[5] = "0";
+                        insert_cmd_xiangxi[6] = "0";
+                        MainView.builder.Insert(gongyi_name + "xiangxi", insert_cmd_xiangxi);
+
+                        // 创建 info 
+
+                        CreateSqlValueType[] create_cmd_info = new CreateSqlValueType[5];
+                        create_cmd_info[0] = new CreateSqlValueType("nvarchar(50)", "ID", true);
+                        create_cmd_info[1] = new CreateSqlValueType("nvarchar(50)", "mode");
+                        create_cmd_info[2] = new CreateSqlValueType("nvarchar(50)", "address");
+                        create_cmd_info[3] = new CreateSqlValueType("nvarchar(50)", "row_index");
+                        create_cmd_info[4] = new CreateSqlValueType("nvarchar(50)", "col_index");
+                        MainView.builder.Create_Table(gongyi_name + "info", create_cmd_info);
+
+                        // 插入 info
+
+                        string[] insert_cmd_info1 = new string[5];
+                        insert_cmd_info1[0] = "1";
+                        insert_cmd_info1[1] = "单个";
+                        insert_cmd_info1[2] = "1";
+                        insert_cmd_info1[3] = "1";
+                        insert_cmd_info1[4] = "2";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info1);
+
+                        string[] insert_cmd_info2 = new string[5];
+                        insert_cmd_info2[0] = "1";
+                        insert_cmd_info2[1] = "整列";
+                        insert_cmd_info2[2] = "1";
+                        insert_cmd_info2[3] = "0";
+                        insert_cmd_info2[4] = "4";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info2);
+
+                        string[] insert_cmd_info3 = new string[5];
+                        insert_cmd_info3[0] = "2";
+                        insert_cmd_info3[1] = "整列";
+                        insert_cmd_info3[2] = "2";
+                        insert_cmd_info3[3] = "0";
+                        insert_cmd_info3[4] = "5";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info3);
+
+                        string[] insert_cmd_info4 = new string[5];
+                        insert_cmd_info4[0] = "3";
+                        insert_cmd_info4[1] = "整列";
+                        insert_cmd_info4[2] = "3";
+                        insert_cmd_info4[3] = "0";
+                        insert_cmd_info4[4] = "6";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info4);
+
+
+                        // 向工艺中插入
+                        index_count++;
+                        string[] insert_gongyi = new string[13];
+                        insert_gongyi[0] = index_count.ToString();
+                        insert_gongyi[1] = gongyi_name;
+                        insert_gongyi[2] = dr[5].ToString();           // 
+                        insert_gongyi[3] = dr[7].ToString();           // 主泵频率
+                        insert_gongyi[4] = dr[11].ToString();          // 提布频率
+                        insert_gongyi[5] = dr[10].ToString();          // 风机频率
+                        MainView.builder.Insert(selected_gongyi, insert_gongyi);
+                        oldgongyi = gongyi_name;
+
+                    }
+
+                    else if (gongyi_name == "中和助剂" || gongyi_name == "染色助剂" || gongyi_name == "分散染料" || gongyi_name == "液碱" ||
+                             gongyi_name == "前处理助剂" || gongyi_name == "元明粉" || gongyi_name == "纯碱" || gongyi_name == "保温粉" ||
+                             gongyi_name == "双氧水" || gongyi_name == "纤维酶" || gongyi_name == "阳离子染料" || gongyi_name == "混纺染料" ||
+                             gongyi_name == "硫化染料" || gongyi_name == "活性染料" || gongyi_name == "中性染料" || gongyi_name == "酸性染料" ||
+                             gongyi_name == "还原染料" || gongyi_name == "冰醋酸" || gongyi_name == "硫化碱" || gongyi_name == "去油灵" ||
+                             gongyi_name == "皂洗剂" || gongyi_name == "消泡剂" || gongyi_name == "固色剂" || gongyi_name == "高温匀染剂" ||
+                             gongyi_name == "棉用匀染剂" || gongyi_name == "阳离子匀染剂" || gongyi_name == "阳离子匀染剂" || gongyi_name == "酸性匀染剂" ||
+                             gongyi_name == "酸性匀染剂" || gongyi_name == "膨化剂" || gongyi_name == "柔软剂" || gongyi_name == "增白剂" ||
+                             gongyi_name == "修补剂" || gongyi_name == "防水剂" || gongyi_name == "分散剂" || gongyi_name == "防皱剂" ||
+                             gongyi_name == "精炼剂" || gongyi_name == "酵素酶" || gongyi_name == "除氧酶")      // 回流搅拌助剂类
+                    {
+                        // 过程类
+                        // 创建Craft_Name_Table 
+                        string[] insert_cmd = new string[12];
+                        insert_cmd[0] = gongyi_name;
+                        insert_cmd[1] = "回流液位";
+                        insert_cmd[2] = "搅拌时间";
+                        insert_cmd[3] = "进料时间";
+                        insert_cmd[4] = "主泵频率";
+                        insert_cmd[5] = "提布频率";
+                        insert_cmd[6] = "风机频率";
+                        insert_cmd[7] = "";
+                        insert_cmd[8] = "";
+                        insert_cmd[9] = "";
+                        insert_cmd[10] = "";
+                        insert_cmd[11] = "";
+                        MainView.builder.Insert("Craft_Name_Table", insert_cmd);
+
+
+                        // 创建xiangxi 有三行
+                        CreateSqlValueType[] create_cmd = new CreateSqlValueType[7];
+                        create_cmd[0] = new CreateSqlValueType("int", "ID", true);
+                        create_cmd[1] = new CreateSqlValueType("nvarchar(50)", "value1");
+                        create_cmd[2] = new CreateSqlValueType("nvarchar(50)", "value2");
+                        create_cmd[3] = new CreateSqlValueType("nvarchar(50)", "Craft");
+                        create_cmd[4] = new CreateSqlValueType("nvarchar(50)", "zhubenpinlv");
+                        create_cmd[5] = new CreateSqlValueType("nvarchar(50)", "tibupinlv");
+                        create_cmd[6] = new CreateSqlValueType("nvarchar(50)", "fengjipinlv");
+                        MainView.builder.Create_Table(gongyi_name + "xiangxi", create_cmd);
+
+                        string[] insert_cmd_xiangxi = new string[7];
+                        insert_cmd_xiangxi[0] = "1";
+                        insert_cmd_xiangxi[1] = "0";
+                        insert_cmd_xiangxi[2] = "0";
+                        insert_cmd_xiangxi[3] = "料缸回流";
+                        insert_cmd_xiangxi[4] = "0";
+                        insert_cmd_xiangxi[5] = "0";
+                        insert_cmd_xiangxi[6] = "0";
+                        MainView.builder.Insert(gongyi_name + "xiangxi", insert_cmd_xiangxi);
+
+                        string[] insert_cmd_xiangxi1 = new string[7];
+                        insert_cmd_xiangxi1[0] = "2";
+                        insert_cmd_xiangxi1[1] = "0";
+                        insert_cmd_xiangxi1[2] = "0";
+                        insert_cmd_xiangxi1[3] = "化料搅拌";
+                        insert_cmd_xiangxi1[4] = "0";
+                        insert_cmd_xiangxi1[5] = "0";
+                        insert_cmd_xiangxi1[6] = "0";
+                        MainView.builder.Insert(gongyi_name + "xiangxi", insert_cmd_xiangxi1);
+
+                        string[] insert_cmd_xiangxi2 = new string[7];
+                        insert_cmd_xiangxi1[0] = "3";
+                        insert_cmd_xiangxi1[1] = "0";
+                        insert_cmd_xiangxi1[2] = "0";
+                        insert_cmd_xiangxi1[3] = gongyi_name;
+                        insert_cmd_xiangxi1[4] = "0";
+                        insert_cmd_xiangxi1[5] = "0";
+                        insert_cmd_xiangxi1[6] = "0";
+                        MainView.builder.Insert(gongyi_name + "xiangxi", insert_cmd_xiangxi1);
+
+                        // 创建 info 
+
+                        CreateSqlValueType[] create_cmd_info = new CreateSqlValueType[5];
+                        create_cmd_info[0] = new CreateSqlValueType("nvarchar(50)", "ID", true);
+                        create_cmd_info[1] = new CreateSqlValueType("nvarchar(50)", "mode");
+                        create_cmd_info[2] = new CreateSqlValueType("nvarchar(50)", "address");
+                        create_cmd_info[3] = new CreateSqlValueType("nvarchar(50)", "row_index");
+                        create_cmd_info[4] = new CreateSqlValueType("nvarchar(50)", "col_index");
+                        MainView.builder.Create_Table(gongyi_name + "info", create_cmd_info);
+
+                        // 插入 info
+                        // 回流液位
+                        string[] insert_cmd_info1 = new string[5];
+                        insert_cmd_info1[0] = "1";
+                        insert_cmd_info1[1] = "单个";
+                        insert_cmd_info1[2] = "1";
+                        insert_cmd_info1[3] = "1";
+                        insert_cmd_info1[4] = "1";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info1);
+
+                        // 搅拌时间
+                        string[] insert_cmd_info11 = new string[5];
+                        insert_cmd_info11[0] = "2";
+                        insert_cmd_info11[1] = "单个";
+                        insert_cmd_info11[2] = "2";
+                        insert_cmd_info11[3] = "2";
+                        insert_cmd_info11[4] = "2";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info11);
+
+                        // 进料时间
+                        
+                        string[] insert_cmd_info12 = new string[5];
+                        insert_cmd_info12[0] = "3";
+                        insert_cmd_info12[1] = "单个";
+                        insert_cmd_info12[2] = "3";
+                        insert_cmd_info12[3] = "3";
+                        insert_cmd_info12[4] = "2";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info12);
+
+                        string[] insert_cmd_info2 = new string[5];
+                        insert_cmd_info2[0] = "4";
+                        insert_cmd_info2[1] = "整列";
+                        insert_cmd_info2[2] = "4";
+                        insert_cmd_info2[3] = "0";
+                        insert_cmd_info2[4] = "4";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info2);
+
+                        string[] insert_cmd_info3 = new string[5];
+                        insert_cmd_info3[0] = "5";
+                        insert_cmd_info3[1] = "整列";
+                        insert_cmd_info3[2] = "5";
+                        insert_cmd_info3[3] = "0";
+                        insert_cmd_info3[4] = "5";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info3);
+
+                        string[] insert_cmd_info4 = new string[5];
+                        insert_cmd_info4[0] = "6";
+                        insert_cmd_info4[1] = "整列";
+                        insert_cmd_info4[2] = "6";
+                        insert_cmd_info4[3] = "0";
+                        insert_cmd_info4[4] = "6";
+                        MainView.builder.Insert(gongyi_name + "info", insert_cmd_info4);
+
+
+                        // 向工艺中插入
+                        index_count++;
+                        string[] insert_gongyi = new string[13];
+                        insert_gongyi[0] = index_count.ToString();
+                        insert_gongyi[1] = gongyi_name;
+                        insert_gongyi[2] = "0";                        // 回流液位
+                        insert_gongyi[3] = "0";                        // 搅拌时间
+                        insert_gongyi[4] = dr[5].ToString();           // 进料时间
+                        insert_gongyi[5] = dr[7].ToString();           // 主泵频率
+                        insert_gongyi[6] = dr[11].ToString();          // 提布频率
+                        insert_gongyi[7] = dr[10].ToString();          // 风机频率
+
+                        try
+                        {
+                            DataRow dr_2 = ds.Tables[0].Rows[i - 2];
+                           
+                            if (dr_2[6].ToString() == "料缸回流")
+                                insert_gongyi[2] = dr_2[3].ToString();
+                            if (dr_2[6].ToString() == "化料搅拌")
+                                insert_gongyi[3] = dr_2[5].ToString();
+                        }
+                        catch{}
+
+                        try
+                        {
+                            DataRow dr_1 = ds.Tables[0].Rows[i - 1];
+
+                            if (dr_1[6].ToString() == "料缸回流")
+                                insert_gongyi[2] = dr_1[3].ToString();
+                            if (dr_1[6].ToString() == "化料搅拌")
+                                insert_gongyi[3] = dr_1[5].ToString();
+                        }
+
+                        catch { }
+                        MainView.builder.Insert(selected_gongyi, insert_gongyi);
+                        oldgongyi = gongyi_name;
+
+                    }
+
+
+
+
+                    // 温度控制 分三种
+                    else if (gongyi_name == "温控")           // 回流搅拌助剂类
+                    {
+                        // 过程类
+                        // 创建Craft_Name_Table
+ 
+
+                        // 上一条
+                        try
+                        {
+                            DataRow pre_dr = ds.Tables[0].Rows[i - 1];
+                            Console.Write(pre_dr[6].ToString());
+                            if (pre_dr[6].ToString() != "温控")
+                                continue;
+                            
+                            string wenkonggongyi_name = "";
+                            if(int.Parse(pre_dr[3].ToString())<int.Parse(dr[3].ToString()))
+                            {
+                                wenkonggongyi_name="升温";
+                            }
+                            if(int.Parse(pre_dr[3].ToString())>int.Parse(dr[3].ToString()))
+                            {
+                                wenkonggongyi_name="降温";
+                            }
+                            if(int.Parse(pre_dr[3].ToString())==int.Parse(dr[3].ToString()))
+                            {
+                                wenkonggongyi_name="保温";
+                            }
+                            Console.WriteLine(wenkonggongyi_name);
+                                string[] insert_cmd = new string[12];
+                                insert_cmd[0] = wenkonggongyi_name;
+                                insert_cmd[1] = "起始温度";
+                                insert_cmd[2] = "目标温度";
+                                insert_cmd[3] = "时间";
+                                insert_cmd[4] = "主泵频率";
+                                insert_cmd[5] = "提布频率";
+                                insert_cmd[6] = "风机频率";
+                                insert_cmd[7] = "";
+                                insert_cmd[8] = "";
+                                insert_cmd[9] = "";
+                                insert_cmd[10] = "";
+                                insert_cmd[11] = "";
+                                MainView.builder.Insert("Craft_Name_Table", insert_cmd);
+
+                                // 创建xiangxi 有两行
+                                CreateSqlValueType[] create_cmd = new CreateSqlValueType[7];
+                                create_cmd[0] = new CreateSqlValueType("int", "ID", true);
+                                create_cmd[1] = new CreateSqlValueType("nvarchar(50)", "value1");
+                                create_cmd[2] = new CreateSqlValueType("nvarchar(50)", "value2");
+                                create_cmd[3] = new CreateSqlValueType("nvarchar(50)", "Craft");
+                                create_cmd[4] = new CreateSqlValueType("nvarchar(50)", "zhubenpinlv");
+                                create_cmd[5] = new CreateSqlValueType("nvarchar(50)", "tibupinlv");
+                                create_cmd[6] = new CreateSqlValueType("nvarchar(50)", "fengjipinlv");
+                                MainView.builder.Create_Table(wenkonggongyi_name+"xiangxi", create_cmd);
+
+                                string[] insert_cmd_xiangxi = new string[7];
+                                insert_cmd_xiangxi[0] = "1";
+                                insert_cmd_xiangxi[1] = "0";
+                                insert_cmd_xiangxi[2] = "0";
+                                insert_cmd_xiangxi[3] = "温控";
+                                insert_cmd_xiangxi[4] = "0";
+                                insert_cmd_xiangxi[5] = "0";
+                                insert_cmd_xiangxi[6] = "0";
+                                MainView.builder.Insert(wenkonggongyi_name+"xiangxi", insert_cmd_xiangxi);
+
+                                string[] insert_cmd_xiangxi1 = new string[7];
+                                insert_cmd_xiangxi1[0] = "2";
+                                insert_cmd_xiangxi1[1] = "0";
+                                insert_cmd_xiangxi1[2] = "0";
+                                insert_cmd_xiangxi1[3] = "温控";
+                                insert_cmd_xiangxi1[4] = "0";
+                                insert_cmd_xiangxi1[5] = "0";
+                                insert_cmd_xiangxi1[6] = "0";
+                                MainView.builder.Insert(wenkonggongyi_name+"xiangxi", insert_cmd_xiangxi1);
+                            
+                           
+                            
+
+
+                           
+
+                            // 创建 info 
+
+                            CreateSqlValueType[] create_cmd_info = new CreateSqlValueType[5];
+                            create_cmd_info[0] = new CreateSqlValueType("nvarchar(50)", "ID", true);
+                            create_cmd_info[1] = new CreateSqlValueType("nvarchar(50)", "mode");
+                            create_cmd_info[2] = new CreateSqlValueType("nvarchar(50)", "address");
+                            create_cmd_info[3] = new CreateSqlValueType("nvarchar(50)", "row_index");
+                            create_cmd_info[4] = new CreateSqlValueType("nvarchar(50)", "col_index");
+                            MainView.builder.Create_Table(wenkonggongyi_name + "info", create_cmd_info);
+
+                            // 插入 info
+                            // 起始温度
+                            string[] insert_cmd_info1 = new string[5];
+                            insert_cmd_info1[0] = "1";
+                            insert_cmd_info1[1] = "单个";
+                            insert_cmd_info1[2] = "1";
+                            insert_cmd_info1[3] = "1";
+                            insert_cmd_info1[4] = "1";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info1);
+
+                            // 目标温度
+                            string[] insert_cmd_info11 = new string[5];
+                            insert_cmd_info11[0] = "2";
+                            insert_cmd_info11[1] = "单个";
+                            insert_cmd_info11[2] = "2";
+                            insert_cmd_info11[3] = "2";
+                            insert_cmd_info11[4] = "1";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info11);
+
+                            // 目标时间
+
+                            string[] insert_cmd_info12 = new string[5];
+                            insert_cmd_info12[0] = "3";
+                            insert_cmd_info12[1] = "单个";
+                            insert_cmd_info12[2] = "3";
+                            insert_cmd_info12[3] = "1";
+                            insert_cmd_info12[4] = "2";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info12);
+
+                            string[] insert_cmd_info2 = new string[5];
+                            insert_cmd_info2[0] = "4";
+                            insert_cmd_info2[1] = "整列";
+                            insert_cmd_info2[2] = "4";
+                            insert_cmd_info2[3] = "0";
+                            insert_cmd_info2[4] = "4";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info2);
+
+                            string[] insert_cmd_info3 = new string[5];
+                            insert_cmd_info3[0] = "5";
+                            insert_cmd_info3[1] = "整列";
+                            insert_cmd_info3[2] = "5";
+                            insert_cmd_info3[3] = "0";
+                            insert_cmd_info3[4] = "5";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info3);
+
+                            string[] insert_cmd_info4 = new string[5];
+                            insert_cmd_info4[0] = "6";
+                            insert_cmd_info4[1] = "整列";
+                            insert_cmd_info4[2] = "6";
+                            insert_cmd_info4[3] = "0";
+                            insert_cmd_info4[4] = "6";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info4);
+
+
+                            // 向工艺中插入
+                            index_count++;
+                            string[] insert_gongyi = new string[13];
+                            insert_gongyi[0] = index_count.ToString();
+                            insert_gongyi[1] = wenkonggongyi_name;
+                            insert_gongyi[2] = pre_dr[3].ToString();                        // 回流液位
+                            insert_gongyi[3] = dr[3].ToString();                       // 搅拌时间
+                            insert_gongyi[4] = pre_dr[5].ToString();           // 进料时间
+                            insert_gongyi[5] = dr[7].ToString();           // 主泵频率
+                            insert_gongyi[6] = dr[11].ToString();          // 提布频率
+                            insert_gongyi[7] = dr[10].ToString();          // 风机频率
+
+                            
+                            MainView.builder.Insert(selected_gongyi, insert_gongyi);
+                            oldgongyi = gongyi_name;
+                        }
+                        catch { }
+
+                    }
+
+
+
+
+
+
+
+                    // 水洗类
+                    else if (gongyi_name == "6111" || gongyi_name == "6112" || gongyi_name == "6113" || gongyi_name == "6121" || gongyi_name == "6122" || gongyi_name == "6123" || gongyi_name == "6131" || gongyi_name == "6132" || gongyi_name == "6133" ||
+                             gongyi_name == "5111" || gongyi_name == "5112" || gongyi_name == "5113" || gongyi_name == "5121" || gongyi_name == "5122" || gongyi_name == "5123" || gongyi_name == "5113" || gongyi_name == "5123" || gongyi_name == "5133"
+                        )           // 回流搅拌助剂类
+                    {
+                        // 过程类
+                        // 创建Craft_Name_Table
+
+
+                        // 上一条
+                        try
+                        {
+                            DataRow pre_dr = ds.Tables[0].Rows[i - 1];
+                            Console.Write(pre_dr[6].ToString());
+                            if (pre_dr[6].ToString() != dr[6].ToString())
+                                continue;
+
+                            string wenkonggongyi_name = "";
+                            if (gongyi_name.Substring(0, 1) == "6") wenkonggongyi_name = "吨数水洗进" + gongyi_name.Substring(2, 1) + "出" + gongyi_name.Substring(3, 1);
+                            if (gongyi_name.Substring(0, 1) == "5") wenkonggongyi_name = "时间水洗进" + gongyi_name.Substring(2, 1) + "出" + gongyi_name.Substring(3, 1);
+                            Console.WriteLine(wenkonggongyi_name);
+                            string[] insert_cmd = new string[12];
+                            insert_cmd[0] = wenkonggongyi_name;
+                            insert_cmd[1] = "上限水位";
+                            insert_cmd[2] = "下限水位";
+                            insert_cmd[3] = "时间/吨数";
+                            insert_cmd[4] = "主泵频率";
+                            insert_cmd[5] = "提布频率";
+                            insert_cmd[6] = "风机频率";
+                            insert_cmd[7] = "";
+                            insert_cmd[8] = "";
+                            insert_cmd[9] = "";
+                            insert_cmd[10] = "";
+                            insert_cmd[11] = "";
+                            MainView.builder.Insert("Craft_Name_Table", insert_cmd);
+
+                            // 创建xiangxi 有两行
+                            CreateSqlValueType[] create_cmd = new CreateSqlValueType[7];
+                            create_cmd[0] = new CreateSqlValueType("int", "ID", true);
+                            create_cmd[1] = new CreateSqlValueType("nvarchar(50)", "value1");
+                            create_cmd[2] = new CreateSqlValueType("nvarchar(50)", "value2");
+                            create_cmd[3] = new CreateSqlValueType("nvarchar(50)", "Craft");
+                            create_cmd[4] = new CreateSqlValueType("nvarchar(50)", "zhubenpinlv");
+                            create_cmd[5] = new CreateSqlValueType("nvarchar(50)", "tibupinlv");
+                            create_cmd[6] = new CreateSqlValueType("nvarchar(50)", "fengjipinlv");
+                            MainView.builder.Create_Table(wenkonggongyi_name + "xiangxi", create_cmd);
+
+                            string[] insert_cmd_xiangxi = new string[7];
+                            insert_cmd_xiangxi[0] = "1";
+                            insert_cmd_xiangxi[1] = "0";
+                            insert_cmd_xiangxi[2] = "0";
+                            insert_cmd_xiangxi[3] = dr[6].ToString();
+                            insert_cmd_xiangxi[4] = "0";
+                            insert_cmd_xiangxi[5] = "0";
+                            insert_cmd_xiangxi[6] = "0";
+                            MainView.builder.Insert(wenkonggongyi_name + "xiangxi", insert_cmd_xiangxi);
+
+                            string[] insert_cmd_xiangxi1 = new string[7];
+                            insert_cmd_xiangxi1[0] = "2";
+                            insert_cmd_xiangxi1[1] = "0";
+                            insert_cmd_xiangxi1[2] = "0";
+                            insert_cmd_xiangxi1[3] = dr[6].ToString();
+                            insert_cmd_xiangxi1[4] = "0";
+                            insert_cmd_xiangxi1[5] = "0";
+                            insert_cmd_xiangxi1[6] = "0";
+                            MainView.builder.Insert(wenkonggongyi_name + "xiangxi", insert_cmd_xiangxi1);
+
+
+
+
+
+
+
+                            // 创建 info 
+
+                            CreateSqlValueType[] create_cmd_info = new CreateSqlValueType[5];
+                            create_cmd_info[0] = new CreateSqlValueType("nvarchar(50)", "ID", true);
+                            create_cmd_info[1] = new CreateSqlValueType("nvarchar(50)", "mode");
+                            create_cmd_info[2] = new CreateSqlValueType("nvarchar(50)", "address");
+                            create_cmd_info[3] = new CreateSqlValueType("nvarchar(50)", "row_index");
+                            create_cmd_info[4] = new CreateSqlValueType("nvarchar(50)", "col_index");
+                            MainView.builder.Create_Table(wenkonggongyi_name + "info", create_cmd_info);
+
+                            // 插入 info
+                            // 起始温度
+                            string[] insert_cmd_info1 = new string[5];
+                            insert_cmd_info1[0] = "1";
+                            insert_cmd_info1[1] = "单个";
+                            insert_cmd_info1[2] = "1";
+                            insert_cmd_info1[3] = "1";
+                            insert_cmd_info1[4] = "1";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info1);
+
+                            // 目标温度
+                            string[] insert_cmd_info11 = new string[5];
+                            insert_cmd_info11[0] = "2";
+                            insert_cmd_info11[1] = "单个";
+                            insert_cmd_info11[2] = "2";
+                            insert_cmd_info11[3] = "2";
+                            insert_cmd_info11[4] = "1";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info11);
+
+                            // 目标时间
+
+                            string[] insert_cmd_info12 = new string[5];
+                            insert_cmd_info12[0] = "3";
+                            insert_cmd_info12[1] = "单个";
+                            insert_cmd_info12[2] = "3";
+                            insert_cmd_info12[3] = "1";
+                            insert_cmd_info12[4] = "2";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info12);
+
+                            string[] insert_cmd_info2 = new string[5];
+                            insert_cmd_info2[0] = "4";
+                            insert_cmd_info2[1] = "整列";
+                            insert_cmd_info2[2] = "4";
+                            insert_cmd_info2[3] = "0";
+                            insert_cmd_info2[4] = "4";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info2);
+
+                            string[] insert_cmd_info3 = new string[5];
+                            insert_cmd_info3[0] = "5";
+                            insert_cmd_info3[1] = "整列";
+                            insert_cmd_info3[2] = "5";
+                            insert_cmd_info3[3] = "0";
+                            insert_cmd_info3[4] = "5";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info3);
+
+                            string[] insert_cmd_info4 = new string[5];
+                            insert_cmd_info4[0] = "6";
+                            insert_cmd_info4[1] = "整列";
+                            insert_cmd_info4[2] = "6";
+                            insert_cmd_info4[3] = "0";
+                            insert_cmd_info4[4] = "6";
+                            MainView.builder.Insert(wenkonggongyi_name + "info", insert_cmd_info4);
+
+
+                            // 向工艺中插入
+                            index_count++;
+                            string[] insert_gongyi = new string[13];
+                            insert_gongyi[0] = index_count.ToString();
+                            insert_gongyi[1] = wenkonggongyi_name;
+                            insert_gongyi[2] = pre_dr[3].ToString();                        // 回流液位
+                            insert_gongyi[3] = dr[3].ToString();                       // 搅拌时间
+                            insert_gongyi[4] = pre_dr[5].ToString();           // 进料时间
+                            insert_gongyi[5] = dr[7].ToString();           // 主泵频率
+                            insert_gongyi[6] = dr[11].ToString();          // 提布频率
+                            insert_gongyi[7] = dr[10].ToString();          // 风机频率
+
+
+                            MainView.builder.Insert(selected_gongyi, insert_gongyi);
+                            oldgongyi = gongyi_name;
+                        }
+                        catch { }
+
+                    }
+
+                        // 创建xinxi 
+                        
+
+                        // 读取工艺名称
+                    
+
+                }
+            }
+        }
+
+        private void dataGridView_xiangxi_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGridView_xiangxi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView_craft_SelectionChanged(object sender, EventArgs e)
+        {
+           
+            
         }
     }
 }

@@ -34,6 +34,24 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -136,6 +154,12 @@
     </Compile>
     <Compile Include="shengchanpaishan.Designer.cs">
       <DependentUpon>shengchanpaishan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shengwen_subview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shengwen_subview.Designer.cs">
+      <DependentUpon>Shengwen_subview.cs</DependentUpon>
     </Compile>
     <Compile Include="Update_Craft_Final.cs">
       <SubType>Form</SubType>
@@ -276,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="shengchanpaishan.resx">
       <DependentUpon>shengchanpaishan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shengwen_subview.resx">
+      <DependentUpon>Shengwen_subview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update_Craft_Final.resx">
       <DependentUpon>Update_Craft_Final.cs</DependentUpon>
@@ -420,6 +447,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\control_fastforward.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engine_512px_1125364_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\robot_512px_1125682_easyicon.net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wind_mill_459px_1209484_easyicon.net.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -171,3 +171,12 @@ D:\Ranji2019\Communication\bin\Debug\String_Caozuo.pdb
 D:\Ranji2019\Communication\obj\Debug\Communication.csprojResolveAssemblyReference.cache
 D:\Ranji2019\Communication\obj\Debug\Communication.dll
 D:\Ranji2019\Communication\obj\Debug\Communication.pdb
+D:\Ranji2019 old\Communication\bin\Debug\Communication.dll.config
+D:\Ranji2019 old\Communication\bin\Debug\Communication.dll
+D:\Ranji2019 old\Communication\bin\Debug\Communication.pdb
+D:\Ranji2019 old\Communication\bin\Debug\Communication.tlb
+D:\Ranji2019 old\Communication\bin\Debug\String_Caozuo.dll
+D:\Ranji2019 old\Communication\bin\Debug\String_Caozuo.pdb
+D:\Ranji2019 old\Communication\obj\Debug\Communication.csprojResolveAssemblyReference.cache
+D:\Ranji2019 old\Communication\obj\Debug\Communication.dll
+D:\Ranji2019 old\Communication\obj\Debug\Communication.pdb

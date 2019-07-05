@@ -397,11 +397,13 @@
             // 
             this.timer_send2.Enabled = true;
             this.timer_send2.Interval = 20;
+            this.timer_send2.Tick += new System.EventHandler(this.timer_send2_Tick);
             // 
             // timer_send3
             // 
             this.timer_send3.Enabled = true;
             this.timer_send3.Interval = 20;
+            this.timer_send3.Tick += new System.EventHandler(this.timer_send3_Tick);
             // 
             // timer_send4
             // 

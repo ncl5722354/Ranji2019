@@ -45,7 +45,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView_craft = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,10 +74,6 @@
             this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.panel_datagridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -145,6 +146,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button_readgongyi);
@@ -179,11 +181,11 @@
             // 
             // button_readgongyi
             // 
-            this.button_readgongyi.Location = new System.Drawing.Point(307, 51);
+            this.button_readgongyi.Location = new System.Drawing.Point(307, 74);
             this.button_readgongyi.Name = "button_readgongyi";
-            this.button_readgongyi.Size = new System.Drawing.Size(75, 23);
+            this.button_readgongyi.Size = new System.Drawing.Size(125, 23);
             this.button_readgongyi.TabIndex = 4;
-            this.button_readgongyi.Text = "读取工艺";
+            this.button_readgongyi.Text = "读取气流工艺";
             this.button_readgongyi.UseVisualStyleBackColor = true;
             this.button_readgongyi.Click += new System.EventHandler(this.button_readgongyi_Click);
             // 
@@ -243,175 +245,6 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // dataGridView_craft
-            // 
-            this.dataGridView_craft.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_craft.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column9,
-            this.Column31,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
-            this.Column23,
-            this.Column24,
-            this.Column25,
-            this.Column26,
-            this.Column27,
-            this.Column28,
-            this.Column29,
-            this.Column30});
-            this.dataGridView_craft.Location = new System.Drawing.Point(3, 44);
-            this.dataGridView_craft.Name = "dataGridView_craft";
-            this.dataGridView_craft.RowTemplate.Height = 23;
-            this.dataGridView_craft.Size = new System.Drawing.Size(485, 290);
-            this.dataGridView_craft.TabIndex = 1;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "ID";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 60;
-            // 
-            // Column31
-            // 
-            this.Column31.HeaderText = "工艺";
-            this.Column31.Name = "Column31";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "参数1说明";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 60;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "参数1";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 60;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "参数2说明";
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 60;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "参数2";
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 60;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "参数3说明";
-            this.Column14.Name = "Column14";
-            this.Column14.Width = 60;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "参数3";
-            this.Column15.Name = "Column15";
-            this.Column15.Width = 60;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "参数4说明";
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 60;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "参数4";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 60;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "参数5说明";
-            this.Column18.Name = "Column18";
-            this.Column18.Width = 60;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "参数5";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 60;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "参数6说明";
-            this.Column20.Name = "Column20";
-            this.Column20.Width = 60;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "参数6";
-            this.Column21.Name = "Column21";
-            this.Column21.Width = 60;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "参数7说明";
-            this.Column22.Name = "Column22";
-            this.Column22.Width = 60;
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "参数7";
-            this.Column23.Name = "Column23";
-            this.Column23.Width = 60;
-            // 
-            // Column24
-            // 
-            this.Column24.HeaderText = "参数8说明";
-            this.Column24.Name = "Column24";
-            this.Column24.Width = 60;
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "说明8";
-            this.Column25.Name = "Column25";
-            this.Column25.Width = 60;
-            // 
-            // Column26
-            // 
-            this.Column26.HeaderText = "参数9说明";
-            this.Column26.Name = "Column26";
-            this.Column26.Width = 60;
-            // 
-            // Column27
-            // 
-            this.Column27.HeaderText = "参数9";
-            this.Column27.Name = "Column27";
-            this.Column27.Width = 60;
-            // 
-            // Column28
-            // 
-            this.Column28.HeaderText = "参数10说明";
-            this.Column28.Name = "Column28";
-            this.Column28.Width = 60;
-            // 
-            // Column29
-            // 
-            this.Column29.HeaderText = "参数10";
-            this.Column29.Name = "Column29";
-            this.Column29.Width = 60;
-            // 
-            // Column30
-            // 
-            this.Column30.HeaderText = "备注";
-            this.Column30.Name = "Column30";
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -453,6 +286,189 @@
             this.toolStripButton4.Text = "toolStripButton4";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
+            // dataGridView_craft
+            // 
+            this.dataGridView_craft.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_craft.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column31,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22,
+            this.Column23,
+            this.Column24,
+            this.Column25,
+            this.Column26,
+            this.Column27,
+            this.Column28,
+            this.Column29,
+            this.Column30});
+            this.dataGridView_craft.Location = new System.Drawing.Point(3, 44);
+            this.dataGridView_craft.Name = "dataGridView_craft";
+            this.dataGridView_craft.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dataGridView_craft.RowTemplate.Height = 23;
+            this.dataGridView_craft.Size = new System.Drawing.Size(485, 290);
+            this.dataGridView_craft.TabIndex = 1;
+            this.dataGridView_craft.Click += new System.EventHandler(this.dataGridView_craft_Click);
+            this.dataGridView_craft.DoubleClick += new System.EventHandler(this.dataGridView_craft_DoubleClick);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(307, 49);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 23);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "读取溢流工艺";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "ID";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 60;
+            // 
+            // Column31
+            // 
+            this.Column31.HeaderText = "工艺";
+            this.Column31.Name = "Column31";
+            this.Column31.Width = 150;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "参数1说明";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 150;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "参数1";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 60;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "参数2说明";
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 150;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "参数2";
+            this.Column13.Name = "Column13";
+            this.Column13.Width = 60;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "参数3说明";
+            this.Column14.Name = "Column14";
+            this.Column14.Width = 150;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "参数3";
+            this.Column15.Name = "Column15";
+            this.Column15.Width = 60;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "参数4说明";
+            this.Column16.Name = "Column16";
+            this.Column16.Width = 150;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "参数4";
+            this.Column17.Name = "Column17";
+            this.Column17.Width = 60;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "参数5说明";
+            this.Column18.Name = "Column18";
+            this.Column18.Width = 150;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "参数5";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 60;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "参数6说明";
+            this.Column20.Name = "Column20";
+            this.Column20.Width = 150;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "参数6";
+            this.Column21.Name = "Column21";
+            this.Column21.Width = 60;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "参数7说明";
+            this.Column22.Name = "Column22";
+            this.Column22.Width = 150;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "参数7";
+            this.Column23.Name = "Column23";
+            this.Column23.Width = 60;
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "参数8说明";
+            this.Column24.Name = "Column24";
+            this.Column24.Width = 150;
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "说明8";
+            this.Column25.Name = "Column25";
+            this.Column25.Width = 60;
+            // 
+            // Column26
+            // 
+            this.Column26.HeaderText = "参数9说明";
+            this.Column26.Name = "Column26";
+            this.Column26.Width = 150;
+            // 
+            // Column27
+            // 
+            this.Column27.HeaderText = "参数9";
+            this.Column27.Name = "Column27";
+            this.Column27.Width = 60;
+            // 
+            // Column28
+            // 
+            this.Column28.HeaderText = "参数10说明";
+            this.Column28.Name = "Column28";
+            this.Column28.Width = 150;
+            // 
+            // Column29
+            // 
+            this.Column29.HeaderText = "参数10";
+            this.Column29.Name = "Column29";
+            this.Column29.Width = 60;
+            // 
+            // Column30
+            // 
+            this.Column30.HeaderText = "备注";
+            this.Column30.Name = "Column30";
+            // 
             // shengchanpaishan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -491,6 +507,18 @@
         private System.Windows.Forms.Button button_readgongyi;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView_craft;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
@@ -514,16 +542,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
     }
 }

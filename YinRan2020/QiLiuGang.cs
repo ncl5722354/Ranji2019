@@ -54,32 +54,7 @@ namespace YinRan2020
             myLabel_Red_Yellow_tingzhi.Device_Name = name;    // 停止显示
             myLabel_Red_Yellow_tingzhi.init();
 
-            myLabel_Red_Yellow_jinshui1.Device_Name = name;   // 进水1
-            myLabel_Red_Yellow_jinshui1.init();
-
-            myLabel_Red_Yellow_jinshui2.Device_Name = name;   // 进水2
-            myLabel_Red_Yellow_jinshui2.init();
-
-            myLabel_Red_Yellow_jinshui3.Device_Name = name;   // 进水3
-            myLabel_Red_Yellow_jinshui3.init();
-
-            myLabel_Red_Yellow_jinshui4.Device_Name = name;   // 进水4
-            myLabel_Red_Yellow_jinshui4.init();
-
-            myLabel_Red_Yellow_paishui1.Device_Name = name;   // 排水1
-            myLabel_Red_Yellow_paishui1.init();
-
-            myLabel_Red_Yellow_paishui2.Device_Name = name;   // 排水2
-            myLabel_Red_Yellow_paishui2.init();
-
-            myLabel_Red_Yellow_paishui3.Device_Name = name;   // 排水3
-            myLabel_Red_Yellow_paishui3.init();
-
-            myLabel_Red_Yellow_paishui4.Device_Name = name;   // 排水4
-            myLabel_Red_Yellow_paishui4.init();
-
-            myLabel_Gongyi_gongyi.Device_Name = name;         // 工艺显示
-            myLabel_Gongyi_gongyi.init();
+           
         
         }
 
@@ -109,41 +84,23 @@ namespace YinRan2020
 
             ViewCaoZuo.Object_Position(0.01, 0.77, 0.3, 0.12, label_duanshi, this.Controls);       // 工艺时长标签
 
-            ViewCaoZuo.Object_Position(0.3, 0.77, 0.3, 0.12, myLabel_time_gongyi, this.Controls);  // 工艺运行时长显示
+            ViewCaoZuo.Object_Position(0.3, 0.77, 0.4, 0.12, myLabel_time_gongyi, this.Controls);  // 工艺运行时长显示
 
             ViewCaoZuo.Object_Position(0.01, 0.89, 0.3, 0.12, label_zongyunxingshijian, this.Controls);  // 总时长标签
 
-            ViewCaoZuo.Object_Position(0.3, 0.89, 0.3, 0.12, myLabel_time_zong, this.Controls);          // 总时长显示
+            ViewCaoZuo.Object_Position(0.3, 0.89, 0.4, 0.12, myLabel_time_zong, this.Controls);          // 总时长显示
 
-            ViewCaoZuo.Object_Position(0.6, 0.89, 0.2, 0.1, label_zhixinggongyi, this.Controls);        // 执行工艺标签
-
-            ViewCaoZuo.Object_Position(0.8, 0.89, 0.2, 0.1, myLabel_Gongyi_gongyi, this.Controls);      // 执行工艺显示
-
+           
             // 开关量
 
-            ViewCaoZuo.Object_Position(0.55, 0.3, 0.1, 0.1, myLabel_Red_Yellow_start, this.Controls);     // 启动
+            ViewCaoZuo.Object_Position(0.7, 0.3, 0.1, 0.1, myLabel_Red_Yellow_start, this.Controls);     // 启动
 
-            ViewCaoZuo.Object_Position(0.65, 0.3, 0.1, 0.1, myLabel_Red_Yellow_zanting, this.Controls);   // 暂停
+            ViewCaoZuo.Object_Position(0.7, 0.4, 0.1, 0.1, myLabel_Red_Yellow_zanting, this.Controls);   // 暂停
 
-            ViewCaoZuo.Object_Position(0.75, 0.3, 0.1, 0.1, myLabel_Red_Yellow_zhubeng, this.Controls);   // 主泵
+            ViewCaoZuo.Object_Position(0.7, 0.5, 0.1, 0.1, myLabel_Red_Yellow_zhubeng, this.Controls);   // 主泵
 
-            ViewCaoZuo.Object_Position(0.85, 0.3, 0.1, 0.1, myLabel_Red_Yellow_tingzhi, this.Controls);   // 停止
-
-            ViewCaoZuo.Object_Position(0.65, 0.45, 0.1, 0.1, myLabel_Red_Yellow_jinshui1, this.Controls);   // 进水1
-
-            ViewCaoZuo.Object_Position(0.65, 0.55, 0.1, 0.1, myLabel_Red_Yellow_jinshui2, this.Controls);   // 进水2
-
-            ViewCaoZuo.Object_Position(0.65, 0.65, 0.1, 0.1, myLabel_Red_Yellow_jinshui3, this.Controls);   // 进水3
-
-            ViewCaoZuo.Object_Position(0.65, 0.75, 0.1, 0.1, myLabel_Red_Yellow_jinshui4, this.Controls);   // 进水4
-
-            ViewCaoZuo.Object_Position(0.85, 0.45, 0.1, 0.1, myLabel_Red_Yellow_paishui1, this.Controls);   // 进水1
-
-            ViewCaoZuo.Object_Position(0.85, 0.55, 0.1, 0.1, myLabel_Red_Yellow_paishui2, this.Controls);   // 进水2
-
-            ViewCaoZuo.Object_Position(0.85, 0.65, 0.1, 0.1, myLabel_Red_Yellow_paishui3, this.Controls);   // 进水3
-
-            ViewCaoZuo.Object_Position(0.85, 0.75, 0.1, 0.1, myLabel_Red_Yellow_paishui4, this.Controls);   // 进水4
+            ViewCaoZuo.Object_Position(0.7, 0.6, 0.1, 0.1, myLabel_Red_Yellow_tingzhi, this.Controls);   // 停止
+           
 
         }
 

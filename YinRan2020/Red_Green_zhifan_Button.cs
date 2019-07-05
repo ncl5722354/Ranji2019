@@ -43,14 +43,14 @@ namespace YinRan2020
         public static int xiazai_data42 = 3700;
 
         // 替补频率
-        public static int xiazai_data5 = 4000;
-        public static int xiazai_data51 = 4100;
-        public static int xiazai_data52 = 4200;
+        public static int xiazai_data5 = 4500;
+        public static int xiazai_data51 = 4600;
+        public static int xiazai_data52 = 4700;
 
         // 风机频率
-        public static int xiazai_data6 = 4500;
-        public static int xiazai_data61 = 4700;
-        public static int xiazai_data62 = 4800;
+        public static int xiazai_data6 = 4000;
+        public static int xiazai_data61 = 4100;
+        public static int xiazai_data62 = 4200;
 
         public static  int[] down_data1 = new int[2000];
         public static  int[] down_data2 = new int[2000];

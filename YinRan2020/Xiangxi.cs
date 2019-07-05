@@ -21,6 +21,8 @@ namespace YinRan2020
         public static int loadcount = 0;
 
         int machine_num = 0;
+
+        public event EventHandler return_to_zongmao = null;
         public Xiangxi()
         {
             InitializeComponent();
@@ -42,6 +44,8 @@ namespace YinRan2020
             //ViewCaoZuo.Object_Position(0.4, 0.6, 0.35, 0.35, panel2, this.Controls);
 
             ViewCaoZuo.Object_Position(0.8, 0.65, 0.23, 0.34, panel3, this.Controls);
+
+            ViewCaoZuo.Object_Position(0.9, 0.01, 0.09, 0.05, button_return, this.Controls);
         }
 
         public void Set_Yiliu()
@@ -462,6 +466,29 @@ namespace YinRan2020
             show_chart();
         }
 
+        public void selected_datagridview_cells(object sender)
+        {
+            try
+            {
+                DataGridView datagridview = (DataGridView)sender;
+                int selected_index = datagridview.SelectedCells[0].RowIndex;
+
+                for (int i = 0; i < datagridview.Rows.Count; i++)
+                {
+                    if (i == selected_index)
+                    {
+                        datagridview.Rows[i].Selected = true;
+                    }
+                    else
+                    {
+                        datagridview.Rows[i].Selected = false;
+                    }
+                }
+
+            }
+            catch { }
+        }
+
         private void show_chart()
         {
             try
@@ -664,6 +691,24 @@ namespace YinRan2020
                 
             }
             catch { }
+
+        }
+
+        private void button_return_Click(object sender, EventArgs e)
+        {
+            if(return_to_zongmao!=null)
+            {
+                return_to_zongmao(this, new EventArgs());
+            }
+        }
+
+        private void dataGridView_craft_Click(object sender, EventArgs e)
+        {
+            selected_datagridview_cells(sender);
+        }
+
+        private void Xiangxi_Load(object sender, EventArgs e)
+        {
 
         }
     }

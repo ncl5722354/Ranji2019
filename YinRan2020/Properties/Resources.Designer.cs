@@ -123,6 +123,16 @@ namespace YinRan2020.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap engine_512px_1125364_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("engine_512px_1125364_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap horizontal_insert_rule_24px_6779_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("horizontal_insert_rule_24px_6779_easyicon.net", resourceCulture);
@@ -156,6 +166,26 @@ namespace YinRan2020.Properties {
         internal static System.Drawing.Bitmap navigate_previous {
             get {
                 object obj = ResourceManager.GetObject("navigate_previous", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap robot_512px_1125682_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("robot_512px_1125682_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap wind_mill_459px_1209484_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("wind_mill_459px_1209484_easyicon.net", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
