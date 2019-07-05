@@ -412,3 +412,5 @@ D:\程序\Ranji2019-master\Ranji_Controlor4.0\obj\Debug\Ranji_Controlor4._0.Prop
 D:\程序\Ranji2019-master\Ranji_Controlor4.0\obj\Debug\Ranji_Controlor4.0.csproj.GenerateResource.Cache
 D:\程序\Ranji2019-master\Ranji_Controlor4.0\obj\Debug\Ranji_Controlor4.0.exe
 D:\程序\Ranji2019-master\Ranji_Controlor4.0\obj\Debug\Ranji_Controlor4.0.pdb
+D:\程序\Ranji2019-master\Ranji_Controlor4.0\bin\Debug\Ranji_Controlor4.0.exe.CodeAnalysisLog.xml
+D:\程序\Ranji2019-master\Ranji_Controlor4.0\bin\Debug\Ranji_Controlor4.0.exe.lastcodeanalysissucceeded

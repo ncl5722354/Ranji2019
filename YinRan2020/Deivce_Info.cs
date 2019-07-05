@@ -68,7 +68,7 @@ namespace YinRan2020
 
             // 波特率下拉菜单
             comboBox_botelv.Items.Clear();
-            comboBox_botelv.Items.Add("2400kps");
+            comboBox_botelv.Items.Add("2‘kps");
             comboBox_botelv.Items.Add("4800kps");
             comboBox_botelv.Items.Add("9600kps");
             comboBox_botelv.Items.Add("19200kps");
@@ -577,6 +577,134 @@ namespace YinRan2020
             {
             }
             return gongnengma;
+        }
+
+        private void timer_send2_Tick(object sender, EventArgs e)
+        {
+            if (modbus2.sp.IsOpen == true)
+            {
+                if (modbus2.cmd_num > 11)
+                {
+                    modbus2.cmd_num = 1;
+                    modbus2.send_machine_num = modbus2.send_machine_num + 1;
+                }
+                if (modbus2.send_machine_num > 70) modbus2.send_machine_num = 1;
+                if (modbus2.send_is == false && modbus2.receive_is == false)
+                {
+                    //串口1没有数据发送 发送数据
+                    //com1_biaozhi.BackColor = System.Drawing.Color.Red;
+                    string where_cmd = "Address='" + modbus2.send_machine_num.ToString() + "' and Com='串口2'";
+                    DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                    while (dt == null || dt.Rows.Count == 0)
+                    {
+                        modbus2.send_machine_num = modbus2.send_machine_num + 1; //换下一号
+                        if (modbus2.send_machine_num > 70)
+                        {
+                            modbus2.send_machine_num = 1;
+                            return;
+                        }
+                        where_cmd = "Address='" + modbus2.send_machine_num.ToString() + "' and Com='串口2'";
+                        dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                    }
+
+                    string cmd = MainView.inifile.IniReadValue("CMD", "cmd" + modbus2.cmd_num);
+                    cmd = modbus2.send_machine_num.ToString("X").PadLeft(2, '0') + cmd;
+                    modbus2.send_address_high = gethighaddress(cmd);
+                    modbus2.send_address_low = getlowaddress(cmd);
+                    modbus2.send_gongnengma = getgongnengma(cmd);
+                    if (modbus2.xunjian_is == true)
+                    {
+                        //modbus1.sp.DiscardInBuffer();
+                        modbus2.send_data(cmd);
+                        modbus2.time_out = 0;
+                        modbus2.send_is = true;
+                    }
+                }
+                if (modbus2.send_is == true && modbus2.receive_is == false)
+                {
+                    modbus2.time_out = modbus2.time_out + 1;
+                    if (modbus2.time_out > 50)
+                    {
+                        //超时了
+                        modbus2.send_is = false;
+
+                        modbus2.send_machine_num = modbus2.send_machine_num + 1;
+                        modbus2.cmd_num = 1;
+
+                    }
+                }
+                if (modbus2.send_is == true && modbus2.receive_is == true)
+                {
+                    modbus2.cmd_num = modbus2.cmd_num + 1;
+                    modbus2.time_out = 0;
+                    modbus2.send_is = false;
+                    modbus2.receive_is = false;
+                }
+            }
+        }
+
+        private void timer_send3_Tick(object sender, EventArgs e)
+        {
+            if (modbus3.sp.IsOpen == true)
+            {
+                if (modbus3.cmd_num > 11)
+                {
+                    modbus3.cmd_num = 1;
+                    modbus3.send_machine_num = modbus3.send_machine_num + 1;
+                }
+                if (modbus3.send_machine_num > 70) modbus3.send_machine_num = 1;
+                if (modbus3.send_is == false && modbus3.receive_is == false)
+                {
+                    //串口1没有数据发送 发送数据
+                    //com1_biaozhi.BackColor = System.Drawing.Color.Red;
+                    string where_cmd = "Address='" + modbus3.send_machine_num.ToString() + "' and Com='串口3'";
+                    DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                    while (dt == null || dt.Rows.Count == 0)
+                    {
+                        modbus3.send_machine_num = modbus3.send_machine_num + 1; //换下一号
+                        if (modbus3.send_machine_num > 70)
+                        {
+                            modbus3.send_machine_num = 1;
+                            return;
+                        }
+                        where_cmd = "Address='" + modbus3.send_machine_num.ToString() + "' and Com='串口3'";
+                        dt = MainView.builder.Select_Table("Device_Info", where_cmd);
+                    }
+
+                    string cmd = MainView.inifile.IniReadValue("CMD", "cmd" + modbus3.cmd_num);
+                    cmd = modbus3.send_machine_num.ToString("X").PadLeft(2, '0') + cmd;
+                    modbus3.send_address_high = gethighaddress(cmd);
+                    modbus3.send_address_low = getlowaddress(cmd);
+                    modbus3.send_gongnengma = getgongnengma(cmd);
+                    if (modbus3.xunjian_is == true)
+                    {
+                        //modbus1.sp.DiscardInBuffer();
+                        modbus3.send_data(cmd);
+                        modbus3.time_out = 0;
+                        modbus3.send_is = true;
+                    }
+                }
+                if (modbus3.send_is == true && modbus3.receive_is == false)
+                {
+                    modbus3.time_out = modbus3.time_out + 1;
+                    if (modbus3.time_out > 50)
+                    {
+                        //超时了
+                        modbus3.send_is = false;
+
+                        modbus3.send_machine_num = modbus3.send_machine_num + 1;
+                        modbus3.cmd_num = 1;
+
+                    }
+                }
+                if (modbus3.send_is == true && modbus3.receive_is == true)
+                {
+                    modbus3.cmd_num = modbus3.cmd_num + 1;
+                    modbus3.time_out = 0;
+                    modbus3.send_is = false;
+                    modbus3.receive_is = false;
+                }
+            }
         }
 
     }

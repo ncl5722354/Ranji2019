@@ -320,3 +320,5 @@ D:\程序\Ranji2019-master\WpfControls\obj\Debug\WpfControls.Properties.Resource
 D:\程序\Ranji2019-master\WpfControls\obj\Debug\WpfControls.csproj.GenerateResource.Cache
 D:\程序\Ranji2019-master\WpfControls\obj\Debug\WpfControls.exe
 D:\程序\Ranji2019-master\WpfControls\obj\Debug\WpfControls.pdb
+D:\程序\Ranji2019-master\WpfControls\bin\Debug\WpfControls.exe.CodeAnalysisLog.xml
+D:\程序\Ranji2019-master\WpfControls\bin\Debug\WpfControls.exe.lastcodeanalysissucceeded

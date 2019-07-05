@@ -264,3 +264,5 @@ D:\程序\Ranji2019-master\WPFDataStruct\obj\Debug\WPFDataStruct.Properties.Reso
 D:\程序\Ranji2019-master\WPFDataStruct\obj\Debug\WPFDataStruct.csproj.GenerateResource.Cache
 D:\程序\Ranji2019-master\WPFDataStruct\obj\Debug\WPFDataStruct.exe
 D:\程序\Ranji2019-master\WPFDataStruct\obj\Debug\WPFDataStruct.pdb
+D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\WPFDataStruct.exe.CodeAnalysisLog.xml
+D:\程序\Ranji2019-master\WPFDataStruct\bin\Debug\WPFDataStruct.exe.lastcodeanalysissucceeded

@@ -132,7 +132,6 @@ D:\程序\组态控制软件\组态与上位机软件\上位机系统\String_Cao
 D:\程序\YinRan2019\String_Caozuo\bin\Debug\String_Caozuo.dll
 D:\程序\YinRan2019\String_Caozuo\bin\Debug\String_Caozuo.pdb
 D:\程序\YinRan2019\String_Caozuo\bin\Debug\String_Caozuo.tlb
-D:\程序\YinRan2019\String_Caozuo\obj\Debug\String_Caozuo.csprojResolveAssemblyReference.cache
 D:\程序\YinRan2019\String_Caozuo\obj\Debug\String_Caozuo.dll
 D:\程序\YinRan2019\String_Caozuo\obj\Debug\String_Caozuo.pdb
 D:\程序\Ranji2019-master\String_Caozuo\bin\Debug\String_Caozuo.dll
@@ -140,3 +139,5 @@ D:\程序\Ranji2019-master\String_Caozuo\bin\Debug\String_Caozuo.pdb
 D:\程序\Ranji2019-master\String_Caozuo\obj\Debug\String_Caozuo.csprojResolveAssemblyReference.cache
 D:\程序\Ranji2019-master\String_Caozuo\obj\Debug\String_Caozuo.dll
 D:\程序\Ranji2019-master\String_Caozuo\obj\Debug\String_Caozuo.pdb
+D:\程序\Ranji2019-master\String_Caozuo\bin\Debug\String_Caozuo.dll.CodeAnalysisLog.xml
+D:\程序\Ranji2019-master\String_Caozuo\bin\Debug\String_Caozuo.dll.lastcodeanalysissucceeded

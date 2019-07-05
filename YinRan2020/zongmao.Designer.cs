@@ -66,6 +66,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1351, 535);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.Resize += new System.EventHandler(this.tabControl1_Resize);
             // 
             // tabPage1
             // 
@@ -76,7 +77,8 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1343, 491);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "串口1";
+            this.tabPage1.Text = "1-12";
+            this.tabPage1.Resize += new System.EventHandler(this.tabPage1_Resize);
             // 
             // tabPage2
             // 
@@ -86,8 +88,9 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1343, 491);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "串口2";
+            this.tabPage2.Text = "13-24";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Resize += new System.EventHandler(this.tabPage2_Resize);
             // 
             // tabPage3
             // 
@@ -97,8 +100,9 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1343, 491);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "串口3";
+            this.tabPage3.Text = "25-36";
             this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Resize += new System.EventHandler(this.tabPage3_Resize);
             // 
             // tabPage4
             // 
@@ -108,8 +112,9 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1343, 491);
             this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "串口4";
+            this.tabPage4.Text = "37-48";
             this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage4.Resize += new System.EventHandler(this.tabPage4_Resize);
             // 
             // tabPage5
             // 
@@ -119,8 +124,9 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1343, 491);
             this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "串口5";
+            this.tabPage5.Text = "49-60";
             this.tabPage5.UseVisualStyleBackColor = true;
+            this.tabPage5.Resize += new System.EventHandler(this.tabPage5_Resize);
             // 
             // tabPage6
             // 
@@ -130,14 +136,15 @@
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage6.Size = new System.Drawing.Size(1343, 491);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "串口6";
+            this.tabPage6.Text = "61-72";
             this.tabPage6.UseVisualStyleBackColor = true;
+            this.tabPage6.Resize += new System.EventHandler(this.tabPage6_Resize);
             // 
             // zongmao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1062);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label_title);
             this.Font = new System.Drawing.Font("微软雅黑", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -146,6 +153,7 @@
             this.Name = "zongmao";
             this.Text = "zongmao";
             this.SizeChanged += new System.EventHandler(this.zongmao_SizeChanged);
+            this.Resize += new System.EventHandler(this.zongmao_Resize);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 

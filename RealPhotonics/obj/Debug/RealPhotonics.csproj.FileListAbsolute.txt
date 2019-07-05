@@ -761,3 +761,5 @@ D:\程序\Ranji2019-master\RealPhotonics\obj\Debug\RealPhotonics.UserMangement.r
 D:\程序\Ranji2019-master\RealPhotonics\obj\Debug\RealPhotonics.csproj.GenerateResource.Cache
 D:\程序\Ranji2019-master\RealPhotonics\obj\Debug\RealPhotonics.exe
 D:\程序\Ranji2019-master\RealPhotonics\obj\Debug\RealPhotonics.pdb
+D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\RealPhotonics.exe.CodeAnalysisLog.xml
+D:\程序\Ranji2019-master\RealPhotonics\bin\Debug\RealPhotonics.exe.lastcodeanalysissucceeded

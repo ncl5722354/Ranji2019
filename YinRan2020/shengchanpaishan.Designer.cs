@@ -36,6 +36,7 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button_readgongyi = new System.Windows.Forms.Button();
@@ -45,6 +46,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView_craft = new System.Windows.Forms.DataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,16 +74,25 @@
             this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.panel_gongyiinfo = new System.Windows.Forms.Panel();
+            this.label_gongyititle = new System.Windows.Forms.Label();
+            this.label_canshu1 = new System.Windows.Forms.Label();
+            this.label_canshu2 = new System.Windows.Forms.Label();
+            this.label_canshu3 = new System.Windows.Forms.Label();
+            this.label_canshu4 = new System.Windows.Forms.Label();
+            this.label_canshu5 = new System.Windows.Forms.Label();
+            this.label_canshu6 = new System.Windows.Forms.Label();
+            this.label_canshu7 = new System.Windows.Forms.Label();
+            this.label_canshu8 = new System.Windows.Forms.Label();
+            this.label_canshu9 = new System.Windows.Forms.Label();
+            this.label_canshu10 = new System.Windows.Forms.Label();
             this.panel_datagridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft)).BeginInit();
+            this.panel_gongyiinfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_title
@@ -101,7 +115,7 @@
             this.panel_datagridview.Controls.Add(this.dataGridView1);
             this.panel_datagridview.Location = new System.Drawing.Point(664, 63);
             this.panel_datagridview.Name = "panel_datagridview";
-            this.panel_datagridview.Size = new System.Drawing.Size(258, 448);
+            this.panel_datagridview.Size = new System.Drawing.Size(258, 217);
             this.panel_datagridview.TabIndex = 1;
             // 
             // button2
@@ -124,7 +138,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(250, 369);
+            this.dataGridView1.Size = new System.Drawing.Size(250, 126);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -145,6 +159,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button_readgongyi);
@@ -156,6 +171,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(493, 104);
             this.panel1.TabIndex = 2;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(307, 49);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(125, 23);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "读取溢流工艺";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -179,11 +204,11 @@
             // 
             // button_readgongyi
             // 
-            this.button_readgongyi.Location = new System.Drawing.Point(307, 51);
+            this.button_readgongyi.Location = new System.Drawing.Point(307, 74);
             this.button_readgongyi.Name = "button_readgongyi";
-            this.button_readgongyi.Size = new System.Drawing.Size(75, 23);
+            this.button_readgongyi.Size = new System.Drawing.Size(125, 23);
             this.button_readgongyi.TabIndex = 4;
-            this.button_readgongyi.Text = "读取工艺";
+            this.button_readgongyi.Text = "读取气流工艺";
             this.button_readgongyi.UseVisualStyleBackColor = true;
             this.button_readgongyi.Click += new System.EventHandler(this.button_readgongyi_Click);
             // 
@@ -243,175 +268,6 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // dataGridView_craft
-            // 
-            this.dataGridView_craft.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_craft.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column9,
-            this.Column31,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
-            this.Column23,
-            this.Column24,
-            this.Column25,
-            this.Column26,
-            this.Column27,
-            this.Column28,
-            this.Column29,
-            this.Column30});
-            this.dataGridView_craft.Location = new System.Drawing.Point(3, 44);
-            this.dataGridView_craft.Name = "dataGridView_craft";
-            this.dataGridView_craft.RowTemplate.Height = 23;
-            this.dataGridView_craft.Size = new System.Drawing.Size(485, 290);
-            this.dataGridView_craft.TabIndex = 1;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "ID";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 60;
-            // 
-            // Column31
-            // 
-            this.Column31.HeaderText = "工艺";
-            this.Column31.Name = "Column31";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "参数1说明";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 60;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "参数1";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 60;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "参数2说明";
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 60;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "参数2";
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 60;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "参数3说明";
-            this.Column14.Name = "Column14";
-            this.Column14.Width = 60;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "参数3";
-            this.Column15.Name = "Column15";
-            this.Column15.Width = 60;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "参数4说明";
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 60;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "参数4";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 60;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "参数5说明";
-            this.Column18.Name = "Column18";
-            this.Column18.Width = 60;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "参数5";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 60;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "参数6说明";
-            this.Column20.Name = "Column20";
-            this.Column20.Width = 60;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "参数6";
-            this.Column21.Name = "Column21";
-            this.Column21.Width = 60;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "参数7说明";
-            this.Column22.Name = "Column22";
-            this.Column22.Width = 60;
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "参数7";
-            this.Column23.Name = "Column23";
-            this.Column23.Width = 60;
-            // 
-            // Column24
-            // 
-            this.Column24.HeaderText = "参数8说明";
-            this.Column24.Name = "Column24";
-            this.Column24.Width = 60;
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "说明8";
-            this.Column25.Name = "Column25";
-            this.Column25.Width = 60;
-            // 
-            // Column26
-            // 
-            this.Column26.HeaderText = "参数9说明";
-            this.Column26.Name = "Column26";
-            this.Column26.Width = 60;
-            // 
-            // Column27
-            // 
-            this.Column27.HeaderText = "参数9";
-            this.Column27.Name = "Column27";
-            this.Column27.Width = 60;
-            // 
-            // Column28
-            // 
-            this.Column28.HeaderText = "参数10说明";
-            this.Column28.Name = "Column28";
-            this.Column28.Width = 60;
-            // 
-            // Column29
-            // 
-            this.Column29.HeaderText = "参数10";
-            this.Column29.Name = "Column29";
-            this.Column29.Width = 60;
-            // 
-            // Column30
-            // 
-            this.Column30.HeaderText = "备注";
-            this.Column30.Name = "Column30";
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -453,11 +309,336 @@
             this.toolStripButton4.Text = "toolStripButton4";
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
+            // dataGridView_craft
+            // 
+            this.dataGridView_craft.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_craft.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column9,
+            this.Column31,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22,
+            this.Column23,
+            this.Column24,
+            this.Column25,
+            this.Column26,
+            this.Column27,
+            this.Column28,
+            this.Column29,
+            this.Column30});
+            this.dataGridView_craft.Location = new System.Drawing.Point(3, 44);
+            this.dataGridView_craft.Name = "dataGridView_craft";
+            this.dataGridView_craft.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.dataGridView_craft.RowTemplate.Height = 23;
+            this.dataGridView_craft.Size = new System.Drawing.Size(485, 290);
+            this.dataGridView_craft.TabIndex = 1;
+            this.dataGridView_craft.Click += new System.EventHandler(this.dataGridView_craft_Click);
+            this.dataGridView_craft.DoubleClick += new System.EventHandler(this.dataGridView_craft_DoubleClick);
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "ID";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 60;
+            // 
+            // Column31
+            // 
+            this.Column31.HeaderText = "工艺";
+            this.Column31.Name = "Column31";
+            this.Column31.Width = 150;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "参数1说明";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 150;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "参数1";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 60;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "参数2说明";
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 150;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "参数2";
+            this.Column13.Name = "Column13";
+            this.Column13.Width = 60;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "参数3说明";
+            this.Column14.Name = "Column14";
+            this.Column14.Width = 150;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "参数3";
+            this.Column15.Name = "Column15";
+            this.Column15.Width = 60;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "参数4说明";
+            this.Column16.Name = "Column16";
+            this.Column16.Width = 150;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "参数4";
+            this.Column17.Name = "Column17";
+            this.Column17.Width = 60;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "参数5说明";
+            this.Column18.Name = "Column18";
+            this.Column18.Width = 150;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "参数5";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 60;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "参数6说明";
+            this.Column20.Name = "Column20";
+            this.Column20.Width = 150;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "参数6";
+            this.Column21.Name = "Column21";
+            this.Column21.Width = 60;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "参数7说明";
+            this.Column22.Name = "Column22";
+            this.Column22.Width = 150;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "参数7";
+            this.Column23.Name = "Column23";
+            this.Column23.Width = 60;
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "参数8说明";
+            this.Column24.Name = "Column24";
+            this.Column24.Width = 150;
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "说明8";
+            this.Column25.Name = "Column25";
+            this.Column25.Width = 60;
+            // 
+            // Column26
+            // 
+            this.Column26.HeaderText = "参数9说明";
+            this.Column26.Name = "Column26";
+            this.Column26.Width = 150;
+            // 
+            // Column27
+            // 
+            this.Column27.HeaderText = "参数9";
+            this.Column27.Name = "Column27";
+            this.Column27.Width = 60;
+            // 
+            // Column28
+            // 
+            this.Column28.HeaderText = "参数10说明";
+            this.Column28.Name = "Column28";
+            this.Column28.Width = 150;
+            // 
+            // Column29
+            // 
+            this.Column29.HeaderText = "参数10";
+            this.Column29.Name = "Column29";
+            this.Column29.Width = 60;
+            // 
+            // Column30
+            // 
+            this.Column30.HeaderText = "备注";
+            this.Column30.Name = "Column30";
+            // 
+            // panel_gongyiinfo
+            // 
+            this.panel_gongyiinfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu10);
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu9);
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu8);
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu7);
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu6);
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu5);
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu4);
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu3);
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu2);
+            this.panel_gongyiinfo.Controls.Add(this.label_canshu1);
+            this.panel_gongyiinfo.Controls.Add(this.label_gongyititle);
+            this.panel_gongyiinfo.Location = new System.Drawing.Point(668, 286);
+            this.panel_gongyiinfo.Name = "panel_gongyiinfo";
+            this.panel_gongyiinfo.Size = new System.Drawing.Size(258, 481);
+            this.panel_gongyiinfo.TabIndex = 4;
+            // 
+            // label_gongyititle
+            // 
+            this.label_gongyititle.BackColor = System.Drawing.SystemColors.Highlight;
+            this.label_gongyititle.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_gongyititle.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label_gongyititle.Location = new System.Drawing.Point(3, 0);
+            this.label_gongyititle.Name = "label_gongyititle";
+            this.label_gongyititle.Size = new System.Drawing.Size(254, 48);
+            this.label_gongyititle.TabIndex = 0;
+            this.label_gongyititle.Text = "工艺段名称";
+            this.label_gongyititle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu1
+            // 
+            this.label_canshu1.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu1.Location = new System.Drawing.Point(4, 67);
+            this.label_canshu1.Name = "label_canshu1";
+            this.label_canshu1.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu1.TabIndex = 1;
+            this.label_canshu1.Text = "参数1";
+            this.label_canshu1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu2
+            // 
+            this.label_canshu2.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu2.Location = new System.Drawing.Point(3, 107);
+            this.label_canshu2.Name = "label_canshu2";
+            this.label_canshu2.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu2.TabIndex = 2;
+            this.label_canshu2.Text = "参数2";
+            this.label_canshu2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu3
+            // 
+            this.label_canshu3.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu3.Location = new System.Drawing.Point(3, 143);
+            this.label_canshu3.Name = "label_canshu3";
+            this.label_canshu3.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu3.TabIndex = 3;
+            this.label_canshu3.Text = "参数3";
+            this.label_canshu3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu4
+            // 
+            this.label_canshu4.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu4.Location = new System.Drawing.Point(3, 182);
+            this.label_canshu4.Name = "label_canshu4";
+            this.label_canshu4.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu4.TabIndex = 4;
+            this.label_canshu4.Text = "参数4";
+            this.label_canshu4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu5
+            // 
+            this.label_canshu5.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu5.Location = new System.Drawing.Point(3, 220);
+            this.label_canshu5.Name = "label_canshu5";
+            this.label_canshu5.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu5.TabIndex = 5;
+            this.label_canshu5.Text = "参数5";
+            this.label_canshu5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu6
+            // 
+            this.label_canshu6.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu6.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu6.Location = new System.Drawing.Point(3, 260);
+            this.label_canshu6.Name = "label_canshu6";
+            this.label_canshu6.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu6.TabIndex = 6;
+            this.label_canshu6.Text = "参数6";
+            this.label_canshu6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu7
+            // 
+            this.label_canshu7.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu7.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu7.Location = new System.Drawing.Point(3, 302);
+            this.label_canshu7.Name = "label_canshu7";
+            this.label_canshu7.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu7.TabIndex = 7;
+            this.label_canshu7.Text = "参数7";
+            this.label_canshu7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu8
+            // 
+            this.label_canshu8.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu8.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu8.Location = new System.Drawing.Point(3, 342);
+            this.label_canshu8.Name = "label_canshu8";
+            this.label_canshu8.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu8.TabIndex = 8;
+            this.label_canshu8.Text = "参数8";
+            this.label_canshu8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu9
+            // 
+            this.label_canshu9.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu9.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu9.Location = new System.Drawing.Point(3, 383);
+            this.label_canshu9.Name = "label_canshu9";
+            this.label_canshu9.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu9.TabIndex = 9;
+            this.label_canshu9.Text = "参数9";
+            this.label_canshu9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label_canshu10
+            // 
+            this.label_canshu10.BackColor = System.Drawing.Color.Cyan;
+            this.label_canshu10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label_canshu10.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_canshu10.Location = new System.Drawing.Point(3, 424);
+            this.label_canshu10.Name = "label_canshu10";
+            this.label_canshu10.Size = new System.Drawing.Size(100, 23);
+            this.label_canshu10.TabIndex = 10;
+            this.label_canshu10.Text = "参数10";
+            this.label_canshu10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // shengchanpaishan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 523);
+            this.ClientSize = new System.Drawing.Size(964, 799);
+            this.Controls.Add(this.panel_gongyiinfo);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_datagridview);
@@ -474,6 +655,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft)).EndInit();
+            this.panel_gongyiinfo.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -491,6 +673,18 @@
         private System.Windows.Forms.Button button_readgongyi;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView_craft;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column31;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
@@ -514,16 +708,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.Panel panel_gongyiinfo;
+        private System.Windows.Forms.Label label_gongyititle;
+        private System.Windows.Forms.Label label_canshu1;
+        private System.Windows.Forms.Label label_canshu4;
+        private System.Windows.Forms.Label label_canshu3;
+        private System.Windows.Forms.Label label_canshu2;
+        private System.Windows.Forms.Label label_canshu6;
+        private System.Windows.Forms.Label label_canshu5;
+        private System.Windows.Forms.Label label_canshu7;
+        private System.Windows.Forms.Label label_canshu10;
+        private System.Windows.Forms.Label label_canshu9;
+        private System.Windows.Forms.Label label_canshu8;
     }
 }

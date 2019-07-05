@@ -30,6 +30,15 @@ namespace YinRan2020
 
             // 容器 
             ViewCaoZuo.Object_Position(0.01, 0.06, 0.95, 0.89, tabControl1, this.Controls);
+
+           for(int i=0;i<6;i++)
+           {
+               tabControl1.TabPages[i].Width =(int)( tabControl1.Width * 0.99);
+               tabControl1.TabPages[i].Height =(int)( tabControl1.Height * 0.99);
+           }
+
+
+           ReSet_Device_Info();
         }
 
         private void zongmao_SizeChanged(object sender, EventArgs e)
@@ -46,43 +55,51 @@ namespace YinRan2020
         public void ReSet_Device_Info()
         {
             // 总貌中显示设备的信息
+            // 按照设备号进行排列
             for (int i = 0; i < 6; i++)
             {
-
-                //tabControl1.TabPages[i].Controls.Clear();
                 int count = tabControl1.TabPages[i].Controls.Count;
 
-                for (int j = 0; j < count;j++)
+                for (int j = 0; j < count; j++)
                 {
                     Control control = (Control)tabControl1.TabPages[i].Controls[0];
                     tabControl1.TabPages[i].Controls.Remove(control);
                     control.Dispose();
                 }
 
-                    //tabControl1.TabPages[i].Controls.Clear();
-                    GC.Collect();
-                // 读取本车间的名称，并从com1到com6在数据库中读取设备信息
-                //string keyname = tabControl1.TabPages[i].Name + CheJian_Name;
-                string where_cmd = "workshop='" + CheJian_Name + "' and Com='" + tabControl1.TabPages[i].Text + "'";
-                DataTable dt = MainView.builder.Select_Table("Device_Info", where_cmd);
-                for (int j = 0; j < dt.Rows.Count; j++)
+                for (int j = 1; j <= 12; j++)
                 {
-                    DataRow dr = dt.Rows[j];
-                    if (dr[3].ToString() == "溢流缸")
+                    try
                     {
-                        YiLiuGang_Item item = new YiLiuGang_Item();
-                        item.MyClick += new EventHandler(Click_Yiliu);
-                        item.Set_Title(dr[0].ToString());
-                        ViewCaoZuo.Object_Position(0.01 + (j % 3) * 0.3, 0.01 + (j / 3) * 0.3, 0.3, 0.3, item, tabControl1.TabPages[i].Controls);
-                    }
+                        int machine_num = i * 12 + j;
+                        string where_cmd = "Address='" + machine_num.ToString() + "'";
+                        DataTable dt_machine = MainView.builder.Select_Table("Device_Info", where_cmd);
+                        DataRow dr = dt_machine.Rows[0];
+                        if (dr[3].ToString() == "溢流缸")
+                        {
+                            if(machine_num>65)
+                            {
+                                MessageBox.Show("超过最大限制，请联系厂家升级！");
+                            }
+                            YiLiuGang_Item item = new YiLiuGang_Item();
+                            item.MyClick += new EventHandler(Click_Yiliu);
+                            item.Set_Title(dr[0].ToString());
+                            ViewCaoZuo.Object_Position(0 + ((j-1) % 4) * 0.25, 0.01 + ((j-1) / 4) * 0.31, 0.24, 0.3, item, tabControl1.TabPages[i].Controls);
+                        }
 
-                    if(dr[3].ToString()=="气流缸")
-                    {
-                        QiLiuGang item = new QiLiuGang();
-                        item.Set_Title(dr[0].ToString());
-                        item.MyClick += new EventHandler(Click_Qiliu);
-                        ViewCaoZuo.Object_Position(0.01 + (j % 3) * 0.3, 0.01 + (j / 3) * 0.3, 0.3, 0.3, item, tabControl1.TabPages[i].Controls);
+                        if (dr[3].ToString() == "气流缸")
+                        {
+                            if (machine_num > 65)
+                            {
+                                MessageBox.Show("超过最大限制，请联系厂家升级！");
+                            } 
+                            QiLiuGang item = new QiLiuGang();
+                            item.Set_Title(dr[0].ToString());
+                            item.MyClick += new EventHandler(Click_Qiliu);
+                            ViewCaoZuo.Object_Position(0 + ((j-1) % 4) * 0.25, 0.01 + ((j-1) / 4) * 0.31, 0.24, 0.3, item, tabControl1.TabPages[i].Controls);
+                        }
                     }
+                    catch { }
                 }
             }
         }
@@ -95,6 +112,46 @@ namespace YinRan2020
         private void Show_Qiliu(object sender,EventArgs e)
         {
             Click_Qiliu(sender, e);
+        }
+
+        private void tabControl1_Resize(object sender, EventArgs e)
+        {
+           // init_view();
+        }
+
+        private void zongmao_Resize(object sender, EventArgs e)
+        {
+            //init_view();
+        }
+
+        private void tabPage6_Resize(object sender, EventArgs e)
+        {
+            //init_view();
+        }
+
+        private void tabPage5_Resize(object sender, EventArgs e)
+        {
+            //init_view();
+        }
+
+        private void tabPage4_Resize(object sender, EventArgs e)
+        {
+            //init_view();
+        }
+
+        private void tabPage3_Resize(object sender, EventArgs e)
+        {
+            //init_view();
+        }
+
+        private void tabPage2_Resize(object sender, EventArgs e)
+        {
+            //init_view();
+        }
+
+        private void tabPage1_Resize(object sender, EventArgs e)
+        {
+            //init_view();
         }
     }
 }

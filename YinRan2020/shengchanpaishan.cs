@@ -33,30 +33,63 @@ namespace YinRan2020
             ViewCaoZuo.Object_Position(0.42, 0.01, 0.1, 0.05, label_title, this.Controls);
 
             // 初始化工艺号
-            for(int i=1;i<=300;i++)
+            for(int i=1;i<=400;i++)
             {
-                comboBox_gongyihao.Items.Add("工艺" + i.ToString().PadLeft(3, '0'));
+                comboBox_gongyihao.Items.Add(i.ToString());
 
             }
-            for (int i = 1; i <= 300; i++)
-            {
-                comboBox_gongyihao.Items.Add("工艺" + i.ToString().PadLeft(3, '0')+"气流");
+           
 
-            }
-
-            ViewCaoZuo.Object_Position(0.01, 0.15, 0.75, 0.15, panel1, this.Controls);
-            ViewCaoZuo.Object_Position(0.01, 0.35, 0.75, 0.6, panel2, this.Controls);
-            ViewCaoZuo.Object_Position(0.8, 0.15, 0.15, 0.8, panel_datagridview, this.Controls);
+            ViewCaoZuo.Object_Position(0.01, 0.15, 0.5, 0.15, panel1, this.Controls);
+            ViewCaoZuo.Object_Position(0.01, 0.35, 0.5, 0.64, panel2, this.Controls);
+            ViewCaoZuo.Object_Position(0.51, 0.15, 0.48, 0.35, panel_datagridview, this.Controls);
             ViewCaoZuo.Object_Position(0, 0.1, 1, 0.9, dataGridView_craft, panel2.Controls);
             ViewCaoZuo.Object_Position(0, 0.1, 1, 0.9, dataGridView1, panel_datagridview.Controls);
+            ViewCaoZuo.Object_Position(0.51, 0.55, 0.48, 0.44, panel_gongyiinfo, this.Controls);
 
+            // panel_gongyinfo里的信息
+            ViewCaoZuo.Object_Position(0, 0, 1, 0.1, label_gongyititle, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1, 0.3, 0.08, label_canshu1, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1 + 0.08, 0.3, 0.08, label_canshu2, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 2, 0.3, 0.08, label_canshu3, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 3, 0.3, 0.08, label_canshu4, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 4, 0.3, 0.08, label_canshu5, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 5, 0.3, 0.08, label_canshu6, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 6, 0.3, 0.08, label_canshu7, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 7, 0.3, 0.08, label_canshu8, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 8, 0.3, 0.08, label_canshu9, panel_gongyiinfo.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 9, 0.3, 0.08, label_canshu10, panel_gongyiinfo.Controls);
             // 
             ReFlush_GongDan_List();
         }
 
+        public void selected_datagridview_cells(object sender)
+        {
+            try
+            {
+                DataGridView datagridview = (DataGridView)sender;
+                int selected_index = datagridview.SelectedCells[0].RowIndex;
+
+                for (int i = 0; i < datagridview.Rows.Count; i++)
+                {
+                    if (i == selected_index)
+                    {
+                        datagridview.Rows[i].Selected = true;
+                    }
+                    else
+                    {
+                        datagridview.Rows[i].Selected = false;
+                    }
+                }
+
+            }
+            catch { }
+        }
+
         private void button_readgongyi_Click(object sender, EventArgs e)
         {
-            ReFlash_Gongyi_Fanal(comboBox_gongyihao.Text);
+            string gongyihao = comboBox_gongyihao.Text.PadLeft(3, '0');
+            ReFlash_Gongyi_Fanal_qiliu(gongyihao);
         }
 
         private void ReFlash_Gongyi_Fanal(string gongyi_name)
@@ -69,7 +102,15 @@ namespace YinRan2020
                     dataGridView_craft[i, 0].Value = "";
                 }
 
-                DataTable dt = MainView.builder.Select_Table(gongyi_name);
+                DataTable dt = MainView.builder.Select_Table("工艺"+gongyi_name);
+                try
+                {
+                    if (dt == null)
+                        dt = MainView.builder.Select_Table(gongyi_name);
+                    if (dt.Rows.Count == 0)
+                        dt = MainView.builder.Select_Table(gongyi_name);
+                }
+                catch { }
                 dataGridView_craft.RowCount = dt.Rows.Count;
 
 
@@ -104,6 +145,53 @@ namespace YinRan2020
             }
             catch { }
         }
+
+        private void ReFlash_Gongyi_Fanal_qiliu(string gongyi_name)
+        {
+            try
+            {
+                dataGridView_craft.RowCount = 1;
+                for (int i = 0; i < dataGridView_craft.ColumnCount; i++)
+                {
+                    dataGridView_craft[i, 0].Value = "";
+                }
+
+                DataTable dt = MainView.builder.Select_Table("工艺" + gongyi_name+"气流");
+                dataGridView_craft.RowCount = dt.Rows.Count;
+
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    dataGridView_craft[0, i].Value = dt.Rows[i][0].ToString();
+                    dataGridView_craft[1, i].Value = dt.Rows[i][1].ToString();
+                    dataGridView_craft[3, i].Value = dt.Rows[i][2].ToString();
+                    dataGridView_craft[5, i].Value = dt.Rows[i][3].ToString();
+                    dataGridView_craft[7, i].Value = dt.Rows[i][4].ToString();
+                    dataGridView_craft[9, i].Value = dt.Rows[i][5].ToString();
+                    dataGridView_craft[11, i].Value = dt.Rows[i][6].ToString();
+                    dataGridView_craft[13, i].Value = dt.Rows[i][7].ToString();
+                    dataGridView_craft[15, i].Value = dt.Rows[i][8].ToString();
+                    dataGridView_craft[17, i].Value = dt.Rows[i][9].ToString();
+                    dataGridView_craft[19, i].Value = dt.Rows[i][10].ToString();
+                    dataGridView_craft[21, i].Value = dt.Rows[i][11].ToString();
+                    string where = "Gongyi_Name='" + dataGridView_craft[1, i].Value + "'";
+                    DataTable gongyi_dt = MainView.builder.Select_Table("Craft_Name_Table", where);
+                    DataRow dr = gongyi_dt.Rows[0];
+                    dataGridView_craft[2, i].Value = dr[1].ToString();
+                    dataGridView_craft[4, i].Value = dr[2].ToString();
+                    dataGridView_craft[6, i].Value = dr[3].ToString();
+                    dataGridView_craft[8, i].Value = dr[4].ToString();
+                    dataGridView_craft[10, i].Value = dr[5].ToString();
+                    dataGridView_craft[12, i].Value = dr[6].ToString();
+                    dataGridView_craft[14, i].Value = dr[7].ToString();
+                    dataGridView_craft[16, i].Value = dr[8].ToString();
+                    dataGridView_craft[18, i].Value = dr[9].ToString();
+                    dataGridView_craft[20, i].Value = dr[10].ToString();
+                }
+            }
+            catch { }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -219,7 +307,7 @@ namespace YinRan2020
                     dataGridView_craft[i, 0].Value = "";
                 }
                 DataGridViewRow dr = dataGridView1.SelectedRows[0];
-                ReFlash_Gongyi_Fanal("工艺" + dr.Cells[0].Value.ToString());
+                ReFlash_Gongyi_Fanal(dr.Cells[0].Value.ToString());
                 textBox_danhao.Text = dr.Cells[0].Value.ToString();
                 comboBox_gongyihao.Text = dr.Cells[2].Value.ToString();
             }
@@ -258,9 +346,13 @@ namespace YinRan2020
                     insert_cmd[10] = Add_Craft_Final.value9;
                     insert_cmd[11] = Add_Craft_Final.value10;
                     insert_cmd[12] = "";
-                    MainView.builder.Insert(selected_gongyi, insert_cmd);
+                    bool resutl= MainView.builder.Insert(selected_gongyi, insert_cmd);
+                    if(resutl==true)
+                    {
+                        ReFlash_Gongyi_Fanal(selected_gongyi);
+                    }
                 }
-                ReFlash_Gongyi_Fanal(selected_gongyi);
+                //ReFlash_Gongyi_Fanal(selected_gongyi);
             }
             catch { }
         }
@@ -321,7 +413,7 @@ namespace YinRan2020
                     dataGridView_craft[i, 0].Value = "";
                 }
                 
-                ReFlash_Gongyi_Fanal("工艺" + textBox_danhao.Text);
+                ReFlash_Gongyi_Fanal(textBox_danhao.Text);
                 
             }
             catch { }
@@ -385,23 +477,26 @@ namespace YinRan2020
 
                     Update_Craft_Final view = new Update_Craft_Final();
                     DialogResult result = view.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        string where_cmd1 = "ID='" + dr.Cells[0].Value.ToString() + "'";
+                        string[] update_cmd = new string[11];
+                        update_cmd[0] = "craft_name='" + Update_Craft_Final.Craft_Name + "'";
+                        update_cmd[1] = "value1='" + Update_Craft_Final.canshu1 + "'";
+                        update_cmd[2] = "value2='" + Update_Craft_Final.canshu2 + "'";
+                        update_cmd[3] = "value3='" + Update_Craft_Final.canshu3 + "'";
+                        update_cmd[4] = "value4='" + Update_Craft_Final.canshu4 + "'";
+                        update_cmd[5] = "value5='" + Update_Craft_Final.canshu5 + "'";
+                        update_cmd[6] = "value6='" + Update_Craft_Final.canshu6 + "'";
+                        update_cmd[7] = "value7='" + Update_Craft_Final.canshu7 + "'";
+                        update_cmd[8] = "value8='" + Update_Craft_Final.canshu8 + "'";
+                        update_cmd[9] = "value9='" + Update_Craft_Final.canshu9 + "'";
+                        update_cmd[10] = "value10='" + Update_Craft_Final.canshu10 + "'";
 
-                    string where_cmd1 = "ID='" + dr.Cells[0].Value.ToString() + "'";
-                    string[] update_cmd = new string[10];
-                    update_cmd[0] = "value1='" + Update_Craft_Final.canshu1 + "'";
-                    update_cmd[1] = "value2='" + Update_Craft_Final.canshu2 + "'";
-                    update_cmd[2] = "value3='" + Update_Craft_Final.canshu3 + "'";
-                    update_cmd[3] = "value4='" + Update_Craft_Final.canshu4 + "'";
-                    update_cmd[4] = "value5='" + Update_Craft_Final.canshu5 + "'";
-                    update_cmd[5] = "value6='" + Update_Craft_Final.canshu6 + "'";
-                    update_cmd[6] = "value7='" + Update_Craft_Final.canshu7 + "'";
-                    update_cmd[7] = "value8='" + Update_Craft_Final.canshu8 + "'";
-                    update_cmd[8] = "value9='" + Update_Craft_Final.canshu9 + "'";
-                    update_cmd[9] = "value10='" + Update_Craft_Final.canshu10 + "'";
+                        MainView.builder.Updata(craft_name, where_cmd1, update_cmd);
 
-                    MainView.builder.Updata(craft_name, where_cmd1, update_cmd);
-
-                    ReFlash_Gongyi_Fanal(craft_name);
+                        ReFlash_Gongyi_Fanal(craft_name);
+                    }
                 }
             }
             catch { }
@@ -492,6 +587,100 @@ namespace YinRan2020
 
             }
             catch { }
+        }
+
+        private void dataGridView_craft_Click(object sender, EventArgs e)
+        {
+            selected_datagridview_cells(sender);
+        }
+
+        private void dataGridView_craft_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                // 选择的工艺名称
+                string craft_name = "工艺" + textBox_danhao.Text;
+
+                // 选择的行
+                DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
+
+
+                string key = dr.Cells[1].Value.ToString();
+                string where_cmd = "Gongyi_Name='" + key + "'";
+                DataTable dt = MainView.builder.Select_Table("Craft_Name_Table", where_cmd);
+                if (dt == null)
+                {
+                    Update_Craft_Final.canshu1_shuoming = "参数1说明";
+                    Update_Craft_Final.canshu2_shuoming = "参数2说明";
+                    Update_Craft_Final.canshu3_shuoming = "参数3说明";
+                    Update_Craft_Final.canshu4_shuoming = "参数4说明";
+                    Update_Craft_Final.canshu5_shuoming = "参数5说明";
+                    Update_Craft_Final.canshu6_shuoming = "参数6说明";
+                    Update_Craft_Final.canshu7_shuoming = "参数7说明";
+                    Update_Craft_Final.canshu8_shuoming = "参数8说明";
+                    Update_Craft_Final.canshu9_shuoming = "参数9说明";
+                    Update_Craft_Final.canshu10_shuoming = "参数10说明";
+                }
+                else
+                {
+                    DataRow dr1 = dt.Rows[0];
+
+
+                    Update_Craft_Final.Craft_Name = dr.Cells[1].Value.ToString();
+                    Update_Craft_Final.canshu1 = dr.Cells[3].Value.ToString();
+                    Update_Craft_Final.canshu2 = dr.Cells[5].Value.ToString();
+                    Update_Craft_Final.canshu3 = dr.Cells[7].Value.ToString();
+                    Update_Craft_Final.canshu4 = dr.Cells[9].Value.ToString();
+                    Update_Craft_Final.canshu5 = dr.Cells[11].Value.ToString();
+                    Update_Craft_Final.canshu6 = dr.Cells[13].Value.ToString();
+                    Update_Craft_Final.canshu7 = dr.Cells[15].Value.ToString();
+                    Update_Craft_Final.canshu8 = dr.Cells[17].Value.ToString();
+                    Update_Craft_Final.canshu9 = dr.Cells[19].Value.ToString();
+                    Update_Craft_Final.canshu10 = dr.Cells[21].Value.ToString();
+
+                    Update_Craft_Final.canshu1_shuoming = dr.Cells[2].Value.ToString();
+                    Update_Craft_Final.canshu2_shuoming = dr.Cells[4].Value.ToString();
+                    Update_Craft_Final.canshu3_shuoming = dr.Cells[6].Value.ToString();
+                    Update_Craft_Final.canshu4_shuoming = dr.Cells[8].Value.ToString();
+                    Update_Craft_Final.canshu5_shuoming = dr.Cells[10].Value.ToString();
+                    Update_Craft_Final.canshu6_shuoming = dr.Cells[12].Value.ToString();
+                    Update_Craft_Final.canshu7_shuoming = dr.Cells[14].Value.ToString();
+                    Update_Craft_Final.canshu8_shuoming = dr.Cells[16].Value.ToString();
+                    Update_Craft_Final.canshu9_shuoming = dr.Cells[18].Value.ToString();
+                    Update_Craft_Final.canshu10_shuoming = dr.Cells[20].Value.ToString();
+
+
+                    Update_Craft_Final view = new Update_Craft_Final();
+                    DialogResult result = view.ShowDialog();
+                    if (result == DialogResult.OK)
+                    {
+                        string where_cmd1 = "ID='" + dr.Cells[0].Value.ToString() + "'";
+                        string[] update_cmd = new string[11];
+                        update_cmd[0] = "craft_name='" + Update_Craft_Final.Craft_Name + "'";
+                        update_cmd[1] = "value1='" + Update_Craft_Final.canshu1 + "'";
+                        update_cmd[2] = "value2='" + Update_Craft_Final.canshu2 + "'";
+                        update_cmd[3] = "value3='" + Update_Craft_Final.canshu3 + "'";
+                        update_cmd[4] = "value4='" + Update_Craft_Final.canshu4 + "'";
+                        update_cmd[5] = "value5='" + Update_Craft_Final.canshu5 + "'";
+                        update_cmd[6] = "value6='" + Update_Craft_Final.canshu6 + "'";
+                        update_cmd[7] = "value7='" + Update_Craft_Final.canshu7 + "'";
+                        update_cmd[8] = "value8='" + Update_Craft_Final.canshu8 + "'";
+                        update_cmd[9] = "value9='" + Update_Craft_Final.canshu9 + "'";
+                        update_cmd[10] = "value10='" + Update_Craft_Final.canshu10 + "'";
+
+                        MainView.builder.Updata(craft_name, where_cmd1, update_cmd);
+
+                        ReFlash_Gongyi_Fanal(craft_name);
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string gongyiname = comboBox_gongyihao.Text.PadLeft(3, '0');
+            ReFlash_Gongyi_Fanal(gongyiname);
         }
     }
 }

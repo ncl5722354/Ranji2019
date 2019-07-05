@@ -365,3 +365,5 @@ D:\程序\Ranji2019-master\Shuini\obj\Debug\Shuini.SubView.resources
 D:\程序\Ranji2019-master\Shuini\obj\Debug\Shuini.csproj.GenerateResource.Cache
 D:\程序\Ranji2019-master\Shuini\obj\Debug\Shuini.exe
 D:\程序\Ranji2019-master\Shuini\obj\Debug\Shuini.pdb
+D:\程序\Ranji2019-master\Shuini\bin\Debug\Shuini.exe.CodeAnalysisLog.xml
+D:\程序\Ranji2019-master\Shuini\bin\Debug\Shuini.exe.lastcodeanalysissucceeded

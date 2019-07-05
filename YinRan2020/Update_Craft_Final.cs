@@ -49,6 +49,17 @@ namespace YinRan2020
             }
             catch { }
             comboBox_craft.Text = Craft_Name;
+            string key = comboBox_craft.Text;
+            if (key == "升温" || key == "降温")
+            {
+                label2.Visible = true;
+                textBox_sulv.Visible = true;
+            }
+            else
+            {
+                label2.Visible = false;
+                textBox_sulv.Visible = false;
+            }
             label_value1.Text = canshu1_shuoming;
             label_value2.Text = canshu2_shuoming;
             label_value3.Text = canshu3_shuoming;
@@ -84,6 +95,7 @@ namespace YinRan2020
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Craft_Name = comboBox_craft.Text;
             canshu1 = textBox_value1.Text;
             canshu2 = textBox_value2.Text;
             canshu3 = textBox_value3.Text;
@@ -135,6 +147,29 @@ namespace YinRan2020
                 label_value9.Text = dr[9].ToString();
                 label_value10.Text = dr[10].ToString();
             }
+        }
+
+        private void textBox_sulv_TextChanged(object sender, EventArgs e)
+        {
+            string key = comboBox_craft.Text;
+
+
+            if (key == "升温" || key == "降温")
+            {
+                try
+                {
+                    double time = Math.Abs(double.Parse(textBox_value1.Text) - double.Parse(textBox_value2.Text)) / Math.Abs(double.Parse(textBox_sulv.Text));
+                    int mytime = (int)(time);
+                    textBox_value3.Text = mytime.ToString();
+                }
+                catch { textBox_value3.Text = "0"; }
+            }
+        }
+
+        private void textBox_value1_Click(object sender, EventArgs e)
+        {
+            TextBox textbox = (TextBox)sender;
+            textbox.SelectAll();
         }
     }
 }

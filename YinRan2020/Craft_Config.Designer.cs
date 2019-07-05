@@ -74,6 +74,8 @@
             this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridView_craft = new System.Windows.Forms.DataGridView();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -107,7 +109,6 @@
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_craft_name)).BeginInit();
@@ -475,10 +476,10 @@
             this.Column35,
             this.Column36,
             this.Column37});
-            this.dataGridView_exe.Location = new System.Drawing.Point(680, 8);
+            this.dataGridView_exe.Location = new System.Drawing.Point(689, 8);
             this.dataGridView_exe.Name = "dataGridView_exe";
             this.dataGridView_exe.RowTemplate.Height = 23;
-            this.dataGridView_exe.Size = new System.Drawing.Size(270, 402);
+            this.dataGridView_exe.Size = new System.Drawing.Size(270, 320);
             this.dataGridView_exe.TabIndex = 2;
             this.dataGridView_exe.Click += new System.EventHandler(this.dataGridView_exe_Click);
             // 
@@ -534,7 +535,8 @@
             this.toolStripButton14,
             this.toolStripButton15,
             this.toolStripButton16,
-            this.toolStripLabel1});
+            this.toolStripLabel1,
+            this.toolStripLabel2});
             this.toolStrip5.Location = new System.Drawing.Point(0, 0);
             this.toolStrip5.Name = "toolStrip5";
             this.toolStrip5.Size = new System.Drawing.Size(385, 25);
@@ -580,6 +582,20 @@
             this.toolStripButton16.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton16.Text = "toolStripButton16";
             this.toolStripButton16.Click += new System.EventHandler(this.toolStripButton16_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(80, 22);
+            this.toolStripLabel1.Text = "导入工艺代码";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(56, 22);
+            this.toolStripLabel2.Text = "导入工艺";
+            this.toolStripLabel2.Click += new System.EventHandler(this.toolStripLabel2_Click);
             // 
             // dataGridView_craft
             // 
@@ -839,13 +855,6 @@
             this.toolStripButton6.Text = "修改";
             this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(68, 22);
-            this.toolStripLabel1.Text = "读取工艺号";
-            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
-            // 
             // Craft_Config
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -974,5 +983,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column37;
         private System.Windows.Forms.ToolStripButton toolStripButton16;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+
     }
 }
