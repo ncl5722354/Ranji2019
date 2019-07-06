@@ -2,3 +2,8 @@ D:\程序\预警系统新版\预警系统\SqlConnect\SqlConnect\bin\Release\SqlC
 D:\程序\预警系统新版\预警系统\SqlConnect\SqlConnect\bin\Release\SqlConnect.pdb
 D:\程序\预警系统新版\预警系统\SqlConnect\SqlConnect\obj\Release\SqlConnect.dll
 D:\程序\预警系统新版\预警系统\SqlConnect\SqlConnect\obj\Release\SqlConnect.pdb
+D:\Ranji2019 old\SqlConnect\SqlConnect\bin\Release\SqlConnect.dll
+D:\Ranji2019 old\SqlConnect\SqlConnect\bin\Release\SqlConnect.pdb
+D:\Ranji2019 old\SqlConnect\SqlConnect\obj\Release\SqlConnect.csprojResolveAssemblyReference.cache
+D:\Ranji2019 old\SqlConnect\SqlConnect\obj\Release\SqlConnect.dll
+D:\Ranji2019 old\SqlConnect\SqlConnect\obj\Release\SqlConnect.pdb

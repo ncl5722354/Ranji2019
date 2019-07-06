@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\程序\预警系统新版\预警系统\WarningSystem\obj\Release\
+D:\Ranji2019 old\WarningSystem\obj\Release\
 WarningSystem
 none
 false
 TRACE
-D:\程序\预警系统新版\预警系统\WarningSystem\App.xaml
+D:\Ranji2019 old\WarningSystem\App.xaml
 201900212768
 
-32884282594
-22494351537
+32-1551356094
+23-1051355620
 ChaFenView.xaml;DataList.xaml;DataQushi.xaml;DiZhuang_Item.xaml;myline.xaml;Login.xaml;MainWindow.xaml;Map_Set.xaml;MyView.xaml;Point_Set_View.xaml;putong.xaml;putongpoint.xaml;QuXian_View.xaml;Report.xaml;Value_Set.xaml;WarnInfo.xaml;warninginfo.xaml;Warning_List.xaml;WarnPoint.xaml;ZhuZi.xaml;
 
 True

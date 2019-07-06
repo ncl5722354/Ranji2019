@@ -65,6 +65,27 @@ namespace SqlConnect
             }
         }
 
+        public void copy_Table(string table_name, string mudi_table)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr.ConnectionString))
+            {
+                conn.Open();              //打开此连接
+                // 创建command对像
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;               // 将连接赋值给cmd的连接
+                string create_cmd = "insert into " + mudi_table + " select * from " + table_name;
+                
+                
+                cmd.CommandText = create_cmd;
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch { }
+                conn.Close();             //关闭连接
+            }
+        }
+
         // 查找表格
         public DataTable Select_Table(string table_name,string where_condition="",string[] cols=null)
         {

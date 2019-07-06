@@ -3,3 +3,8 @@ D:\程序\预警系统新版\预警系统\FileOperation\bin\Release\FileOperatio
 D:\程序\预警系统新版\预警系统\FileOperation\obj\Release\FileOperation.csproj.ResolveComReference.cache
 D:\程序\预警系统新版\预警系统\FileOperation\obj\Release\FileOperation.dll
 D:\程序\预警系统新版\预警系统\FileOperation\obj\Release\FileOperation.pdb
+D:\Ranji2019 old\FileOperation\bin\Release\FileOperation.dll
+D:\Ranji2019 old\FileOperation\bin\Release\FileOperation.pdb
+D:\Ranji2019 old\FileOperation\obj\Release\FileOperation.csproj.ResolveComReference.cache
+D:\Ranji2019 old\FileOperation\obj\Release\FileOperation.dll
+D:\Ranji2019 old\FileOperation\obj\Release\FileOperation.pdb

@@ -6,3 +6,11 @@ D:\程序\预警系统新版\预警系统\Communication\bin\Release\String_Caozu
 D:\程序\预警系统新版\预警系统\Communication\obj\Release\Communication.csprojResolveAssemblyReference.cache
 D:\程序\预警系统新版\预警系统\Communication\obj\Release\Communication.dll
 D:\程序\预警系统新版\预警系统\Communication\obj\Release\Communication.pdb
+D:\Ranji2019 old\Communication\bin\Release\Communication.dll.config
+D:\Ranji2019 old\Communication\bin\Release\Communication.dll
+D:\Ranji2019 old\Communication\bin\Release\Communication.pdb
+D:\Ranji2019 old\Communication\bin\Release\String_Caozuo.dll
+D:\Ranji2019 old\Communication\bin\Release\String_Caozuo.pdb
+D:\Ranji2019 old\Communication\obj\Release\Communication.csprojResolveAssemblyReference.cache
+D:\Ranji2019 old\Communication\obj\Release\Communication.dll
+D:\Ranji2019 old\Communication\obj\Release\Communication.pdb

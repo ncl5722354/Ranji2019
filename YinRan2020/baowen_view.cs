@@ -52,5 +52,84 @@ namespace YinRan2020
             }
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            baowenwendu = textBox_baowenwendu.Text;
+            baowenshijian = textBox_baowenshijian.Text;
+            zhubengpinlv = textBox_pinlv.Text;
+            fengjipinlv = textBox_fengji.Text;
+            tibupinlv = textBox_tibu.Text;
+
+            // 当前行的全部+1
+            int nowid = int.Parse(ID);
+            string[] update_cmd = new string[1];
+            update_cmd[0] = "ID=ID+1";
+            string where_cmd = "ID>='" + nowid.ToString() + "'";
+            MainView.builder.Updata(gongyi_name, where_cmd, update_cmd);
+
+
+            // 插入当前一行
+            string[] insert_cmd = new string[13];
+            insert_cmd[0] = ID;
+            insert_cmd[1] = "保温";
+            insert_cmd[2] = baowenwendu;
+            insert_cmd[3] = baowenshijian;
+            insert_cmd[4] = zhubengpinlv;
+            insert_cmd[5] = tibupinlv;
+            insert_cmd[6] = fengjipinlv;
+            
+
+            bool result = MainView.builder.Insert(gongyi_name, insert_cmd);
+            if (result == true)
+            {
+                if (change != null)
+                {
+                    change(this, new EventArgs());
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            baowenwendu = textBox_baowenwendu.Text;
+            baowenshijian = textBox_baowenshijian.Text;
+            zhubengpinlv = textBox_pinlv.Text;
+            fengjipinlv = textBox_fengji.Text;
+            tibupinlv = textBox_tibu.Text;
+
+            // 当前行的全部+1
+            int nowid = int.Parse(ID);
+            string[] update_cmd = new string[1];
+            update_cmd[0] = "ID=ID+1";
+            string where_cmd = "ID>'" + nowid.ToString() + "'";
+            MainView.builder.Updata(gongyi_name, where_cmd, update_cmd);
+
+
+            // 插入当前一行
+            string[] insert_cmd = new string[13];
+            insert_cmd[0] = (nowid+1).ToString();
+            insert_cmd[1] = "保温";
+            insert_cmd[2] = baowenwendu;
+            insert_cmd[3] = baowenshijian;
+            insert_cmd[4] = zhubengpinlv;
+            insert_cmd[5] = tibupinlv;
+            insert_cmd[6] = fengjipinlv;
+
+
+            bool result = MainView.builder.Insert(gongyi_name, insert_cmd);
+            if (result == true)
+            {
+                if (change != null)
+                {
+                    change(this, new EventArgs());
+                }
+            }
+        }
+
+        private void baowen_view_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

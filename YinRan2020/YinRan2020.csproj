@@ -136,11 +136,47 @@
     <Compile Include="DeleteDevice.Designer.cs">
       <DependentUpon>DeleteDevice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Guocheng.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Guocheng.Designer.cs">
+      <DependentUpon>Guocheng.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jiangwen_subview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Jiangwen_subview.Designer.cs">
+      <DependentUpon>Jiangwen_subview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="jigangyunxing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="jigangyunxing.Designer.cs">
+      <DependentUpon>jigangyunxing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="jinliao_subview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="jinliao_subview.Designer.cs">
+      <DependentUpon>jinliao_subview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JinShui_subview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="JinShui_subview.Designer.cs">
+      <DependentUpon>JinShui_subview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lishijilv.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Lishijilv.Designer.cs">
       <DependentUpon>Lishijilv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paishui_subview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Paishui_subview.Designer.cs">
+      <DependentUpon>Paishui_subview.cs</DependentUpon>
     </Compile>
     <Compile Include="Password.cs">
       <SubType>Form</SubType>
@@ -166,6 +202,12 @@
     </Compile>
     <Compile Include="Shengwen_subview.Designer.cs">
       <DependentUpon>Shengwen_subview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shuixi_Subview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shuixi_Subview.Designer.cs">
+      <DependentUpon>Shuixi_Subview.cs</DependentUpon>
     </Compile>
     <Compile Include="Update_Craft_Final.cs">
       <SubType>Form</SubType>
@@ -299,8 +341,26 @@
     <EmbeddedResource Include="DeleteDevice.resx">
       <DependentUpon>DeleteDevice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Guocheng.resx">
+      <DependentUpon>Guocheng.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jiangwen_subview.resx">
+      <DependentUpon>Jiangwen_subview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jigangyunxing.resx">
+      <DependentUpon>jigangyunxing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jinliao_subview.resx">
+      <DependentUpon>jinliao_subview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JinShui_subview.resx">
+      <DependentUpon>JinShui_subview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Lishijilv.resx">
       <DependentUpon>Lishijilv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Paishui_subview.resx">
+      <DependentUpon>Paishui_subview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Password.resx">
       <DependentUpon>Password.cs</DependentUpon>
@@ -313,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Shengwen_subview.resx">
       <DependentUpon>Shengwen_subview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shuixi_Subview.resx">
+      <DependentUpon>Shuixi_Subview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Update_Craft_Final.resx">
       <DependentUpon>Update_Craft_Final.cs</DependentUpon>

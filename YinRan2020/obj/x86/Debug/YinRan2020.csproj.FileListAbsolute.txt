@@ -52,3 +52,11 @@ D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.csproj.GenerateResource.Cac
 D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.exe
 D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.pdb
 D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.Shengwen_subview.resources
+D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.baowen_view.resources
+D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.Jiangwen_subview.resources
+D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.JinShui_subview.resources
+D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.Paishui_subview.resources
+D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.Shuixi_Subview.resources
+D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.jinliao_subview.resources
+D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.Guocheng.resources
+D:\Ranji2019 old\YinRan2020\obj\x86\Debug\YinRan2020.jigangyunxing.resources

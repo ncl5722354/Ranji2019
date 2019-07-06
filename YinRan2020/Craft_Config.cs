@@ -142,7 +142,7 @@ namespace YinRan2020
 
             // datagridview_craft
             ViewCaoZuo.Object_Position(0.22, 0.1, 0.4, 0.9, panel_craft, tabControl1.TabPages[2].Controls);
-            ViewCaoZuo.Object_Position(0, 0.05, 1, 0.9, dataGridView_craft, panel_craft.Controls);
+            ViewCaoZuo.Object_Position(0, 0.1, 1, 0.9, dataGridView_craft, panel_craft.Controls);
             ViewCaoZuo.Object_Position(0.67, 0.1, 0.33, 0.25, dataGridView_exe, tabControl1.TabPages[2].Controls);
             ViewCaoZuo.Object_Position(0.67, 0.40, 0.33, 0.59, panel_craft_info, tabControl1.TabPages[2].Controls);
 
@@ -151,9 +151,11 @@ namespace YinRan2020
             
             
             listBox_gongyi.Items.Clear();
+            comboBox_copy_table.Items.Clear();
             for (int i = 1; i <= 400; i++)
             {
                 listBox_gongyi.Items.Add("工艺" + i.ToString().PadLeft(3, '0'));
+                comboBox_copy_table.Items.Add("工艺" + i.ToString().PadLeft(3, '0'));
 
                 // 建立300个工艺库
                 CreateSqlValueType[] create_cmd = new CreateSqlValueType[13];
@@ -176,7 +178,7 @@ namespace YinRan2020
             for (int i = 1; i <= 400; i++)
             {
                 listBox_gongyi.Items.Add("工艺" + i.ToString().PadLeft(3, '0')+"气流");
-
+                comboBox_copy_table.Items.Add("工艺" + i.ToString().PadLeft(3, '0') + "气流");
                 // 建立300个工艺库
                 CreateSqlValueType[] create_cmd = new CreateSqlValueType[13];
                 create_cmd[0] = new CreateSqlValueType("int", "ID", true);
@@ -240,6 +242,7 @@ namespace YinRan2020
             comboBox_select_gongyi.Items.Add("水洗");
             comboBox_select_gongyi.Items.Add("进料");
             comboBox_select_gongyi.Items.Add("过程");
+            comboBox_select_gongyi.Items.Add("运行");
         }
 
         public void Set_Title(string title)
@@ -1214,6 +1217,21 @@ namespace YinRan2020
                 ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
                 view.change += new EventHandler(ReFlush_Craft_Return);
             }
+            if (dr.Cells[1].Value.ToString() == "降温")
+            {
+
+                Jiangwen_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                Jiangwen_subview.ID = dr.Cells[0].Value.ToString();
+                Jiangwen_subview.start_wendu = dr.Cells[3].Value.ToString();
+                Jiangwen_subview.end_wendu = dr.Cells[5].Value.ToString();
+                Jiangwen_subview.shengwen_time = dr.Cells[7].Value.ToString();
+                Jiangwen_subview.zhubengpinlv = dr.Cells[9].Value.ToString();
+                Jiangwen_subview.tibupinlv = dr.Cells[11].Value.ToString();
+                Jiangwen_subview.fengjipinlv = dr.Cells[13].Value.ToString();
+                Jiangwen_subview view = new Jiangwen_subview();
+                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                view.change += new EventHandler(ReFlush_Craft_Return);
+            }
             if(dr.Cells[1].Value.ToString()=="保温")
             {
                 baowen_view.ID = dr.Cells[0].Value.ToString();
@@ -1227,6 +1245,134 @@ namespace YinRan2020
                 ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
                 view.change += new EventHandler(ReFlush_Craft_Return);
             }
+            if (dr.Cells[1].Value.ToString() == "机缸进水一" || dr.Cells[1].Value.ToString() == "机缸进水二" || dr.Cells[1].Value.ToString() == "机缸进水三" || dr.Cells[1].Value.ToString() == "机缸进水四" ||
+                dr.Cells[1].Value.ToString() == "停泵进水一" || dr.Cells[1].Value.ToString() == "停泵进水二" || dr.Cells[1].Value.ToString() == "停泵进水三" || dr.Cells[1].Value.ToString() == "停泵进水四")
+            {
+
+                JinShui_subview.ID = dr.Cells[0].Value.ToString();
+                JinShui_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                JinShui_subview.gongyi_duan_name = dr.Cells[1].Value.ToString();
+                JinShui_subview.mubiaoshuiwei = dr.Cells[3].Value.ToString();
+
+                JinShui_subview.zhubengpinlv = dr.Cells[5].Value.ToString();
+                JinShui_subview.tibupinlv = dr.Cells[7].Value.ToString();
+                JinShui_subview.fengjipinlv = dr.Cells[9].Value.ToString();
+                JinShui_subview view = new JinShui_subview();
+                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                view.change += new EventHandler(ReFlush_Craft_Return);
+            }
+
+            if (dr.Cells[1].Value.ToString() == "机缸排水一" || dr.Cells[1].Value.ToString() == "机缸排水二" || dr.Cells[1].Value.ToString() == "机缸排水三" || dr.Cells[1].Value.ToString() == "机缸排水四" ||
+                dr.Cells[1].Value.ToString() == "停泵排水一" || dr.Cells[1].Value.ToString() == "停泵排水二" || dr.Cells[1].Value.ToString() == "停泵排水三" || dr.Cells[1].Value.ToString() == "停泵排水四")
+            {
+
+                Paishui_subview.ID = dr.Cells[0].Value.ToString();
+                Paishui_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                Paishui_subview.gongyi_duan_name = dr.Cells[1].Value.ToString();
+                Paishui_subview.mubiaoshuiwei = dr.Cells[3].Value.ToString();
+
+                Paishui_subview.zhubengpinlv = dr.Cells[5].Value.ToString();
+                Paishui_subview.tibupinlv = dr.Cells[7].Value.ToString();
+                Paishui_subview.fengjipinlv = dr.Cells[9].Value.ToString();
+                Paishui_subview view = new Paishui_subview();
+                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                view.change += new EventHandler(ReFlush_Craft_Return);
+            }
+            try
+            {
+                if (dr.Cells[1].Value.ToString().Substring(2, 2) == "水洗")
+                {
+
+                    Shuixi_Subview.ID = dr.Cells[0].Value.ToString();
+                    Shuixi_Subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                    Shuixi_Subview.gongyi_duan_name = dr.Cells[1].Value.ToString();
+                    Shuixi_Subview.shangxian = dr.Cells[3].Value.ToString();
+                    Shuixi_Subview.xiaxian = dr.Cells[5].Value.ToString();
+                    Shuixi_Subview.dunshu_shijian = dr.Cells[7].Value.ToString();
+
+                    Shuixi_Subview.zhubengpinlv = dr.Cells[9].Value.ToString();
+                    Shuixi_Subview.tibupinlv = dr.Cells[11].Value.ToString();
+                    Shuixi_Subview.fengjipinlv = dr.Cells[13].Value.ToString();
+                    Shuixi_Subview view = new Shuixi_Subview();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+            }
+            catch { }
+            try
+            {
+                string gongyi_name = dr.Cells[1].Value.ToString();
+                if (gongyi_name == "中和助剂" || gongyi_name == "染色助剂" || gongyi_name == "分散染料" || gongyi_name == "液碱" ||
+                                 gongyi_name == "前处理助剂" || gongyi_name == "元明粉" || gongyi_name == "纯碱" || gongyi_name == "保温粉" ||
+                                 gongyi_name == "双氧水" || gongyi_name == "纤维酶" || gongyi_name == "阳离子染料" || gongyi_name == "混纺染料" ||
+                                 gongyi_name == "硫化染料" || gongyi_name == "活性染料" || gongyi_name == "中性染料" || gongyi_name == "酸性染料" ||
+                                 gongyi_name == "还原染料" || gongyi_name == "冰醋酸" || gongyi_name == "硫化碱" || gongyi_name == "去油灵" ||
+                                 gongyi_name == "皂洗剂" || gongyi_name == "消泡剂" || gongyi_name == "固色剂" || gongyi_name == "高温匀染剂" ||
+                                 gongyi_name == "棉用匀染剂" || gongyi_name == "阳离子匀染剂" || gongyi_name == "阳离子匀染剂" || gongyi_name == "酸性匀染剂" ||
+                                 gongyi_name == "酸性匀染剂" || gongyi_name == "膨化剂" || gongyi_name == "柔软剂" || gongyi_name == "增白剂" ||
+                                 gongyi_name == "修补剂" || gongyi_name == "防水剂" || gongyi_name == "分散剂" || gongyi_name == "防皱剂" ||
+                                 gongyi_name == "精炼剂" || gongyi_name == "酵素酶" || gongyi_name == "除氧酶")      // 回流搅拌助剂类
+
+                {
+
+                    jinliao_subview.ID = dr.Cells[0].Value.ToString();
+                    jinliao_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                     jinliao_subview.gongyi_duan_name = dr.Cells[1].Value.ToString();
+                     jinliao_subview.huiliuyewei = dr.Cells[3].Value.ToString();
+                     jinliao_subview.jiaobanshijian = dr.Cells[5].Value.ToString();
+                     jinliao_subview.jinliaoshijian = dr.Cells[7].Value.ToString();
+
+                     jinliao_subview.zhubengpinlv = dr.Cells[9].Value.ToString();
+                     jinliao_subview.tibupinlv = dr.Cells[11].Value.ToString();
+                     jinliao_subview.fengjipinlv = dr.Cells[13].Value.ToString();
+                     jinliao_subview view = new jinliao_subview();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+            }
+            catch { }
+
+            try
+            {
+                string gongyi_name = dr.Cells[1].Value.ToString();
+                if (gongyi_name == "结束" || gongyi_name == "取样" || gongyi_name == "出布" || gongyi_name == "自动暂停" || gongyi_name == "停泵取样" || gongyi_name == "进布")           // 机缸过程类
+                {
+
+                    Guocheng.ID = dr.Cells[0].Value.ToString();
+                    Guocheng.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                    Guocheng.gongyi_duan_name = dr.Cells[1].Value.ToString();
+
+
+                    Guocheng.zhubengpinlv = dr.Cells[3].Value.ToString();
+                    Guocheng.tibupinlv = dr.Cells[5].Value.ToString();
+                    Guocheng.fengjipinlv = dr.Cells[7].Value.ToString();
+                    Guocheng view = new Guocheng();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+            }
+            catch { }
+
+            try
+            {
+                string gongyi_name = dr.Cells[1].Value.ToString();
+                if (gongyi_name == "染机运行一" || gongyi_name == "染机运行二" || gongyi_name == "染机运行三")           // 机缸运行类
+                {
+
+                    jigangyunxing.ID = dr.Cells[0].Value.ToString();
+                    jigangyunxing.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                    jigangyunxing.gongyi_duan_name = dr.Cells[1].Value.ToString();
+
+                    jigangyunxing.yunxingshijian = dr.Cells[3].Value.ToString();
+                    jigangyunxing.zhubengpinlv = dr.Cells[5].Value.ToString();
+                    jigangyunxing.tibupinlv = dr.Cells[7].Value.ToString();
+                    jigangyunxing.fengjipinlv = dr.Cells[9].Value.ToString();
+                    jigangyunxing view = new jigangyunxing();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+            }
+            catch { }
         }
 
         private void ReFlush_Craft_Return(object sender,EventArgs e)
@@ -2232,35 +2378,132 @@ namespace YinRan2020
 
         private void comboBox_select_gongyi_TextUpdate(object sender, EventArgs e)
         {
-            
-        }
 
-        private void comboBox_select_gongyi_SelectedValueChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void comboBox_select_gongyi_DropDownClosed(object sender, EventArgs e)
         {
-            DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
-            if (comboBox_select_gongyi.Text == "升温")
-            {
-                Shengwen_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
-                Shengwen_subview.ID = dr.Cells[0].Value.ToString();
+            
+        }
 
-                Shengwen_subview view = new Shengwen_subview();
-                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
-                view.change += new EventHandler(ReFlush_Craft_Return);
-            }
-            if (comboBox_select_gongyi.Text == "保温")
-            {
-                baowen_view.ID = dr.Cells[0].Value.ToString();
-                baowen_view.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+        private void comboBox_select_gongyi_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-                baowen_view view = new baowen_view();
-                ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
-                view.change += new EventHandler(ReFlush_Craft_Return);
+            try
+            {
+                DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
+
+                string gongyi = comboBox_select_gongyi.Items[comboBox_select_gongyi.SelectedIndex].ToString();
+                //MessageBox.Show(gongyi);
+                panel_craft_info.Controls.Clear();
+                if (gongyi == "升温")
+                {
+                    Shengwen_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                    Shengwen_subview.ID = dr.Cells[0].Value.ToString();
+
+                    Shengwen_subview view = new Shengwen_subview();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+                if (gongyi == "保温")
+                {
+                    baowen_view.ID = dr.Cells[0].Value.ToString();
+                    baowen_view.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                    baowen_view view = new baowen_view();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+                if (gongyi == "降温")
+                {
+
+                    Jiangwen_subview.ID = dr.Cells[0].Value.ToString();
+                    Jiangwen_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                    baowen_view view = new baowen_view();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+
+                if (gongyi == "进水")
+                {
+
+                    JinShui_subview.ID = dr.Cells[0].Value.ToString();
+                    JinShui_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                    JinShui_subview view = new JinShui_subview();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+
+                if (gongyi == "排水")
+                {
+
+                    Paishui_subview.ID = dr.Cells[0].Value.ToString();
+                    Paishui_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                    Paishui_subview view = new Paishui_subview();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+                if (gongyi == "水洗")
+                {
+
+                    Shuixi_Subview.ID = dr.Cells[0].Value.ToString();
+                    Shuixi_Subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                    Shuixi_Subview view = new Shuixi_Subview();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+                if (gongyi == "进料")
+                {
+
+                    jinliao_subview.ID = dr.Cells[0].Value.ToString();
+                    jinliao_subview.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                    jinliao_subview view = new jinliao_subview();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+                if(gongyi=="过程")
+                {
+
+                    Guocheng.ID = dr.Cells[0].Value.ToString();
+                    Guocheng.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                    Guocheng view = new Guocheng();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
+                if(gongyi=="运行")
+                {
+                    //jigangyunxing
+                    jigangyunxing.ID = dr.Cells[0].Value.ToString();
+                    jigangyunxing.gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                    jigangyunxing view = new jigangyunxing();
+                    ViewCaoZuo.Object_Position(0, 0, 1, 1, view, panel_craft_info.Controls);
+                    view.change += new EventHandler(ReFlush_Craft_Return);
+                }
             }
+            catch (Exception ex) { MessageBox.Show(ex.ToString()); }
+        }
+
+        private void dataGridView_craft_ChangeUICues(object sender, UICuesEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string selected_gongyi = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+                string mudi_table = comboBox_copy_table.Text;
+                MainView.builder.copy_Table(selected_gongyi, mudi_table);
+            }
+            catch { }
         }
     }
 }
