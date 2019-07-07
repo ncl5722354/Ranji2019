@@ -74,7 +74,8 @@
             this.Column28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel_gongyiinfo = new System.Windows.Forms.Panel();
+            this.panel_craft_info = new System.Windows.Forms.Panel();
+            this.comboBox_gongyi = new System.Windows.Forms.ComboBox();
             this.panel_datagridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -99,6 +100,7 @@
             // panel_datagridview
             // 
             this.panel_datagridview.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_datagridview.Controls.Add(this.comboBox_gongyi);
             this.panel_datagridview.Controls.Add(this.button2);
             this.panel_datagridview.Controls.Add(this.dataGridView1);
             this.panel_datagridview.Location = new System.Drawing.Point(664, 63);
@@ -110,7 +112,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(3, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 36);
+            this.button2.Size = new System.Drawing.Size(94, 36);
             this.button2.TabIndex = 1;
             this.button2.Text = "读取工艺详情";
             this.button2.UseVisualStyleBackColor = true;
@@ -126,7 +128,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(3, 74);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(250, 126);
+            this.dataGridView1.Size = new System.Drawing.Size(250, 128);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -470,20 +472,32 @@
             this.Column30.HeaderText = "备注";
             this.Column30.Name = "Column30";
             // 
-            // panel_gongyiinfo
+            // panel_craft_info
             // 
-            this.panel_gongyiinfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_gongyiinfo.Location = new System.Drawing.Point(668, 286);
-            this.panel_gongyiinfo.Name = "panel_gongyiinfo";
-            this.panel_gongyiinfo.Size = new System.Drawing.Size(258, 481);
-            this.panel_gongyiinfo.TabIndex = 4;
+            this.panel_craft_info.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_craft_info.Location = new System.Drawing.Point(668, 286);
+            this.panel_craft_info.Name = "panel_craft_info";
+            this.panel_craft_info.Size = new System.Drawing.Size(258, 481);
+            this.panel_craft_info.TabIndex = 4;
+            // 
+            // comboBox_gongyi
+            // 
+            this.comboBox_gongyi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox_gongyi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_gongyi.FormattingEnabled = true;
+            this.comboBox_gongyi.Location = new System.Drawing.Point(103, 12);
+            this.comboBox_gongyi.Name = "comboBox_gongyi";
+            this.comboBox_gongyi.Size = new System.Drawing.Size(139, 20);
+            this.comboBox_gongyi.TabIndex = 2;
+            this.comboBox_gongyi.TextUpdate += new System.EventHandler(this.comboBox_gongyi_TextUpdate);
+            this.comboBox_gongyi.TextChanged += new System.EventHandler(this.comboBox_gongyi_TextChanged);
             // 
             // shengchanpaishan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 799);
-            this.Controls.Add(this.panel_gongyiinfo);
+            this.Controls.Add(this.panel_craft_info);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_datagridview);
@@ -552,6 +566,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column28;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column29;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
-        private System.Windows.Forms.Panel panel_gongyiinfo;
+        private System.Windows.Forms.Panel panel_craft_info;
+        private System.Windows.Forms.ComboBox comboBox_gongyi;
     }
 }

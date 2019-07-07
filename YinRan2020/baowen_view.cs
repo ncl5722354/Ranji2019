@@ -13,11 +13,11 @@ namespace YinRan2020
     {
         public static string ID;
         public static string gongyi_name;
-        public static string baowenwendu;
-        public static string baowenshijian;
-        public static string zhubengpinlv;
-        public static string tibupinlv;
-        public static string fengjipinlv;
+        public static string baowenwendu="0";
+        public static string baowenshijian="0";
+        public static string zhubengpinlv="0";
+        public static string tibupinlv="0";
+        public static string fengjipinlv="0";
         public event EventHandler change = null;
         public baowen_view()
         {

@@ -14,12 +14,12 @@ namespace YinRan2020
         public static string gongyi_name;
        
         public static string ID;
-        public static string huiliuyewei;
-        public static string jiaobanshijian;
-        public static string jinliaoshijian;
-        public static string zhubengpinlv;
-        public static string tibupinlv;
-        public static string fengjipinlv;
+        public static string huiliuyewei = "0";
+        public static string jiaobanshijian = "0";
+        public static string jinliaoshijian = "0";
+        public static string zhubengpinlv= "0";
+        public static string tibupinlv= "0";
+        public static string fengjipinlv= "0";
         public static string gongyi_duan_name;
         
 

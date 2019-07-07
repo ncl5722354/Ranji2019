@@ -35,7 +35,7 @@ namespace YinRan2020
 
             ViewCaoZuo.Object_Position(0.27, 0.5, 0.5, 0.49, dataGridView_craft, this.Controls);
 
-            ViewCaoZuo.Object_Position(0.8, 0.5, 0.2, 0.05, textBox_danhao, this.Controls);
+            ViewCaoZuo.Object_Position(0.8, 0.5, 0.2, 0.05, comboBox1, this.Controls);
 
             ViewCaoZuo.Object_Position(0.8, 0.56, 0.2, 0.03, button_read_gongyi, this.Controls);
 
@@ -72,14 +72,14 @@ namespace YinRan2020
 
 
 
-                ReFlash_Gongyi_Fanal("工艺" + textBox_danhao.Text);
+                ReFlash_Gongyi_Fanal("工艺" + comboBox1.Text);
                 ReFlush_Exe_Craft();
 
 
                 // 执行工单号需要记录
 
                 string[] update_cmd = new string[1];
-                update_cmd[0] = "gongdanhao='"+textBox_danhao.Text+"'";
+                update_cmd[0] = "gongdanhao='"+comboBox1.Text+"'";
 
                 string where_cmd = "machine_num='" + machine_num.ToString() + "'";
 
@@ -296,6 +296,16 @@ namespace YinRan2020
                 ReFlash_Gongyi_Fanal("工艺"+textBox_danhao.Text);
                 ReFlush_Exe_Craft();
 
+            }
+            catch { }
+            try
+            {
+                comboBox1.Items.Clear();
+                DataTable dt1 = MainView.builder.Select_Table("Shengchanpaichan");
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    comboBox1.Items.Add(dr[0].ToString());
+                }
             }
             catch { }
         }

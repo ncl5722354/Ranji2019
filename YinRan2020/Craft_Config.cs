@@ -19,6 +19,8 @@ namespace YinRan2020
 
         public string Title = "";
         public int pre_selected_index = 0;
+
+        public ArrayList copy_List = new ArrayList();
         public Craft_Config()
         {
             InitializeComponent();
@@ -137,7 +139,7 @@ namespace YinRan2020
 
 
             // listbox craft
-            ViewCaoZuo.Object_Position(0.01, 0.1, 0.2, 0.9, listBox_gongyi, tabControl1.TabPages[2].Controls);
+            ViewCaoZuo.Object_Position(0.01, 0.1, 0.1, 0.9, listBox_gongyi, tabControl1.TabPages[2].Controls);
 
 
             // datagridview_craft
@@ -1169,22 +1171,30 @@ namespace YinRan2020
             try
             {
                 DataGridView datagridview = (DataGridView)sender;
-                int selected_index = datagridview.SelectedCells[0].RowIndex;
-
-                for (int i = 0; i < datagridview.Rows.Count; i++)
+                
+                for(int i=0;i<datagridview.SelectedCells.Count;i++)
                 {
-                    if(i==selected_index)
+
+                    int selected_index = datagridview.SelectedCells[i].RowIndex;
+                    for (int j = 0; j < datagridview.Rows.Count; j++)
                     {
-                        datagridview.Rows[i].Selected = true;
-                    }
-                    else
-                    {
-                        datagridview.Rows[i].Selected = false;
+                        if (j == selected_index)
+                        {
+                            datagridview.Rows[j].Selected = true;
+                        }
+                        else
+                        {
+                           // datagridview.Rows[j].Selected = false;
+                        }
                     }
                 }
-
             }
             catch { }
+        }
+
+        public void selected_datagridview_rows(object sender)
+        {
+
         }
 
         private void dataGridView_info_Click(object sender, EventArgs e)
@@ -2502,6 +2512,161 @@ namespace YinRan2020
                 string selected_gongyi = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
                 string mudi_table = comboBox_copy_table.Text;
                 MainView.builder.copy_Table(selected_gongyi, mudi_table);
+            }
+            catch { }
+        }
+
+        private void dataGridView_craft_CellMouseUp(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                selected_datagridview_cells(sender);
+            }
+            catch { }
+        }
+
+        private void paste_pre_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
+                string gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                // 当前行的全部+复制的行数
+                if (dr.Cells[0].Value.ToString() != "")
+                {
+                    string ID = dr.Cells[0].Value.ToString();
+                    int copy_num = copy_List.Count;
+                    int nowid = int.Parse(ID);
+                    string[] update_cmd = new string[1];
+                    update_cmd[0] = "ID=ID+"+copy_num.ToString();
+                    string where_cmd = "ID>='" + nowid.ToString() + "'";
+                    MainView.builder.Updata(gongyi_name, where_cmd, update_cmd);
+
+
+                    // 插入
+                    for (int i = 0; i < copy_List.Count; i++)
+                    {
+                        DataGridViewRow insertdr=(DataGridViewRow)copy_List[i];
+                        string[] insert_cmd = new string[13];
+                        insert_cmd[0] = (nowid +i).ToString();
+                        for(int j=1;j<=11;j++)
+                        {
+                            insert_cmd[j] = insertdr.Cells[1 + (j - 1) * 2].Value.ToString();
+                        }
+                        MainView.builder.Insert(gongyi_name, insert_cmd);
+                    }
+                }
+                if (dr.Cells[0].Value.ToString() == "")
+                {
+                    string ID = dr.Cells[0].Value.ToString();
+                    int copy_num = copy_List.Count;
+                    int nowid = 1;
+                    string[] update_cmd = new string[1];
+                    update_cmd[0] = "ID=ID+" + copy_num.ToString();
+                    string where_cmd = "ID>='" + nowid.ToString() + "'";
+                    MainView.builder.Updata(gongyi_name, where_cmd, update_cmd);
+
+
+                    // 插入
+                    for (int i = 0; i < copy_List.Count; i++)
+                    {
+                        DataGridViewRow insertdr = (DataGridViewRow)copy_List[i];
+                        string[] insert_cmd = new string[13];
+                        insert_cmd[0] = (nowid + i).ToString();
+                        for (int j = 1; j <= 11; j++)
+                        {
+                            insert_cmd[j] = insertdr.Cells[1 + (j - 1) * 2].Value.ToString();
+                        }
+                        MainView.builder.Insert(gongyi_name, insert_cmd);
+                    }
+                }
+                ReFlash_Gongyi_Fanal(gongyi_name);
+                
+            }
+            catch { }
+        }
+
+        private void copy_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                copy_List = null;
+                copy_List = new ArrayList();
+                foreach(DataGridViewRow dr in dataGridView_craft.SelectedRows)
+                {
+                    copy_List.Add(dr);
+                }
+                int a = 0;
+            }
+            catch { }
+
+
+        }
+
+        private void contextMenuStrip_copy_paste_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void 粘贴到下一条ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow dr = dataGridView_craft.SelectedRows[0];
+                string gongyi_name = listBox_gongyi.Items[listBox_gongyi.SelectedIndex].ToString();
+
+                // 当前行的全部+复制的行数
+                if (dr.Cells[0].Value.ToString() != "")
+                {
+                    string ID = dr.Cells[0].Value.ToString();
+                    int copy_num = copy_List.Count;
+                    int nowid = int.Parse(ID);
+                    string[] update_cmd = new string[1];
+                    update_cmd[0] = "ID=ID+" + copy_num.ToString();
+                    string where_cmd = "ID>'" + nowid.ToString() + "'";
+                    MainView.builder.Updata(gongyi_name, where_cmd, update_cmd);
+
+
+                    // 插入
+                    for (int i = 0; i < copy_List.Count; i++)
+                    {
+                        DataGridViewRow insertdr = (DataGridViewRow)copy_List[i];
+                        string[] insert_cmd = new string[13];
+                        insert_cmd[0] = (nowid + i+1).ToString();
+                        for (int j = 1; j <= 11; j++)
+                        {
+                            insert_cmd[j] = insertdr.Cells[1 + (j - 1) * 2].Value.ToString();
+                        }
+                        MainView.builder.Insert(gongyi_name, insert_cmd);
+                    }
+                }
+                if (dr.Cells[0].Value.ToString() == "")
+                {
+                    string ID = dr.Cells[0].Value.ToString();
+                    int copy_num = copy_List.Count;
+                    int nowid = 1;
+                    string[] update_cmd = new string[1];
+                    update_cmd[0] = "ID=ID+" + copy_num.ToString();
+                    string where_cmd = "ID>='" + nowid.ToString() + "'";
+                    MainView.builder.Updata(gongyi_name, where_cmd, update_cmd);
+
+
+                    // 插入
+                    for (int i = 0; i < copy_List.Count; i++)
+                    {
+                        DataGridViewRow insertdr = (DataGridViewRow)copy_List[i];
+                        string[] insert_cmd = new string[13];
+                        insert_cmd[0] = (nowid + i).ToString();
+                        for (int j = 1; j <= 11; j++)
+                        {
+                            insert_cmd[j] = insertdr.Cells[1 + (j - 1) * 2].Value.ToString();
+                        }
+                        MainView.builder.Insert(gongyi_name, insert_cmd);
+                    }
+                }
+                ReFlash_Gongyi_Fanal(gongyi_name);
+
             }
             catch { }
         }

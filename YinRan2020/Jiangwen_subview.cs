@@ -13,13 +13,13 @@ namespace YinRan2020
     {
         public static string gongyi_name;
         public static string ID;
-        public static string start_wendu;
-        public static string end_wendu;
-        public static string shengwen_time;
-        public static string shengwen_sulv;
-        public static string zhubengpinlv;
-        public static string tibupinlv;
-        public static string fengjipinlv;
+        public static string start_wendu = "0";
+        public static string end_wendu = "0";
+        public static string shengwen_time = "0";
+        public static string shengwen_sulv = "0";
+        public static string zhubengpinlv = "0";
+        public static string tibupinlv = "0";
+        public static string fengjipinlv = "0";
         public static string gongyi_duan_name;
 
         public event EventHandler change = null;
