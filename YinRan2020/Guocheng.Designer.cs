@@ -102,8 +102,9 @@
             this.textBox_fengji.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_fengji.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_fengji.Location = new System.Drawing.Point(176, 174);
+            this.textBox_fengji.Multiline = true;
             this.textBox_fengji.Name = "textBox_fengji";
-            this.textBox_fengji.Size = new System.Drawing.Size(70, 23);
+            this.textBox_fengji.Size = new System.Drawing.Size(70, 21);
             this.textBox_fengji.TabIndex = 70;
             this.textBox_fengji.Text = "0";
             this.textBox_fengji.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -125,8 +126,9 @@
             this.textBox_tibu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_tibu.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_tibu.Location = new System.Drawing.Point(176, 142);
+            this.textBox_tibu.Multiline = true;
             this.textBox_tibu.Name = "textBox_tibu";
-            this.textBox_tibu.Size = new System.Drawing.Size(70, 23);
+            this.textBox_tibu.Size = new System.Drawing.Size(70, 21);
             this.textBox_tibu.TabIndex = 67;
             this.textBox_tibu.Text = "0";
             this.textBox_tibu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -148,8 +150,9 @@
             this.textBox_pinlv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_pinlv.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_pinlv.Location = new System.Drawing.Point(176, 109);
+            this.textBox_pinlv.Multiline = true;
             this.textBox_pinlv.Name = "textBox_pinlv";
-            this.textBox_pinlv.Size = new System.Drawing.Size(70, 23);
+            this.textBox_pinlv.Size = new System.Drawing.Size(70, 21);
             this.textBox_pinlv.TabIndex = 64;
             this.textBox_pinlv.Text = "0";
             this.textBox_pinlv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -236,6 +239,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Guocheng";
             this.Size = new System.Drawing.Size(336, 245);
+            this.Resize += new System.EventHandler(this.Guocheng_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

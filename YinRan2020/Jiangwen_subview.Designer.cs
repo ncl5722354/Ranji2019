@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -94,8 +94,9 @@
             this.textBox_fengji.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_fengji.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_fengji.Location = new System.Drawing.Point(252, 191);
+            this.textBox_fengji.Multiline = true;
             this.textBox_fengji.Name = "textBox_fengji";
-            this.textBox_fengji.Size = new System.Drawing.Size(70, 23);
+            this.textBox_fengji.Size = new System.Drawing.Size(70, 21);
             this.textBox_fengji.TabIndex = 40;
             this.textBox_fengji.Text = "0";
             this.textBox_fengji.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -129,8 +130,9 @@
             this.textBox_tibu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_tibu.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_tibu.Location = new System.Drawing.Point(252, 161);
+            this.textBox_tibu.Multiline = true;
             this.textBox_tibu.Name = "textBox_tibu";
-            this.textBox_tibu.Size = new System.Drawing.Size(70, 23);
+            this.textBox_tibu.Size = new System.Drawing.Size(70, 21);
             this.textBox_tibu.TabIndex = 37;
             this.textBox_tibu.Text = "0";
             this.textBox_tibu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -164,8 +166,9 @@
             this.textBox_pinlv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_pinlv.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_pinlv.Location = new System.Drawing.Point(252, 128);
+            this.textBox_pinlv.Multiline = true;
             this.textBox_pinlv.Name = "textBox_pinlv";
-            this.textBox_pinlv.Size = new System.Drawing.Size(70, 23);
+            this.textBox_pinlv.Size = new System.Drawing.Size(70, 21);
             this.textBox_pinlv.TabIndex = 34;
             this.textBox_pinlv.Text = "0";
             this.textBox_pinlv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -199,8 +202,9 @@
             this.textBox_time.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_time.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_time.Location = new System.Drawing.Point(76, 187);
+            this.textBox_time.Multiline = true;
             this.textBox_time.Name = "textBox_time";
-            this.textBox_time.Size = new System.Drawing.Size(70, 23);
+            this.textBox_time.Size = new System.Drawing.Size(70, 21);
             this.textBox_time.TabIndex = 31;
             this.textBox_time.Text = "0";
             this.textBox_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -214,7 +218,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(70, 20);
             this.label5.TabIndex = 30;
-            this.label5.Text = "升温时间";
+            this.label5.Text = "降温时间";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_sulv
@@ -222,8 +226,9 @@
             this.textBox_sulv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_sulv.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_sulv.Location = new System.Drawing.Point(76, 166);
+            this.textBox_sulv.Multiline = true;
             this.textBox_sulv.Name = "textBox_sulv";
-            this.textBox_sulv.Size = new System.Drawing.Size(70, 23);
+            this.textBox_sulv.Size = new System.Drawing.Size(70, 21);
             this.textBox_sulv.TabIndex = 29;
             this.textBox_sulv.Text = "0";
             this.textBox_sulv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -237,7 +242,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 28;
-            this.label4.Text = "升温速率";
+            this.label4.Text = "降温速率";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_endwendu
@@ -245,8 +250,9 @@
             this.textBox_endwendu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_endwendu.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_endwendu.Location = new System.Drawing.Point(76, 146);
+            this.textBox_endwendu.Multiline = true;
             this.textBox_endwendu.Name = "textBox_endwendu";
-            this.textBox_endwendu.Size = new System.Drawing.Size(70, 23);
+            this.textBox_endwendu.Size = new System.Drawing.Size(70, 21);
             this.textBox_endwendu.TabIndex = 27;
             this.textBox_endwendu.Text = "0";
             this.textBox_endwendu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -268,8 +274,9 @@
             this.textBox_startwendu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_startwendu.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_startwendu.Location = new System.Drawing.Point(76, 126);
+            this.textBox_startwendu.Multiline = true;
             this.textBox_startwendu.Name = "textBox_startwendu";
-            this.textBox_startwendu.Size = new System.Drawing.Size(70, 23);
+            this.textBox_startwendu.Size = new System.Drawing.Size(70, 21);
             this.textBox_startwendu.TabIndex = 25;
             this.textBox_startwendu.Text = "0";
             this.textBox_startwendu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -303,18 +310,18 @@
             // 
             this.chart1.BorderlineColor = System.Drawing.Color.Black;
             this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chart1.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(2, 53);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = System.Drawing.Color.Red;
-            series4.Legend = "Legend1";
-            series4.Name = "温度曲线";
-            this.chart1.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "温度曲线";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(332, 71);
             this.chart1.TabIndex = 22;
             this.chart1.Text = "chart1";
@@ -347,6 +354,7 @@
             this.Controls.Add(this.chart1);
             this.Name = "Jiangwen_subview";
             this.Size = new System.Drawing.Size(336, 245);
+            this.Resize += new System.EventHandler(this.Jiangwen_subview_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -58,7 +58,7 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(332, 50);
+            this.label1.Size = new System.Drawing.Size(336, 50);
             this.label1.TabIndex = 2;
             this.label1.Text = "保     温";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -78,8 +78,9 @@
             this.textBox_fengji.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_fengji.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_fengji.Location = new System.Drawing.Point(257, 133);
+            this.textBox_fengji.Multiline = true;
             this.textBox_fengji.Name = "textBox_fengji";
-            this.textBox_fengji.Size = new System.Drawing.Size(70, 23);
+            this.textBox_fengji.Size = new System.Drawing.Size(70, 21);
             this.textBox_fengji.TabIndex = 36;
             this.textBox_fengji.Text = "0";
             this.textBox_fengji.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -101,8 +102,9 @@
             this.textBox_tibu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_tibu.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_tibu.Location = new System.Drawing.Point(257, 101);
+            this.textBox_tibu.Multiline = true;
             this.textBox_tibu.Name = "textBox_tibu";
-            this.textBox_tibu.Size = new System.Drawing.Size(70, 23);
+            this.textBox_tibu.Size = new System.Drawing.Size(70, 21);
             this.textBox_tibu.TabIndex = 33;
             this.textBox_tibu.Text = "0";
             this.textBox_tibu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -124,8 +126,9 @@
             this.textBox_pinlv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_pinlv.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_pinlv.Location = new System.Drawing.Point(257, 68);
+            this.textBox_pinlv.Multiline = true;
             this.textBox_pinlv.Name = "textBox_pinlv";
-            this.textBox_pinlv.Size = new System.Drawing.Size(70, 23);
+            this.textBox_pinlv.Size = new System.Drawing.Size(70, 21);
             this.textBox_pinlv.TabIndex = 30;
             this.textBox_pinlv.Text = "0";
             this.textBox_pinlv.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -147,8 +150,9 @@
             this.textBox_baowenshijian.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_baowenshijian.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_baowenshijian.Location = new System.Drawing.Point(81, 112);
+            this.textBox_baowenshijian.Multiline = true;
             this.textBox_baowenshijian.Name = "textBox_baowenshijian";
-            this.textBox_baowenshijian.Size = new System.Drawing.Size(70, 23);
+            this.textBox_baowenshijian.Size = new System.Drawing.Size(70, 21);
             this.textBox_baowenshijian.TabIndex = 23;
             this.textBox_baowenshijian.Text = "0";
             this.textBox_baowenshijian.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -170,8 +174,9 @@
             this.textBox_baowenwendu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_baowenwendu.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.textBox_baowenwendu.Location = new System.Drawing.Point(81, 67);
+            this.textBox_baowenwendu.Multiline = true;
             this.textBox_baowenwendu.Name = "textBox_baowenwendu";
-            this.textBox_baowenwendu.Size = new System.Drawing.Size(70, 23);
+            this.textBox_baowenwendu.Size = new System.Drawing.Size(70, 21);
             this.textBox_baowenwendu.TabIndex = 21;
             this.textBox_baowenwendu.Text = "0";
             this.textBox_baowenwendu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -266,8 +271,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "baowen_view";
-            this.Size = new System.Drawing.Size(336, 245);
+            this.Size = new System.Drawing.Size(333, 245);
             this.Load += new System.EventHandler(this.baowen_view_Load);
+            this.Resize += new System.EventHandler(this.baowen_view_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

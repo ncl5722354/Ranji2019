@@ -14,12 +14,12 @@ namespace YinRan2020
 
         public static string gongyi_name;
         public static string ID;
-        public static string shangxian;
-        public static string xiaxian;
-        public static string dunshu_shijian;
-        public static string zhubengpinlv;
-        public static string tibupinlv;
-        public static string fengjipinlv;
+        public static string shangxian = "0";
+        public static string xiaxian = "0";
+        public static string dunshu_shijian = "0";
+        public static string zhubengpinlv = "0";
+        public static string tibupinlv = "0";
+        public static string fengjipinlv = "0";
         public static string gongyi_duan_name;
         public event EventHandler change = null;
         public Shuixi_Subview()
