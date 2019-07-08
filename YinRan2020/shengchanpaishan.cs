@@ -45,10 +45,30 @@ namespace YinRan2020
             // 初始化工艺号
             for(int i=1;i<=400;i++)
             {
-                comboBox_gongyihao.Items.Add(i.ToString());
-
+                comboBox_gongyihao.Items.Add( i.ToString().PadLeft(3, '0'));
+                comboBox_gongyihao.Items.Add( i.ToString().PadLeft(3, '0') + "气流");
             }
-           
+
+            for (int i = 1; i <= 400; i++)
+            {
+                
+                comboBox_gongyihao2.Items.Add( i.ToString().PadLeft(3, '0'));
+                comboBox_gongyihao2.Items.Add( i.ToString().PadLeft(3, '0') + "气流");
+            }
+
+            for (int i = 1; i <= 400; i++)
+            {
+
+                comboBox_gongyihao3.Items.Add( i.ToString().PadLeft(3, '0'));
+                comboBox_gongyihao3.Items.Add( i.ToString().PadLeft(3, '0') + "气流");
+            }
+
+            for (int i = 1; i <= 400; i++)
+            {
+
+                comboBox_gongyihao4.Items.Add( i.ToString().PadLeft(3, '0'));
+                comboBox_gongyihao4.Items.Add( i.ToString().PadLeft(3, '0') + "气流");
+            }
 
             ViewCaoZuo.Object_Position(0.01, 0.15, 0.5, 0.15, panel1, this.Controls);
             ViewCaoZuo.Object_Position(0.01, 0.35, 0.5, 0.64, panel2, this.Controls);
@@ -57,19 +77,7 @@ namespace YinRan2020
             ViewCaoZuo.Object_Position(0, 0.1, 1, 0.9, dataGridView1, panel_datagridview.Controls);
             ViewCaoZuo.Object_Position(0.51, 0.55, 0.48, 0.44, panel_craft_info, this.Controls);
 
-            //// panel_gongyinfo里的信息
-            //ViewCaoZuo.Object_Position(0, 0, 1, 0.1, label_gongyititle, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1, 0.3, 0.08, label_canshu1, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08, 0.3, 0.08, label_canshu2, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 2, 0.3, 0.08, label_canshu3, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 3, 0.3, 0.08, label_canshu4, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 4, 0.3, 0.08, label_canshu5, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 5, 0.3, 0.08, label_canshu6, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 6, 0.3, 0.08, label_canshu7, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 7, 0.3, 0.08, label_canshu8, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 8, 0.3, 0.08, label_canshu9, panel_gongyiinfo.Controls);
-            //ViewCaoZuo.Object_Position(0, 0.1 + 0.08 * 9, 0.3, 0.08, label_canshu10, panel_gongyiinfo.Controls);
-            // 
+           
             ReFlush_GongDan_List();
         }
 
@@ -875,8 +883,202 @@ namespace YinRan2020
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string gongyiname = comboBox_gongyihao.Text.PadLeft(3, '0');
-            ReFlash_Gongyi_Fanal(gongyiname);
+            string gongyiname = "工艺" + comboBox_gongyihao.Text;
+            string gongyiname2 = "工艺" + comboBox_gongyihao2.Text;
+            string gongyiname3 = "工艺" + comboBox_gongyihao3.Text;
+            string gongyiname4 = "工艺" + comboBox_gongyihao4.Text;
+            
+            ReFlash_4Gongyis(gongyiname, gongyiname2, gongyiname3, gongyiname4);
+        }
+
+
+        // 读取四个工艺
+        private void ReFlash_4Gongyis(string gongyi1,string gongyi2,string gongyi3,string gongyi4)
+        {
+             try
+            {
+                dataGridView_craft.RowCount = 1;
+                for (int i = 0; i < dataGridView_craft.ColumnCount; i++)
+                {
+                    dataGridView_craft[i, 0].Value = "";
+                }
+
+                DataTable dt = MainView.builder.Select_Table(gongyi1);
+                DataTable dt2 = MainView.builder.Select_Table(gongyi2);
+                DataTable dt3 = MainView.builder.Select_Table(gongyi3);
+                DataTable dt4 = MainView.builder.Select_Table(gongyi4);
+
+                int zonghangshu = 0;
+                int hangshu1 = 0;
+                int hangshu2 = 0;
+                int hangshu3 = 0;
+                int haungshu4 = 0;
+                 try
+                 {
+                     zonghangshu = zonghangshu + dt.Rows.Count;
+                     hangshu1 = dt.Rows.Count;
+                 }
+                 catch { }
+                 try
+                 {
+                     zonghangshu = zonghangshu + dt2.Rows.Count;
+                     hangshu2 = dt2.Rows.Count;
+                 }
+                 catch { }
+                 try
+                 {
+                     zonghangshu = zonghangshu + dt3.Rows.Count;
+                     hangshu3 = dt3.Rows.Count;
+                 }
+                 catch { }
+                 try
+                 {
+                     zonghangshu = zonghangshu + dt4.Rows.Count;
+                     haungshu4 = dt4.Rows.Count;
+                 }
+                 catch { }
+
+
+
+                 try
+                 {
+                     dataGridView_craft.RowCount = zonghangshu;
+                 }
+                 catch { }
+
+                 try
+                 {
+                     for (int i = 0; i < dt.Rows.Count; i++)
+                     {
+                         dataGridView_craft[0, i].Value = dt.Rows[i][0].ToString();
+                         dataGridView_craft[1, i].Value = dt.Rows[i][1].ToString();
+                         dataGridView_craft[3, i].Value = dt.Rows[i][2].ToString();
+                         dataGridView_craft[5, i].Value = dt.Rows[i][3].ToString();
+                         dataGridView_craft[7, i].Value = dt.Rows[i][4].ToString();
+                         dataGridView_craft[9, i].Value = dt.Rows[i][5].ToString();
+                         dataGridView_craft[11, i].Value = dt.Rows[i][6].ToString();
+                         dataGridView_craft[13, i].Value = dt.Rows[i][7].ToString();
+                         dataGridView_craft[15, i].Value = dt.Rows[i][8].ToString();
+                         dataGridView_craft[17, i].Value = dt.Rows[i][9].ToString();
+                         dataGridView_craft[19, i].Value = dt.Rows[i][10].ToString();
+                         dataGridView_craft[21, i].Value = dt.Rows[i][11].ToString();
+                         string where = "Gongyi_Name='" + dataGridView_craft[1, i].Value + "'";
+                         DataTable gongyi_dt = MainView.builder.Select_Table("Craft_Name_Table", where);
+                         DataRow dr = gongyi_dt.Rows[0];
+                         dataGridView_craft[2, i].Value = dr[1].ToString();
+                         dataGridView_craft[4, i].Value = dr[2].ToString();
+                         dataGridView_craft[6, i].Value = dr[3].ToString();
+                         dataGridView_craft[8, i].Value = dr[4].ToString();
+                         dataGridView_craft[10, i].Value = dr[5].ToString();
+                         dataGridView_craft[12, i].Value = dr[6].ToString();
+                         dataGridView_craft[14, i].Value = dr[7].ToString();
+                         dataGridView_craft[16, i].Value = dr[8].ToString();
+                         dataGridView_craft[18, i].Value = dr[9].ToString();
+                         dataGridView_craft[20, i].Value = dr[10].ToString();
+                     }
+                 }
+                 catch { }
+
+                 try
+                 {
+                     for (int i = hangshu1; i < dt2.Rows.Count+hangshu1; i++)
+                     {
+                         dataGridView_craft[0, i].Value = (int.Parse(dt2.Rows[i - hangshu1][0].ToString())+hangshu1).ToString();
+                         dataGridView_craft[1, i].Value = dt2.Rows[i - hangshu1][1].ToString();
+                         dataGridView_craft[3, i].Value = dt2.Rows[i - hangshu1][2].ToString();
+                         dataGridView_craft[5, i].Value = dt2.Rows[i - hangshu1][3].ToString();
+                         dataGridView_craft[7, i].Value = dt2.Rows[i - hangshu1][4].ToString();
+                         dataGridView_craft[9, i].Value = dt2.Rows[i - hangshu1][5].ToString();
+                         dataGridView_craft[11, i].Value = dt2.Rows[i - hangshu1][6].ToString();
+                         dataGridView_craft[13, i].Value = dt2.Rows[i - hangshu1][7].ToString();
+                         dataGridView_craft[15, i].Value = dt2.Rows[i - hangshu1][8].ToString();
+                         dataGridView_craft[17, i].Value = dt2.Rows[i - hangshu1][9].ToString();
+                         dataGridView_craft[19, i].Value = dt2.Rows[i - hangshu1][10].ToString();
+                         dataGridView_craft[21, i].Value = dt2.Rows[i - hangshu1][11].ToString();
+                         string where = "Gongyi_Name='" + dataGridView_craft[1, i].Value + "'";
+                         DataTable gongyi_dt = MainView.builder.Select_Table("Craft_Name_Table", where);
+                         DataRow dr = gongyi_dt.Rows[0];
+                         dataGridView_craft[2, i].Value = dr[1].ToString();
+                         dataGridView_craft[4, i].Value = dr[2].ToString();
+                         dataGridView_craft[6, i].Value = dr[3].ToString();
+                         dataGridView_craft[8, i].Value = dr[4].ToString();
+                         dataGridView_craft[10, i].Value = dr[5].ToString();
+                         dataGridView_craft[12, i].Value = dr[6].ToString();
+                         dataGridView_craft[14, i].Value = dr[7].ToString();
+                         dataGridView_craft[16, i].Value = dr[8].ToString();
+                         dataGridView_craft[18, i].Value = dr[9].ToString();
+                         dataGridView_craft[20, i].Value = dr[10].ToString();
+                     }
+                 }
+                 catch { }
+
+                 try
+                 {
+                     for (int i = hangshu1+hangshu2; i < dt3.Rows.Count + hangshu1+hangshu2; i++)
+                     {
+                         dataGridView_craft[0, i].Value = (int.Parse(dt3.Rows[i - hangshu1 - hangshu2][0].ToString())+hangshu1+hangshu2).ToString();
+                         dataGridView_craft[1, i].Value = dt3.Rows[i - hangshu1 - hangshu2][1].ToString();
+                         dataGridView_craft[3, i].Value = dt3.Rows[i - hangshu1 - hangshu2][2].ToString();
+                         dataGridView_craft[5, i].Value = dt3.Rows[i - hangshu1 - hangshu2][3].ToString();
+                         dataGridView_craft[7, i].Value = dt3.Rows[i - hangshu1 - hangshu2][4].ToString();
+                         dataGridView_craft[9, i].Value = dt3.Rows[i - hangshu1 - hangshu2][5].ToString();
+                         dataGridView_craft[11, i].Value = dt3.Rows[i - hangshu1 - hangshu2][6].ToString();
+                         dataGridView_craft[13, i].Value = dt3.Rows[i - hangshu1 - hangshu2][7].ToString();
+                         dataGridView_craft[15, i].Value = dt3.Rows[i - hangshu1 - hangshu2][8].ToString();
+                         dataGridView_craft[17, i].Value = dt3.Rows[i - hangshu1 - hangshu2][9].ToString();
+                         dataGridView_craft[19, i].Value = dt3.Rows[i - hangshu1 - hangshu2][10].ToString();
+                         dataGridView_craft[21, i].Value = dt3.Rows[i - hangshu1 - hangshu2][11].ToString();
+                         string where = "Gongyi_Name='" + dataGridView_craft[1, i].Value + "'";
+                         DataTable gongyi_dt = MainView.builder.Select_Table("Craft_Name_Table", where);
+                         DataRow dr = gongyi_dt.Rows[0];
+                         dataGridView_craft[2, i].Value = dr[1].ToString();
+                         dataGridView_craft[4, i].Value = dr[2].ToString();
+                         dataGridView_craft[6, i].Value = dr[3].ToString();
+                         dataGridView_craft[8, i].Value = dr[4].ToString();
+                         dataGridView_craft[10, i].Value = dr[5].ToString();
+                         dataGridView_craft[12, i].Value = dr[6].ToString();
+                         dataGridView_craft[14, i].Value = dr[7].ToString();
+                         dataGridView_craft[16, i].Value = dr[8].ToString();
+                         dataGridView_craft[18, i].Value = dr[9].ToString();
+                         dataGridView_craft[20, i].Value = dr[10].ToString();
+                     }
+                 }
+                 catch { }
+
+                 try
+                 {
+                     for (int i = hangshu1 + hangshu2+hangshu3; i < dt3.Rows.Count + hangshu1 + hangshu2+hangshu3; i++)
+                     {
+                         dataGridView_craft[0, i].Value = (int.Parse(dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][0].ToString())+hangshu1+hangshu2+hangshu3).ToString();
+                         dataGridView_craft[1, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][1].ToString();
+                         dataGridView_craft[3, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][2].ToString();
+                         dataGridView_craft[5, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][3].ToString();
+                         dataGridView_craft[7, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][4].ToString();
+                         dataGridView_craft[9, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][5].ToString();
+                         dataGridView_craft[11, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][6].ToString();
+                         dataGridView_craft[13, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][7].ToString();
+                         dataGridView_craft[15, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][8].ToString();
+                         dataGridView_craft[17, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][9].ToString();
+                         dataGridView_craft[19, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][10].ToString();
+                         dataGridView_craft[21, i].Value = dt4.Rows[i - hangshu1 - hangshu2 - hangshu3][11].ToString();
+                         string where = "Gongyi_Name='" + dataGridView_craft[1, i].Value + "'";
+                         DataTable gongyi_dt = MainView.builder.Select_Table("Craft_Name_Table", where);
+                         DataRow dr = gongyi_dt.Rows[0];
+                         dataGridView_craft[2, i].Value = dr[1].ToString();
+                         dataGridView_craft[4, i].Value = dr[2].ToString();
+                         dataGridView_craft[6, i].Value = dr[3].ToString();
+                         dataGridView_craft[8, i].Value = dr[4].ToString();
+                         dataGridView_craft[10, i].Value = dr[5].ToString();
+                         dataGridView_craft[12, i].Value = dr[6].ToString();
+                         dataGridView_craft[14, i].Value = dr[7].ToString();
+                         dataGridView_craft[16, i].Value = dr[8].ToString();
+                         dataGridView_craft[18, i].Value = dr[9].ToString();
+                         dataGridView_craft[20, i].Value = dr[10].ToString();
+                     }
+                 }
+                 catch { }
+            }
+             catch { }
         }
 
         private void comboBox_gongyi_TextChanged(object sender, EventArgs e)
@@ -886,7 +1088,7 @@ namespace YinRan2020
 
         private void comboBox_gongyi_TextUpdate(object sender, EventArgs e)
         {
-            
+           
         }
     }
 }

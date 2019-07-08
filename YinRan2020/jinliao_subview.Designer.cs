@@ -88,7 +88,7 @@
             // 
             this.textBox_fengji.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_fengji.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox_fengji.Location = new System.Drawing.Point(259, 158);
+            this.textBox_fengji.Location = new System.Drawing.Point(259, 159);
             this.textBox_fengji.Name = "textBox_fengji";
             this.textBox_fengji.Size = new System.Drawing.Size(70, 23);
             this.textBox_fengji.TabIndex = 53;
@@ -100,7 +100,7 @@
             this.label8.BackColor = System.Drawing.Color.Blue;
             this.label8.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label8.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label8.Location = new System.Drawing.Point(188, 157);
+            this.label8.Location = new System.Drawing.Point(190, 161);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 20);
             this.label8.TabIndex = 52;
@@ -135,9 +135,9 @@
             this.label7.BackColor = System.Drawing.Color.Blue;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label7.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label7.Location = new System.Drawing.Point(190, 120);
+            this.label7.Location = new System.Drawing.Point(190, 121);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 20);
+            this.label7.Size = new System.Drawing.Size(70, 23);
             this.label7.TabIndex = 49;
             this.label7.Text = "提布频率";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,7 +158,7 @@
             // 
             this.textBox_pinlv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_pinlv.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox_pinlv.Location = new System.Drawing.Point(259, 87);
+            this.textBox_pinlv.Location = new System.Drawing.Point(259, 86);
             this.textBox_pinlv.Name = "textBox_pinlv";
             this.textBox_pinlv.Size = new System.Drawing.Size(70, 23);
             this.textBox_pinlv.TabIndex = 47;
@@ -170,9 +170,9 @@
             this.label6.BackColor = System.Drawing.Color.Blue;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label6.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label6.Location = new System.Drawing.Point(193, 86);
+            this.label6.Location = new System.Drawing.Point(190, 83);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 20);
+            this.label6.Size = new System.Drawing.Size(70, 26);
             this.label6.TabIndex = 46;
             this.label6.Text = "主泵频率";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

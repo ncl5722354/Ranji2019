@@ -30,6 +30,7 @@
         {
             this.label_title = new System.Windows.Forms.Label();
             this.panel_datagridview = new System.Windows.Forms.Panel();
+            this.comboBox_gongyi = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +40,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button_readgongyi = new System.Windows.Forms.Button();
             this.comboBox_gongyihao = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_danhao = new System.Windows.Forms.TextBox();
@@ -75,7 +75,12 @@
             this.Column29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_craft_info = new System.Windows.Forms.Panel();
-            this.comboBox_gongyi = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox_gongyihao2 = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox_gongyihao3 = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox_gongyihao4 = new System.Windows.Forms.ComboBox();
             this.panel_datagridview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -107,6 +112,18 @@
             this.panel_datagridview.Name = "panel_datagridview";
             this.panel_datagridview.Size = new System.Drawing.Size(258, 217);
             this.panel_datagridview.TabIndex = 1;
+            // 
+            // comboBox_gongyi
+            // 
+            this.comboBox_gongyi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox_gongyi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_gongyi.FormattingEnabled = true;
+            this.comboBox_gongyi.Location = new System.Drawing.Point(103, 12);
+            this.comboBox_gongyi.Name = "comboBox_gongyi";
+            this.comboBox_gongyi.Size = new System.Drawing.Size(139, 20);
+            this.comboBox_gongyi.TabIndex = 2;
+            this.comboBox_gongyi.TextUpdate += new System.EventHandler(this.comboBox_gongyi_TextUpdate);
+            this.comboBox_gongyi.TextChanged += new System.EventHandler(this.comboBox_gongyi_TextChanged);
             // 
             // button2
             // 
@@ -149,10 +166,15 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.comboBox_gongyihao4);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.comboBox_gongyihao3);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.comboBox_gongyihao2);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button_readgongyi);
             this.panel1.Controls.Add(this.comboBox_gongyihao);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox_danhao);
@@ -164,11 +186,11 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(307, 49);
+            this.button4.Location = new System.Drawing.Point(363, 80);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(125, 23);
             this.button4.TabIndex = 7;
-            this.button4.Text = "读取溢流工艺";
+            this.button4.Text = "读取工艺";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -192,32 +214,24 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button_readgongyi
-            // 
-            this.button_readgongyi.Location = new System.Drawing.Point(307, 74);
-            this.button_readgongyi.Name = "button_readgongyi";
-            this.button_readgongyi.Size = new System.Drawing.Size(125, 23);
-            this.button_readgongyi.TabIndex = 4;
-            this.button_readgongyi.Text = "读取气流工艺";
-            this.button_readgongyi.UseVisualStyleBackColor = true;
-            this.button_readgongyi.Click += new System.EventHandler(this.button_readgongyi_Click);
-            // 
             // comboBox_gongyihao
             // 
+            this.comboBox_gongyihao.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox_gongyihao.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboBox_gongyihao.FormattingEnabled = true;
-            this.comboBox_gongyihao.Location = new System.Drawing.Point(307, 25);
+            this.comboBox_gongyihao.Location = new System.Drawing.Point(307, 9);
             this.comboBox_gongyihao.Name = "comboBox_gongyihao";
-            this.comboBox_gongyihao.Size = new System.Drawing.Size(153, 20);
+            this.comboBox_gongyihao.Size = new System.Drawing.Size(91, 20);
             this.comboBox_gongyihao.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(260, 27);
+            this.label2.Location = new System.Drawing.Point(260, 12);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(47, 12);
             this.label2.TabIndex = 2;
-            this.label2.Text = "工艺号";
+            this.label2.Text = "工艺号1";
             // 
             // textBox_danhao
             // 
@@ -480,17 +494,62 @@
             this.panel_craft_info.Size = new System.Drawing.Size(258, 481);
             this.panel_craft_info.TabIndex = 4;
             // 
-            // comboBox_gongyi
+            // label3
             // 
-            this.comboBox_gongyi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.comboBox_gongyi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.comboBox_gongyi.FormattingEnabled = true;
-            this.comboBox_gongyi.Location = new System.Drawing.Point(103, 12);
-            this.comboBox_gongyi.Name = "comboBox_gongyi";
-            this.comboBox_gongyi.Size = new System.Drawing.Size(139, 20);
-            this.comboBox_gongyi.TabIndex = 2;
-            this.comboBox_gongyi.TextUpdate += new System.EventHandler(this.comboBox_gongyi_TextUpdate);
-            this.comboBox_gongyi.TextChanged += new System.EventHandler(this.comboBox_gongyi_TextChanged);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(404, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 12);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "工艺号2";
+            // 
+            // comboBox_gongyihao2
+            // 
+            this.comboBox_gongyihao2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox_gongyihao2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_gongyihao2.FormattingEnabled = true;
+            this.comboBox_gongyihao2.Location = new System.Drawing.Point(461, 9);
+            this.comboBox_gongyihao2.Name = "comboBox_gongyihao2";
+            this.comboBox_gongyihao2.Size = new System.Drawing.Size(88, 20);
+            this.comboBox_gongyihao2.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(260, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 12);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "工艺号3";
+            // 
+            // comboBox_gongyihao3
+            // 
+            this.comboBox_gongyihao3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox_gongyihao3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_gongyihao3.FormattingEnabled = true;
+            this.comboBox_gongyihao3.Location = new System.Drawing.Point(307, 37);
+            this.comboBox_gongyihao3.Name = "comboBox_gongyihao3";
+            this.comboBox_gongyihao3.Size = new System.Drawing.Size(91, 20);
+            this.comboBox_gongyihao3.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(404, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(47, 12);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "工艺号4";
+            // 
+            // comboBox_gongyihao4
+            // 
+            this.comboBox_gongyihao4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.comboBox_gongyihao4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.comboBox_gongyihao4.FormattingEnabled = true;
+            this.comboBox_gongyihao4.Location = new System.Drawing.Point(461, 36);
+            this.comboBox_gongyihao4.Name = "comboBox_gongyihao4";
+            this.comboBox_gongyihao4.Size = new System.Drawing.Size(91, 20);
+            this.comboBox_gongyihao4.TabIndex = 13;
             // 
             // shengchanpaishan
             // 
@@ -528,7 +587,6 @@
         private System.Windows.Forms.TextBox textBox_danhao;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox_gongyihao;
-        private System.Windows.Forms.Button button_readgongyi;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView_craft;
         private System.Windows.Forms.Button button1;
@@ -568,5 +626,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column30;
         private System.Windows.Forms.Panel panel_craft_info;
         private System.Windows.Forms.ComboBox comboBox_gongyi;
+        private System.Windows.Forms.ComboBox comboBox_gongyihao2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox_gongyihao3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox_gongyihao4;
+        private System.Windows.Forms.Label label5;
     }
 }

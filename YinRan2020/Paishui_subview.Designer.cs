@@ -197,9 +197,9 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(-14, 2);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(332, 50);
+            this.label1.Size = new System.Drawing.Size(343, 50);
             this.label1.TabIndex = 59;
             this.label1.Text = "排       水";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -262,7 +262,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Paishui_subview";
-            this.Size = new System.Drawing.Size(304, 254);
+            this.Size = new System.Drawing.Size(343, 262);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

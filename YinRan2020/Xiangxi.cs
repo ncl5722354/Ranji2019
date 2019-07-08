@@ -35,9 +35,11 @@ namespace YinRan2020
 
             ViewCaoZuo.Object_Position(0.27, 0.5, 0.5, 0.49, dataGridView_craft, this.Controls);
 
-            ViewCaoZuo.Object_Position(0.8, 0.5, 0.2, 0.05, comboBox1, this.Controls);
+            ViewCaoZuo.Object_Position(0.78, 0.5, 0.2, 0.05, label_no1, this.Controls);
 
-            ViewCaoZuo.Object_Position(0.8, 0.56, 0.2, 0.03, button_read_gongyi, this.Controls);
+           
+
+            ViewCaoZuo.Object_Position(0.8, 0.6, 0.2, 0.03, button_read_gongyi, this.Controls);
 
             ViewCaoZuo.Object_Position(0.01, 0.5, 0.25, 0.49, panel1, this.Controls);
 
@@ -305,6 +307,20 @@ namespace YinRan2020
                 foreach (DataRow dr in dt1.Rows)
                 {
                     comboBox1.Items.Add(dr[0].ToString());
+                }
+
+                //comboBox2.Items.Clear();
+                //DataTable dt1 = MainView.builder.Select_Table("Shengchanpaichan");
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    //comboBox2.Items.Add(dr[0].ToString());
+                }
+
+                //comboBox3.Items.Clear();
+                //DataTable dt1 = MainView.builder.Select_Table("Shengchanpaichan");
+                foreach (DataRow dr in dt1.Rows)
+                {
+                    //comboBox3.Items.Add(dr[0].ToString());
                 }
             }
             catch { }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ViewConfig;
 
 namespace YinRan2020
 {
@@ -40,7 +41,27 @@ namespace YinRan2020
 
         private void init_view()
         {
+            ViewCaoZuo.Object_Position(0, 0, 1, 0.2, label1, this.Controls);   // 标题
 
+            ViewCaoZuo.Object_Position(0, 0.2, 1, 0.2, chart1, this.Controls); // 图表
+
+            ViewCaoZuo.Object_Position(0.01, 0.4, 0.2, 0.1, label2, this.Controls); // 起始温度
+
+            ViewCaoZuo.Object_Position(0.21, 0.4, 0.2, 0.1, textBox_startwendu, this.Controls);
+
+            ViewCaoZuo.Object_Position(0.01, 0.5, 0.2, 0.1, label3, this.Controls); // 目标温度
+
+            ViewCaoZuo.Object_Position(0.21, 0.5, 0.2, 0.1, textBox_endwendu, this.Controls);
+
+            ViewCaoZuo.Object_Position(0.01, 0.6, 0.2, 0.1, label4, this.Controls); // 降温速率
+
+            ViewCaoZuo.Object_Position(0.21, 0.6, 0.2, 0.1, textBox_sulv, this.Controls);
+
+            ViewCaoZuo.Object_Position(0.01, 0.7, 0.2, 0.1, label5, this.Controls);  // 降温时间
+
+            ViewCaoZuo.Object_Position(0.21, 0.7, 0.2, 0.1, textBox_time, this.Controls);
+
+            
         }
         
 
@@ -234,6 +255,11 @@ namespace YinRan2020
                     change(this, new EventArgs());
                 }
             }
+        }
+
+        private void Jiangwen_subview_Resize(object sender, EventArgs e)
+        {
+            init_view();
         }
     }
 }
