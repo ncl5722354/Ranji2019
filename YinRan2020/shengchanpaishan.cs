@@ -19,6 +19,35 @@ namespace YinRan2020
         {
             
             InitializeComponent();
+
+            // 初始化工艺号
+            for (int i = 1; i <= 400; i++)
+            {
+                comboBox_gongyihao.Items.Add(i.ToString().PadLeft(3, '0'));
+                comboBox_gongyihao.Items.Add(i.ToString().PadLeft(3, '0') + "气流");
+            }
+
+            for (int i = 1; i <= 400; i++)
+            {
+
+                comboBox_gongyihao2.Items.Add(i.ToString().PadLeft(3, '0'));
+                comboBox_gongyihao2.Items.Add(i.ToString().PadLeft(3, '0') + "气流");
+            }
+
+            for (int i = 1; i <= 400; i++)
+            {
+
+                comboBox_gongyihao3.Items.Add(i.ToString().PadLeft(3, '0'));
+                comboBox_gongyihao3.Items.Add(i.ToString().PadLeft(3, '0') + "气流");
+            }
+
+            for (int i = 1; i <= 400; i++)
+            {
+
+                comboBox_gongyihao4.Items.Add(i.ToString().PadLeft(3, '0'));
+                comboBox_gongyihao4.Items.Add(i.ToString().PadLeft(3, '0') + "气流");
+            }
+
             try
             {
                 comboBox_gongyi.Items.Clear();
@@ -42,34 +71,7 @@ namespace YinRan2020
         {
             ViewCaoZuo.Object_Position(0.42, 0.01, 0.1, 0.05, label_title, this.Controls);
 
-            // 初始化工艺号
-            for(int i=1;i<=400;i++)
-            {
-                comboBox_gongyihao.Items.Add( i.ToString().PadLeft(3, '0'));
-                comboBox_gongyihao.Items.Add( i.ToString().PadLeft(3, '0') + "气流");
-            }
-
-            for (int i = 1; i <= 400; i++)
-            {
-                
-                comboBox_gongyihao2.Items.Add( i.ToString().PadLeft(3, '0'));
-                comboBox_gongyihao2.Items.Add( i.ToString().PadLeft(3, '0') + "气流");
-            }
-
-            for (int i = 1; i <= 400; i++)
-            {
-
-                comboBox_gongyihao3.Items.Add( i.ToString().PadLeft(3, '0'));
-                comboBox_gongyihao3.Items.Add( i.ToString().PadLeft(3, '0') + "气流");
-            }
-
-            for (int i = 1; i <= 400; i++)
-            {
-
-                comboBox_gongyihao4.Items.Add( i.ToString().PadLeft(3, '0'));
-                comboBox_gongyihao4.Items.Add( i.ToString().PadLeft(3, '0') + "气流");
-            }
-
+            
             ViewCaoZuo.Object_Position(0.01, 0.15, 0.5, 0.15, panel1, this.Controls);
             ViewCaoZuo.Object_Position(0.01, 0.35, 0.5, 0.64, panel2, this.Controls);
             ViewCaoZuo.Object_Position(0.51, 0.15, 0.48, 0.35, panel_datagridview, this.Controls);

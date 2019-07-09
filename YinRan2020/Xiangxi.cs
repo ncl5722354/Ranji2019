@@ -35,9 +35,9 @@ namespace YinRan2020
 
             ViewCaoZuo.Object_Position(0.27, 0.5, 0.5, 0.49, dataGridView_craft, this.Controls);
 
-            ViewCaoZuo.Object_Position(0.78, 0.5, 0.2, 0.05, label_no1, this.Controls);
+            ViewCaoZuo.Object_Position(0.78, 0.5, 0.05, 0.05, label_no1, this.Controls);
 
-           
+            ViewCaoZuo.Object_Position(0.84, 0.5, 0.15, 0.05, comboBox1, this.Controls);
 
             ViewCaoZuo.Object_Position(0.8, 0.6, 0.2, 0.03, button_read_gongyi, this.Controls);
 

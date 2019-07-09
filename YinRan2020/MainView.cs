@@ -65,7 +65,7 @@ namespace YinRan2020
         /// 定义数据库
         /// </summary>
         /// 
-        public static SQL_Connect_Builder builder = new SQL_Connect_Builder(".","YinRan2019", 1, 100000);             
+        public static SQL_Connect_Builder builder = new SQL_Connect_Builder("192.168.1.2","pwd3", 1, 100000);             
         public MainView()
         {
             InitializeComponent();
